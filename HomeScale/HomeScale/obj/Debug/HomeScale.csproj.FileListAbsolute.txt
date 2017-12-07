@@ -1,0 +1,11 @@
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\bin\Debug\HomeScale.exe.config
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\bin\Debug\HomeScale.exe
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\bin\Debug\HomeScale.pdb
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\bin\Debug\log4net.dll
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\bin\Debug\log4net.xml
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\obj\Debug\HomeScale.csprojResolveAssemblyReference.cache
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\obj\Debug\HomeScale.Login.resources
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\obj\Debug\HomeScale.Properties.Resources.resources
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\obj\Debug\HomeScale.csproj.GenerateResource.Cache
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\obj\Debug\HomeScale.exe
+c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\obj\Debug\HomeScale.pdb
