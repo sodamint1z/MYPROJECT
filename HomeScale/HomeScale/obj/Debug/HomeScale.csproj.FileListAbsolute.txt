@@ -9,3 +9,15 @@ c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\
 c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\obj\Debug\HomeScale.csproj.GenerateResource.Cache
 c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\obj\Debug\HomeScale.exe
 c:\users\professional\documents\visual studio 2013\Projects\HomeScale\HomeScale\obj\Debug\HomeScale.pdb
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\HomeScale.exe.config
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.exe
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.pdb
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\HomeScale.exe
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\HomeScale.pdb
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\log4net.dll
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\log4net.xml
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.csprojResolveAssemblyReference.cache
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.Login.resources
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.Properties.Resources.resources
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.csproj.GenerateResource.Cache
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.MST_PRODUCT.resources

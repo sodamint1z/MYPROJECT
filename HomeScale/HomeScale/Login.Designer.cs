@@ -42,46 +42,46 @@
             this.lblUsername.AutoSize = true;
             this.lblUsername.BackColor = System.Drawing.SystemColors.Control;
             this.lblUsername.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsername.Location = new System.Drawing.Point(17, 61);
+            this.lblUsername.Location = new System.Drawing.Point(56, 59);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(167, 29);
+            this.lblUsername.Size = new System.Drawing.Size(82, 29);
             this.lblUsername.TabIndex = 0;
-            this.lblUsername.Text = "USERNAME :";
+            this.lblUsername.Text = "ขื่อผู้ใช้ :";
             // 
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
             this.lblPassword.BackColor = System.Drawing.SystemColors.Control;
             this.lblPassword.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPassword.Location = new System.Drawing.Point(12, 128);
+            this.lblPassword.Location = new System.Drawing.Point(47, 126);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(172, 29);
+            this.lblPassword.Size = new System.Drawing.Size(91, 29);
             this.lblPassword.TabIndex = 1;
-            this.lblPassword.Text = "PASSWORD :";
+            this.lblPassword.Text = "รหัสผ่าน :";
             // 
             // txtUsername
             // 
             this.txtUsername.Font = new System.Drawing.Font("Verdana", 18F);
-            this.txtUsername.Location = new System.Drawing.Point(190, 58);
+            this.txtUsername.Location = new System.Drawing.Point(153, 56);
             this.txtUsername.Multiline = true;
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(232, 40);
+            this.txtUsername.Size = new System.Drawing.Size(240, 40);
             this.txtUsername.TabIndex = 2;
             // 
             // txtPassword
             // 
             this.txtPassword.Font = new System.Drawing.Font("Verdana", 18F);
-            this.txtPassword.Location = new System.Drawing.Point(190, 125);
+            this.txtPassword.Location = new System.Drawing.Point(153, 123);
             this.txtPassword.Multiline = true;
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(232, 40);
+            this.txtPassword.Size = new System.Drawing.Size(240, 40);
             this.txtPassword.TabIndex = 3;
             // 
             // btnLogin
             // 
             this.btnLogin.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnLogin.Location = new System.Drawing.Point(202, 171);
+            this.btnLogin.Location = new System.Drawing.Point(153, 169);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(107, 46);
             this.btnLogin.TabIndex = 4;
@@ -91,7 +91,7 @@
             // btnCancel
             // 
             this.btnCancel.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnCancel.Location = new System.Drawing.Point(315, 171);
+            this.btnCancel.Location = new System.Drawing.Point(286, 169);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 46);
             this.btnCancel.TabIndex = 5;
