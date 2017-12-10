@@ -55,11 +55,29 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="View\MST_CAR_REGISTERTION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MST_CAR_REGISTERTION.Designer.cs">
+      <DependentUpon>MST_CAR_REGISTERTION.cs</DependentUpon>
+    </Compile>
     <Compile Include="View\MST_PRODUCT.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="View\MST_PRODUCT.Designer.cs">
       <DependentUpon>MST_PRODUCT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MST_PRODUCT_UNIT.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MST_PRODUCT_UNIT.Designer.cs">
+      <DependentUpon>MST_PRODUCT_UNIT.cs</DependentUpon>
+    </Compile>
+    <Compile Include="View\MST_VENDOR.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="View\MST_VENDOR.Designer.cs">
+      <DependentUpon>MST_VENDOR.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
@@ -73,8 +91,17 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="View\MST_CAR_REGISTERTION.resx">
+      <DependentUpon>MST_CAR_REGISTERTION.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="View\MST_PRODUCT.resx">
       <DependentUpon>MST_PRODUCT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MST_PRODUCT_UNIT.resx">
+      <DependentUpon>MST_PRODUCT_UNIT.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="View\MST_VENDOR.resx">
+      <DependentUpon>MST_VENDOR.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

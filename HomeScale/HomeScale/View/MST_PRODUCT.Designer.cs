@@ -31,7 +31,6 @@
             this.lblProductName = new System.Windows.Forms.Label();
             this.lblProductUnit = new System.Windows.Forms.Label();
             this.txtProductName = new System.Windows.Forms.TextBox();
-            this.txtProductUnit = new System.Windows.Forms.TextBox();
             this.btnAdd = new System.Windows.Forms.Button();
             this.btnEdit = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
@@ -39,13 +38,15 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblHead = new System.Windows.Forms.Label();
+            this.cboProductUnit = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // lblProductName
             // 
             this.lblProductName.AutoSize = true;
-            this.lblProductName.BackColor = System.Drawing.SystemColors.Control;
+            this.lblProductName.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblProductName.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductName.Location = new System.Drawing.Point(61, 215);
             this.lblProductName.Name = "lblProductName";
@@ -56,7 +57,7 @@
             // lblProductUnit
             // 
             this.lblProductUnit.AutoSize = true;
-            this.lblProductUnit.BackColor = System.Drawing.SystemColors.Control;
+            this.lblProductUnit.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblProductUnit.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblProductUnit.Location = new System.Drawing.Point(491, 215);
             this.lblProductUnit.Name = "lblProductUnit";
@@ -69,22 +70,15 @@
             this.txtProductName.BackColor = System.Drawing.SystemColors.Window;
             this.txtProductName.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtProductName.Location = new System.Drawing.Point(170, 212);
+            this.txtProductName.MaxLength = 50;
             this.txtProductName.Multiline = true;
             this.txtProductName.Name = "txtProductName";
             this.txtProductName.Size = new System.Drawing.Size(300, 40);
             this.txtProductName.TabIndex = 2;
             // 
-            // txtProductUnit
-            // 
-            this.txtProductUnit.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtProductUnit.Location = new System.Drawing.Point(621, 212);
-            this.txtProductUnit.Multiline = true;
-            this.txtProductUnit.Name = "txtProductUnit";
-            this.txtProductUnit.Size = new System.Drawing.Size(300, 40);
-            this.txtProductUnit.TabIndex = 3;
-            // 
             // btnAdd
             // 
+            this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnAdd.Font = new System.Drawing.Font("Verdana", 18F);
             this.btnAdd.Location = new System.Drawing.Point(4, 111);
@@ -92,10 +86,11 @@
             this.btnAdd.Size = new System.Drawing.Size(150, 80);
             this.btnAdd.TabIndex = 4;
             this.btnAdd.Text = "เพิ่ม";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.UseVisualStyleBackColor = false;
             // 
             // btnEdit
             // 
+            this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnEdit.Font = new System.Drawing.Font("Verdana", 18F);
             this.btnEdit.Location = new System.Drawing.Point(174, 111);
@@ -103,10 +98,11 @@
             this.btnEdit.Size = new System.Drawing.Size(150, 80);
             this.btnEdit.TabIndex = 5;
             this.btnEdit.Text = "แก้ไข";
-            this.btnEdit.UseVisualStyleBackColor = true;
+            this.btnEdit.UseVisualStyleBackColor = false;
             // 
             // btnDelete
             // 
+            this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDelete.Font = new System.Drawing.Font("Verdana", 18F);
             this.btnDelete.Location = new System.Drawing.Point(344, 111);
@@ -114,10 +110,11 @@
             this.btnDelete.Size = new System.Drawing.Size(150, 80);
             this.btnDelete.TabIndex = 6;
             this.btnDelete.Text = "ลบ";
-            this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCancel.Font = new System.Drawing.Font("Verdana", 18F);
             this.btnCancel.Location = new System.Drawing.Point(514, 111);
@@ -125,10 +122,11 @@
             this.btnCancel.Size = new System.Drawing.Size(150, 80);
             this.btnCancel.TabIndex = 7;
             this.btnCancel.Text = "ยกเลิก";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // btnSave
             // 
+            this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSave.Font = new System.Drawing.Font("Verdana", 18F);
             this.btnSave.Location = new System.Drawing.Point(684, 111);
@@ -136,10 +134,11 @@
             this.btnSave.Size = new System.Drawing.Size(150, 80);
             this.btnSave.TabIndex = 8;
             this.btnSave.Text = "บันทึก";
-            this.btnSave.UseVisualStyleBackColor = true;
+            this.btnSave.UseVisualStyleBackColor = false;
             // 
             // btnBack
             // 
+            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnBack.Font = new System.Drawing.Font("Verdana", 18F);
             this.btnBack.Location = new System.Drawing.Point(854, 111);
@@ -147,7 +146,7 @@
             this.btnBack.Size = new System.Drawing.Size(150, 80);
             this.btnBack.TabIndex = 9;
             this.btnBack.Text = "ย้อนกลับ";
-            this.btnBack.UseVisualStyleBackColor = true;
+            this.btnBack.UseVisualStyleBackColor = false;
             // 
             // dataGridView1
             // 
@@ -157,12 +156,35 @@
             this.dataGridView1.Size = new System.Drawing.Size(855, 422);
             this.dataGridView1.TabIndex = 10;
             // 
+            // lblHead
+            // 
+            this.lblHead.AutoSize = true;
+            this.lblHead.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblHead.Font = new System.Drawing.Font("Verdana", 18F);
+            this.lblHead.Location = new System.Drawing.Point(457, 42);
+            this.lblHead.Name = "lblHead";
+            this.lblHead.Size = new System.Drawing.Size(105, 29);
+            this.lblHead.TabIndex = 11;
+            this.lblHead.Text = "ข้อมูลสินค้า";
+            // 
+            // cboProductUnit
+            // 
+            this.cboProductUnit.Font = new System.Drawing.Font("Verdana", 18F);
+            this.cboProductUnit.FormattingEnabled = true;
+            this.cboProductUnit.Location = new System.Drawing.Point(626, 212);
+            this.cboProductUnit.MaxLength = 50;
+            this.cboProductUnit.Name = "cboProductUnit";
+            this.cboProductUnit.Size = new System.Drawing.Size(300, 37);
+            this.cboProductUnit.TabIndex = 3;
+            // 
             // MST_PRODUCT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.cboProductUnit);
+            this.Controls.Add(this.lblHead);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
@@ -170,7 +192,6 @@
             this.Controls.Add(this.btnDelete);
             this.Controls.Add(this.btnEdit);
             this.Controls.Add(this.btnAdd);
-            this.Controls.Add(this.txtProductUnit);
             this.Controls.Add(this.txtProductName);
             this.Controls.Add(this.lblProductUnit);
             this.Controls.Add(this.lblProductName);
@@ -188,7 +209,6 @@
         private System.Windows.Forms.Label lblProductName;
         private System.Windows.Forms.Label lblProductUnit;
         private System.Windows.Forms.TextBox txtProductName;
-        private System.Windows.Forms.TextBox txtProductUnit;
         private System.Windows.Forms.Button btnAdd;
         private System.Windows.Forms.Button btnEdit;
         private System.Windows.Forms.Button btnDelete;
@@ -196,5 +216,7 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblHead;
+        private System.Windows.Forms.ComboBox cboProductUnit;
     }
 }

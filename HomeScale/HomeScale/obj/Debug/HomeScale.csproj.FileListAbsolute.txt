@@ -21,3 +21,6 @@ E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.Login.
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.Properties.Resources.resources
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.csproj.GenerateResource.Cache
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.MST_PRODUCT.resources
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.MST_CAR_REGISTERTION.resources
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.MST_PRODUCT_UNIT.resources
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.MST_VENDOR.resources

@@ -16,7 +16,7 @@ namespace HomeScale
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View.MST_PRODUCT());
+            Application.Run(new View.MST_VENDOR());
         }
     }
 }

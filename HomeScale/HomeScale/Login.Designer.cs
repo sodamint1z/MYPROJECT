@@ -40,7 +40,7 @@
             // lblUsername
             // 
             this.lblUsername.AutoSize = true;
-            this.lblUsername.BackColor = System.Drawing.SystemColors.Control;
+            this.lblUsername.BackColor = System.Drawing.SystemColors.Highlight;
             this.lblUsername.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsername.Location = new System.Drawing.Point(56, 59);
             this.lblUsername.Name = "lblUsername";
@@ -51,7 +51,7 @@
             // lblPassword
             // 
             this.lblPassword.AutoSize = true;
-            this.lblPassword.BackColor = System.Drawing.SystemColors.Control;
+            this.lblPassword.BackColor = System.Drawing.SystemColors.Highlight;
             this.lblPassword.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPassword.Location = new System.Drawing.Point(47, 126);
             this.lblPassword.Name = "lblPassword";
@@ -80,23 +80,25 @@
             // 
             // btnLogin
             // 
+            this.btnLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnLogin.Font = new System.Drawing.Font("Verdana", 18F);
             this.btnLogin.Location = new System.Drawing.Point(153, 169);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(107, 46);
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "เข้าสู่ระบบ";
-            this.btnLogin.UseVisualStyleBackColor = true;
+            this.btnLogin.UseVisualStyleBackColor = false;
             // 
             // btnCancel
             // 
+            this.btnCancel.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnCancel.Font = new System.Drawing.Font("Verdana", 18F);
             this.btnCancel.Location = new System.Drawing.Point(286, 169);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(107, 46);
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "ยกเลิก";
-            this.btnCancel.UseVisualStyleBackColor = true;
+            this.btnCancel.UseVisualStyleBackColor = false;
             // 
             // Login
             // 
