@@ -1,0 +1,128 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="HomeScaleDBModelStoreContainer" CdmEntityContainer="HomeScaleDBEntities">
+    <EntitySetMapping Name="MST_BUSINESS">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_BUSINESS">
+        <MappingFragment StoreEntitySet="MST_BUSINESS">
+          <ScalarProperty Name="BUSINESS_TEL_NO" ColumnName="BUSINESS_TEL_NO" />
+          <ScalarProperty Name="BUSINESS_ADDRESS" ColumnName="BUSINESS_ADDRESS" />
+          <ScalarProperty Name="BUSINESS_NAME" ColumnName="BUSINESS_NAME" />
+          <ScalarProperty Name="BUSINESS_ID" ColumnName="BUSINESS_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MST_CAR_REGISTERTION">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_CAR_REGISTERTION">
+        <MappingFragment StoreEntitySet="MST_CAR_REGISTERTION">
+          <ScalarProperty Name="CAR_REGISTERTION_VENDOR_NAME" ColumnName="CAR_REGISTERTION_VENDOR_NAME" />
+          <ScalarProperty Name="CAR_REGISTERTION_VENDOR_ID" ColumnName="CAR_REGISTERTION_VENDOR_ID" />
+          <ScalarProperty Name="CAR_REGISTERTION_NAME" ColumnName="CAR_REGISTERTION_NAME" />
+          <ScalarProperty Name="CAR_REGISTERTION_ID" ColumnName="CAR_REGISTERTION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MST_DATA_BASIC">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_DATA_BASIC">
+        <MappingFragment StoreEntitySet="MST_DATA_BASIC">
+          <ScalarProperty Name="BASIC_STATUS_CUSTOMER" ColumnName="BASIC_STATUS_CUSTOMER" />
+          <ScalarProperty Name="BASIC_STATUS_BALANCE" ColumnName="BASIC_STATUS_BALANCE" />
+          <ScalarProperty Name="BASIC_STATUS_SCALE_CARD" ColumnName="BASIC_STATUS_SCALE_CARD" />
+          <ScalarProperty Name="BASIC_FARE" ColumnName="BASIC_FARE" />
+          <ScalarProperty Name="BASIC_DEDUCTION" ColumnName="BASIC_DEDUCTION" />
+          <ScalarProperty Name="BASIC_MOVE_NO" ColumnName="BASIC_MOVE_NO" />
+          <ScalarProperty Name="BASIC_DECIMAL_NUMBER" ColumnName="BASIC_DECIMAL_NUMBER" />
+          <ScalarProperty Name="BASIC_RECEIPT_NO" ColumnName="BASIC_RECEIPT_NO" />
+          <ScalarProperty Name="BASIC_CARD_NO" ColumnName="BASIC_CARD_NO" />
+          <ScalarProperty Name="BASIC_ID" ColumnName="BASIC_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MST_DISTINATION">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_DISTINATION">
+        <MappingFragment StoreEntitySet="MST_DISTINATION">
+          <ScalarProperty Name="DISTINATION_FAX" ColumnName="DISTINATION_FAX" />
+          <ScalarProperty Name="DISTINATION_TEL_NO" ColumnName="DISTINATION_TEL_NO" />
+          <ScalarProperty Name="DISTINATION_POSTCODE" ColumnName="DISTINATION_POSTCODE" />
+          <ScalarProperty Name="DISTINATION_COUNTY" ColumnName="DISTINATION_COUNTY" />
+          <ScalarProperty Name="DISTINATION_DISTRICT_TWO" ColumnName="DISTINATION_DISTRICT_TWO" />
+          <ScalarProperty Name="DISTINATION_DISTRICT_ONE" ColumnName="DISTINATION_DISTRICT_ONE" />
+          <ScalarProperty Name="DISTINATION_ADDRESS" ColumnName="DISTINATION_ADDRESS" />
+          <ScalarProperty Name="DISTINATION_NAME" ColumnName="DISTINATION_NAME" />
+          <ScalarProperty Name="DISTINATION_ID" ColumnName="DISTINATION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MST_LINE_DOWN">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_LINE_DOWN">
+        <MappingFragment StoreEntitySet="MST_LINE_DOWN">
+          <ScalarProperty Name="LINE_DOWN_AMOUNT" ColumnName="LINE_DOWN_AMOUNT" />
+          <ScalarProperty Name="LINE_DOWN_CALCULATE" ColumnName="LINE_DOWN_CALCULATE" />
+          <ScalarProperty Name="LINE_DOWN_NAME" ColumnName="LINE_DOWN_NAME" />
+          <ScalarProperty Name="LINE_DOWN_ID" ColumnName="LINE_DOWN_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MST_MOISTURE">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_MOISTURE">
+        <MappingFragment StoreEntitySet="MST_MOISTURE">
+          <ScalarProperty Name="MOISTURE_DIVIDER" ColumnName="MOISTURE_DIVIDER" />
+          <ScalarProperty Name="MOISTURE_LESS_HUMIDITY" ColumnName="MOISTURE_LESS_HUMIDITY" />
+          <ScalarProperty Name="MOISTURE_MOISTURE" ColumnName="MOISTURE_MOISTURE" />
+          <ScalarProperty Name="MOISTURE_ID" ColumnName="MOISTURE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MST_PRODUCT">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_PRODUCT">
+        <MappingFragment StoreEntitySet="MST_PRODUCT">
+          <ScalarProperty Name="PRODUCT_UNIT" ColumnName="PRODUCT_UNIT" />
+          <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MST_PRODUCT_UNIT">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_PRODUCT_UNIT">
+        <MappingFragment StoreEntitySet="MST_PRODUCT_UNIT">
+          <ScalarProperty Name="PRODUCT_UNIT_NAME" ColumnName="PRODUCT_UNIT_NAME" />
+          <ScalarProperty Name="PRODUCT_UNIT_ID" ColumnName="PRODUCT_UNIT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MST_SERVICE_CHARGE">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_SERVICE_CHARGE">
+        <MappingFragment StoreEntitySet="MST_SERVICE_CHARGE">
+          <ScalarProperty Name="SERVICE_CHARGE_STATUS" ColumnName="SERVICE_CHARGE_STATUS" />
+          <ScalarProperty Name="SERVICE_CHARGE_NAME" ColumnName="SERVICE_CHARGE_NAME" />
+          <ScalarProperty Name="SERVICE_CHARGE_ID" ColumnName="SERVICE_CHARGE_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MST_VENDOR">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_VENDOR">
+        <MappingFragment StoreEntitySet="MST_VENDOR">
+          <ScalarProperty Name="VENDOR_FAX" ColumnName="VENDOR_FAX" />
+          <ScalarProperty Name="VENDOR_TEL_NO" ColumnName="VENDOR_TEL_NO" />
+          <ScalarProperty Name="VENDOR_POSTCODE" ColumnName="VENDOR_POSTCODE" />
+          <ScalarProperty Name="VENDOR_COUNTY" ColumnName="VENDOR_COUNTY" />
+          <ScalarProperty Name="VENDOR_DISTRICT_TWO" ColumnName="VENDOR_DISTRICT_TWO" />
+          <ScalarProperty Name="VENDOR_DISTRICT_ONE" ColumnName="VENDOR_DISTRICT_ONE" />
+          <ScalarProperty Name="VENDOR_ADDRESS" ColumnName="VENDOR_ADDRESS" />
+          <ScalarProperty Name="VENDOR_NAME" ColumnName="VENDOR_NAME" />
+          <ScalarProperty Name="VENDOR_ID" ColumnName="VENDOR_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="USER_LOGIN">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.USER_LOGIN">
+        <MappingFragment StoreEntitySet="USER_LOGIN">
+          <ScalarProperty Name="STATUS_FLAG" ColumnName="STATUS_FLAG" />
+          <ScalarProperty Name="USER_LASTNAME" ColumnName="USER_LASTNAME" />
+          <ScalarProperty Name="USER_FIRSTNAME" ColumnName="USER_FIRSTNAME" />
+          <ScalarProperty Name="USER_PASSWORD" ColumnName="USER_PASSWORD" />
+          <ScalarProperty Name="USER_ID" ColumnName="USER_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

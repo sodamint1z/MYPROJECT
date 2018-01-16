@@ -88,6 +88,7 @@
             this.btnLogin.TabIndex = 4;
             this.btnLogin.Text = "เข้าสู่ระบบ";
             this.btnLogin.UseVisualStyleBackColor = false;
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
             // btnCancel
             // 
@@ -99,6 +100,7 @@
             this.btnCancel.TabIndex = 5;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // Login
             // 

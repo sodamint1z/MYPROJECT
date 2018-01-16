@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="351921c041374770b18620b50c1b9f74" Name="Diagram1">
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_BUSINESS" Width="1.5" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_CAR_REGISTERTION" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_DATA_BASIC" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_DISTINATION" Width="1.5" PointX="2.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_LINE_DOWN" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_MOISTURE" Width="1.5" PointX="4.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_PRODUCT" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_PRODUCT_UNIT" Width="1.5" PointX="6.75" PointY="3.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_SERVICE_CHARGE" Width="1.5" PointX="4.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.MST_VENDOR" Width="1.5" PointX="6.75" PointY="6.75" />
+        <EntityTypeShape EntityType="HomeScaleDBModel.USER_LOGIN" Width="1.5" PointX="0.75" PointY="7.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

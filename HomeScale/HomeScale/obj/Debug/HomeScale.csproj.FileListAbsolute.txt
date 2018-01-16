@@ -16,7 +16,6 @@ E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\HomeScale.exe
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\HomeScale.pdb
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\log4net.dll
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\log4net.xml
-E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.csprojResolveAssemblyReference.cache
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.Login.resources
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.Properties.Resources.resources
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.csproj.GenerateResource.Cache
@@ -24,3 +23,13 @@ E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.M
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.MST_CAR_REGISTERTION.resources
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.MST_PRODUCT_UNIT.resources
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.MST_VENDOR.resources
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.View.MST_DISTINATION.resources
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\EntityFramework.dll
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\EntityFramework.SqlServer.dll
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\System.Data.SQLite.dll
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\System.Data.SQLite.EF6.dll
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\System.Data.SQLite.Linq.dll
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\EntityFramework.xml
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\EntityFramework.SqlServer.xml
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\System.Data.SQLite.xml
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.csprojResolveAssemblyReference.cache
