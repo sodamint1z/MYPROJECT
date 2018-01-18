@@ -16,7 +16,6 @@
     <Property Name="CAR_REGISTERTION_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="CAR_REGISTERTION_NAME" Type="varchar" MaxLength="50" />
     <Property Name="CAR_REGISTERTION_VENDOR_ID" Type="int" />
-    <Property Name="CAR_REGISTERTION_VENDOR_NAME" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="MST_DATA_BASIC">
     <Key>
@@ -71,7 +70,7 @@
     </Key>
     <Property Name="PRODUCT_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="PRODUCT_NAME" Type="varchar" MaxLength="50" />
-    <Property Name="PRODUCT_UNIT" Type="varchar" MaxLength="50" />
+    <Property Name="PRODUCT_UNIT" Type="int" />
   </EntityType>
   <EntityType Name="MST_PRODUCT_UNIT">
     <Key>
@@ -112,6 +111,28 @@
     <Property Name="USER_LASTNAME" Type="varchar" MaxLength="50" />
     <Property Name="STATUS_FLAG" Type="int" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'main.VW_MST_CAR_REGISTERTION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_MST_CAR_REGISTERTION">
+    <Key>
+      <PropertyRef Name="CAR_REGISTERTION_ID" />
+    </Key>
+    <Property Name="CAR_REGISTERTION_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CAR_REGISTERTION_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="CAR_REGISTERTION_VENDOR_ID" Type="int" />
+    <Property Name="VENDOR_NAME" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'main.VW_MST_PRODUCT' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="VW_MST_PRODUCT">
+    <Key>
+      <PropertyRef Name="PRODUCT_ID" />
+    </Key>
+    <Property Name="PRODUCT_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRODUCT_NAME" Type="varchar" MaxLength="50" />
+    <Property Name="PRODUCT_UNIT" Type="int" />
+    <Property Name="PRODUCT_UNIT_NAME" Type="varchar" MaxLength="50" />
+  </EntityType>
   <EntityContainer Name="HomeScaleDBModelStoreContainer">
     <EntitySet Name="MST_BUSINESS" EntityType="Self.MST_BUSINESS" store:Type="Tables" />
     <EntitySet Name="MST_CAR_REGISTERTION" EntityType="Self.MST_CAR_REGISTERTION" store:Type="Tables" />
@@ -124,5 +145,21 @@
     <EntitySet Name="MST_SERVICE_CHARGE" EntityType="Self.MST_SERVICE_CHARGE" store:Type="Tables" />
     <EntitySet Name="MST_VENDOR" EntityType="Self.MST_VENDOR" store:Type="Tables" />
     <EntitySet Name="USER_LOGIN" EntityType="Self.USER_LOGIN" store:Type="Tables" />
+    <EntitySet Name="VW_MST_CAR_REGISTERTION" EntityType="Self.VW_MST_CAR_REGISTERTION" store:Type="Views">
+      <DefiningQuery>SELECT 
+[VW_MST_CAR_REGISTERTION].[CAR_REGISTERTION_ID] AS [CAR_REGISTERTION_ID], 
+[VW_MST_CAR_REGISTERTION].[CAR_REGISTERTION_NAME] AS [CAR_REGISTERTION_NAME], 
+[VW_MST_CAR_REGISTERTION].[CAR_REGISTERTION_VENDOR_ID] AS [CAR_REGISTERTION_VENDOR_ID], 
+[VW_MST_CAR_REGISTERTION].[VENDOR_NAME] AS [VENDOR_NAME]
+FROM [VW_MST_CAR_REGISTERTION] AS [VW_MST_CAR_REGISTERTION]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="VW_MST_PRODUCT" EntityType="Self.VW_MST_PRODUCT" store:Type="Views">
+      <DefiningQuery>SELECT 
+[VW_MST_PRODUCT].[PRODUCT_ID] AS [PRODUCT_ID], 
+[VW_MST_PRODUCT].[PRODUCT_NAME] AS [PRODUCT_NAME], 
+[VW_MST_PRODUCT].[PRODUCT_UNIT] AS [PRODUCT_UNIT], 
+[VW_MST_PRODUCT].[PRODUCT_UNIT_NAME] AS [PRODUCT_UNIT_NAME]
+FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

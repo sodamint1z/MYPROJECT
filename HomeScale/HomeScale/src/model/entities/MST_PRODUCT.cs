@@ -16,6 +16,6 @@ namespace HomeScale.src.model.entities
     {
         public long PRODUCT_ID { get; set; }
         public string PRODUCT_NAME { get; set; }
-        public string PRODUCT_UNIT { get; set; }
+        public Nullable<int> PRODUCT_UNIT { get; set; }
     }
 }

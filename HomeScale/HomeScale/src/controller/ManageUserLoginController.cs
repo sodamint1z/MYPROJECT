@@ -10,19 +10,19 @@ using HomeScale.src.util;
 
 namespace HomeScale.src.controller
 {
-    public class MstProductController
+    public class ManageUserLoginController
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public object[] queryComboMstProductUnit()
+        public object[] searchDataManageUserLogin()
         {
-            Log.Info("Start log INFO... queryComboMstProductUnit");
+            Log.Info("Start log INFO... searchDataManageUserLogin");
             MsgForm msgError = new MsgForm();
-            List<MST_PRODUCT_UNIT> resultList = new List<MST_PRODUCT_UNIT>();
+            List<USER_LOGIN> resultList = new List<USER_LOGIN>();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    resultList = (from row in db.MST_PRODUCT_UNIT select row).ToList();
+                    resultList = (from row in db.USER_LOGIN select row).ToList();
                     db.Dispose();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
                 }
@@ -35,53 +35,28 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... queryComboMstProductUnit");
-            }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList };
-        }
-
-        public object[] searchDataVwMstProduct()
-        {
-            Log.Info("Start log INFO... searchDataVwMstProduct");
-            MsgForm msgError = new MsgForm();
-            List<VW_MST_PRODUCT> resultList = new List<VW_MST_PRODUCT>();
-            try
-            {
-                using (var db = new HomeScaleDBEntities())
-                {
-                    resultList = (from row in db.VW_MST_PRODUCT select row).ToList();
-                    db.Dispose();
-                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex.ToString(), ex);
-                msgError.statusFlag = MsgForm.STATUS_ERROR;
-                msgError.messageDescription = ex.ToString();
-            }
-            finally
-            {
-                Log.Info("End log INFO... searchDataVwMstProduct");
+                Log.Info("End log INFO... searchDataManageUserLogin");
             }
             return new object[] { msgError.statusFlag, msgError.messageDescription, resultList, resultList.Count() };
         }
 
-        public object[] insertDataMstProduct(MST_PRODUCT param)
+        public object[] insertDataManageUserLogin(USER_LOGIN param)
         {
-            Log.Info("Start log INFO... insertDataMstProduct");
+            Log.Info("Start log INFO... insertDataManageUserLogin");
             MsgForm msgError = new MsgForm();
-            MST_PRODUCT form = new MST_PRODUCT();
+            USER_LOGIN form = new USER_LOGIN();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    form.PRODUCT_ID = db.MST_PRODUCT.Count() + 1;
-                    form.PRODUCT_NAME = param.PRODUCT_NAME;
-                    form.PRODUCT_UNIT = param.PRODUCT_UNIT;
+                    form.USER_ID = param.USER_ID;
+                    form.USER_PASSWORD = param.USER_PASSWORD;
+                    form.USER_FIRSTNAME = param.USER_FIRSTNAME;
+                    form.USER_LASTNAME = param.USER_LASTNAME;
+                    form.STATUS_FLAG = param.STATUS_FLAG;
                     if (CheckUtil.isNotEmpty(form))
                     {
-                        db.MST_PRODUCT.Add(form);
+                        db.USER_LOGIN.Add(form);
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -95,25 +70,27 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... insertDataMstProduct");
+                Log.Info("End log INFO... insertDataManageUserLogin");
             }
             return new object[] { msgError.statusFlag, msgError.messageDescription };
         }
 
-        public object[] updateDataMstProduct(MST_PRODUCT param)
+        public object[] updateDataManageUserLogin(USER_LOGIN param)
         {
-            Log.Info("Start log INFO... updateDataMstProduct");
+            Log.Info("Start log INFO... updateDataManageUserLogin");
             MsgForm msgError = new MsgForm();
-            MST_PRODUCT form = new MST_PRODUCT();
+            USER_LOGIN form = new USER_LOGIN();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
+                    form = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
                     if (CheckUtil.isNotEmpty(form))
                     {
-                        form.PRODUCT_NAME = param.PRODUCT_NAME;
-                        form.PRODUCT_UNIT = param.PRODUCT_UNIT;
+                        form.USER_PASSWORD = param.USER_PASSWORD;
+                        form.USER_FIRSTNAME = param.USER_FIRSTNAME;
+                        form.USER_LASTNAME = param.USER_LASTNAME;
+                        form.STATUS_FLAG = param.STATUS_FLAG;
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -127,24 +104,24 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... updateDataMstProduct");
+                Log.Info("End log INFO... updateDataManageUserLogin");
             }
             return new object[] { msgError.statusFlag, msgError.messageDescription };
         }
 
-        public object[] deleteDataMstProduct(MST_PRODUCT param)
+        public object[] deleteDataManageUserLogin(USER_LOGIN param)
         {
-            Log.Info("Start log INFO... deleteDataMstProduct");
+            Log.Info("Start log INFO... deleteDataManageUserLogin");
             MsgForm msgError = new MsgForm();
-            MST_PRODUCT form = new MST_PRODUCT();
+            USER_LOGIN form = new USER_LOGIN();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
+                    form = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
                     if (CheckUtil.isNotEmpty(form))
                     {
-                        db.MST_PRODUCT.Remove(form);
+                        db.USER_LOGIN.Remove(form);
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -158,7 +135,7 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... deleteDataMstProduct");
+                Log.Info("End log INFO... deleteDataManageUserLogin");
             }
             return new object[] { msgError.statusFlag, msgError.messageDescription };
         }

@@ -40,6 +40,7 @@
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.lblHead = new System.Windows.Forms.Label();
             this.cboProductUnit = new System.Windows.Forms.ComboBox();
+            this.lblCountData = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -151,7 +152,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 268);
+            this.dataGridView1.Location = new System.Drawing.Point(66, 294);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(855, 422);
             this.dataGridView1.TabIndex = 10;
@@ -177,12 +178,23 @@
             this.cboProductUnit.Size = new System.Drawing.Size(300, 37);
             this.cboProductUnit.TabIndex = 3;
             // 
+            // lblCountData
+            // 
+            this.lblCountData.AutoSize = true;
+            this.lblCountData.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountData.Location = new System.Drawing.Point(776, 273);
+            this.lblCountData.Name = "lblCountData";
+            this.lblCountData.Size = new System.Drawing.Size(95, 18);
+            this.lblCountData.TabIndex = 12;
+            this.lblCountData.Text = "CountData";
+            // 
             // MST_PRODUCT
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1008, 729);
+            this.Controls.Add(this.lblCountData);
             this.Controls.Add(this.cboProductUnit);
             this.Controls.Add(this.lblHead);
             this.Controls.Add(this.dataGridView1);
@@ -218,5 +230,6 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Label lblHead;
         private System.Windows.Forms.ComboBox cboProductUnit;
+        private System.Windows.Forms.Label lblCountData;
     }
 }

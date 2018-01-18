@@ -12,10 +12,11 @@ namespace HomeScale.src.model.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class MST_CAR_REGISTERTION
+    public partial class VW_MST_CAR_REGISTERTION
     {
         public long CAR_REGISTERTION_ID { get; set; }
         public string CAR_REGISTERTION_NAME { get; set; }
         public Nullable<int> CAR_REGISTERTION_VENDOR_ID { get; set; }
+        public string VENDOR_NAME { get; set; }
     }
 }

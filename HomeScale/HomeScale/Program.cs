@@ -18,27 +18,28 @@ namespace HomeScale
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new View.MST_PRODUCT());
 
             //MstProductController mstProControl = new MstProductController();
             //MST_PRODUCT form = new MST_PRODUCT
             //{
             //    //PRODUCT_ID = 1,
             //    PRODUCT_NAME = "ข้าวเปลือก",
-            //    PRODUCT_UNIT = "ตัน"
+            //    PRODUCT_UNIT = 1
             //};
             ////service.saveDataMstProduct(form);
             ////service.updateDataMstProduct(form);
-            //mstProControl.searchDataMstProduct();
+            ////mstProControl.searchDataMstProduct();
+            //mstProControl.searchDataVwMstProduct();
             ////service.deleteDataMstProduct(form);
 
-            //LoginController loginControl = new LoginController();
-            //USER_LOGIN formLogin = new USER_LOGIN
-            //{
-            //    USER_ID = "admin",
-            //    USER_PASSWORD = "admin"
-            //};
-            //loginControl.checkLogin(formLogin);
+            ////LoginController loginControl = new LoginController();
+            ////USER_LOGIN formLogin = new USER_LOGIN
+            ////{
+            ////    USER_ID = "admin",
+            ////    USER_PASSWORD = "admin"
+            ////};
+            ////loginControl.checkLogin(formLogin);
         }
     }
 }

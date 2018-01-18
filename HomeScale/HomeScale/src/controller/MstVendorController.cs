@@ -10,19 +10,19 @@ using HomeScale.src.util;
 
 namespace HomeScale.src.controller
 {
-    public class MstProductController
+    public class MstVendorController
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public object[] queryComboMstProductUnit()
+        public object[] searchDataMstVendor()
         {
-            Log.Info("Start log INFO... queryComboMstProductUnit");
+            Log.Info("Start log INFO... searchDataMstVendor");
             MsgForm msgError = new MsgForm();
-            List<MST_PRODUCT_UNIT> resultList = new List<MST_PRODUCT_UNIT>();
+            List<MST_VENDOR> resultList = new List<MST_VENDOR>();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    resultList = (from row in db.MST_PRODUCT_UNIT select row).ToList();
+                    resultList = (from row in db.MST_VENDOR select row).ToList();
                     db.Dispose();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
                 }
@@ -35,53 +35,32 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... queryComboMstProductUnit");
-            }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList };
-        }
-
-        public object[] searchDataVwMstProduct()
-        {
-            Log.Info("Start log INFO... searchDataVwMstProduct");
-            MsgForm msgError = new MsgForm();
-            List<VW_MST_PRODUCT> resultList = new List<VW_MST_PRODUCT>();
-            try
-            {
-                using (var db = new HomeScaleDBEntities())
-                {
-                    resultList = (from row in db.VW_MST_PRODUCT select row).ToList();
-                    db.Dispose();
-                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex.ToString(), ex);
-                msgError.statusFlag = MsgForm.STATUS_ERROR;
-                msgError.messageDescription = ex.ToString();
-            }
-            finally
-            {
-                Log.Info("End log INFO... searchDataVwMstProduct");
+                Log.Info("End log INFO... searchDataMstVendor");
             }
             return new object[] { msgError.statusFlag, msgError.messageDescription, resultList, resultList.Count() };
         }
 
-        public object[] insertDataMstProduct(MST_PRODUCT param)
+        public object[] insertDataMstVendor(MST_VENDOR param)
         {
-            Log.Info("Start log INFO... insertDataMstProduct");
+            Log.Info("Start log INFO... insertDataMstVendor");
             MsgForm msgError = new MsgForm();
-            MST_PRODUCT form = new MST_PRODUCT();
+            MST_VENDOR form = new MST_VENDOR();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    form.PRODUCT_ID = db.MST_PRODUCT.Count() + 1;
-                    form.PRODUCT_NAME = param.PRODUCT_NAME;
-                    form.PRODUCT_UNIT = param.PRODUCT_UNIT;
+                    form.VENDOR_ID = db.MST_VENDOR.Count() + 1;
+                    form.VENDOR_NAME = param.VENDOR_NAME;
+                    form.VENDOR_ADDRESS = param.VENDOR_ADDRESS;
+                    form.VENDOR_DISTRICT_ONE = param.VENDOR_DISTRICT_ONE;
+                    form.VENDOR_DISTRICT_TWO = param.VENDOR_DISTRICT_TWO;
+                    form.VENDOR_COUNTY = param.VENDOR_COUNTY;
+                    form.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
+                    form.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
+                    form.VENDOR_FAX = param.VENDOR_FAX;
                     if (CheckUtil.isNotEmpty(form))
                     {
-                        db.MST_PRODUCT.Add(form);
+                        db.MST_VENDOR.Add(form);
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -95,25 +74,31 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... insertDataMstProduct");
+                Log.Info("End log INFO... insertDataMstVendor");
             }
             return new object[] { msgError.statusFlag, msgError.messageDescription };
         }
 
-        public object[] updateDataMstProduct(MST_PRODUCT param)
+        public object[] updateDataMstVendor(MST_VENDOR param)
         {
-            Log.Info("Start log INFO... updateDataMstProduct");
+            Log.Info("Start log INFO... updateDataMstVendor");
             MsgForm msgError = new MsgForm();
-            MST_PRODUCT form = new MST_PRODUCT();
+            MST_VENDOR form = new MST_VENDOR();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
+                    form = (from row in db.MST_VENDOR where row.VENDOR_ID == param.VENDOR_ID select row).FirstOrDefault();
                     if (CheckUtil.isNotEmpty(form))
                     {
-                        form.PRODUCT_NAME = param.PRODUCT_NAME;
-                        form.PRODUCT_UNIT = param.PRODUCT_UNIT;
+                        form.VENDOR_NAME = param.VENDOR_NAME;
+                        form.VENDOR_ADDRESS = param.VENDOR_ADDRESS;
+                        form.VENDOR_DISTRICT_ONE = param.VENDOR_DISTRICT_ONE;
+                        form.VENDOR_DISTRICT_TWO = param.VENDOR_DISTRICT_TWO;
+                        form.VENDOR_COUNTY = param.VENDOR_COUNTY;
+                        form.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
+                        form.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
+                        form.VENDOR_FAX = param.VENDOR_FAX;
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -127,24 +112,24 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... updateDataMstProduct");
+                Log.Info("End log INFO... updateDataMstVendor");
             }
             return new object[] { msgError.statusFlag, msgError.messageDescription };
         }
 
-        public object[] deleteDataMstProduct(MST_PRODUCT param)
+        public object[] deleteDataMstVendor(MST_VENDOR param)
         {
-            Log.Info("Start log INFO... deleteDataMstProduct");
+            Log.Info("Start log INFO... deleteDataMstVendor");
             MsgForm msgError = new MsgForm();
-            MST_PRODUCT form = new MST_PRODUCT();
+            MST_VENDOR form = new MST_VENDOR();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
+                    form = (from row in db.MST_VENDOR where row.VENDOR_ID == param.VENDOR_ID select row).FirstOrDefault();
                     if (CheckUtil.isNotEmpty(form))
                     {
-                        db.MST_PRODUCT.Remove(form);
+                        db.MST_VENDOR.Remove(form);
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -158,7 +143,7 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... deleteDataMstProduct");
+                Log.Info("End log INFO... deleteDataMstVendor");
             }
             return new object[] { msgError.statusFlag, msgError.messageDescription };
         }

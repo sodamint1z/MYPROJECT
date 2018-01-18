@@ -37,19 +37,19 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... searchDataMstProductUnit");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList };
+            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList, resultList.Count() };
         }
 
-        public object[] saveDataMstProductUnit(MST_PRODUCT_UNIT param)
+        public object[] insertDataMstProductUnit(MST_PRODUCT_UNIT param)
         {
-            Log.Info("Start log INFO... saveDataMstProductUnit");
+            Log.Info("Start log INFO... insertDataMstProductUnit");
             MsgForm msgError = new MsgForm();
             MST_PRODUCT_UNIT form = new MST_PRODUCT_UNIT();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    form.PRODUCT_UNIT_ID = db.MST_PRODUCT.Count() + 1;
+                    form.PRODUCT_UNIT_ID = db.MST_PRODUCT_UNIT.Count() + 1;
                     form.PRODUCT_UNIT_NAME = param.PRODUCT_UNIT_NAME;
                     if (CheckUtil.isNotEmpty(form))
                     {
@@ -67,7 +67,7 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... saveDataMstProductUnit");
+                Log.Info("End log INFO... insertDataMstProductUnit");
             }
             return new object[] { msgError.statusFlag, msgError.messageDescription };
         }

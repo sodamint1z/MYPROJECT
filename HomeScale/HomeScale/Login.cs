@@ -24,12 +24,38 @@ namespace HomeScale
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         private void btnLogin_Click(object sender, EventArgs e)
         {
+            checkLogin();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            txtUsername.Text = "";
+            txtPassword.Text = "";
+        }
+
+        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtPassword.Focus();
+            }
+        }
+
+        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                txtUsername.Focus();
+            }
+        }
+
+        public void checkLogin()
+        {
             try
             {
                 //Start Request
-                LoginController loginControl = new LoginController();
+                LoginController loginCtrl = new LoginController();
                 USER_LOGIN form = new USER_LOGIN();
-                
 
                 if (CheckUtil.isEmpty(txtUsername.Text))
                 {
@@ -45,13 +71,18 @@ namespace HomeScale
                 form.USER_ID = txtUsername.Text;
                 form.USER_PASSWORD = txtPassword.Text;
 
+                if (CheckUtil.isEmpty(form))
+                {
+                    return;
+                }
+
                 //form.USER_ID = "admin";
                 //form.USER_PASSWORD = "admin";
 
                 //End Request
 
                 //Start Response
-                object[] result = loginControl.checkLogin(form);
+                object[] result = loginCtrl.checkLogin(form);
 
                 //Status & MessageError
                 var statusError = result[0];
@@ -77,16 +108,10 @@ namespace HomeScale
                     MessageBox.Show("Error : " + msgError);
                 }
             }
-            catch (Exception ex) 
+            catch (Exception ex)
             {
                 Log.Error(ex.ToString(), ex);
             }
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            txtUsername.Text = "";
-            txtPassword.Text = "";
         }
     }
 }

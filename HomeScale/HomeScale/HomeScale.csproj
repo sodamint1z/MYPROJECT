@@ -79,7 +79,12 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\controller\LoginController.cs" />
+    <Compile Include="src\controller\ManageUserLoginController.cs" />
+    <Compile Include="src\controller\MstCarRegistertionController.cs" />
+    <Compile Include="src\controller\MstDataBasicController.cs" />
     <Compile Include="src\controller\MstProductController.cs" />
+    <Compile Include="src\controller\MstProductUnitController.cs" />
+    <Compile Include="src\controller\MstVendorController.cs" />
     <Compile Include="src\model\configDatabase\SQLiteConfiguration.cs" />
     <Compile Include="src\model\entities\HomeScaleDB.Context.cs">
       <AutoGen>True</AutoGen>
@@ -127,6 +132,12 @@
       <DependentUpon>HomeScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\entities\USER_LOGIN.cs">
+      <DependentUpon>HomeScaleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\entities\VW_MST_CAR_REGISTERTION.cs">
+      <DependentUpon>HomeScaleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\entities\VW_MST_PRODUCT.cs">
       <DependentUpon>HomeScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\form\MsgForm.cs" />
