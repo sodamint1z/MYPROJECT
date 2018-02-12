@@ -14,7 +14,7 @@ namespace HomeScale.src.model.entities
     
     public partial class MST_LINE_DOWN
     {
-        public long LINE_DOWN_ID { get; set; }
+        public string LINE_DOWN_ID { get; set; }
         public string LINE_DOWN_NAME { get; set; }
         public Nullable<int> LINE_DOWN_CALCULATE { get; set; }
         public Nullable<int> LINE_DOWN_AMOUNT { get; set; }

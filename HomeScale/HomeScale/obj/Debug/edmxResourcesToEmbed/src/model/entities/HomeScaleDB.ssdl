@@ -4,7 +4,7 @@
     <Key>
       <PropertyRef Name="BUSINESS_ID" />
     </Key>
-    <Property Name="BUSINESS_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="BUSINESS_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="BUSINESS_NAME" Type="varchar" MaxLength="50" />
     <Property Name="BUSINESS_ADDRESS" Type="varchar" MaxLength="50" />
     <Property Name="BUSINESS_TEL_NO" Type="varchar" MaxLength="50" />
@@ -13,7 +13,7 @@
     <Key>
       <PropertyRef Name="CAR_REGISTERTION_ID" />
     </Key>
-    <Property Name="CAR_REGISTERTION_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CAR_REGISTERTION_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="CAR_REGISTERTION_NAME" Type="varchar" MaxLength="50" />
     <Property Name="CAR_REGISTERTION_VENDOR_ID" Type="int" />
   </EntityType>
@@ -36,7 +36,7 @@
     <Key>
       <PropertyRef Name="DISTINATION_ID" />
     </Key>
-    <Property Name="DISTINATION_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="DISTINATION_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="DISTINATION_NAME" Type="varchar" MaxLength="50" />
     <Property Name="DISTINATION_ADDRESS" Type="varchar" MaxLength="50" />
     <Property Name="DISTINATION_DISTRICT_ONE" Type="varchar" MaxLength="50" />
@@ -50,7 +50,7 @@
     <Key>
       <PropertyRef Name="LINE_DOWN_ID" />
     </Key>
-    <Property Name="LINE_DOWN_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="LINE_DOWN_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="LINE_DOWN_NAME" Type="varchar" MaxLength="50" />
     <Property Name="LINE_DOWN_CALCULATE" Type="int" />
     <Property Name="LINE_DOWN_AMOUNT" Type="int" />
@@ -59,7 +59,7 @@
     <Key>
       <PropertyRef Name="MOISTURE_ID" />
     </Key>
-    <Property Name="MOISTURE_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="MOISTURE_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="MOISTURE_MOISTURE" Type="int" />
     <Property Name="MOISTURE_LESS_HUMIDITY" Type="int" />
     <Property Name="MOISTURE_DIVIDER" Type="int" />
@@ -68,7 +68,7 @@
     <Key>
       <PropertyRef Name="PRODUCT_ID" />
     </Key>
-    <Property Name="PRODUCT_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="PRODUCT_NAME" Type="varchar" MaxLength="50" />
     <Property Name="PRODUCT_UNIT" Type="int" />
   </EntityType>
@@ -76,7 +76,7 @@
     <Key>
       <PropertyRef Name="PRODUCT_UNIT_ID" />
     </Key>
-    <Property Name="PRODUCT_UNIT_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRODUCT_UNIT_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="PRODUCT_UNIT_NAME" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="MST_SERVICE_CHARGE">
@@ -91,7 +91,7 @@
     <Key>
       <PropertyRef Name="VENDOR_ID" />
     </Key>
-    <Property Name="VENDOR_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VENDOR_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="VENDOR_NAME" Type="varchar" MaxLength="50" />
     <Property Name="VENDOR_ADDRESS" Type="varchar" MaxLength="50" />
     <Property Name="VENDOR_DISTRICT_ONE" Type="varchar" MaxLength="50" />
@@ -117,7 +117,7 @@ warning 6002: The table/view 'main.VW_MST_CAR_REGISTERTION' does not have a prim
     <Key>
       <PropertyRef Name="CAR_REGISTERTION_ID" />
     </Key>
-    <Property Name="CAR_REGISTERTION_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CAR_REGISTERTION_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="CAR_REGISTERTION_NAME" Type="varchar" MaxLength="50" />
     <Property Name="CAR_REGISTERTION_VENDOR_ID" Type="int" />
     <Property Name="VENDOR_NAME" Type="varchar" MaxLength="50" />
@@ -128,9 +128,8 @@ warning 6002: The table/view 'main.VW_MST_PRODUCT' does not have a primary key d
     <Key>
       <PropertyRef Name="PRODUCT_ID" />
     </Key>
-    <Property Name="PRODUCT_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PRODUCT_ID" Type="varchar" MaxLength="10" Nullable="false" />
     <Property Name="PRODUCT_NAME" Type="varchar" MaxLength="50" />
-    <Property Name="PRODUCT_UNIT" Type="int" />
     <Property Name="PRODUCT_UNIT_NAME" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityContainer Name="HomeScaleDBModelStoreContainer">
@@ -157,7 +156,6 @@ FROM [VW_MST_CAR_REGISTERTION] AS [VW_MST_CAR_REGISTERTION]</DefiningQuery>
       <DefiningQuery>SELECT 
 [VW_MST_PRODUCT].[PRODUCT_ID] AS [PRODUCT_ID], 
 [VW_MST_PRODUCT].[PRODUCT_NAME] AS [PRODUCT_NAME], 
-[VW_MST_PRODUCT].[PRODUCT_UNIT] AS [PRODUCT_UNIT], 
 [VW_MST_PRODUCT].[PRODUCT_UNIT_NAME] AS [PRODUCT_UNIT_NAME]
 FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
     </EntitySet>

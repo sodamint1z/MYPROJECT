@@ -14,9 +14,8 @@ namespace HomeScale.src.model.entities
     
     public partial class VW_MST_PRODUCT
     {
-        public long PRODUCT_ID { get; set; }
+        public string PRODUCT_ID { get; set; }
         public string PRODUCT_NAME { get; set; }
-        public Nullable<int> PRODUCT_UNIT { get; set; }
         public string PRODUCT_UNIT_NAME { get; set; }
     }
 }

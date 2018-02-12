@@ -64,25 +64,92 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... searchDataVwMstProduct");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList, resultList.Count() };
+            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList };
         }
 
-        public object[] insertDataMstProduct(MST_PRODUCT param)
+        public object[] queryDataMstProductByProductId(MST_PRODUCT param)
         {
-            Log.Info("Start log INFO... insertDataMstProduct");
+            Log.Info("Start log INFO... queryDataMstProductByProductId");
             MsgForm msgError = new MsgForm();
             MST_PRODUCT form = new MST_PRODUCT();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    form.PRODUCT_ID = db.MST_PRODUCT.Count() + 1;
-                    form.PRODUCT_NAME = param.PRODUCT_NAME;
-                    form.PRODUCT_UNIT = param.PRODUCT_UNIT;
-                    if (CheckUtil.isNotEmpty(form))
+                    form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                Log.Info("End log INFO... queryDataMstProductByProductId");
+            }
+            return new object[] { msgError.statusFlag, msgError.messageDescription, form };
+        }
+
+        public object[] insertOrUpdateDataMstProduct(MST_PRODUCT param, string flagAddEdit)
+        {
+            Log.Info("Start log INFO... insertOrUpdateDataMstProduct");
+            MsgForm msgError = new MsgForm();
+            MST_PRODUCT formInsert = new MST_PRODUCT();
+            MST_PRODUCT formUpdate = new MST_PRODUCT();
+            try
+            {
+                using (var db = new HomeScaleDBEntities())
+                {
+                    formUpdate = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
+                    if (flagAddEdit.Equals("A"))
                     {
-                        db.MST_PRODUCT.Add(form);
+                        if (CheckUtil.isEmpty(formUpdate))
+                        {
+                            //formInsert.PRODUCT_ID = db.MST_PRODUCT.Count() + 1;
+                            formInsert.PRODUCT_ID = param.PRODUCT_ID;
+                            formInsert.PRODUCT_NAME = param.PRODUCT_NAME;
+                            formInsert.PRODUCT_UNIT = param.PRODUCT_UNIT;
+                            db.MST_PRODUCT.Add(formInsert);
+                            Log.Info("Insert Data form MST_PRODUCT"
+                            + " PRODUCT_ID : " + formInsert.PRODUCT_ID
+                            + " PRODUCT_NAME : " + formInsert.PRODUCT_NAME
+                            + " PRODUCT_UNIT : " + formInsert.PRODUCT_UNIT
+                            );
+                        }
                     }
+                    else if (flagAddEdit.Equals("E"))
+                    {
+                        if (CheckUtil.isNotEmpty(formUpdate))
+                        {
+                            formUpdate.PRODUCT_ID = param.PRODUCT_ID;
+                            formUpdate.PRODUCT_NAME = param.PRODUCT_NAME;
+                            formUpdate.PRODUCT_UNIT = param.PRODUCT_UNIT;
+                            Log.Info("Update Data form MST_PRODUCT"
+                            + " PRODUCT_ID : " + formInsert.PRODUCT_ID
+                            + " PRODUCT_NAME : " + formInsert.PRODUCT_NAME
+                            + " PRODUCT_UNIT : " + formInsert.PRODUCT_UNIT
+                            );
+                        }
+                    }
+                    //formUpdate = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
+                    //if (CheckUtil.isEmpty(formUpdate))
+                    //{
+                    //    //formInsert.PRODUCT_ID = db.MST_PRODUCT.Count() + 1;
+                    //    formInsert.PRODUCT_ID = param.PRODUCT_ID;
+                    //    formInsert.PRODUCT_NAME = param.PRODUCT_NAME;
+                    //    formInsert.PRODUCT_UNIT = param.PRODUCT_UNIT;
+                    //    db.MST_PRODUCT.Add(formInsert);
+                    //}
+                    //else if (CheckUtil.isNotEmpty(formUpdate))
+                    //{
+                    //    formUpdate.PRODUCT_ID = param.PRODUCT_ID;
+                    //    formUpdate.PRODUCT_NAME = param.PRODUCT_NAME;
+                    //    formUpdate.PRODUCT_UNIT = param.PRODUCT_UNIT;
+                    //}
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
                 }
@@ -95,9 +162,9 @@ namespace HomeScale.src.controller
             }
             finally
             {
-                Log.Info("End log INFO... insertDataMstProduct");
+                Log.Info("End log INFO... insertOrUpdateDataMstProduct");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError.statusFlag, msgError.messageDescription, formUpdate };
         }
 
         public object[] updateDataMstProduct(MST_PRODUCT param)

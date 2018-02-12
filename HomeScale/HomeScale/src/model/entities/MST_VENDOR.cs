@@ -14,7 +14,7 @@ namespace HomeScale.src.model.entities
     
     public partial class MST_VENDOR
     {
-        public long VENDOR_ID { get; set; }
+        public string VENDOR_ID { get; set; }
         public string VENDOR_NAME { get; set; }
         public string VENDOR_ADDRESS { get; set; }
         public string VENDOR_DISTRICT_ONE { get; set; }

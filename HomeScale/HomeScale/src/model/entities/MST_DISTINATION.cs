@@ -14,7 +14,7 @@ namespace HomeScale.src.model.entities
     
     public partial class MST_DISTINATION
     {
-        public long DISTINATION_ID { get; set; }
+        public string DISTINATION_ID { get; set; }
         public string DISTINATION_NAME { get; set; }
         public string DISTINATION_ADDRESS { get; set; }
         public string DISTINATION_DISTRICT_ONE { get; set; }

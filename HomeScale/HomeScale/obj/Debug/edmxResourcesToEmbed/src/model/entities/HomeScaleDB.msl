@@ -11,6 +11,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MST_CAR_REGISTERTION">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_CAR_REGISTERTION">
+        <MappingFragment StoreEntitySet="MST_CAR_REGISTERTION">
+          <ScalarProperty Name="CAR_REGISTERTION_VENDOR_ID" ColumnName="CAR_REGISTERTION_VENDOR_ID" />
+          <ScalarProperty Name="CAR_REGISTERTION_NAME" ColumnName="CAR_REGISTERTION_NAME" />
+          <ScalarProperty Name="CAR_REGISTERTION_ID" ColumnName="CAR_REGISTERTION_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MST_DATA_BASIC">
       <EntityTypeMapping TypeName="HomeScaleDBModel.MST_DATA_BASIC">
         <MappingFragment StoreEntitySet="MST_DATA_BASIC">
@@ -62,6 +71,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="MST_PRODUCT">
+      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_PRODUCT">
+        <MappingFragment StoreEntitySet="MST_PRODUCT">
+          <ScalarProperty Name="PRODUCT_UNIT" ColumnName="PRODUCT_UNIT" />
+          <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
+          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="MST_PRODUCT_UNIT">
       <EntityTypeMapping TypeName="HomeScaleDBModel.MST_PRODUCT_UNIT">
         <MappingFragment StoreEntitySet="MST_PRODUCT_UNIT">
@@ -105,24 +123,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="MST_PRODUCT">
-      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_PRODUCT">
-        <MappingFragment StoreEntitySet="MST_PRODUCT">
-          <ScalarProperty Name="PRODUCT_UNIT" ColumnName="PRODUCT_UNIT" />
-          <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
-          <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="MST_CAR_REGISTERTION">
-      <EntityTypeMapping TypeName="HomeScaleDBModel.MST_CAR_REGISTERTION">
-        <MappingFragment StoreEntitySet="MST_CAR_REGISTERTION">
-          <ScalarProperty Name="CAR_REGISTERTION_VENDOR_ID" ColumnName="CAR_REGISTERTION_VENDOR_ID" />
-          <ScalarProperty Name="CAR_REGISTERTION_NAME" ColumnName="CAR_REGISTERTION_NAME" />
-          <ScalarProperty Name="CAR_REGISTERTION_ID" ColumnName="CAR_REGISTERTION_ID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="VW_MST_CAR_REGISTERTION">
       <EntityTypeMapping TypeName="HomeScaleDBModel.VW_MST_CAR_REGISTERTION">
         <MappingFragment StoreEntitySet="VW_MST_CAR_REGISTERTION">
@@ -137,7 +137,6 @@
       <EntityTypeMapping TypeName="HomeScaleDBModel.VW_MST_PRODUCT">
         <MappingFragment StoreEntitySet="VW_MST_PRODUCT">
           <ScalarProperty Name="PRODUCT_UNIT_NAME" ColumnName="PRODUCT_UNIT_NAME" />
-          <ScalarProperty Name="PRODUCT_UNIT" ColumnName="PRODUCT_UNIT" />
           <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
           <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
         </MappingFragment>

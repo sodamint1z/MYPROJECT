@@ -23,23 +23,23 @@ namespace HomeScale
             //MstProductController mstProControl = new MstProductController();
             //MST_PRODUCT form = new MST_PRODUCT
             //{
-            //    //PRODUCT_ID = 1,
-            //    PRODUCT_NAME = "ข้าวเปลือก",
+            //    PRODUCT_ID = 3,
+            //    PRODUCT_NAME = "ข้าวสาร",
             //    PRODUCT_UNIT = 1
             //};
-            ////service.saveDataMstProduct(form);
-            ////service.updateDataMstProduct(form);
-            ////mstProControl.searchDataMstProduct();
-            //mstProControl.searchDataVwMstProduct();
-            ////service.deleteDataMstProduct(form);
+            //service.saveDataMstProduct(form);
+            //service.updateDataMstProduct(form);
+            //mstProControl.searchDataMstProduct();
+            //mstProControl.insertOrUpdateDataMstProduct(form);
+            //service.deleteDataMstProduct(form);
 
-            ////LoginController loginControl = new LoginController();
-            ////USER_LOGIN formLogin = new USER_LOGIN
-            ////{
-            ////    USER_ID = "admin",
-            ////    USER_PASSWORD = "admin"
-            ////};
-            ////loginControl.checkLogin(formLogin);
+            //LoginController loginControl = new LoginController();
+            //USER_LOGIN formLogin = new USER_LOGIN
+            //{
+            //    USER_ID = "admin",
+            //    USER_PASSWORD = "admin"
+            //};
+            //loginControl.checkLogin(formLogin);
         }
     }
 }

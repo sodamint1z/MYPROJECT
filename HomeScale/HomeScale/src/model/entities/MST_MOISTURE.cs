@@ -14,7 +14,7 @@ namespace HomeScale.src.model.entities
     
     public partial class MST_MOISTURE
     {
-        public long MOISTURE_ID { get; set; }
+        public string MOISTURE_ID { get; set; }
         public Nullable<int> MOISTURE_MOISTURE { get; set; }
         public Nullable<int> MOISTURE_LESS_HUMIDITY { get; set; }
         public Nullable<int> MOISTURE_DIVIDER { get; set; }

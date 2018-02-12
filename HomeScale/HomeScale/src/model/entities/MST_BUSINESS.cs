@@ -14,7 +14,7 @@ namespace HomeScale.src.model.entities
     
     public partial class MST_BUSINESS
     {
-        public long BUSINESS_ID { get; set; }
+        public string BUSINESS_ID { get; set; }
         public string BUSINESS_NAME { get; set; }
         public string BUSINESS_ADDRESS { get; set; }
         public string BUSINESS_TEL_NO { get; set; }

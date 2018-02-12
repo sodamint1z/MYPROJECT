@@ -51,12 +51,10 @@ namespace HomeScale
 
         public void checkLogin()
         {
+            LoginController loginCtrl = new LoginController();
+            USER_LOGIN form = new USER_LOGIN();
             try
             {
-                //Start Request
-                LoginController loginCtrl = new LoginController();
-                USER_LOGIN form = new USER_LOGIN();
-
                 if (CheckUtil.isEmpty(txtUsername.Text))
                 {
                     MessageBox.Show("กรุณากรอกบัญชีผู้ใช้");
@@ -76,20 +74,11 @@ namespace HomeScale
                     return;
                 }
 
-                //form.USER_ID = "admin";
-                //form.USER_PASSWORD = "admin";
-
-                //End Request
-
-                //Start Response
                 object[] result = loginCtrl.checkLogin(form);
 
-                //Status & MessageError
                 var statusError = result[0];
                 var msgError = result[1];
-                //Data
                 var data = result[2];
-                //End Response
 
                 if (statusError.Equals(1))
                 {

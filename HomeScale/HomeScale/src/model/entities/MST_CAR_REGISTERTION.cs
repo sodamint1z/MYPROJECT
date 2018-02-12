@@ -14,7 +14,7 @@ namespace HomeScale.src.model.entities
     
     public partial class MST_CAR_REGISTERTION
     {
-        public long CAR_REGISTERTION_ID { get; set; }
+        public string CAR_REGISTERTION_ID { get; set; }
         public string CAR_REGISTERTION_NAME { get; set; }
         public Nullable<int> CAR_REGISTERTION_VENDOR_ID { get; set; }
     }
