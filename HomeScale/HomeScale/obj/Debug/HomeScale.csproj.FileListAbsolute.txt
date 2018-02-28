@@ -32,3 +32,4 @@ E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\System.Data.SQLi
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\EntityFramework.xml
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\EntityFramework.SqlServer.xml
 E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\bin\Debug\System.Data.SQLite.xml
+E:\MYPROJECT\PROProject\MYPROJECT\HomeScale\HomeScale\obj\Debug\HomeScale.csprojResolveAssemblyReference.cache
