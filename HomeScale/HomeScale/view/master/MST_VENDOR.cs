@@ -13,7 +13,7 @@ using HomeScale.src.model.form;
 using HomeScale.src.util;
 using log4net;
 
-namespace HomeScale.View
+namespace HomeScale.view.master
 {
     public partial class MST_VENDOR : Form
     {

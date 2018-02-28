@@ -18,7 +18,7 @@ namespace HomeScale
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new View.MST_DISTINATION());
+            Application.Run(new view.master.MST_PRODUCT());
 
             //MstProductController mstProControl = new MstProductController();
             //MST_PRODUCT form = new MST_PRODUCT

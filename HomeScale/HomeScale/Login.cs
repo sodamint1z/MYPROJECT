@@ -11,6 +11,7 @@ using HomeScale.src.model.entities;
 using HomeScale.src.controller;
 using HomeScale.src.model.form;
 using HomeScale.src.util;
+using HomeScale.view;
 using log4net;
 
 namespace HomeScale
@@ -87,8 +88,9 @@ namespace HomeScale
                     }
                     else
                     {
-                        //Next Page
-                        MessageBox.Show("มี User ในระบบ");
+                        MenuMain menuMain = new MenuMain();
+                        menuMain.Close();
+                        menuMain.Show();
                     }
                 }
                 else

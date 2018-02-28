@@ -1,4 +1,4 @@
-﻿namespace HomeScale.View
+﻿namespace HomeScale.view.master
 {
     partial class MST_DISTINATION
     {
