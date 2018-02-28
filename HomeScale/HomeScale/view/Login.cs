@@ -14,7 +14,7 @@ using HomeScale.src.util;
 using HomeScale.view;
 using log4net;
 
-namespace HomeScale
+namespace HomeScale.view
 {
     public partial class Login : Form
     {

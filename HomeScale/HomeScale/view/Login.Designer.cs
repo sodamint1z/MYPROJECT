@@ -1,4 +1,4 @@
-﻿namespace HomeScale
+﻿namespace HomeScale.view
 {
     partial class Login
     {
