@@ -76,11 +76,10 @@ namespace HomeScale
 
                 object[] result = loginCtrl.checkLogin(form);
 
-                var statusError = result[0];
-                var msgError = result[1];
-                var data = result[2];
+                MsgForm msgForm = (MsgForm)result[0];
+                HomeScale.src.model.entities.USER_LOGIN data = (src.model.entities.USER_LOGIN)result[1];
 
-                if (statusError.Equals(1))
+                if (msgForm.statusFlag.Equals(1))
                 {
                     if (CheckUtil.isEmpty(data))
                     {
@@ -94,7 +93,7 @@ namespace HomeScale
                 }
                 else
                 {
-                    MessageBox.Show("Error : " + msgError);
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
                 }
             }
             catch (Exception ex)

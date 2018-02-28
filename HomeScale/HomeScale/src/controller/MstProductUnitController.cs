@@ -37,7 +37,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... searchDataMstProductUnit");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList };
+            return new object[] { msgError, resultList };
         }
 
         public object[] queryDataMstProductUnitByProductUnitId(MST_PRODUCT_UNIT param)
@@ -64,7 +64,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... queryDataMstProductUnitByProductUnitId");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, form };
+            return new object[] { msgError, form };
         }
 
         public object[] insertOrUpdateDataMstProductUnit(MST_PRODUCT_UNIT param, string flagAddEdit)
@@ -117,7 +117,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... insertOrUpdateDataMstProductUnit");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, formUpdate };
+            return new object[] { msgError, formUpdate };
         }
 
         public object[] updateDataMstProductUnit(MST_PRODUCT_UNIT param)
@@ -148,7 +148,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... updateDataMstProductUnit");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError };
         }
 
         public object[] deleteDataMstProductUnit(MST_PRODUCT_UNIT param)
@@ -182,7 +182,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... deleteDataMstProductUnit");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError };
         }
     }
 }

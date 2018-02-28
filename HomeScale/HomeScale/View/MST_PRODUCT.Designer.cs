@@ -154,9 +154,10 @@
             // 
             // cboProductUnit
             // 
+            this.cboProductUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboProductUnit.Font = new System.Drawing.Font("Verdana", 18F);
             this.cboProductUnit.FormattingEnabled = true;
-            this.cboProductUnit.Location = new System.Drawing.Point(185, 240);
+            this.cboProductUnit.Location = new System.Drawing.Point(184, 240);
             this.cboProductUnit.MaxLength = 50;
             this.cboProductUnit.Name = "cboProductUnit";
             this.cboProductUnit.Size = new System.Drawing.Size(300, 37);

@@ -83,6 +83,7 @@
     <Compile Include="src\controller\MstBusinessController.cs" />
     <Compile Include="src\controller\MstCarRegistertionController.cs" />
     <Compile Include="src\controller\MstDataBasicController.cs" />
+    <Compile Include="src\controller\MstDistinationController.cs" />
     <Compile Include="src\controller\MstProductController.cs" />
     <Compile Include="src\controller\MstProductUnitController.cs" />
     <Compile Include="src\controller\MstVendorController.cs" />

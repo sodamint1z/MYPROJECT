@@ -43,11 +43,10 @@ namespace HomeScale.View
             {
                 object[] result = mstProductUnitCtrl.searchDataMstProductUnit();
 
-                var statusError = result[0];
-                var msgError = result[1];
-                List<HomeScale.src.model.entities.MST_PRODUCT_UNIT> lstdata = (List<src.model.entities.MST_PRODUCT_UNIT>)result[2];
+                MsgForm msgForm = (MsgForm)result[0];
+                List<HomeScale.src.model.entities.MST_PRODUCT_UNIT> lstdata = (List<src.model.entities.MST_PRODUCT_UNIT>)result[1];
 
-                if (statusError.Equals(1))
+                if (msgForm.statusFlag.Equals(1))
                 {
                     dataGridView1.DataSource = lstdata;
                     dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 18);
@@ -62,7 +61,7 @@ namespace HomeScale.View
                 }
                 else
                 {
-                    MessageBox.Show("Error : " + msgError);
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
                 }
             }
             catch (Exception ex)
@@ -78,11 +77,10 @@ namespace HomeScale.View
             {
                 object[] result = mstProductUnitCtrl.queryDataMstProductUnitByProductUnitId(formMstProductUnit);
 
-                var statusError = result[0];
-                var msgError = result[1];
-                HomeScale.src.model.entities.MST_PRODUCT_UNIT data = (src.model.entities.MST_PRODUCT_UNIT)result[2];
+                MsgForm msgForm = (MsgForm)result[0];
+                HomeScale.src.model.entities.MST_PRODUCT_UNIT data = (src.model.entities.MST_PRODUCT_UNIT)result[1];
 
-                if (statusError.Equals(1))
+                if (msgForm.statusFlag.Equals(1))
                 {
                     if (CheckUtil.isNotEmpty(result))
                     {
@@ -94,7 +92,7 @@ namespace HomeScale.View
                 }
                 else
                 {
-                    MessageBox.Show("Error : " + msgError);
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
                 }
             }
             catch (Exception ex)
@@ -109,7 +107,8 @@ namespace HomeScale.View
             HomeScale.src.model.entities.MST_PRODUCT_UNIT form = new src.model.entities.MST_PRODUCT_UNIT();
             try
             {
-                if (CheckUtil.isEmpty(txtProductUnitName.Text))
+                if (CheckUtil.isEmpty(txtProductUnitId.Text) 
+                    || CheckUtil.isEmpty(txtProductUnitName.Text))
                 {
                     MessageBox.Show(CommonUtil.REQUIRE_MESSAGE);
                     return;
@@ -125,26 +124,25 @@ namespace HomeScale.View
 
                 object[] result = mstProductUnitCtrl.insertOrUpdateDataMstProductUnit(form, flagAddEdit);
 
-                var statusError = result[0];
-                var msgError = result[1];
-                HomeScale.src.model.entities.MST_PRODUCT_UNIT data = (src.model.entities.MST_PRODUCT_UNIT)result[2];
+                MsgForm msgForm = (MsgForm)result[0];
+                HomeScale.src.model.entities.MST_PRODUCT_UNIT data = (src.model.entities.MST_PRODUCT_UNIT)result[1];
 
                 if (flagAddEdit.Equals("A"))
                 {
                     if (CheckUtil.isNotEmpty(data))
                     {
-                        if (statusError.Equals(1))
+                        if (msgForm.statusFlag.Equals(1))
                         {
                             MessageBox.Show(CommonUtil.DUPLICATE_DATA);
                         }
                         else
                         {
-                            MessageBox.Show("Error : " + msgError);
+                            MessageBox.Show("Error : " + msgForm.messageDescription);
                         }
                     }
                     else
                     {
-                        if (statusError.Equals(1))
+                        if (msgForm.statusFlag.Equals(1))
                         {
                             resetDataMstProductUnit();
                             searchDataMstProductUnit();
@@ -152,13 +150,13 @@ namespace HomeScale.View
                         }
                         else
                         {
-                            MessageBox.Show("Error : " + msgError);
+                            MessageBox.Show("Error : " + msgForm.messageDescription);
                         }
                     }
                 }
                 else if (flagAddEdit.Equals("E"))
                 {
-                    if (statusError.Equals(1))
+                    if (msgForm.statusFlag.Equals(1))
                     {
                         resetDataMstProductUnit();
                         searchDataMstProductUnit();
@@ -166,7 +164,7 @@ namespace HomeScale.View
                     }
                     else
                     {
-                        MessageBox.Show("Error : " + msgError);
+                        MessageBox.Show("Error : " + msgForm.messageDescription);
                     }
                 }
             }
@@ -192,17 +190,11 @@ namespace HomeScale.View
 
                 if (MessageBox.Show(CommonUtil.CONFIRM_DELETE_DATA, CommonUtil.TITLE_DELETE, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    object[] result = new object[2];
+                    object[] result = mstProductUnitCtrl.deleteDataMstProductUnit(form);
 
-                    if (CheckUtil.isNotEmpty(form.PRODUCT_UNIT_ID))
-                    {
-                        result = mstProductUnitCtrl.deleteDataMstProductUnit(form);
-                    }
+                    MsgForm msgForm = (MsgForm)result[0];
 
-                    var statusError = result[0];
-                    var msgError = result[1];
-
-                    if (statusError.Equals(1))
+                    if (msgForm.statusFlag.Equals(1))
                     {
                         resetDataMstProductUnit();
                         searchDataMstProductUnit();
@@ -210,7 +202,7 @@ namespace HomeScale.View
                     }
                     else
                     {
-                        MessageBox.Show("Error : " + msgError);
+                        MessageBox.Show("Error : " + msgForm.messageDescription);
                     }
                 }
             }

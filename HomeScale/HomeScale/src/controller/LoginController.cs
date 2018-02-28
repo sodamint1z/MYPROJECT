@@ -36,7 +36,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... checkLogin");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription ,result };
+            return new object[] { msgError, result };
         }
     }
 }

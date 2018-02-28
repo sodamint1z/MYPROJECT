@@ -37,10 +37,10 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... searchDataManageUserLogin");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList, resultList.Count() };
+            return new object[] { msgError, resultList };
         }
 
-        public object[] insertOrUpdateDataManageUserLogin(USER_LOGIN param)
+        public object[] insertOrUpdateDataManageUserLogin(USER_LOGIN param, string flagAddEdit)
         {
             Log.Info("Start log INFO... insertOrUpdateDataManageUserLogin");
             MsgForm msgError = new MsgForm();
@@ -51,21 +51,41 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     formUpdate = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
-                    if (CheckUtil.isEmpty(formUpdate))
+                    if (flagAddEdit.Equals("A"))
                     {
-                        formInsert.USER_ID = param.USER_ID;
-                        formInsert.USER_PASSWORD = param.USER_PASSWORD;
-                        formInsert.USER_FIRSTNAME = param.USER_FIRSTNAME;
-                        formInsert.USER_LASTNAME = param.USER_LASTNAME;
-                        formInsert.STATUS_FLAG = param.STATUS_FLAG;
-                        db.USER_LOGIN.Add(formInsert);
+                        if (CheckUtil.isEmpty(formUpdate))
+                        {
+                            formInsert.USER_ID = param.USER_ID;
+                            formInsert.USER_PASSWORD = param.USER_PASSWORD;
+                            formInsert.USER_FIRSTNAME = param.USER_FIRSTNAME;
+                            formInsert.USER_LASTNAME = param.USER_LASTNAME;
+                            formInsert.STATUS_FLAG = param.STATUS_FLAG;
+                            db.USER_LOGIN.Add(formInsert);
+                            Log.Info("Insert Data form USER_LOGIN"
+                            + " USER_ID : " + formInsert.USER_ID
+                            + " USER_PASSWORD : " + formInsert.USER_PASSWORD
+                            + " USER_FIRSTNAME : " + formInsert.USER_FIRSTNAME
+                            + " USER_LASTNAME : " + formInsert.USER_LASTNAME
+                            + " STATUS_FLAG : " + formInsert.STATUS_FLAG
+                            );
+                        }
                     }
-                    else if (CheckUtil.isNotEmpty(formUpdate))
+                    else if (flagAddEdit.Equals("E"))
                     {
-                        formUpdate.USER_PASSWORD = param.USER_PASSWORD;
-                        formUpdate.USER_FIRSTNAME = param.USER_FIRSTNAME;
-                        formUpdate.USER_LASTNAME = param.USER_LASTNAME;
-                        formUpdate.STATUS_FLAG = param.STATUS_FLAG;
+                        if (CheckUtil.isNotEmpty(formUpdate))
+                        {
+                            formUpdate.USER_PASSWORD = param.USER_PASSWORD;
+                            formUpdate.USER_FIRSTNAME = param.USER_FIRSTNAME;
+                            formUpdate.USER_LASTNAME = param.USER_LASTNAME;
+                            formUpdate.STATUS_FLAG = param.STATUS_FLAG;
+                            Log.Info("Insert Data form USER_LOGIN"
+                            + " USER_ID : " + formUpdate.USER_ID
+                            + " USER_PASSWORD : " + formUpdate.USER_PASSWORD
+                            + " USER_FIRSTNAME : " + formUpdate.USER_FIRSTNAME
+                            + " USER_LASTNAME : " + formUpdate.USER_LASTNAME
+                            + " STATUS_FLAG : " + formUpdate.STATUS_FLAG
+                            );
+                        }
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -81,41 +101,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... insertOrUpdateDataManageUserLogin");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
-        }
-
-        public object[] updateDataManageUserLogin(USER_LOGIN param)
-        {
-            Log.Info("Start log INFO... updateDataManageUserLogin");
-            MsgForm msgError = new MsgForm();
-            USER_LOGIN form = new USER_LOGIN();
-            try
-            {
-                using (var db = new HomeScaleDBEntities())
-                {
-                    form = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
-                    {
-                        form.USER_PASSWORD = param.USER_PASSWORD;
-                        form.USER_FIRSTNAME = param.USER_FIRSTNAME;
-                        form.USER_LASTNAME = param.USER_LASTNAME;
-                        form.STATUS_FLAG = param.STATUS_FLAG;
-                    }
-                    db.SaveChanges();
-                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex.ToString(), ex);
-                msgError.statusFlag = MsgForm.STATUS_ERROR;
-                msgError.messageDescription = ex.ToString();
-            }
-            finally
-            {
-                Log.Info("End log INFO... updateDataManageUserLogin");
-            }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError, formUpdate };
         }
 
         public object[] deleteDataManageUserLogin(USER_LOGIN param)
@@ -146,7 +132,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... deleteDataManageUserLogin");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError };
         }
     }
 }

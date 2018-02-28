@@ -37,10 +37,37 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... searchDataMstVendor");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList, resultList.Count() };
+            return new object[] { msgError, resultList };
         }
 
-        public object[] insertOrUpdateDataMstVendor(MST_VENDOR param)
+        public object[] queryDataMstVendorByVendorId(MST_VENDOR param)
+        {
+            Log.Info("Start log INFO... queryDataMstVendorByVendorId");
+            MsgForm msgError = new MsgForm();
+            MST_VENDOR form = new MST_VENDOR();
+            try
+            {
+                using (var db = new HomeScaleDBEntities())
+                {
+                    form = (from row in db.MST_VENDOR where row.VENDOR_ID == param.VENDOR_ID select row).FirstOrDefault();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                Log.Info("End log INFO... queryDataMstVendorByVendorId");
+            }
+            return new object[] { msgError, form };
+        }
+
+        public object[] insertOrUpdateDataMstVendor(MST_VENDOR param, string flagAddEdit)
         {
             Log.Info("Start log INFO... insertOrUpdateDataMstVendor");
             MsgForm msgError = new MsgForm();
@@ -51,52 +78,58 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     formUpdate = (from row in db.MST_VENDOR where row.VENDOR_ID == param.VENDOR_ID select row).FirstOrDefault();
-                    if (CheckUtil.isEmpty(formUpdate))
+                    if (flagAddEdit.Equals("A"))
                     {
-                        formInsert.VENDOR_ID = param.VENDOR_ID;
-                        formInsert.VENDOR_NAME = param.VENDOR_NAME;
-                        formInsert.VENDOR_ADDRESS = param.VENDOR_ADDRESS;
-                        formInsert.VENDOR_DISTRICT_ONE = param.VENDOR_DISTRICT_ONE;
-                        formInsert.VENDOR_DISTRICT_TWO = param.VENDOR_DISTRICT_TWO;
-                        formInsert.VENDOR_COUNTY = param.VENDOR_COUNTY;
-                        formInsert.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
-                        formInsert.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
-                        formInsert.VENDOR_FAX = param.VENDOR_FAX;
-                        db.MST_VENDOR.Add(formInsert);
-                        Log.Info("Insert Data form MST_VENDOR"
-                            + " VENDOR_ID : " + formInsert.VENDOR_ID
-                            + " VENDOR_NAME : " + formInsert.VENDOR_NAME
-                            + " VENDOR_ADDRESS : " + formInsert.VENDOR_ADDRESS
-                            + " VENDOR_DISTRICT_ONE : " + formInsert.VENDOR_DISTRICT_ONE
-                            + " VENDOR_DISTRICT_TWO : " + formInsert.VENDOR_DISTRICT_TWO
-                            + " VENDOR_COUNTY : " + formInsert.VENDOR_COUNTY
-                            + " VENDOR_POSTCODE : " + formInsert.VENDOR_POSTCODE
-                            + " VENDOR_TEL_NO : " + formInsert.VENDOR_TEL_NO
-                            + " VENDOR_FAX : " + formInsert.VENDOR_FAX
-                            );
+                        if (CheckUtil.isEmpty(formUpdate))
+                        {
+                            formInsert.VENDOR_ID = param.VENDOR_ID;
+                            formInsert.VENDOR_NAME = param.VENDOR_NAME;
+                            formInsert.VENDOR_ADDRESS = param.VENDOR_ADDRESS;
+                            formInsert.VENDOR_DISTRICT_ONE = param.VENDOR_DISTRICT_ONE;
+                            formInsert.VENDOR_DISTRICT_TWO = param.VENDOR_DISTRICT_TWO;
+                            formInsert.VENDOR_COUNTY = param.VENDOR_COUNTY;
+                            formInsert.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
+                            formInsert.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
+                            formInsert.VENDOR_FAX = param.VENDOR_FAX;
+                            db.MST_VENDOR.Add(formInsert);
+                            Log.Info("Insert Data form MST_VENDOR"
+                                + " VENDOR_ID : " + formInsert.VENDOR_ID
+                                + " VENDOR_NAME : " + formInsert.VENDOR_NAME
+                                + " VENDOR_ADDRESS : " + formInsert.VENDOR_ADDRESS
+                                + " VENDOR_DISTRICT_ONE : " + formInsert.VENDOR_DISTRICT_ONE
+                                + " VENDOR_DISTRICT_TWO : " + formInsert.VENDOR_DISTRICT_TWO
+                                + " VENDOR_COUNTY : " + formInsert.VENDOR_COUNTY
+                                + " VENDOR_POSTCODE : " + formInsert.VENDOR_POSTCODE
+                                + " VENDOR_TEL_NO : " + formInsert.VENDOR_TEL_NO
+                                + " VENDOR_FAX : " + formInsert.VENDOR_FAX
+                                );
+                        }
                     }
-                    else if (CheckUtil.isNotEmpty(formUpdate))
+                    else if (flagAddEdit.Equals("E"))
                     {
-                        formUpdate.VENDOR_ID = param.VENDOR_ID;
-                        formUpdate.VENDOR_NAME = param.VENDOR_NAME;
-                        formUpdate.VENDOR_ADDRESS = param.VENDOR_ADDRESS;
-                        formUpdate.VENDOR_DISTRICT_ONE = param.VENDOR_DISTRICT_ONE;
-                        formUpdate.VENDOR_DISTRICT_TWO = param.VENDOR_DISTRICT_TWO;
-                        formUpdate.VENDOR_COUNTY = param.VENDOR_COUNTY;
-                        formUpdate.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
-                        formUpdate.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
-                        formUpdate.VENDOR_FAX = param.VENDOR_FAX;
-                        Log.Info("Update Data form MST_VENDOR"
-                            + " VENDOR_ID : " + formUpdate.VENDOR_ID
-                            + " VENDOR_NAME : " + formUpdate.VENDOR_NAME
-                            + " VENDOR_ADDRESS : " + formUpdate.VENDOR_ADDRESS
-                            + " VENDOR_DISTRICT_ONE : " + formUpdate.VENDOR_DISTRICT_ONE
-                            + " VENDOR_DISTRICT_TWO : " + formUpdate.VENDOR_DISTRICT_TWO
-                            + " VENDOR_COUNTY : " + formUpdate.VENDOR_COUNTY
-                            + " VENDOR_POSTCODE : " + formUpdate.VENDOR_POSTCODE
-                            + " VENDOR_TEL_NO : " + formUpdate.VENDOR_TEL_NO
-                            + " VENDOR_FAX : " + formUpdate.VENDOR_FAX
-                            );
+                        if (CheckUtil.isNotEmpty(formUpdate))
+                        {
+                            formUpdate.VENDOR_ID = param.VENDOR_ID;
+                            formUpdate.VENDOR_NAME = param.VENDOR_NAME;
+                            formUpdate.VENDOR_ADDRESS = param.VENDOR_ADDRESS;
+                            formUpdate.VENDOR_DISTRICT_ONE = param.VENDOR_DISTRICT_ONE;
+                            formUpdate.VENDOR_DISTRICT_TWO = param.VENDOR_DISTRICT_TWO;
+                            formUpdate.VENDOR_COUNTY = param.VENDOR_COUNTY;
+                            formUpdate.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
+                            formUpdate.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
+                            formUpdate.VENDOR_FAX = param.VENDOR_FAX;
+                            Log.Info("Update Data form MST_VENDOR"
+                                + " VENDOR_ID : " + formUpdate.VENDOR_ID
+                                + " VENDOR_NAME : " + formUpdate.VENDOR_NAME
+                                + " VENDOR_ADDRESS : " + formUpdate.VENDOR_ADDRESS
+                                + " VENDOR_DISTRICT_ONE : " + formUpdate.VENDOR_DISTRICT_ONE
+                                + " VENDOR_DISTRICT_TWO : " + formUpdate.VENDOR_DISTRICT_TWO
+                                + " VENDOR_COUNTY : " + formUpdate.VENDOR_COUNTY
+                                + " VENDOR_POSTCODE : " + formUpdate.VENDOR_POSTCODE
+                                + " VENDOR_TEL_NO : " + formUpdate.VENDOR_TEL_NO
+                                + " VENDOR_FAX : " + formUpdate.VENDOR_FAX
+                                );
+                        }
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -112,7 +145,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... insertOrUpdateDataMstVendor");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError, formUpdate };
         }
 
         public object[] updateDataMstVendor(MST_VENDOR param)
@@ -150,7 +183,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... updateDataMstVendor");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError };
         }
 
         public object[] deleteDataMstVendor(MST_VENDOR param)
@@ -184,7 +217,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... deleteDataMstVendor");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError };
         }
     }
 }

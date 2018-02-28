@@ -20,16 +20,23 @@ namespace HomeScale.View
         public MST_CAR_REGISTERTION()
         {
             InitializeComponent();
+            queryComboMstVendor();
+            searchDataVwMstCarRegistertion();
         }
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         HomeScale.src.model.entities.MST_CAR_REGISTERTION formMstCarRegistertion = new src.model.entities.MST_CAR_REGISTERTION();
+        string flagAddEdit = "A";
         public void resetDataMstCarRegistertion()
         {
-            txtLicensePlate.Text = "";
-            cboVendorName.Text = "";
+            txtCarRegistertionId.Text = "";
+            txtCarRegistertionName.Text = "";
+            cboCarRegistertionVendorId.SelectedValue = "";
             formMstCarRegistertion.CAR_REGISTERTION_ID = "";
             formMstCarRegistertion.CAR_REGISTERTION_NAME = "";
-            formMstCarRegistertion.CAR_REGISTERTION_VENDOR_ID = Int32.Parse("");
+            formMstCarRegistertion.CAR_REGISTERTION_VENDOR_ID = Int32.Parse("0");
+            flagAddEdit = "A";
+            txtCarRegistertionId.Enabled = true;
+            txtCarRegistertionId.Focus();
         }
 
         public void queryComboMstVendor()
@@ -37,23 +44,22 @@ namespace HomeScale.View
             MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
             try
             {
-                var result = mstCarRegistertionCtrl.queryComboMstVendor();
+                object[] result = mstCarRegistertionCtrl.queryComboMstVendor();
 
-                var statusError = result[0];
-                var msgError = result[1];
-                var data = result[2];
+                MsgForm msgForm = (MsgForm)result[0];
+                List<HomeScale.src.model.entities.MST_VENDOR> lstdata = (List<src.model.entities.MST_VENDOR>)result[1];
 
-                if (statusError.Equals(1))
+                if (msgForm.statusFlag.Equals(1))
                 {
-                    cboVendorName.ValueMember = "VENDOR_ID";
-                    cboVendorName.DisplayMember = "VENDOR_NAME";
-                    cboVendorName.DataSource = data;
+                    cboCarRegistertionVendorId.DataSource = lstdata;
+                    cboCarRegistertionVendorId.ValueMember = "VENDOR_ID";
+                    cboCarRegistertionVendorId.DisplayMember = "VENDOR_NAME";
 
-                    cboVendorName.SelectedValue = "VENDOR_ID";
+                    cboCarRegistertionVendorId.SelectedValue = "";
                 }
                 else
                 {
-                    MessageBox.Show("Error : " + msgError);
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
                 }
             }
             catch (Exception ex)
@@ -67,16 +73,14 @@ namespace HomeScale.View
             MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
             try
             {
-                var result = mstCarRegistertionCtrl.searchDataVwMstCarRegistertion();
+                object[] result = mstCarRegistertionCtrl.searchDataVwMstCarRegistertion();
 
-                var statusError = result[0];
-                var msgError = result[1];
-                var data = result[2];
-                var countData = result[3];
+                MsgForm msgForm = (MsgForm)result[0];
+                List<HomeScale.src.model.entities.VW_MST_CAR_REGISTERTION> lstdata = (List<src.model.entities.VW_MST_CAR_REGISTERTION>)result[1];
 
-                if (statusError.Equals(1))
+                if (msgForm.statusFlag.Equals(1))
                 {
-                    dataGridView1.DataSource = data;
+                    dataGridView1.DataSource = lstdata;
                     dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 18);
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
                     dataGridView1.ColumnHeadersHeight = 150;
@@ -87,11 +91,45 @@ namespace HomeScale.View
                     dataGridView1.Columns[2].HeaderCell.Value = "รหัสผู้ขาย";
                     dataGridView1.Columns[3].HeaderCell.Value = "ชื่อผู้ขาย";
                     //dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 16, FontStyle.Bold);
-                    //lblCountData.Text = "แสดงข้อมูลทั้งหมด " + countData + " รายการ";
+                    lblCountData.Text = "แสดงข้อมูลทั้งหมด " + lstdata.Count() + " รายการ";
                 }
                 else
                 {
-                    MessageBox.Show("Error : " + msgError);
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString(), ex);
+            }
+        }
+
+        public void queryDataMstCarRegistertionByCarRegistertionId()
+        {
+            MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
+            try
+            {
+                object[] result = mstCarRegistertionCtrl.queryDataMstCarRegistertionByCarRegistertionId(formMstCarRegistertion);
+
+                MsgForm msgForm = (MsgForm)result[0];
+                HomeScale.src.model.entities.MST_CAR_REGISTERTION data = (src.model.entities.MST_CAR_REGISTERTION)result[1];
+
+                if (msgForm.statusFlag.Equals(1))
+                {
+                    if (CheckUtil.isNotEmpty(result))
+                    {
+                        txtCarRegistertionId.Text = data.CAR_REGISTERTION_ID;
+                        txtCarRegistertionName.Text = data.CAR_REGISTERTION_NAME;
+                        string convertVendorNameToString = data.CAR_REGISTERTION_VENDOR_ID.ToString();
+                        cboCarRegistertionVendorId.SelectedValue = convertVendorNameToString;
+                        formMstCarRegistertion.CAR_REGISTERTION_ID = data.CAR_REGISTERTION_ID;
+                        formMstCarRegistertion.CAR_REGISTERTION_NAME = data.CAR_REGISTERTION_NAME;
+                        formMstCarRegistertion.CAR_REGISTERTION_VENDOR_ID = data.CAR_REGISTERTION_VENDOR_ID;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
                 }
             }
             catch (Exception ex)
@@ -106,34 +144,67 @@ namespace HomeScale.View
             HomeScale.src.model.entities.MST_CAR_REGISTERTION form = new src.model.entities.MST_CAR_REGISTERTION();
             try
             {
-                if (CheckUtil.isEmpty(txtLicensePlate.Text) && CheckUtil.isEmpty(cboVendorName.Text))
+                if (CheckUtil.isEmpty(txtCarRegistertionId.Text) 
+                    || CheckUtil.isEmpty(txtCarRegistertionName.Text) 
+                    || CheckUtil.isEmpty(cboCarRegistertionVendorId.Text))
                 {
                     MessageBox.Show(CommonUtil.REQUIRE_MESSAGE);
                     return;
                 }
 
-                int convertVendorName = Int32.Parse(cboVendorName.Text);
-                form.CAR_REGISTERTION_ID = formMstCarRegistertion.CAR_REGISTERTION_ID;
-                form.CAR_REGISTERTION_NAME = txtLicensePlate.Text;
-                form.CAR_REGISTERTION_VENDOR_ID = convertVendorName;
+                form.CAR_REGISTERTION_ID = txtCarRegistertionId.Text;
+                form.CAR_REGISTERTION_NAME = txtCarRegistertionName.Text;
+                form.CAR_REGISTERTION_VENDOR_ID = Int32.Parse(cboCarRegistertionVendorId.SelectedValue.ToString());
 
                 if (CheckUtil.isEmpty(form))
                 {
                     return;
                 }
 
-                object[] result = mstCarRegistertionCtrl.insertOrUpdateDataMstCarRegistertion(form);
+                object[] result = mstCarRegistertionCtrl.insertOrUpdateDataMstCarRegistertion(form, flagAddEdit);
 
-                var statusError = result[0];
-                var msgError = result[1];
+                MsgForm msgForm = (MsgForm)result[0];
+                HomeScale.src.model.entities.MST_CAR_REGISTERTION data = (src.model.entities.MST_CAR_REGISTERTION)result[1];
 
-                if (statusError.Equals(1))
+                if (flagAddEdit.Equals("A"))
                 {
-                    MessageBox.Show(CommonUtil.SAVE_DATA_SUCCESS);
+                    if (CheckUtil.isNotEmpty(data))
+                    {
+                        if (msgForm.statusFlag.Equals(1))
+                        {
+                            MessageBox.Show(CommonUtil.DUPLICATE_DATA);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error : " + msgForm.messageDescription);
+                        }
+                    }
+                    else
+                    {
+                        if (msgForm.statusFlag.Equals(1))
+                        {
+                            resetDataMstCarRegistertion();
+                            searchDataVwMstCarRegistertion();
+                            MessageBox.Show(CommonUtil.SAVE_DATA_SUCCESS);
+                        }
+                        else
+                        {
+                            MessageBox.Show("Error : " + msgForm.messageDescription);
+                        }
+                    }
                 }
-                else
+                else if (flagAddEdit.Equals("E"))
                 {
-                    MessageBox.Show("Error : " + msgError);
+                    if (msgForm.statusFlag.Equals(1))
+                    {
+                        resetDataMstCarRegistertion();
+                        searchDataVwMstCarRegistertion();
+                        MessageBox.Show(CommonUtil.SAVE_DATA_SUCCESS);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Error : " + msgForm.messageDescription);
+                    }    
                 }
             }
             catch (Exception ex)
@@ -148,7 +219,7 @@ namespace HomeScale.View
             HomeScale.src.model.entities.MST_CAR_REGISTERTION form = new src.model.entities.MST_CAR_REGISTERTION();
             try
             {
-                form.CAR_REGISTERTION_ID = formMstCarRegistertion.CAR_REGISTERTION_ID;
+                form.CAR_REGISTERTION_ID = txtCarRegistertionId.Text;
 
                 if (CheckUtil.isEmpty(form.CAR_REGISTERTION_ID))
                 {
@@ -156,25 +227,21 @@ namespace HomeScale.View
                     return;
                 }
 
-                if (MessageBox.Show(CommonUtil.TITLE_DELETE, CommonUtil.CONFIRM_DELETE_DATA, MessageBoxButtons.YesNo) == DialogResult.Yes)
+                if (MessageBox.Show(CommonUtil.CONFIRM_DELETE_DATA, CommonUtil.TITLE_DELETE, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    object[] result = new object[2];
+                    object[] result = mstCarRegistertionCtrl.deleteDataMstCarRegistertion(form);
 
-                    if (CheckUtil.isNotEmpty(form.CAR_REGISTERTION_ID))
+                    MsgForm msgForm = (MsgForm)result[0];
+
+                    if (msgForm.statusFlag.Equals(1))
                     {
-                        result = mstCarRegistertionCtrl.deleteDataMstCarRegistertion(form);
-                    }
-
-                    var statusError = result[0];
-                    var msgError = result[1];
-
-                    if (statusError.Equals(1))
-                    {
+                        resetDataMstCarRegistertion();
+                        searchDataVwMstCarRegistertion();
                         MessageBox.Show(CommonUtil.DELETE_DATA_SUCCESS);
                     }
                     else
                     {
-                        MessageBox.Show("Error : " + msgError);
+                        MessageBox.Show("Error : " + msgForm.messageDescription);
                     }
                 }
             }
@@ -182,6 +249,38 @@ namespace HomeScale.View
             {
                 Log.Error(ex.ToString(), ex);
             }
+        }
+
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
+                formMstCarRegistertion.CAR_REGISTERTION_ID = row.Cells[0].Value.ToString();
+                queryDataMstCarRegistertionByCarRegistertionId();
+                flagAddEdit = "E";
+                txtCarRegistertionId.Enabled = false;
+            }
+        }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            insertOrUpdateDataMstCarRegistertion();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            resetDataMstCarRegistertion();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            deleteDataMstCarRegistertion();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

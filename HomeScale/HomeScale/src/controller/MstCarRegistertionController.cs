@@ -37,7 +37,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... queryComboMstVendor");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList };
+            return new object[] { msgError, resultList };
         }
 
         public object[] searchDataVwMstCarRegistertion()
@@ -64,10 +64,37 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... searchDataVwMstCarRegistertion");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, resultList, resultList.Count() };
+            return new object[] { msgError, resultList };
         }
 
-        public object[] insertOrUpdateDataMstCarRegistertion(MST_CAR_REGISTERTION param)
+        public object[] queryDataMstCarRegistertionByCarRegistertionId(MST_CAR_REGISTERTION param)
+        {
+            Log.Info("Start log INFO... queryDataMstCarRegistertionBycarRegistertionId");
+            MsgForm msgError = new MsgForm();
+            MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
+            try
+            {
+                using (var db = new HomeScaleDBEntities())
+                {
+                    form = (from row in db.MST_CAR_REGISTERTION where row.CAR_REGISTERTION_ID == param.CAR_REGISTERTION_ID select row).FirstOrDefault();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                Log.Info("End log INFO... queryDataMstCarRegistertionBycarRegistertionId");
+            }
+            return new object[] { msgError, form };
+        }
+
+        public object[] insertOrUpdateDataMstCarRegistertion(MST_CAR_REGISTERTION param, string flagAddEdit)
         {
             Log.Info("Start log INFO... insertOrUpdateDataMstCarRegistertion");
             MsgForm msgError = new MsgForm();
@@ -78,18 +105,34 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     formUpdate = (from row in db.MST_CAR_REGISTERTION where row.CAR_REGISTERTION_ID == param.CAR_REGISTERTION_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(formUpdate))
+                    if (flagAddEdit.Equals("A"))
                     {
-                        formInsert.CAR_REGISTERTION_ID = param.CAR_REGISTERTION_ID;
-                        formInsert.CAR_REGISTERTION_NAME = param.CAR_REGISTERTION_NAME;
-                        formInsert.CAR_REGISTERTION_VENDOR_ID = param.CAR_REGISTERTION_VENDOR_ID;
-                        db.MST_CAR_REGISTERTION.Add(formInsert);
+                        if (CheckUtil.isEmpty(formUpdate))
+                        {
+                            formInsert.CAR_REGISTERTION_ID = param.CAR_REGISTERTION_ID;
+                            formInsert.CAR_REGISTERTION_NAME = param.CAR_REGISTERTION_NAME;
+                            formInsert.CAR_REGISTERTION_VENDOR_ID = param.CAR_REGISTERTION_VENDOR_ID;
+                            db.MST_CAR_REGISTERTION.Add(formInsert);
+                            Log.Info("Insert Data form MST_CAR_REGISTERTION"
+                            + " CAR_REGISTERTION_ID : " + formInsert.CAR_REGISTERTION_ID
+                            + " CAR_REGISTERTION_NAME : " + formInsert.CAR_REGISTERTION_NAME
+                            + " CAR_REGISTERTION_VENDOR_ID : " + formInsert.CAR_REGISTERTION_VENDOR_ID
+                            );
+                        }
                     }
-                    else if (CheckUtil.isNotEmpty(formUpdate))
+                    else if (flagAddEdit.Equals("E"))
                     {
-                        formUpdate.CAR_REGISTERTION_ID = param.CAR_REGISTERTION_ID;
-                        formUpdate.CAR_REGISTERTION_NAME = param.CAR_REGISTERTION_NAME;
-                        formUpdate.CAR_REGISTERTION_VENDOR_ID = param.CAR_REGISTERTION_VENDOR_ID;
+                        if (CheckUtil.isNotEmpty(formUpdate))
+                        {
+                            formUpdate.CAR_REGISTERTION_ID = param.CAR_REGISTERTION_ID;
+                            formUpdate.CAR_REGISTERTION_NAME = param.CAR_REGISTERTION_NAME;
+                            formUpdate.CAR_REGISTERTION_VENDOR_ID = param.CAR_REGISTERTION_VENDOR_ID;
+                            Log.Info("Update Data form MST_CAR_REGISTERTION"
+                            + " CAR_REGISTERTION_ID : " + formUpdate.CAR_REGISTERTION_ID
+                            + " CAR_REGISTERTION_NAME : " + formUpdate.CAR_REGISTERTION_NAME
+                            + " CAR_REGISTERTION_VENDOR_ID : " + formUpdate.CAR_REGISTERTION_VENDOR_ID
+                            );
+                        }
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -105,7 +148,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... insertOrUpdateDataMstCarRegistertion");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError, formUpdate };
         }
 
         public object[] updateDataMstCarRegistertion(MST_CAR_REGISTERTION param)
@@ -137,7 +180,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... updateDataMstCarRegistertion");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError };
         }
 
         public object[] deleteDataMstCarRegistertion(MST_CAR_REGISTERTION param)
@@ -168,7 +211,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... deleteDataMstCarRegistertion");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError };
         }
     }
 }

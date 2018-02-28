@@ -37,7 +37,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... queryDataMstDataBasic");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription, form };
+            return new object[] { msgError, form };
         }
 
         public object[] updateDataMstDataBasic(MST_DATA_BASIC param)
@@ -52,6 +52,7 @@ namespace HomeScale.src.controller
                     form = (from row in db.MST_DATA_BASIC where row.BASIC_ID == param.BASIC_ID select row).FirstOrDefault();
                     if (CheckUtil.isNotEmpty(form))
                     {
+                        form.BASIC_ID = param.BASIC_ID;
                         form.BASIC_CARD_NO = param.BASIC_CARD_NO;
                         form.BASIC_RECEIPT_NO = param.BASIC_RECEIPT_NO;
                         form.BASIC_DECIMAL_NUMBER = param.BASIC_DECIMAL_NUMBER;
@@ -61,6 +62,18 @@ namespace HomeScale.src.controller
                         form.BASIC_STATUS_SCALE_CARD = param.BASIC_STATUS_SCALE_CARD;
                         form.BASIC_STATUS_BALANCE = param.BASIC_STATUS_BALANCE;
                         form.BASIC_STATUS_CUSTOMER = param.BASIC_STATUS_CUSTOMER;
+                        Log.Info("Update Data form MST_DATA_BASIC"
+                            + " BASIC_ID : " + form.BASIC_ID
+                            + " BASIC_CARD_NO : " + form.BASIC_CARD_NO
+                            + " BASIC_RECEIPT_NO : " + form.BASIC_RECEIPT_NO
+                            + " BASIC_DECIMAL_NUMBER : " + form.BASIC_DECIMAL_NUMBER
+                            + " BASIC_MOVE_NO : " + form.BASIC_MOVE_NO
+                            + " BASIC_DEDUCTION : " + form.BASIC_DEDUCTION
+                            + " BASIC_FARE : " + form.BASIC_FARE
+                            + " BASIC_STATUS_SCALE_CARD : " + form.BASIC_STATUS_SCALE_CARD
+                            + " BASIC_STATUS_BALANCE : " + form.BASIC_STATUS_BALANCE
+                            + " BASIC_STATUS_CUSTOMER : " + form.BASIC_STATUS_CUSTOMER
+                            );
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
@@ -76,7 +89,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... updateDataMstDataBasic");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError };
         }
     }
 }

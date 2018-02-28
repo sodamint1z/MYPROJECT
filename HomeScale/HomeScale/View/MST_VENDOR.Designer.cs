@@ -45,14 +45,18 @@
             this.lblVendorTelNo = new System.Windows.Forms.Label();
             this.lblVendorFax = new System.Windows.Forms.Label();
             this.lblHead = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.txtVendorId = new System.Windows.Forms.TextBox();
+            this.lblVendorId = new System.Windows.Forms.Label();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
-            this.btnEdit = new System.Windows.Forms.Button();
-            this.btnAdd = new System.Windows.Forms.Button();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.lblCountData = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatuslblCredit = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtVendorName
@@ -65,7 +69,7 @@
             this.txtVendorName.Multiline = true;
             this.txtVendorName.Name = "txtVendorName";
             this.txtVendorName.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorName.TabIndex = 0;
+            this.txtVendorName.TabIndex = 1;
             // 
             // txtVendorAddress
             // 
@@ -74,7 +78,7 @@
             this.txtVendorAddress.Multiline = true;
             this.txtVendorAddress.Name = "txtVendorAddress";
             this.txtVendorAddress.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorAddress.TabIndex = 1;
+            this.txtVendorAddress.TabIndex = 2;
             // 
             // txtVendorDistrictOne
             // 
@@ -83,7 +87,7 @@
             this.txtVendorDistrictOne.Multiline = true;
             this.txtVendorDistrictOne.Name = "txtVendorDistrictOne";
             this.txtVendorDistrictOne.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorDistrictOne.TabIndex = 2;
+            this.txtVendorDistrictOne.TabIndex = 3;
             // 
             // txtVendorDistrictTwo
             // 
@@ -92,7 +96,7 @@
             this.txtVendorDistrictTwo.Multiline = true;
             this.txtVendorDistrictTwo.Name = "txtVendorDistrictTwo";
             this.txtVendorDistrictTwo.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorDistrictTwo.TabIndex = 3;
+            this.txtVendorDistrictTwo.TabIndex = 4;
             // 
             // txtVendorCounty
             // 
@@ -101,7 +105,7 @@
             this.txtVendorCounty.Multiline = true;
             this.txtVendorCounty.Name = "txtVendorCounty";
             this.txtVendorCounty.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorCounty.TabIndex = 4;
+            this.txtVendorCounty.TabIndex = 5;
             // 
             // txtVendorPostcode
             // 
@@ -110,7 +114,7 @@
             this.txtVendorPostcode.Multiline = true;
             this.txtVendorPostcode.Name = "txtVendorPostcode";
             this.txtVendorPostcode.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorPostcode.TabIndex = 5;
+            this.txtVendorPostcode.TabIndex = 6;
             // 
             // txtVendorTelNo
             // 
@@ -119,7 +123,7 @@
             this.txtVendorTelNo.Multiline = true;
             this.txtVendorTelNo.Name = "txtVendorTelNo";
             this.txtVendorTelNo.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorTelNo.TabIndex = 6;
+            this.txtVendorTelNo.TabIndex = 7;
             // 
             // txtVendorFax
             // 
@@ -128,7 +132,7 @@
             this.txtVendorFax.Multiline = true;
             this.txtVendorFax.Name = "txtVendorFax";
             this.txtVendorFax.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorFax.TabIndex = 7;
+            this.txtVendorFax.TabIndex = 8;
             // 
             // lblVendorName
             // 
@@ -223,106 +227,138 @@
             this.lblHead.AutoSize = true;
             this.lblHead.BackColor = System.Drawing.SystemColors.MenuHighlight;
             this.lblHead.Font = new System.Drawing.Font("Verdana", 18F);
-            this.lblHead.Location = new System.Drawing.Point(451, 41);
+            this.lblHead.Location = new System.Drawing.Point(451, 42);
             this.lblHead.Name = "lblHead";
             this.lblHead.Size = new System.Drawing.Size(107, 29);
             this.lblHead.TabIndex = 30;
             this.lblHead.Text = "ข้อมูลผู้ขาย";
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(9, 207);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(500, 408);
+            this.dataGridView1.TabIndex = 31;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
+            // 
+            // txtVendorId
+            // 
+            this.txtVendorId.BackColor = System.Drawing.SystemColors.Window;
+            this.txtVendorId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtVendorId.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtVendorId.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtVendorId.Location = new System.Drawing.Point(684, 209);
+            this.txtVendorId.Multiline = true;
+            this.txtVendorId.Name = "txtVendorId";
+            this.txtVendorId.Size = new System.Drawing.Size(300, 40);
+            this.txtVendorId.TabIndex = 0;
+            // 
+            // lblVendorId
+            // 
+            this.lblVendorId.AutoSize = true;
+            this.lblVendorId.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblVendorId.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblVendorId.Location = new System.Drawing.Point(549, 210);
+            this.lblVendorId.Name = "lblVendorId";
+            this.lblVendorId.Size = new System.Drawing.Size(103, 29);
+            this.lblVendorId.TabIndex = 33;
+            this.lblVendorId.Text = "รหัสผู้ขาย :";
+            // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBack.BackColor = System.Drawing.Color.Wheat;
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnBack.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnBack.Location = new System.Drawing.Point(854, 111);
+            this.btnBack.Location = new System.Drawing.Point(685, 90);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(150, 80);
-            this.btnBack.TabIndex = 29;
+            this.btnBack.TabIndex = 37;
             this.btnBack.Text = "ย้อนกลับ";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnSave
             // 
             this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnSave.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnSave.Location = new System.Drawing.Point(684, 111);
+            this.btnSave.Location = new System.Drawing.Point(175, 90);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(150, 80);
-            this.btnSave.TabIndex = 28;
+            this.btnSave.TabIndex = 36;
             this.btnSave.Text = "บันทึก";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
-            this.btnCancel.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnCancel.BackColor = System.Drawing.Color.LightGreen;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCancel.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnCancel.Location = new System.Drawing.Point(514, 111);
+            this.btnCancel.Location = new System.Drawing.Point(345, 90);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(150, 80);
-            this.btnCancel.TabIndex = 27;
+            this.btnCancel.TabIndex = 35;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
-            this.btnDelete.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDelete.BackColor = System.Drawing.Color.Salmon;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDelete.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnDelete.Location = new System.Drawing.Point(344, 111);
+            this.btnDelete.Location = new System.Drawing.Point(515, 90);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(150, 80);
-            this.btnDelete.TabIndex = 26;
+            this.btnDelete.TabIndex = 34;
             this.btnDelete.Text = "ลบ";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // btnEdit
+            // lblCountData
             // 
-            this.btnEdit.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnEdit.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnEdit.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnEdit.Location = new System.Drawing.Point(174, 111);
-            this.btnEdit.Name = "btnEdit";
-            this.btnEdit.Size = new System.Drawing.Size(150, 80);
-            this.btnEdit.TabIndex = 25;
-            this.btnEdit.Text = "แก้ไข";
-            this.btnEdit.UseVisualStyleBackColor = false;
+            this.lblCountData.AutoSize = true;
+            this.lblCountData.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblCountData.Location = new System.Drawing.Point(352, 179);
+            this.lblCountData.Name = "lblCountData";
+            this.lblCountData.Size = new System.Drawing.Size(95, 18);
+            this.lblCountData.TabIndex = 38;
+            this.lblCountData.Text = "CountData";
             // 
-            // btnAdd
+            // statusStrip1
             // 
-            this.btnAdd.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnAdd.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnAdd.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnAdd.Location = new System.Drawing.Point(4, 111);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(150, 80);
-            this.btnAdd.TabIndex = 24;
-            this.btnAdd.Text = "เพิ่ม";
-            this.btnAdd.UseVisualStyleBackColor = false;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatuslblCredit});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 619);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
+            this.statusStrip1.TabIndex = 39;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // dataGridView1
+            // toolStripStatuslblCredit
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 208);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(500, 493);
-            this.dataGridView1.TabIndex = 31;
+            this.toolStripStatuslblCredit.Name = "toolStripStatuslblCredit";
+            this.toolStripStatuslblCredit.Size = new System.Drawing.Size(263, 17);
+            this.toolStripStatuslblCredit.Text = "Copyright©2018  Credit : Pro. All rights reserved.";
             // 
             // MST_VENDOR
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1008, 729);
-            this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lblHead);
+            this.ClientSize = new System.Drawing.Size(1008, 641);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.lblCountData);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
-            this.Controls.Add(this.btnEdit);
-            this.Controls.Add(this.btnAdd);
+            this.Controls.Add(this.lblVendorId);
+            this.Controls.Add(this.txtVendorId);
+            this.Controls.Add(this.dataGridView1);
+            this.Controls.Add(this.lblHead);
             this.Controls.Add(this.lblVendorFax);
             this.Controls.Add(this.lblVendorTelNo);
             this.Controls.Add(this.lblVendorPostcode);
@@ -343,6 +379,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeScale";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -367,12 +405,15 @@
         private System.Windows.Forms.Label lblVendorTelNo;
         private System.Windows.Forms.Label lblVendorFax;
         private System.Windows.Forms.Label lblHead;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.TextBox txtVendorId;
+        private System.Windows.Forms.Label lblVendorId;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDelete;
-        private System.Windows.Forms.Button btnEdit;
-        private System.Windows.Forms.Button btnAdd;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.Label lblCountData;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatuslblCredit;
     }
 }
