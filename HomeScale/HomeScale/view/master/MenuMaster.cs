@@ -59,9 +59,21 @@ namespace HomeScale.view.master
             mstCarRegistertion.Show();
         }
 
+        public void callMenuMain()
+        {
+            MenuMain menuMain = new MenuMain();
+            this.Hide();
+            menuMain.Show();
+        }
+
         private void btnDataProduct_Click(object sender, EventArgs e)
         {
             callMenuMstProduct();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            callMenuMain();
         }
     }
 }
