@@ -251,6 +251,13 @@ namespace HomeScale.view.master
             }
         }
 
+        public void callMenuMaster()
+        {
+            MenuMaster menuMaster = new MenuMaster();
+            this.Hide();
+            menuMaster.Show();
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -280,7 +287,7 @@ namespace HomeScale.view.master
 
         private void btnBack_Click(object sender, EventArgs e)
         {
-
+            callMenuMaster();
         }
     }
 }

@@ -37,19 +37,21 @@
           <Property Name="BASIC_STATUS_BALANCE" Type="int" />
           <Property Name="BASIC_STATUS_CUSTOMER" Type="int" />
         </EntityType>
-        <EntityType Name="MST_DISTINATION">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'main.MST_DESTINATION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="MST_DESTINATION">
           <Key>
-            <PropertyRef Name="DISTINATION_ID" />
+            <PropertyRef Name="DESTINATION_ID" />
           </Key>
-          <Property Name="DISTINATION_ID" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="DISTINATION_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="DISTINATION_ADDRESS" Type="varchar" MaxLength="50" />
-          <Property Name="DISTINATION_DISTRICT_ONE" Type="varchar" MaxLength="50" />
-          <Property Name="DISTINATION_DISTRICT_TWO" Type="varchar" MaxLength="50" />
-          <Property Name="DISTINATION_COUNTY" Type="varchar" MaxLength="50" />
-          <Property Name="DISTINATION_POSTCODE" Type="varchar" MaxLength="50" />
-          <Property Name="DISTINATION_TEL_NO" Type="varchar" MaxLength="50" />
-          <Property Name="DISTINATION_FAX" Type="varchar" MaxLength="50" />
+          <Property Name="DESTINATION_ID" Type="varchar" MaxLength="10" Nullable="false" />
+          <Property Name="DESTINATION_NAME" Type="varchar" MaxLength="50" />
+          <Property Name="DESTINATION_ADDRESS" Type="varchar" MaxLength="50" />
+          <Property Name="DESTINATION_DISTRICT_ONE" Type="varchar" MaxLength="50" />
+          <Property Name="DESTINATION_DISTRICT_TWO" Type="varchar" MaxLength="50" />
+          <Property Name="DESTINATION_COUNTY" Type="varchar" MaxLength="50" />
+          <Property Name="DESTINATION_POSTCODE" Type="varchar" MaxLength="50" />
+          <Property Name="DESTINATION_TEL_NO" Type="varchar" MaxLength="50" />
+          <Property Name="DESTINATION_FAX" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="MST_LINE_DOWN">
           <Key>
@@ -141,7 +143,6 @@ warning 6002: The table/view 'main.VW_MST_PRODUCT' does not have a primary key d
           <EntitySet Name="MST_BUSINESS" EntityType="Self.MST_BUSINESS" store:Type="Tables" />
           <EntitySet Name="MST_CAR_REGISTERTION" EntityType="Self.MST_CAR_REGISTERTION" store:Type="Tables" />
           <EntitySet Name="MST_DATA_BASIC" EntityType="Self.MST_DATA_BASIC" store:Type="Tables" />
-          <EntitySet Name="MST_DISTINATION" EntityType="Self.MST_DISTINATION" store:Type="Tables" />
           <EntitySet Name="MST_LINE_DOWN" EntityType="Self.MST_LINE_DOWN" store:Type="Tables" />
           <EntitySet Name="MST_MOISTURE" EntityType="Self.MST_MOISTURE" store:Type="Tables" />
           <EntitySet Name="MST_PRODUCT" EntityType="Self.MST_PRODUCT" store:Type="Tables" />
@@ -149,6 +150,19 @@ warning 6002: The table/view 'main.VW_MST_PRODUCT' does not have a primary key d
           <EntitySet Name="MST_SERVICE_CHARGE" EntityType="Self.MST_SERVICE_CHARGE" store:Type="Tables" />
           <EntitySet Name="MST_VENDOR" EntityType="Self.MST_VENDOR" store:Type="Tables" />
           <EntitySet Name="USER_LOGIN" EntityType="Self.USER_LOGIN" store:Type="Tables" />
+          <EntitySet Name="MST_DESTINATION" EntityType="Self.MST_DESTINATION" store:Type="Tables">
+            <DefiningQuery>SELECT 
+[MST_DESTINATION].[DESTINATION_ID] AS [DESTINATION_ID], 
+[MST_DESTINATION].[DESTINATION_NAME] AS [DESTINATION_NAME], 
+[MST_DESTINATION].[DESTINATION_ADDRESS] AS [DESTINATION_ADDRESS], 
+[MST_DESTINATION].[DESTINATION_DISTRICT_ONE] AS [DESTINATION_DISTRICT_ONE], 
+[MST_DESTINATION].[DESTINATION_DISTRICT_TWO] AS [DESTINATION_DISTRICT_TWO], 
+[MST_DESTINATION].[DESTINATION_COUNTY] AS [DESTINATION_COUNTY], 
+[MST_DESTINATION].[DESTINATION_POSTCODE] AS [DESTINATION_POSTCODE], 
+[MST_DESTINATION].[DESTINATION_TEL_NO] AS [DESTINATION_TEL_NO], 
+[MST_DESTINATION].[DESTINATION_FAX] AS [DESTINATION_FAX]
+FROM [MST_DESTINATION] AS [MST_DESTINATION]</DefiningQuery>
+          </EntitySet>
           <EntitySet Name="VW_MST_CAR_REGISTERTION" EntityType="Self.VW_MST_CAR_REGISTERTION" store:Type="Views">
             <DefiningQuery>SELECT 
 [VW_MST_CAR_REGISTERTION].[CAR_REGISTERTION_ID] AS [CAR_REGISTERTION_ID], 
@@ -173,7 +187,6 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <EntitySet Name="MST_BUSINESS" EntityType="HomeScaleDBModel.MST_BUSINESS" />
           <EntitySet Name="MST_CAR_REGISTERTION" EntityType="HomeScaleDBModel.MST_CAR_REGISTERTION" />
           <EntitySet Name="MST_DATA_BASIC" EntityType="HomeScaleDBModel.MST_DATA_BASIC" />
-          <EntitySet Name="MST_DISTINATION" EntityType="HomeScaleDBModel.MST_DISTINATION" />
           <EntitySet Name="MST_LINE_DOWN" EntityType="HomeScaleDBModel.MST_LINE_DOWN" />
           <EntitySet Name="MST_MOISTURE" EntityType="HomeScaleDBModel.MST_MOISTURE" />
           <EntitySet Name="MST_PRODUCT" EntityType="HomeScaleDBModel.MST_PRODUCT" />
@@ -183,6 +196,7 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <EntitySet Name="USER_LOGIN" EntityType="HomeScaleDBModel.USER_LOGIN" />
           <EntitySet Name="VW_MST_CAR_REGISTERTION" EntityType="HomeScaleDBModel.VW_MST_CAR_REGISTERTION" />
           <EntitySet Name="VW_MST_PRODUCT" EntityType="HomeScaleDBModel.VW_MST_PRODUCT" />
+          <EntitySet Name="MST_DESTINATION" EntityType="HomeScaleDBModel.MST_DESTINATION" />
         </EntityContainer>
         <EntityType Name="MST_BUSINESS">
           <Key>
@@ -215,20 +229,6 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <Property Name="BASIC_STATUS_SCALE_CARD" Type="Int32" />
           <Property Name="BASIC_STATUS_BALANCE" Type="Int32" />
           <Property Name="BASIC_STATUS_CUSTOMER" Type="Int32" />
-        </EntityType>
-        <EntityType Name="MST_DISTINATION">
-          <Key>
-            <PropertyRef Name="DISTINATION_ID" />
-          </Key>
-          <Property Name="DISTINATION_ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
-          <Property Name="DISTINATION_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DISTINATION_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DISTINATION_DISTRICT_ONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DISTINATION_DISTRICT_TWO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DISTINATION_COUNTY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DISTINATION_POSTCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DISTINATION_TEL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="DISTINATION_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="MST_LINE_DOWN">
           <Key>
@@ -312,6 +312,20 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <Property Name="PRODUCT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PRODUCT_UNIT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="MST_DESTINATION">
+          <Key>
+            <PropertyRef Name="DESTINATION_ID" />
+          </Key>
+          <Property Name="DESTINATION_ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="DESTINATION_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESTINATION_ADDRESS" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESTINATION_DISTRICT_ONE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESTINATION_DISTRICT_TWO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESTINATION_COUNTY" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESTINATION_POSTCODE" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESTINATION_TEL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="DESTINATION_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -350,21 +364,6 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
                 <ScalarProperty Name="BASIC_RECEIPT_NO" ColumnName="BASIC_RECEIPT_NO" />
                 <ScalarProperty Name="BASIC_CARD_NO" ColumnName="BASIC_CARD_NO" />
                 <ScalarProperty Name="BASIC_ID" ColumnName="BASIC_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MST_DISTINATION">
-            <EntityTypeMapping TypeName="HomeScaleDBModel.MST_DISTINATION">
-              <MappingFragment StoreEntitySet="MST_DISTINATION">
-                <ScalarProperty Name="DISTINATION_FAX" ColumnName="DISTINATION_FAX" />
-                <ScalarProperty Name="DISTINATION_TEL_NO" ColumnName="DISTINATION_TEL_NO" />
-                <ScalarProperty Name="DISTINATION_POSTCODE" ColumnName="DISTINATION_POSTCODE" />
-                <ScalarProperty Name="DISTINATION_COUNTY" ColumnName="DISTINATION_COUNTY" />
-                <ScalarProperty Name="DISTINATION_DISTRICT_TWO" ColumnName="DISTINATION_DISTRICT_TWO" />
-                <ScalarProperty Name="DISTINATION_DISTRICT_ONE" ColumnName="DISTINATION_DISTRICT_ONE" />
-                <ScalarProperty Name="DISTINATION_ADDRESS" ColumnName="DISTINATION_ADDRESS" />
-                <ScalarProperty Name="DISTINATION_NAME" ColumnName="DISTINATION_NAME" />
-                <ScalarProperty Name="DISTINATION_ID" ColumnName="DISTINATION_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -456,6 +455,21 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
                 <ScalarProperty Name="PRODUCT_UNIT_NAME" ColumnName="PRODUCT_UNIT_NAME" />
                 <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
                 <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MST_DESTINATION">
+            <EntityTypeMapping TypeName="HomeScaleDBModel.MST_DESTINATION">
+              <MappingFragment StoreEntitySet="MST_DESTINATION">
+                <ScalarProperty Name="DESTINATION_FAX" ColumnName="DESTINATION_FAX" />
+                <ScalarProperty Name="DESTINATION_TEL_NO" ColumnName="DESTINATION_TEL_NO" />
+                <ScalarProperty Name="DESTINATION_POSTCODE" ColumnName="DESTINATION_POSTCODE" />
+                <ScalarProperty Name="DESTINATION_COUNTY" ColumnName="DESTINATION_COUNTY" />
+                <ScalarProperty Name="DESTINATION_DISTRICT_TWO" ColumnName="DESTINATION_DISTRICT_TWO" />
+                <ScalarProperty Name="DESTINATION_DISTRICT_ONE" ColumnName="DESTINATION_DISTRICT_ONE" />
+                <ScalarProperty Name="DESTINATION_ADDRESS" ColumnName="DESTINATION_ADDRESS" />
+                <ScalarProperty Name="DESTINATION_NAME" ColumnName="DESTINATION_NAME" />
+                <ScalarProperty Name="DESTINATION_ID" ColumnName="DESTINATION_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
