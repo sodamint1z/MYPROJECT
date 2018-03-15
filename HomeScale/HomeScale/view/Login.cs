@@ -89,7 +89,7 @@ namespace HomeScale.view
                     else
                     {
                         MenuMain menuMain = new MenuMain();
-                        menuMain.Close();
+                        this.Hide();
                         menuMain.Show();
                     }
                 }

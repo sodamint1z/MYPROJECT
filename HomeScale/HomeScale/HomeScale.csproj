@@ -70,10 +70,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Login.cs">
+    <Compile Include="view\Login.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Login.Designer.cs">
+    <Compile Include="view\Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -145,37 +145,49 @@
     <Compile Include="src\model\form\MsgForm.cs" />
     <Compile Include="src\util\CheckUtil.cs" />
     <Compile Include="src\util\CommonUtil.cs" />
-    <Compile Include="View\MST_CAR_REGISTERTION.cs">
+    <Compile Include="view\master\MenuMaster.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MST_CAR_REGISTERTION.Designer.cs">
+    <Compile Include="view\master\MenuMaster.Designer.cs">
+      <DependentUpon>MenuMaster.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\master\MST_CAR_REGISTERTION.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\master\MST_CAR_REGISTERTION.Designer.cs">
       <DependentUpon>MST_CAR_REGISTERTION.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MST_DISTINATION.cs">
+    <Compile Include="view\master\MST_DISTINATION.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MST_DISTINATION.Designer.cs">
+    <Compile Include="view\master\MST_DISTINATION.Designer.cs">
       <DependentUpon>MST_DISTINATION.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MST_PRODUCT.cs">
+    <Compile Include="view\master\MST_PRODUCT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MST_PRODUCT.Designer.cs">
+    <Compile Include="view\master\MST_PRODUCT.Designer.cs">
       <DependentUpon>MST_PRODUCT.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MST_PRODUCT_UNIT.cs">
+    <Compile Include="view\master\MST_PRODUCT_UNIT.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MST_PRODUCT_UNIT.Designer.cs">
+    <Compile Include="view\master\MST_PRODUCT_UNIT.Designer.cs">
       <DependentUpon>MST_PRODUCT_UNIT.cs</DependentUpon>
     </Compile>
-    <Compile Include="View\MST_VENDOR.cs">
+    <Compile Include="view\master\MST_VENDOR.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="View\MST_VENDOR.Designer.cs">
+    <Compile Include="view\master\MST_VENDOR.Designer.cs">
       <DependentUpon>MST_VENDOR.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Login.resx">
+    <Compile Include="view\MenuMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\MenuMain.Designer.cs">
+      <DependentUpon>MenuMain.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="view\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -188,19 +200,19 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="View\MST_CAR_REGISTERTION.resx">
+    <EmbeddedResource Include="view\master\MST_CAR_REGISTERTION.resx">
       <DependentUpon>MST_CAR_REGISTERTION.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MST_DISTINATION.resx">
+    <EmbeddedResource Include="view\master\MST_DISTINATION.resx">
       <DependentUpon>MST_DISTINATION.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MST_PRODUCT.resx">
+    <EmbeddedResource Include="view\master\MST_PRODUCT.resx">
       <DependentUpon>MST_PRODUCT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MST_PRODUCT_UNIT.resx">
+    <EmbeddedResource Include="view\master\MST_PRODUCT_UNIT.resx">
       <DependentUpon>MST_PRODUCT_UNIT.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="View\MST_VENDOR.resx">
+    <EmbeddedResource Include="view\master\MST_VENDOR.resx">
       <DependentUpon>MST_VENDOR.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="packages.config">
