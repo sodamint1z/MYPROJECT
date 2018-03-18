@@ -75,5 +75,10 @@ namespace HomeScale.view.master
         {
             callMenuMain();
         }
+
+        private void btnDataVendor_Click(object sender, EventArgs e)
+        {
+            callMenuMstVendor();
+        }
     }
 }
