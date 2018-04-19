@@ -19,5 +19,8 @@ namespace HomeScale.src.util
         public static string SELECT_DATA_DELETE = "กรุณาเลือกข้อมูลที่ต้องการลบ!";
         public static string CONFIRM_DELETE_DATA = "คุณแน่ใจว่าต้องการลบข้อมูล!";
         public static string TITLE_DELETE = "ลบข้อมูล";
+        public static string DATA_NOTFOUND_AGAIN_LOGIN = "ไม่พบข้อมูลกรุณาล็อกอินอีกครั้ง";
+        public static string REQUIRE_MESSAGE_USER_LOGIN = "กรุณากรอกบัญชีผู้ใช้";
+        public static string REQUIRE_MESSAGE_PASSWORD_LOGIN = "กรุณากรอกรหัสผ่าน";
     }
 }

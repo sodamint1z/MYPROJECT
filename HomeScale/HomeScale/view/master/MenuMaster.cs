@@ -80,5 +80,20 @@ namespace HomeScale.view.master
         {
             callMenuMstVendor();
         }
+
+        private void btnDataUnitProduct_Click(object sender, EventArgs e)
+        {
+            callMenuMstProductUnit();
+        }
+
+        private void btnDataDestination_Click(object sender, EventArgs e)
+        {
+            callMenuMstDestination();
+        }
+
+        private void btnDataLicensePlate_Click(object sender, EventArgs e)
+        {
+            callMenuMstCarRegistertion();
+        }
     }
 }

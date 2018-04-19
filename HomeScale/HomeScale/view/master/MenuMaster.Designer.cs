@@ -32,6 +32,9 @@
             this.btnDataProduct = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnDataVendor = new System.Windows.Forms.Button();
+            this.btnDataUnitProduct = new System.Windows.Forms.Button();
+            this.btnDataDestination = new System.Windows.Forms.Button();
+            this.btnDataLicensePlate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDataProduct
@@ -44,7 +47,7 @@
             this.btnDataProduct.Name = "btnDataProduct";
             this.btnDataProduct.Size = new System.Drawing.Size(180, 100);
             this.btnDataProduct.TabIndex = 11;
-            this.btnDataProduct.Text = "ฐานข้อมูลสินค้า";
+            this.btnDataProduct.Text = "ข้อมูลสินค้า";
             this.btnDataProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDataProduct.UseVisualStyleBackColor = false;
             this.btnDataProduct.Click += new System.EventHandler(this.btnDataProduct_Click);
@@ -56,7 +59,7 @@
             this.btnBack.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBack.Location = new System.Drawing.Point(77, 203);
+            this.btnBack.Location = new System.Drawing.Point(77, 309);
             this.btnBack.Name = "btnBack";
             this.btnBack.Size = new System.Drawing.Size(180, 100);
             this.btnBack.TabIndex = 12;
@@ -75,10 +78,55 @@
             this.btnDataVendor.Name = "btnDataVendor";
             this.btnDataVendor.Size = new System.Drawing.Size(180, 100);
             this.btnDataVendor.TabIndex = 13;
-            this.btnDataVendor.Text = "ฐานข้อมูลผู้ขาย";
+            this.btnDataVendor.Text = "ข้อมูลผู้ขาย";
             this.btnDataVendor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDataVendor.UseVisualStyleBackColor = false;
             this.btnDataVendor.Click += new System.EventHandler(this.btnDataVendor_Click);
+            // 
+            // btnDataUnitProduct
+            // 
+            this.btnDataUnitProduct.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDataUnitProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDataUnitProduct.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDataUnitProduct.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDataUnitProduct.Location = new System.Drawing.Point(77, 203);
+            this.btnDataUnitProduct.Name = "btnDataUnitProduct";
+            this.btnDataUnitProduct.Size = new System.Drawing.Size(180, 100);
+            this.btnDataUnitProduct.TabIndex = 14;
+            this.btnDataUnitProduct.Text = "ข้อมูลหน่วยสินค้า";
+            this.btnDataUnitProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDataUnitProduct.UseVisualStyleBackColor = false;
+            this.btnDataUnitProduct.Click += new System.EventHandler(this.btnDataUnitProduct_Click);
+            // 
+            // btnDataDestination
+            // 
+            this.btnDataDestination.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDataDestination.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDataDestination.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDataDestination.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDataDestination.Location = new System.Drawing.Point(263, 203);
+            this.btnDataDestination.Name = "btnDataDestination";
+            this.btnDataDestination.Size = new System.Drawing.Size(180, 100);
+            this.btnDataDestination.TabIndex = 15;
+            this.btnDataDestination.Text = "ข้อมูลปลายทาง";
+            this.btnDataDestination.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDataDestination.UseVisualStyleBackColor = false;
+            this.btnDataDestination.Click += new System.EventHandler(this.btnDataDestination_Click);
+            // 
+            // btnDataLicensePlate
+            // 
+            this.btnDataLicensePlate.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDataLicensePlate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDataLicensePlate.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDataLicensePlate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDataLicensePlate.Location = new System.Drawing.Point(449, 97);
+            this.btnDataLicensePlate.Name = "btnDataLicensePlate";
+            this.btnDataLicensePlate.Size = new System.Drawing.Size(180, 100);
+            this.btnDataLicensePlate.TabIndex = 16;
+            this.btnDataLicensePlate.Text = "ข้อมูลทะเบียนรถ";
+            this.btnDataLicensePlate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDataLicensePlate.UseVisualStyleBackColor = false;
+            this.btnDataLicensePlate.Click += new System.EventHandler(this.btnDataLicensePlate_Click);
             // 
             // MenuMaster
             // 
@@ -86,6 +134,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1008, 481);
+            this.Controls.Add(this.btnDataLicensePlate);
+            this.Controls.Add(this.btnDataDestination);
+            this.Controls.Add(this.btnDataUnitProduct);
             this.Controls.Add(this.btnDataVendor);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnDataProduct);
@@ -101,5 +152,8 @@
         private System.Windows.Forms.Button btnDataProduct;
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnDataVendor;
+        private System.Windows.Forms.Button btnDataUnitProduct;
+        private System.Windows.Forms.Button btnDataDestination;
+        private System.Windows.Forms.Button btnDataLicensePlate;
     }
 }

@@ -34,21 +34,21 @@ namespace HomeScale.view
             txtPassword.Text = "";
         }
 
-        private void txtUsername_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtPassword.Focus();
-            }
-        }
+        //private void txtUsername_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        txtPassword.Focus();
+        //    }
+        //}
 
-        private void txtPassword_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                txtUsername.Focus();
-            }
-        }
+        //private void txtPassword_KeyDown(object sender, KeyEventArgs e)
+        //{
+        //    if (e.KeyCode == Keys.Enter)
+        //    {
+        //        txtUsername.Focus();
+        //    }
+        //}
 
         public void checkLogin()
         {
@@ -58,12 +58,12 @@ namespace HomeScale.view
             {
                 if (CheckUtil.isEmpty(txtUsername.Text))
                 {
-                    MessageBox.Show("กรุณากรอกบัญชีผู้ใช้");
+                    MessageBox.Show(CommonUtil.REQUIRE_MESSAGE_USER_LOGIN);
                     return;
                 }
                 if (CheckUtil.isEmpty(txtPassword.Text))
                 {
-                    MessageBox.Show("กรุณากรอกรหัสผ่าน");
+                    MessageBox.Show(CommonUtil.REQUIRE_MESSAGE_PASSWORD_LOGIN);
                     return;
                 }
 
@@ -72,6 +72,7 @@ namespace HomeScale.view
 
                 if (CheckUtil.isEmpty(form))
                 {
+                    MessageBox.Show(CommonUtil.REQUIRE_MESSAGE);
                     return;
                 }
 
@@ -84,7 +85,7 @@ namespace HomeScale.view
                 {
                     if (CheckUtil.isEmpty(data))
                     {
-                        MessageBox.Show("ไม่พบข้อมูลกรุณาล็อกอินอีกครั้ง");
+                        MessageBox.Show(CommonUtil.DATA_NOTFOUND_AGAIN_LOGIN);
                     }
                     else
                     {
