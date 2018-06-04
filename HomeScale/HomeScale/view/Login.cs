@@ -34,6 +34,17 @@ namespace HomeScale.view
             txtPassword.Text = "";
         }
 
+        protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
+        {
+            if (keyData == (Keys.Enter))
+            {
+                checkLogin();
+
+                return true;
+            }
+            return base.ProcessCmdKey(ref msg, keyData);
+        }
+
         //private void txtUsername_KeyDown(object sender, KeyEventArgs e)
         //{
         //    if (e.KeyCode == Keys.Enter)

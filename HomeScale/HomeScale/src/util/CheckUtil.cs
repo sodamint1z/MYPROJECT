@@ -26,7 +26,7 @@ namespace HomeScale.src.util
             return !isEmpty(obj);
         }
 
-        public static bool isEmptyLst(List<string> lst)
+        public static bool isEmptyLst(List<object> lst)
         {
             if (null == lst)
             {
@@ -39,7 +39,7 @@ namespace HomeScale.src.util
             return false;
         }
 
-        public static bool isNotEmptyLst(List<string> lst)
+        public static bool isNotEmptyLst(List<object> lst)
         {
             if (null != lst && lst.Count() > 0)
             {
