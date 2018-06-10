@@ -59,6 +59,13 @@ namespace HomeScale.view.master
             mstCarRegistertion.Show();
         }
 
+        public void callMenuMstDataBasic()
+        {
+            MST_DATA_BASIC mstDataBasic = new MST_DATA_BASIC();
+            this.Hide();
+            mstDataBasic.Show();
+        }
+
         public void callMenuMain()
         {
             MenuMain menuMain = new MenuMain();
@@ -94,6 +101,11 @@ namespace HomeScale.view.master
         private void btnDataLicensePlate_Click(object sender, EventArgs e)
         {
             callMenuMstCarRegistertion();
+        }
+
+        private void btnDataBasic_Click(object sender, EventArgs e)
+        {
+            callMenuMstDataBasic();
         }
     }
 }

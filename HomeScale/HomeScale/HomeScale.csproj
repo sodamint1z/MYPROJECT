@@ -112,9 +112,6 @@
     <Compile Include="src\model\entities\MST_CAR_REGISTERTION.cs">
       <DependentUpon>HomeScaleDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\model\entities\MST_DATA_BASIC.cs">
-      <DependentUpon>HomeScaleDB.tt</DependentUpon>
-    </Compile>
     <Compile Include="src\model\entities\MST_LINE_DOWN.cs">
       <DependentUpon>HomeScaleDB.tt</DependentUpon>
     </Compile>
@@ -156,6 +153,12 @@
     </Compile>
     <Compile Include="view\master\MST_CAR_REGISTERTION.Designer.cs">
       <DependentUpon>MST_CAR_REGISTERTION.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\master\MST_DATA_BASIC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\master\MST_DATA_BASIC.Designer.cs">
+      <DependentUpon>MST_DATA_BASIC.cs</DependentUpon>
     </Compile>
     <Compile Include="view\master\MST_DESTINATION.cs">
       <SubType>Form</SubType>
@@ -205,6 +208,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\master\MST_CAR_REGISTERTION.resx">
       <DependentUpon>MST_CAR_REGISTERTION.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\master\MST_DATA_BASIC.resx">
+      <DependentUpon>MST_DATA_BASIC.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\master\MST_DESTINATION.resx">
       <DependentUpon>MST_DESTINATION.cs</DependentUpon>
@@ -258,6 +264,9 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="view\scale\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.Data.SQLite.Core.1.0.106.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.106.0\build\net451\System.Data.SQLite.Core.targets')" />

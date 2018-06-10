@@ -13,7 +13,7 @@ namespace HomeScale.src.controller
     public class MstDataBasicController
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        public object[] queryDataMstDataBasic()
+        public object[] queryDataMstDataBasic(MST_DATA_BASIC param)
         {
             Log.Info("Start log INFO... queryDataMstDataBasic");
             MsgForm msgError = new MsgForm();
@@ -22,7 +22,7 @@ namespace HomeScale.src.controller
             {
                 using (var db = new HomeScaleDBEntities())
                 {
-                    form = (from row in db.MST_DATA_BASIC select row).FirstOrDefault();
+                    form = (from row in db.MST_DATA_BASIC where row.BASIC_ID == param.BASIC_ID select row).FirstOrDefault();
                     db.Dispose();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
                 }

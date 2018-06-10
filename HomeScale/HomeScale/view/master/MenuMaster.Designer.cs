@@ -35,6 +35,7 @@
             this.btnDataUnitProduct = new System.Windows.Forms.Button();
             this.btnDataDestination = new System.Windows.Forms.Button();
             this.btnDataLicensePlate = new System.Windows.Forms.Button();
+            this.btnDataBasic = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDataProduct
@@ -128,12 +129,28 @@
             this.btnDataLicensePlate.UseVisualStyleBackColor = false;
             this.btnDataLicensePlate.Click += new System.EventHandler(this.btnDataLicensePlate_Click);
             // 
+            // btnDataBasic
+            // 
+            this.btnDataBasic.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDataBasic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDataBasic.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDataBasic.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDataBasic.Location = new System.Drawing.Point(449, 203);
+            this.btnDataBasic.Name = "btnDataBasic";
+            this.btnDataBasic.Size = new System.Drawing.Size(180, 100);
+            this.btnDataBasic.TabIndex = 17;
+            this.btnDataBasic.Text = "ข้อมูลพื้นฐาน";
+            this.btnDataBasic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnDataBasic.UseVisualStyleBackColor = false;
+            this.btnDataBasic.Click += new System.EventHandler(this.btnDataBasic_Click);
+            // 
             // MenuMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1008, 481);
+            this.Controls.Add(this.btnDataBasic);
             this.Controls.Add(this.btnDataLicensePlate);
             this.Controls.Add(this.btnDataDestination);
             this.Controls.Add(this.btnDataUnitProduct);
@@ -155,5 +172,6 @@
         private System.Windows.Forms.Button btnDataUnitProduct;
         private System.Windows.Forms.Button btnDataDestination;
         private System.Windows.Forms.Button btnDataLicensePlate;
+        private System.Windows.Forms.Button btnDataBasic;
     }
 }
