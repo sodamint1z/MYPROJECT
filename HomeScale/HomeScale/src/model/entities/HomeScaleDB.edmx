@@ -10,9 +10,9 @@
             <PropertyRef Name="BUSINESS_ID" />
           </Key>
           <Property Name="BUSINESS_ID" Type="varchar" MaxLength="10" Nullable="false" />
-          <Property Name="BUSINESS_NAME" Type="varchar" MaxLength="50" />
-          <Property Name="BUSINESS_ADDRESS" Type="varchar" MaxLength="50" />
-          <Property Name="BUSINESS_TEL_NO" Type="varchar" MaxLength="50" />
+          <Property Name="BUSINESS_NAME" Type="varchar" MaxLength="100" />
+          <Property Name="BUSINESS_ADDRESS" Type="varchar" MaxLength="200" />
+          <Property Name="BUSINESS_TEL_NO" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="MST_CAR_REGISTERTION">
           <Key>
@@ -28,14 +28,16 @@
           </Key>
           <Property Name="BASIC_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="BASIC_CARD_NO" Type="int" />
+          <Property Name="BASIC_CARD_NO_SCOOP" Type="int" />
           <Property Name="BASIC_RECEIPT_NO" Type="int" />
-          <Property Name="BASIC_DECIMAL_NUMBER" Type="int" />
+          <Property Name="BASIC_DECIMAL" Type="int" />
           <Property Name="BASIC_MOVE_NO" Type="int" />
           <Property Name="BASIC_DEDUCTION" Type="int" />
           <Property Name="BASIC_FARE" Type="int" />
-          <Property Name="BASIC_STATUS_SCALE_CARD" Type="int" />
-          <Property Name="BASIC_STATUS_BALANCE" Type="int" />
-          <Property Name="BASIC_STATUS_CUSTOMER" Type="int" />
+          <Property Name="BASIC_STATUS_PRINT_CARD_NO" Type="int" />
+          <Property Name="BASIC_STATUS_PRINT_CARD_SEND" Type="int" />
+          <Property Name="BASIC_STATIS_SHOW_CARD_FARE" Type="int" />
+          <Property Name="BASIC_STATUS_PRINT_OUTLOOK_VENDOR" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'main.MST_DESTINATION' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -186,7 +188,6 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
         <EntityContainer Name="HomeScaleDBEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="MST_BUSINESS" EntityType="HomeScaleDBModel.MST_BUSINESS" />
           <EntitySet Name="MST_CAR_REGISTERTION" EntityType="HomeScaleDBModel.MST_CAR_REGISTERTION" />
-          <EntitySet Name="MST_DATA_BASIC" EntityType="HomeScaleDBModel.MST_DATA_BASIC" />
           <EntitySet Name="MST_LINE_DOWN" EntityType="HomeScaleDBModel.MST_LINE_DOWN" />
           <EntitySet Name="MST_MOISTURE" EntityType="HomeScaleDBModel.MST_MOISTURE" />
           <EntitySet Name="MST_PRODUCT" EntityType="HomeScaleDBModel.MST_PRODUCT" />
@@ -197,6 +198,7 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <EntitySet Name="VW_MST_CAR_REGISTERTION" EntityType="HomeScaleDBModel.VW_MST_CAR_REGISTERTION" />
           <EntitySet Name="VW_MST_PRODUCT" EntityType="HomeScaleDBModel.VW_MST_PRODUCT" />
           <EntitySet Name="MST_DESTINATION" EntityType="HomeScaleDBModel.MST_DESTINATION" />
+          <EntitySet Name="MST_DATA_BASIC" EntityType="HomeScaleDBModel.MST_DATA_BASIC" />
         </EntityContainer>
         <EntityType Name="MST_BUSINESS">
           <Key>
@@ -214,21 +216,6 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <Property Name="CAR_REGISTERTION_ID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
           <Property Name="CAR_REGISTERTION_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="CAR_REGISTERTION_VENDOR_ID" Type="Int32" />
-        </EntityType>
-        <EntityType Name="MST_DATA_BASIC">
-          <Key>
-            <PropertyRef Name="BASIC_ID" />
-          </Key>
-          <Property Name="BASIC_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="BASIC_CARD_NO" Type="Int32" />
-          <Property Name="BASIC_RECEIPT_NO" Type="Int32" />
-          <Property Name="BASIC_DECIMAL_NUMBER" Type="Int32" />
-          <Property Name="BASIC_MOVE_NO" Type="Int32" />
-          <Property Name="BASIC_DEDUCTION" Type="Int32" />
-          <Property Name="BASIC_FARE" Type="Int32" />
-          <Property Name="BASIC_STATUS_SCALE_CARD" Type="Int32" />
-          <Property Name="BASIC_STATUS_BALANCE" Type="Int32" />
-          <Property Name="BASIC_STATUS_CUSTOMER" Type="Int32" />
         </EntityType>
         <EntityType Name="MST_LINE_DOWN">
           <Key>
@@ -326,6 +313,23 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <Property Name="DESTINATION_TEL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="DESTINATION_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="MST_DATA_BASIC">
+          <Key>
+            <PropertyRef Name="BASIC_ID" />
+          </Key>
+          <Property Name="BASIC_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BASIC_CARD_NO" Type="Int32" />
+          <Property Name="BASIC_CARD_NO_SCOOP" Type="Int32" />
+          <Property Name="BASIC_RECEIPT_NO" Type="Int32" />
+          <Property Name="BASIC_DECIMAL" Type="Int32" />
+          <Property Name="BASIC_MOVE_NO" Type="Int32" />
+          <Property Name="BASIC_DEDUCTION" Type="Int32" />
+          <Property Name="BASIC_FARE" Type="Int32" />
+          <Property Name="BASIC_STATUS_PRINT_CARD_NO" Type="Int32" />
+          <Property Name="BASIC_STATUS_PRINT_CARD_SEND" Type="Int32" />
+          <Property Name="BASIC_STATIS_SHOW_CARD_FARE" Type="Int32" />
+          <Property Name="BASIC_STATUS_PRINT_OUTLOOK_VENDOR" Type="Int32" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -348,22 +352,6 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
                 <ScalarProperty Name="CAR_REGISTERTION_VENDOR_ID" ColumnName="CAR_REGISTERTION_VENDOR_ID" />
                 <ScalarProperty Name="CAR_REGISTERTION_NAME" ColumnName="CAR_REGISTERTION_NAME" />
                 <ScalarProperty Name="CAR_REGISTERTION_ID" ColumnName="CAR_REGISTERTION_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="MST_DATA_BASIC">
-            <EntityTypeMapping TypeName="HomeScaleDBModel.MST_DATA_BASIC">
-              <MappingFragment StoreEntitySet="MST_DATA_BASIC">
-                <ScalarProperty Name="BASIC_STATUS_CUSTOMER" ColumnName="BASIC_STATUS_CUSTOMER" />
-                <ScalarProperty Name="BASIC_STATUS_BALANCE" ColumnName="BASIC_STATUS_BALANCE" />
-                <ScalarProperty Name="BASIC_STATUS_SCALE_CARD" ColumnName="BASIC_STATUS_SCALE_CARD" />
-                <ScalarProperty Name="BASIC_FARE" ColumnName="BASIC_FARE" />
-                <ScalarProperty Name="BASIC_DEDUCTION" ColumnName="BASIC_DEDUCTION" />
-                <ScalarProperty Name="BASIC_MOVE_NO" ColumnName="BASIC_MOVE_NO" />
-                <ScalarProperty Name="BASIC_DECIMAL_NUMBER" ColumnName="BASIC_DECIMAL_NUMBER" />
-                <ScalarProperty Name="BASIC_RECEIPT_NO" ColumnName="BASIC_RECEIPT_NO" />
-                <ScalarProperty Name="BASIC_CARD_NO" ColumnName="BASIC_CARD_NO" />
-                <ScalarProperty Name="BASIC_ID" ColumnName="BASIC_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -470,6 +458,24 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
                 <ScalarProperty Name="DESTINATION_ADDRESS" ColumnName="DESTINATION_ADDRESS" />
                 <ScalarProperty Name="DESTINATION_NAME" ColumnName="DESTINATION_NAME" />
                 <ScalarProperty Name="DESTINATION_ID" ColumnName="DESTINATION_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MST_DATA_BASIC">
+            <EntityTypeMapping TypeName="HomeScaleDBModel.MST_DATA_BASIC">
+              <MappingFragment StoreEntitySet="MST_DATA_BASIC">
+                <ScalarProperty Name="BASIC_STATUS_PRINT_OUTLOOK_VENDOR" ColumnName="BASIC_STATUS_PRINT_OUTLOOK_VENDOR" />
+                <ScalarProperty Name="BASIC_STATIS_SHOW_CARD_FARE" ColumnName="BASIC_STATIS_SHOW_CARD_FARE" />
+                <ScalarProperty Name="BASIC_STATUS_PRINT_CARD_SEND" ColumnName="BASIC_STATUS_PRINT_CARD_SEND" />
+                <ScalarProperty Name="BASIC_STATUS_PRINT_CARD_NO" ColumnName="BASIC_STATUS_PRINT_CARD_NO" />
+                <ScalarProperty Name="BASIC_FARE" ColumnName="BASIC_FARE" />
+                <ScalarProperty Name="BASIC_DEDUCTION" ColumnName="BASIC_DEDUCTION" />
+                <ScalarProperty Name="BASIC_MOVE_NO" ColumnName="BASIC_MOVE_NO" />
+                <ScalarProperty Name="BASIC_DECIMAL" ColumnName="BASIC_DECIMAL" />
+                <ScalarProperty Name="BASIC_RECEIPT_NO" ColumnName="BASIC_RECEIPT_NO" />
+                <ScalarProperty Name="BASIC_CARD_NO_SCOOP" ColumnName="BASIC_CARD_NO_SCOOP" />
+                <ScalarProperty Name="BASIC_CARD_NO" ColumnName="BASIC_CARD_NO" />
+                <ScalarProperty Name="BASIC_ID" ColumnName="BASIC_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

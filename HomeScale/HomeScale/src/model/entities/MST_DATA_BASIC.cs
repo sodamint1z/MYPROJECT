@@ -16,13 +16,15 @@ namespace HomeScale.src.model.entities
     {
         public long BASIC_ID { get; set; }
         public Nullable<int> BASIC_CARD_NO { get; set; }
+        public Nullable<int> BASIC_CARD_NO_SCOOP { get; set; }
         public Nullable<int> BASIC_RECEIPT_NO { get; set; }
-        public Nullable<int> BASIC_DECIMAL_NUMBER { get; set; }
+        public Nullable<int> BASIC_DECIMAL { get; set; }
         public Nullable<int> BASIC_MOVE_NO { get; set; }
         public Nullable<int> BASIC_DEDUCTION { get; set; }
         public Nullable<int> BASIC_FARE { get; set; }
-        public Nullable<int> BASIC_STATUS_SCALE_CARD { get; set; }
-        public Nullable<int> BASIC_STATUS_BALANCE { get; set; }
-        public Nullable<int> BASIC_STATUS_CUSTOMER { get; set; }
+        public Nullable<int> BASIC_STATUS_PRINT_CARD_NO { get; set; }
+        public Nullable<int> BASIC_STATUS_PRINT_CARD_SEND { get; set; }
+        public Nullable<int> BASIC_STATIS_SHOW_CARD_FARE { get; set; }
+        public Nullable<int> BASIC_STATUS_PRINT_OUTLOOK_VENDOR { get; set; }
     }
 }

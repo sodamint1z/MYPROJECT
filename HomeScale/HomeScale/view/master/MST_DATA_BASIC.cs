@@ -42,15 +42,20 @@ namespace HomeScale.view.master
                     {
                         formMstDataBasic.BASIC_ID = data.BASIC_ID;
                         formMstDataBasic.BASIC_CARD_NO = data.BASIC_CARD_NO;
+                        formMstDataBasic.BASIC_CARD_NO_SCOOP = data.BASIC_CARD_NO_SCOOP;
                         formMstDataBasic.BASIC_RECEIPT_NO = data.BASIC_RECEIPT_NO;
-                        formMstDataBasic.BASIC_DECIMAL_NUMBER = data.BASIC_DECIMAL_NUMBER;
+                        formMstDataBasic.BASIC_DECIMAL = data.BASIC_DECIMAL;
                         formMstDataBasic.BASIC_MOVE_NO = data.BASIC_MOVE_NO;
                         formMstDataBasic.BASIC_DEDUCTION = data.BASIC_DEDUCTION;
                         formMstDataBasic.BASIC_FARE = data.BASIC_FARE;
+                        formMstDataBasic.BASIC_STATUS_PRINT_CARD_NO = data.BASIC_STATUS_PRINT_CARD_NO;
+                        formMstDataBasic.BASIC_STATUS_PRINT_CARD_SEND = data.BASIC_STATUS_PRINT_CARD_SEND;
+                        formMstDataBasic.BASIC_STATIS_SHOW_CARD_FARE = data.BASIC_STATIS_SHOW_CARD_FARE;
+                        formMstDataBasic.BASIC_STATUS_PRINT_OUTLOOK_VENDOR = data.BASIC_STATUS_PRINT_OUTLOOK_VENDOR;
 
                         txtBasicCardNo.Text = data.BASIC_CARD_NO.ToString();
                         txtBasicReceiptNo.Text = data.BASIC_RECEIPT_NO.ToString();
-                        txtBasicDecimalNumber.Text = data.BASIC_DECIMAL_NUMBER.ToString();
+                        txtBasicDecimalNumber.Text = data.BASIC_DECIMAL.ToString();
                         txtBasicMoveNo.Text = data.BASIC_MOVE_NO.ToString();
                         txtBasicDeduction.Text = data.BASIC_DEDUCTION.ToString();
                         txtBasicFare.Text = data.BASIC_FARE.ToString();

@@ -54,25 +54,29 @@ namespace HomeScale.src.controller
                     {
                         form.BASIC_ID = param.BASIC_ID;
                         form.BASIC_CARD_NO = param.BASIC_CARD_NO;
+                        form.BASIC_CARD_NO_SCOOP = param.BASIC_CARD_NO_SCOOP;
                         form.BASIC_RECEIPT_NO = param.BASIC_RECEIPT_NO;
-                        form.BASIC_DECIMAL_NUMBER = param.BASIC_DECIMAL_NUMBER;
+                        form.BASIC_DECIMAL = param.BASIC_DECIMAL;
                         form.BASIC_MOVE_NO = param.BASIC_MOVE_NO;
                         form.BASIC_DEDUCTION = param.BASIC_DEDUCTION;
                         form.BASIC_FARE = param.BASIC_FARE;
-                        form.BASIC_STATUS_SCALE_CARD = param.BASIC_STATUS_SCALE_CARD;
-                        form.BASIC_STATUS_BALANCE = param.BASIC_STATUS_BALANCE;
-                        form.BASIC_STATUS_CUSTOMER = param.BASIC_STATUS_CUSTOMER;
+                        form.BASIC_STATUS_PRINT_CARD_NO = param.BASIC_STATUS_PRINT_CARD_NO;
+                        form.BASIC_STATUS_PRINT_CARD_SEND = param.BASIC_STATUS_PRINT_CARD_SEND;
+                        form.BASIC_STATIS_SHOW_CARD_FARE = param.BASIC_STATIS_SHOW_CARD_FARE;
+                        form.BASIC_STATUS_PRINT_OUTLOOK_VENDOR = param.BASIC_STATUS_PRINT_OUTLOOK_VENDOR;
                         Log.Info("Update Data form MST_DATA_BASIC"
                             + " BASIC_ID : " + form.BASIC_ID
                             + " BASIC_CARD_NO : " + form.BASIC_CARD_NO
+                            + " BASIC_CARD_NO_SCOOP : " + form.BASIC_CARD_NO_SCOOP
                             + " BASIC_RECEIPT_NO : " + form.BASIC_RECEIPT_NO
-                            + " BASIC_DECIMAL_NUMBER : " + form.BASIC_DECIMAL_NUMBER
+                            + " BASIC_DECIMAL : " + form.BASIC_DECIMAL
                             + " BASIC_MOVE_NO : " + form.BASIC_MOVE_NO
                             + " BASIC_DEDUCTION : " + form.BASIC_DEDUCTION
                             + " BASIC_FARE : " + form.BASIC_FARE
-                            + " BASIC_STATUS_SCALE_CARD : " + form.BASIC_STATUS_SCALE_CARD
-                            + " BASIC_STATUS_BALANCE : " + form.BASIC_STATUS_BALANCE
-                            + " BASIC_STATUS_CUSTOMER : " + form.BASIC_STATUS_CUSTOMER
+                            + " BASIC_STATUS_PRINT_CARD_NO : " + form.BASIC_STATUS_PRINT_CARD_NO
+                            + " BASIC_STATUS_PRINT_CARD_SEND : " + form.BASIC_STATUS_PRINT_CARD_SEND
+                            + " BASIC_STATIS_SHOW_CARD_FARE : " + form.BASIC_STATIS_SHOW_CARD_FARE
+                            + " BASIC_STATUS_PRINT_OUTLOOK_VENDOR : " + form.BASIC_STATUS_PRINT_OUTLOOK_VENDOR
                             );
                     }
                     db.SaveChanges();
