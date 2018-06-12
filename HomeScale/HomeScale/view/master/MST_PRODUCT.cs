@@ -132,8 +132,7 @@ namespace HomeScale.view.master
                     {
                         txtProductId.Text = data.PRODUCT_ID;
                         txtProductName.Text = data.PRODUCT_NAME;
-                        string convertProductUnitToString = data.PRODUCT_UNIT.ToString();
-                        cboProductUnit.SelectedValue = convertProductUnitToString;
+                        cboProductUnit.SelectedValue = data.PRODUCT_UNIT.ToString();
                         formMstProduct.PRODUCT_ID = data.PRODUCT_ID;
                         formMstProduct.PRODUCT_NAME = data.PRODUCT_NAME;
                         formMstProduct.PRODUCT_UNIT = data.PRODUCT_UNIT;

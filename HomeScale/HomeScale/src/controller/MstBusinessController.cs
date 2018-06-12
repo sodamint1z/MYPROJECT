@@ -13,6 +13,34 @@ namespace HomeScale.src.controller
     public class MstBusinessController
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
+        public object[] queryDataMstBusiness(MST_BUSINESS param)
+        {
+            Log.Info("Start log INFO... queryDataMstBusiness");
+            MsgForm msgError = new MsgForm();
+            MST_BUSINESS form = new MST_BUSINESS();
+            try
+            {
+                using (var db = new HomeScaleDBEntities())
+                {
+                    form = (from row in db.MST_BUSINESS where row.BUSINESS_ID == param.BUSINESS_ID select row).FirstOrDefault();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                Log.Info("End log INFO... queryDataMstBusiness");
+            }
+            return new object[] { msgError, form };
+        }
+
         public object[] updateDataMstBusiness(MST_BUSINESS param)
         {
             Log.Info("Start log INFO... updateDataMstBusiness");
@@ -43,7 +71,7 @@ namespace HomeScale.src.controller
             {
                 Log.Info("End log INFO... updateDataMstBusiness");
             }
-            return new object[] { msgError.statusFlag, msgError.messageDescription };
+            return new object[] { msgError };
         }
     }
 }

@@ -33,16 +33,16 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox2 = new System.Windows.Forms.CheckBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.chkStatusPrintOutlookVendor = new System.Windows.Forms.CheckBox();
+            this.chkStatusShowCardFare = new System.Windows.Forms.CheckBox();
+            this.chkStatusPrintCardSend = new System.Windows.Forms.CheckBox();
+            this.chkStatusPrintCardNo = new System.Windows.Forms.CheckBox();
             this.txtBasicFare = new System.Windows.Forms.TextBox();
             this.txtBasicDeduction = new System.Windows.Forms.TextBox();
             this.txtBasicMoveNo = new System.Windows.Forms.TextBox();
-            this.txtBasicDecimalNumber = new System.Windows.Forms.TextBox();
+            this.txtBasicDecimal = new System.Windows.Forms.TextBox();
             this.txtBasicReceiptNo = new System.Windows.Forms.TextBox();
-            this.txttt = new System.Windows.Forms.TextBox();
+            this.txtBasicCardNoScoop = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -75,9 +75,9 @@
             this.groupBox2.Controls.Add(this.txtBasicFare);
             this.groupBox2.Controls.Add(this.txtBasicDeduction);
             this.groupBox2.Controls.Add(this.txtBasicMoveNo);
-            this.groupBox2.Controls.Add(this.txtBasicDecimalNumber);
+            this.groupBox2.Controls.Add(this.txtBasicDecimal);
             this.groupBox2.Controls.Add(this.txtBasicReceiptNo);
-            this.groupBox2.Controls.Add(this.txttt);
+            this.groupBox2.Controls.Add(this.txtBasicCardNoScoop);
             this.groupBox2.Controls.Add(this.label6);
             this.groupBox2.Controls.Add(this.label5);
             this.groupBox2.Controls.Add(this.label4);
@@ -132,59 +132,59 @@
             // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.checkBox4);
-            this.groupBox1.Controls.Add(this.checkBox3);
-            this.groupBox1.Controls.Add(this.checkBox2);
-            this.groupBox1.Controls.Add(this.checkBox1);
+            this.groupBox1.Controls.Add(this.chkStatusPrintOutlookVendor);
+            this.groupBox1.Controls.Add(this.chkStatusShowCardFare);
+            this.groupBox1.Controls.Add(this.chkStatusPrintCardSend);
+            this.groupBox1.Controls.Add(this.chkStatusPrintCardNo);
             this.groupBox1.Location = new System.Drawing.Point(385, 146);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(281, 181);
             this.groupBox1.TabIndex = 72;
             this.groupBox1.TabStop = false;
             // 
-            // checkBox4
+            // chkStatusPrintOutlookVendor
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox4.Location = new System.Drawing.Point(31, 137);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(203, 37);
-            this.checkBox4.TabIndex = 3;
-            this.checkBox4.Text = "พิมพ์ทัศนะพ่อค้าในบัตรชั่ง";
-            this.checkBox4.UseVisualStyleBackColor = true;
+            this.chkStatusPrintOutlookVendor.AutoSize = true;
+            this.chkStatusPrintOutlookVendor.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStatusPrintOutlookVendor.Location = new System.Drawing.Point(31, 137);
+            this.chkStatusPrintOutlookVendor.Name = "chkStatusPrintOutlookVendor";
+            this.chkStatusPrintOutlookVendor.Size = new System.Drawing.Size(203, 37);
+            this.chkStatusPrintOutlookVendor.TabIndex = 3;
+            this.chkStatusPrintOutlookVendor.Text = "พิมพ์ทัศนะพ่อค้าในบัตรชั่ง";
+            this.chkStatusPrintOutlookVendor.UseVisualStyleBackColor = true;
             // 
-            // checkBox3
+            // chkStatusShowCardFare
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox3.Location = new System.Drawing.Point(31, 98);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(166, 37);
-            this.checkBox3.TabIndex = 2;
-            this.checkBox3.Text = "แสดงค่ารถในบัตรชั่ง";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.chkStatusShowCardFare.AutoSize = true;
+            this.chkStatusShowCardFare.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStatusShowCardFare.Location = new System.Drawing.Point(31, 98);
+            this.chkStatusShowCardFare.Name = "chkStatusShowCardFare";
+            this.chkStatusShowCardFare.Size = new System.Drawing.Size(166, 37);
+            this.chkStatusShowCardFare.TabIndex = 2;
+            this.chkStatusShowCardFare.Text = "แสดงค่ารถในบัตรชั่ง";
+            this.chkStatusShowCardFare.UseVisualStyleBackColor = true;
             // 
-            // checkBox2
+            // chkStatusPrintCardSend
             // 
-            this.checkBox2.AutoSize = true;
-            this.checkBox2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox2.Location = new System.Drawing.Point(31, 59);
-            this.checkBox2.Name = "checkBox2";
-            this.checkBox2.Size = new System.Drawing.Size(195, 37);
-            this.checkBox2.TabIndex = 1;
-            this.checkBox2.Text = "ดูภาพก่อนพิมพ์บัตรชั่งส่ง";
-            this.checkBox2.UseVisualStyleBackColor = true;
+            this.chkStatusPrintCardSend.AutoSize = true;
+            this.chkStatusPrintCardSend.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStatusPrintCardSend.Location = new System.Drawing.Point(31, 59);
+            this.chkStatusPrintCardSend.Name = "chkStatusPrintCardSend";
+            this.chkStatusPrintCardSend.Size = new System.Drawing.Size(195, 37);
+            this.chkStatusPrintCardSend.TabIndex = 1;
+            this.chkStatusPrintCardSend.Text = "ดูภาพก่อนพิมพ์บัตรชั่งส่ง";
+            this.chkStatusPrintCardSend.UseVisualStyleBackColor = true;
             // 
-            // checkBox1
+            // chkStatusPrintCardNo
             // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.checkBox1.Location = new System.Drawing.Point(31, 20);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new System.Drawing.Size(195, 37);
-            this.checkBox1.TabIndex = 0;
-            this.checkBox1.Text = "ดูภาพก่อนพิมพ์บัตรชั่งรับ";
-            this.checkBox1.UseVisualStyleBackColor = true;
+            this.chkStatusPrintCardNo.AutoSize = true;
+            this.chkStatusPrintCardNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStatusPrintCardNo.Location = new System.Drawing.Point(31, 20);
+            this.chkStatusPrintCardNo.Name = "chkStatusPrintCardNo";
+            this.chkStatusPrintCardNo.Size = new System.Drawing.Size(195, 37);
+            this.chkStatusPrintCardNo.TabIndex = 0;
+            this.chkStatusPrintCardNo.Text = "ดูภาพก่อนพิมพ์บัตรชั่งรับ";
+            this.chkStatusPrintCardNo.UseVisualStyleBackColor = true;
             // 
             // txtBasicFare
             // 
@@ -222,17 +222,17 @@
             this.txtBasicMoveNo.Size = new System.Drawing.Size(150, 33);
             this.txtBasicMoveNo.TabIndex = 69;
             // 
-            // txtBasicDecimalNumber
+            // txtBasicDecimal
             // 
-            this.txtBasicDecimalNumber.BackColor = System.Drawing.SystemColors.Window;
-            this.txtBasicDecimalNumber.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtBasicDecimalNumber.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtBasicDecimalNumber.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBasicDecimalNumber.Location = new System.Drawing.Point(203, 197);
-            this.txtBasicDecimalNumber.Multiline = true;
-            this.txtBasicDecimalNumber.Name = "txtBasicDecimalNumber";
-            this.txtBasicDecimalNumber.Size = new System.Drawing.Size(150, 33);
-            this.txtBasicDecimalNumber.TabIndex = 68;
+            this.txtBasicDecimal.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBasicDecimal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBasicDecimal.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
+            this.txtBasicDecimal.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtBasicDecimal.Location = new System.Drawing.Point(203, 197);
+            this.txtBasicDecimal.Multiline = true;
+            this.txtBasicDecimal.Name = "txtBasicDecimal";
+            this.txtBasicDecimal.Size = new System.Drawing.Size(150, 33);
+            this.txtBasicDecimal.TabIndex = 68;
             // 
             // txtBasicReceiptNo
             // 
@@ -246,17 +246,17 @@
             this.txtBasicReceiptNo.Size = new System.Drawing.Size(150, 33);
             this.txtBasicReceiptNo.TabIndex = 67;
             // 
-            // txttt
+            // txtBasicCardNoScoop
             // 
-            this.txttt.BackColor = System.Drawing.SystemColors.Window;
-            this.txttt.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txttt.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txttt.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txttt.Location = new System.Drawing.Point(203, 94);
-            this.txttt.Multiline = true;
-            this.txttt.Name = "txttt";
-            this.txttt.Size = new System.Drawing.Size(150, 33);
-            this.txttt.TabIndex = 66;
+            this.txtBasicCardNoScoop.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBasicCardNoScoop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBasicCardNoScoop.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
+            this.txtBasicCardNoScoop.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtBasicCardNoScoop.Location = new System.Drawing.Point(203, 94);
+            this.txtBasicCardNoScoop.Multiline = true;
+            this.txtBasicCardNoScoop.Name = "txtBasicCardNoScoop";
+            this.txtBasicCardNoScoop.Size = new System.Drawing.Size(150, 33);
+            this.txtBasicCardNoScoop.TabIndex = 66;
             // 
             // label6
             // 
@@ -486,16 +486,16 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox2;
-        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.CheckBox chkStatusPrintOutlookVendor;
+        private System.Windows.Forms.CheckBox chkStatusShowCardFare;
+        private System.Windows.Forms.CheckBox chkStatusPrintCardSend;
+        private System.Windows.Forms.CheckBox chkStatusPrintCardNo;
         private System.Windows.Forms.TextBox txtBasicFare;
         private System.Windows.Forms.TextBox txtBasicDeduction;
         private System.Windows.Forms.TextBox txtBasicMoveNo;
-        private System.Windows.Forms.TextBox txtBasicDecimalNumber;
+        private System.Windows.Forms.TextBox txtBasicDecimal;
         private System.Windows.Forms.TextBox txtBasicReceiptNo;
-        private System.Windows.Forms.TextBox txttt;
+        private System.Windows.Forms.TextBox txtBasicCardNoScoop;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;

@@ -48,6 +48,32 @@ namespace HomeScale.src.util
             return false;
         }
 
+        public static int chkboxToNumber(bool data)
+        {
+            int number;
+            if (data == true) 
+            {
+                number = 1;
+            }
+            else
+            {
+                number = 0;
+            }
+            return number;
+        }
+
+        public static bool chkboxToBool(int? number)
+        {
+            if (number.Equals(1)) 
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+
     }
 }
 
