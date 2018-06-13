@@ -143,7 +143,7 @@
       <DependentUpon>HomeScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\form\MsgForm.cs" />
-    <Compile Include="src\util\CheckUtil.cs" />
+    <Compile Include="src\util\Util.cs" />
     <Compile Include="src\util\CommonUtil.cs" />
     <Compile Include="view\master\MenuMaster.cs">
       <SubType>Form</SubType>
@@ -151,23 +151,23 @@
     <Compile Include="view\master\MenuMaster.Designer.cs">
       <DependentUpon>MenuMaster.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\master\MST_CAR_REGISTERTION.cs">
+    <Compile Include="view\master\MST005.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\master\MST_CAR_REGISTERTION.Designer.cs">
-      <DependentUpon>MST_CAR_REGISTERTION.cs</DependentUpon>
+    <Compile Include="view\master\MST005.Designer.cs">
+      <DependentUpon>MST005.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\master\MST_DATA_BASIC.cs">
+    <Compile Include="view\master\MST006.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\master\MST_DATA_BASIC.Designer.cs">
-      <DependentUpon>MST_DATA_BASIC.cs</DependentUpon>
+    <Compile Include="view\master\MST006.Designer.cs">
+      <DependentUpon>MST006.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\master\MST_DESTINATION.cs">
+    <Compile Include="view\master\MST004.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\master\MST_DESTINATION.Designer.cs">
-      <DependentUpon>MST_DESTINATION.cs</DependentUpon>
+    <Compile Include="view\master\MST004.Designer.cs">
+      <DependentUpon>MST004.cs</DependentUpon>
     </Compile>
     <Compile Include="view\master\MST001.cs">
       <SubType>Form</SubType>
@@ -175,17 +175,17 @@
     <Compile Include="view\master\MST001.Designer.cs">
       <DependentUpon>MST001.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\master\MST_PRODUCT_UNIT.cs">
+    <Compile Include="view\master\MST002.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\master\MST_PRODUCT_UNIT.Designer.cs">
-      <DependentUpon>MST_PRODUCT_UNIT.cs</DependentUpon>
+    <Compile Include="view\master\MST002.Designer.cs">
+      <DependentUpon>MST002.cs</DependentUpon>
     </Compile>
-    <Compile Include="view\master\MST_VENDOR.cs">
+    <Compile Include="view\master\MST003.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="view\master\MST_VENDOR.Designer.cs">
-      <DependentUpon>MST_VENDOR.cs</DependentUpon>
+    <Compile Include="view\master\MST003.Designer.cs">
+      <DependentUpon>MST003.cs</DependentUpon>
     </Compile>
     <Compile Include="view\MenuMain.cs">
       <SubType>Form</SubType>
@@ -209,23 +209,23 @@
     <EmbeddedResource Include="view\master\MenuMaster.resx">
       <DependentUpon>MenuMaster.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\master\MST_CAR_REGISTERTION.resx">
-      <DependentUpon>MST_CAR_REGISTERTION.cs</DependentUpon>
+    <EmbeddedResource Include="view\master\MST005.resx">
+      <DependentUpon>MST005.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\master\MST_DATA_BASIC.resx">
-      <DependentUpon>MST_DATA_BASIC.cs</DependentUpon>
+    <EmbeddedResource Include="view\master\MST006.resx">
+      <DependentUpon>MST006.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\master\MST_DESTINATION.resx">
-      <DependentUpon>MST_DESTINATION.cs</DependentUpon>
+    <EmbeddedResource Include="view\master\MST004.resx">
+      <DependentUpon>MST004.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\master\MST001.resx">
       <DependentUpon>MST001.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\master\MST_PRODUCT_UNIT.resx">
-      <DependentUpon>MST_PRODUCT_UNIT.cs</DependentUpon>
+    <EmbeddedResource Include="view\master\MST002.resx">
+      <DependentUpon>MST002.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="view\master\MST_VENDOR.resx">
-      <DependentUpon>MST_VENDOR.cs</DependentUpon>
+    <EmbeddedResource Include="view\master\MST003.resx">
+      <DependentUpon>MST003.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\MenuMain.resx">
       <DependentUpon>MenuMain.cs</DependentUpon>
