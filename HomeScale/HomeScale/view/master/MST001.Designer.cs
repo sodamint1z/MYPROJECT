@@ -1,6 +1,6 @@
 ﻿namespace HomeScale.view.master
 {
-    partial class MST_PRODUCT
+    partial class MST001
     {
         /// <summary>
         /// Required designer variable.

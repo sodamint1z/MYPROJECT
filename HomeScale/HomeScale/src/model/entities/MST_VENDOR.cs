@@ -17,9 +17,9 @@ namespace HomeScale.src.model.entities
         public string VENDOR_ID { get; set; }
         public string VENDOR_NAME { get; set; }
         public string VENDOR_ADDRESS { get; set; }
-        public string VENDOR_DISTRICT_ONE { get; set; }
-        public string VENDOR_DISTRICT_TWO { get; set; }
-        public string VENDOR_COUNTY { get; set; }
+        public string VENDOR_SUB_DISTRICT { get; set; }
+        public string VENDOR_DISTRICT { get; set; }
+        public string VENDOR_PROVINCE { get; set; }
         public string VENDOR_POSTCODE { get; set; }
         public string VENDOR_TEL_NO { get; set; }
         public string VENDOR_FAX { get; set; }

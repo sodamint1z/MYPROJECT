@@ -15,25 +15,23 @@ using log4net;
 
 namespace HomeScale.view.master
 {
-    public partial class MST_PRODUCT : Form
+    public partial class MST001 : Form
     {
-        public MST_PRODUCT()
+        public MST001()
         {
             InitializeComponent();
             queryComboMstProductUnit();
             searchDataVwMstProduct();
         }
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        HomeScale.src.model.entities.MST_PRODUCT formMstProduct = new src.model.entities.MST_PRODUCT();
+        MST_PRODUCT formMstProduct = new MST_PRODUCT();
         string flagAddEdit = "A";
         public void resetDataMstProduct()
         {
             txtProductId.Text = "";
             txtProductName.Text = "";
             cboProductUnit.SelectedValue = "1";
-            formMstProduct.PRODUCT_ID = "";
-            formMstProduct.PRODUCT_NAME = "";
-            formMstProduct.PRODUCT_UNIT = Int32.Parse("0");
+            formMstProduct = new MST_PRODUCT();
             flagAddEdit = "A";
             txtProductId.Enabled = true;
             txtProductId.Focus();
@@ -46,23 +44,15 @@ namespace HomeScale.view.master
             {
                 object[] result = mstProductCtrl.queryComboMstProductUnit();
 
-                //var statusError = result[0];
-                //var msgError = result[1];
                 MsgForm msgForm = (MsgForm)result[0];
-                List<HomeScale.src.model.entities.MST_PRODUCT_UNIT> lstdata = (List<src.model.entities.MST_PRODUCT_UNIT>)result[1];
+                List<MST_PRODUCT_UNIT> lstdata = (List<MST_PRODUCT_UNIT>)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
                     cboProductUnit.DataSource = lstdata;
                     cboProductUnit.ValueMember = "PRODUCT_UNIT_ID";
                     cboProductUnit.DisplayMember = "PRODUCT_UNIT_NAME";
-
                     cboProductUnit.SelectedValue = "1";
-                    //cboProductUnit.SelectedItem = "PRODUCT_UNIT_ID";
-
-                    //MessageBox.Show(cboProductUnit.SelectedValue.ToString());
-
-                    //cboProductUnit.SelectedValue = "1";
                 }
                 else
                 {
@@ -82,10 +72,8 @@ namespace HomeScale.view.master
             {
                 object[] result = mstProductCtrl.searchDataVwMstProduct();
 
-                //var statusError = result[0];
-                //var msgError = result[1];
                 MsgForm msgForm = (MsgForm)result[0];
-                List<HomeScale.src.model.entities.VW_MST_PRODUCT> lstdata = (List<src.model.entities.VW_MST_PRODUCT>)result[1];
+                List<VW_MST_PRODUCT> lstdata = (List<VW_MST_PRODUCT>)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
@@ -98,7 +86,6 @@ namespace HomeScale.view.master
                     dataGridView1.Columns[0].HeaderCell.Value = "รหัสสินค้า";
                     dataGridView1.Columns[1].HeaderCell.Value = "ชื่อสินค้า";
                     dataGridView1.Columns[2].HeaderCell.Value = "ชื่อหน่วยสินค้า";
-                    //dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 16, FontStyle.Bold);
                     lblCountData.Text = "แสดงข้อมูลทั้งหมด " + lstdata.Count() +" รายการ";
                 }
                 else
@@ -117,25 +104,19 @@ namespace HomeScale.view.master
             MstProductController mstProductCtrl = new MstProductController();
             try
             {
-                //formMstProduct.PRODUCT_ID = "1";
-                //MessageBox.Show(formMstProduct.PRODUCT_ID);
                 object[] result = mstProductCtrl.queryDataMstProductByProductId(formMstProduct);
                 
-                //var statusError = result[0];
-                //var msgError = result[1];
                 MsgForm msgForm = (MsgForm)result[0];
-                HomeScale.src.model.entities.MST_PRODUCT data = (src.model.entities.MST_PRODUCT)result[1];
+                MST_PRODUCT data = (MST_PRODUCT)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
-                    if (CheckUtil.isNotEmpty(result))
+                    if (Util.isNotEmpty(data))
                     {
                         txtProductId.Text = data.PRODUCT_ID;
                         txtProductName.Text = data.PRODUCT_NAME;
                         cboProductUnit.SelectedValue = data.PRODUCT_UNIT.ToString();
-                        formMstProduct.PRODUCT_ID = data.PRODUCT_ID;
-                        formMstProduct.PRODUCT_NAME = data.PRODUCT_NAME;
-                        formMstProduct.PRODUCT_UNIT = data.PRODUCT_UNIT;
+                        formMstProduct = data;
                     }
                 }
                 else
@@ -152,12 +133,12 @@ namespace HomeScale.view.master
         public void insertOrUpdateDataMstProduct()
         {
             MstProductController mstProductCtrl = new MstProductController();
-            HomeScale.src.model.entities.MST_PRODUCT form = new src.model.entities.MST_PRODUCT();
+            MST_PRODUCT form = new MST_PRODUCT();
             try
             {
-                if (CheckUtil.isEmpty(txtProductId.Text) 
-                    || CheckUtil.isEmpty(txtProductName.Text) 
-                    || CheckUtil.isEmpty(cboProductUnit.Text))
+                if (Util.isEmpty(txtProductId.Text) 
+                    || Util.isEmpty(txtProductName.Text) 
+                    || Util.isEmpty(cboProductUnit.Text))
                 {
                     MessageBox.Show(CommonUtil.REQUIRE_MESSAGE);
                     return;
@@ -167,21 +148,19 @@ namespace HomeScale.view.master
                 form.PRODUCT_NAME = txtProductName.Text;
                 form.PRODUCT_UNIT = Int32.Parse(cboProductUnit.SelectedValue.ToString());
 
-                if (CheckUtil.isEmpty(form))
+                if (Util.isEmpty(form))
                 {
                     return;
                 }
 
                 object[] result = mstProductCtrl.insertOrUpdateDataMstProduct(form, flagAddEdit);
 
-                //var statusError = result[0];
-                //var msgError = result[1];
                 MsgForm msgForm = (MsgForm)result[0];
-                HomeScale.src.model.entities.MST_PRODUCT data = (src.model.entities.MST_PRODUCT)result[1];
+                MST_PRODUCT data = (MST_PRODUCT)result[1];
 
                 if (flagAddEdit.Equals("A"))
                 {
-                    if (CheckUtil.isNotEmpty(data))
+                    if (Util.isNotEmpty(data))
                     {
                         if (msgForm.statusFlag.Equals(1))
                         {
@@ -229,12 +208,12 @@ namespace HomeScale.view.master
         public void deleteDataMstProduct()
         {
             MstProductController mstProductCtrl = new MstProductController();
-            HomeScale.src.model.entities.MST_PRODUCT form = new src.model.entities.MST_PRODUCT();
+            MST_PRODUCT form = new MST_PRODUCT();
             try
             {
                 form.PRODUCT_ID = txtProductId.Text;
 
-                if (CheckUtil.isEmpty(form.PRODUCT_ID))
+                if (Util.isEmpty(form.PRODUCT_ID))
                 {
                     MessageBox.Show(CommonUtil.SELECT_DATA_DELETE);
                     return;
@@ -244,13 +223,6 @@ namespace HomeScale.view.master
                 {
                     object[] result = mstProductCtrl.deleteDataMstProduct(form);
 
-                    //if (CheckUtil.isNotEmpty(form.PRODUCT_ID))
-                    //{
-                    //    result = mstProductCtrl.deleteDataMstProduct(form);
-                    //}
-
-                    //var statusError = result[0];
-                    //var msgError = result[1];
                     MsgForm msgForm = (MsgForm)result[0];
 
                     if (msgForm.statusFlag.Equals(1))
@@ -284,11 +256,6 @@ namespace HomeScale.view.master
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 formMstProduct.PRODUCT_ID = row.Cells[0].Value.ToString();
-                //formMstProduct.PRODUCT_NAME = row.Cells[1].Value.ToString();
-                //formMstProduct.PRODUCT_UNIT = Int32.Parse(row.Cells[2].Value.ToString());
-                //txtProductId.Text = row.Cells[0].Value.ToString();
-                //txtProductName.Text = row.Cells[1].Value.ToString();
-                //cboProductUnit.Text = row.Cells[3].Value.ToString();
                 queryDataMstProductByProductId();
                 flagAddEdit = "E";
                 txtProductId.Enabled = false;

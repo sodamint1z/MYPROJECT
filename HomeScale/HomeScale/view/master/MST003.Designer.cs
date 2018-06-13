@@ -1,6 +1,6 @@
 ﻿namespace HomeScale.view.master
 {
-    partial class MST_VENDOR
+    partial class MST003
     {
         /// <summary>
         /// Required designer variable.
@@ -30,9 +30,9 @@
         {
             this.txtVendorName = new System.Windows.Forms.TextBox();
             this.txtVendorAddress = new System.Windows.Forms.TextBox();
-            this.txtVendorDistrictOne = new System.Windows.Forms.TextBox();
-            this.txtVendorDistrictTwo = new System.Windows.Forms.TextBox();
-            this.txtVendorCounty = new System.Windows.Forms.TextBox();
+            this.txtVendorSubDistrict = new System.Windows.Forms.TextBox();
+            this.txtVendorDistrict = new System.Windows.Forms.TextBox();
+            this.txtVendorProvince = new System.Windows.Forms.TextBox();
             this.txtVendorPostcode = new System.Windows.Forms.TextBox();
             this.txtVendorTelNo = new System.Windows.Forms.TextBox();
             this.txtVendorFax = new System.Windows.Forms.TextBox();
@@ -80,32 +80,32 @@
             this.txtVendorAddress.Size = new System.Drawing.Size(300, 40);
             this.txtVendorAddress.TabIndex = 2;
             // 
-            // txtVendorDistrictOne
+            // txtVendorSubDistrict
             // 
-            this.txtVendorDistrictOne.Font = new System.Drawing.Font("Verdana", 18F);
-            this.txtVendorDistrictOne.Location = new System.Drawing.Point(684, 346);
-            this.txtVendorDistrictOne.Multiline = true;
-            this.txtVendorDistrictOne.Name = "txtVendorDistrictOne";
-            this.txtVendorDistrictOne.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorDistrictOne.TabIndex = 3;
+            this.txtVendorSubDistrict.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtVendorSubDistrict.Location = new System.Drawing.Point(684, 346);
+            this.txtVendorSubDistrict.Multiline = true;
+            this.txtVendorSubDistrict.Name = "txtVendorSubDistrict";
+            this.txtVendorSubDistrict.Size = new System.Drawing.Size(300, 40);
+            this.txtVendorSubDistrict.TabIndex = 3;
             // 
-            // txtVendorDistrictTwo
+            // txtVendorDistrict
             // 
-            this.txtVendorDistrictTwo.Font = new System.Drawing.Font("Verdana", 18F);
-            this.txtVendorDistrictTwo.Location = new System.Drawing.Point(684, 392);
-            this.txtVendorDistrictTwo.Multiline = true;
-            this.txtVendorDistrictTwo.Name = "txtVendorDistrictTwo";
-            this.txtVendorDistrictTwo.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorDistrictTwo.TabIndex = 4;
+            this.txtVendorDistrict.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtVendorDistrict.Location = new System.Drawing.Point(684, 392);
+            this.txtVendorDistrict.Multiline = true;
+            this.txtVendorDistrict.Name = "txtVendorDistrict";
+            this.txtVendorDistrict.Size = new System.Drawing.Size(300, 40);
+            this.txtVendorDistrict.TabIndex = 4;
             // 
-            // txtVendorCounty
+            // txtVendorProvince
             // 
-            this.txtVendorCounty.Font = new System.Drawing.Font("Verdana", 18F);
-            this.txtVendorCounty.Location = new System.Drawing.Point(684, 438);
-            this.txtVendorCounty.Multiline = true;
-            this.txtVendorCounty.Name = "txtVendorCounty";
-            this.txtVendorCounty.Size = new System.Drawing.Size(300, 40);
-            this.txtVendorCounty.TabIndex = 5;
+            this.txtVendorProvince.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtVendorProvince.Location = new System.Drawing.Point(684, 438);
+            this.txtVendorProvince.Multiline = true;
+            this.txtVendorProvince.Name = "txtVendorProvince";
+            this.txtVendorProvince.Size = new System.Drawing.Size(300, 40);
+            this.txtVendorProvince.TabIndex = 5;
             // 
             // txtVendorPostcode
             // 
@@ -343,7 +343,7 @@
             this.toolStripStatuslblCredit.Size = new System.Drawing.Size(263, 17);
             this.toolStripStatuslblCredit.Text = "Copyright©2018  Credit : Pro. All rights reserved.";
             // 
-            // MST_VENDOR
+            // MST003
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -370,12 +370,12 @@
             this.Controls.Add(this.txtVendorFax);
             this.Controls.Add(this.txtVendorTelNo);
             this.Controls.Add(this.txtVendorPostcode);
-            this.Controls.Add(this.txtVendorCounty);
-            this.Controls.Add(this.txtVendorDistrictTwo);
-            this.Controls.Add(this.txtVendorDistrictOne);
+            this.Controls.Add(this.txtVendorProvince);
+            this.Controls.Add(this.txtVendorDistrict);
+            this.Controls.Add(this.txtVendorSubDistrict);
             this.Controls.Add(this.txtVendorAddress);
             this.Controls.Add(this.txtVendorName);
-            this.Name = "MST_VENDOR";
+            this.Name = "MST003";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeScale";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -390,9 +390,9 @@
 
         private System.Windows.Forms.TextBox txtVendorName;
         private System.Windows.Forms.TextBox txtVendorAddress;
-        private System.Windows.Forms.TextBox txtVendorDistrictOne;
-        private System.Windows.Forms.TextBox txtVendorDistrictTwo;
-        private System.Windows.Forms.TextBox txtVendorCounty;
+        private System.Windows.Forms.TextBox txtVendorSubDistrict;
+        private System.Windows.Forms.TextBox txtVendorDistrict;
+        private System.Windows.Forms.TextBox txtVendorProvince;
         private System.Windows.Forms.TextBox txtVendorPostcode;
         private System.Windows.Forms.TextBox txtVendorTelNo;
         private System.Windows.Forms.TextBox txtVendorFax;

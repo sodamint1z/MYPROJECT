@@ -53,7 +53,7 @@ namespace HomeScale.src.controller
                     formUpdate = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
                     if (flagAddEdit.Equals("A"))
                     {
-                        if (CheckUtil.isEmpty(formUpdate))
+                        if (Util.isEmpty(formUpdate))
                         {
                             formInsert.USER_ID = param.USER_ID;
                             formInsert.USER_PASSWORD = param.USER_PASSWORD;
@@ -72,7 +72,7 @@ namespace HomeScale.src.controller
                     }
                     else if (flagAddEdit.Equals("E"))
                     {
-                        if (CheckUtil.isNotEmpty(formUpdate))
+                        if (Util.isNotEmpty(formUpdate))
                         {
                             formUpdate.USER_PASSWORD = param.USER_PASSWORD;
                             formUpdate.USER_FIRSTNAME = param.USER_FIRSTNAME;
@@ -114,7 +114,7 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
                         db.USER_LOGIN.Remove(form);
                     }

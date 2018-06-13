@@ -107,7 +107,7 @@ namespace HomeScale.src.controller
                     formUpdate = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
                     if (flagAddEdit.Equals("A"))
                     {
-                        if (CheckUtil.isEmpty(formUpdate))
+                        if (Util.isEmpty(formUpdate))
                         {
                             //formInsert.PRODUCT_ID = db.MST_PRODUCT.Count() + 1;
                             formInsert.PRODUCT_ID = param.PRODUCT_ID;
@@ -123,7 +123,7 @@ namespace HomeScale.src.controller
                     }
                     else if (flagAddEdit.Equals("E"))
                     {
-                        if (CheckUtil.isNotEmpty(formUpdate))
+                        if (Util.isNotEmpty(formUpdate))
                         {
                             formUpdate.PRODUCT_ID = param.PRODUCT_ID;
                             formUpdate.PRODUCT_NAME = param.PRODUCT_NAME;
@@ -177,7 +177,7 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
                         form.PRODUCT_NAME = param.PRODUCT_NAME;
                         form.PRODUCT_UNIT = param.PRODUCT_UNIT;
@@ -209,7 +209,7 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
                         db.MST_PRODUCT.Remove(form);
                     }

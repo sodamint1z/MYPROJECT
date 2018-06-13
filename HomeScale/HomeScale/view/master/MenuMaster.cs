@@ -26,42 +26,42 @@ namespace HomeScale.view.master
 
         public void callMenuMstProduct()
         {
-            MST_PRODUCT mstProduct = new MST_PRODUCT();
+            MST001 mstProduct = new MST001();
             this.Hide();
             mstProduct.Show();
         }
 
         public void callMenuMstVendor()
         {
-            MST_VENDOR mstVendor = new MST_VENDOR();
+            MST003 mstVendor = new MST003();
             this.Hide();
             mstVendor.Show();
         }
 
         public void callMenuMstDestination()
         {
-            MST_DESTINATION mstDestination = new MST_DESTINATION();
+            MST004 mstDestination = new MST004();
             this.Hide();
             mstDestination.Show();
         }
 
         public void callMenuMstProductUnit()
         {
-            MST_PRODUCT_UNIT mstProductUnit = new MST_PRODUCT_UNIT();
+            MST002 mstProductUnit = new MST002();
             this.Hide();
             mstProductUnit.Show();
         }
 
         public void callMenuMstCarRegistertion()
         {
-            MST_CAR_REGISTERTION mstCarRegistertion = new MST_CAR_REGISTERTION();
+            MST005 mstCarRegistertion = new MST005();
             this.Hide();
             mstCarRegistertion.Show();
         }
 
         public void callMenuMstDataBasic()
         {
-            MST_DATA_BASIC mstDataBasic = new MST_DATA_BASIC();
+            MST006 mstDataBasic = new MST006();
             this.Hide();
             mstDataBasic.Show();
         }

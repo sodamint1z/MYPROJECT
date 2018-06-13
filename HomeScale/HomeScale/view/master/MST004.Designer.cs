@@ -1,6 +1,6 @@
 ﻿namespace HomeScale.view.master
 {
-    partial class MST_DESTINATION
+    partial class MST004
     {
         /// <summary>
         /// Required designer variable.
@@ -39,9 +39,9 @@
             this.txtDistinationFax = new System.Windows.Forms.TextBox();
             this.txtDistinationTelNo = new System.Windows.Forms.TextBox();
             this.txtDistinationPostcode = new System.Windows.Forms.TextBox();
-            this.txtDistinationCounty = new System.Windows.Forms.TextBox();
-            this.txtDistinationDistrictTwo = new System.Windows.Forms.TextBox();
-            this.txtDistinationDistrictOne = new System.Windows.Forms.TextBox();
+            this.txtDistinationProvince = new System.Windows.Forms.TextBox();
+            this.txtDistinationDistrict = new System.Windows.Forms.TextBox();
+            this.txtDistinationSubDistrict = new System.Windows.Forms.TextBox();
             this.txtDistinationAddress = new System.Windows.Forms.TextBox();
             this.txtDistinationName = new System.Windows.Forms.TextBox();
             this.lblHead = new System.Windows.Forms.Label();
@@ -174,32 +174,32 @@
             this.txtDistinationPostcode.Size = new System.Drawing.Size(300, 40);
             this.txtDistinationPostcode.TabIndex = 21;
             // 
-            // txtDistinationCounty
+            // txtDistinationProvince
             // 
-            this.txtDistinationCounty.Font = new System.Drawing.Font("Verdana", 18F);
-            this.txtDistinationCounty.Location = new System.Drawing.Point(684, 438);
-            this.txtDistinationCounty.Multiline = true;
-            this.txtDistinationCounty.Name = "txtDistinationCounty";
-            this.txtDistinationCounty.Size = new System.Drawing.Size(300, 40);
-            this.txtDistinationCounty.TabIndex = 20;
+            this.txtDistinationProvince.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationProvince.Location = new System.Drawing.Point(684, 438);
+            this.txtDistinationProvince.Multiline = true;
+            this.txtDistinationProvince.Name = "txtDistinationProvince";
+            this.txtDistinationProvince.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationProvince.TabIndex = 20;
             // 
-            // txtDistinationDistrictTwo
+            // txtDistinationDistrict
             // 
-            this.txtDistinationDistrictTwo.Font = new System.Drawing.Font("Verdana", 18F);
-            this.txtDistinationDistrictTwo.Location = new System.Drawing.Point(684, 392);
-            this.txtDistinationDistrictTwo.Multiline = true;
-            this.txtDistinationDistrictTwo.Name = "txtDistinationDistrictTwo";
-            this.txtDistinationDistrictTwo.Size = new System.Drawing.Size(300, 40);
-            this.txtDistinationDistrictTwo.TabIndex = 19;
+            this.txtDistinationDistrict.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationDistrict.Location = new System.Drawing.Point(684, 392);
+            this.txtDistinationDistrict.Multiline = true;
+            this.txtDistinationDistrict.Name = "txtDistinationDistrict";
+            this.txtDistinationDistrict.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationDistrict.TabIndex = 19;
             // 
-            // txtDistinationDistrictOne
+            // txtDistinationSubDistrict
             // 
-            this.txtDistinationDistrictOne.Font = new System.Drawing.Font("Verdana", 18F);
-            this.txtDistinationDistrictOne.Location = new System.Drawing.Point(684, 346);
-            this.txtDistinationDistrictOne.Multiline = true;
-            this.txtDistinationDistrictOne.Name = "txtDistinationDistrictOne";
-            this.txtDistinationDistrictOne.Size = new System.Drawing.Size(300, 40);
-            this.txtDistinationDistrictOne.TabIndex = 18;
+            this.txtDistinationSubDistrict.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationSubDistrict.Location = new System.Drawing.Point(684, 346);
+            this.txtDistinationSubDistrict.Multiline = true;
+            this.txtDistinationSubDistrict.Name = "txtDistinationSubDistrict";
+            this.txtDistinationSubDistrict.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationSubDistrict.TabIndex = 18;
             // 
             // txtDistinationAddress
             // 
@@ -343,7 +343,7 @@
             this.toolStripStatuslblCredit.Size = new System.Drawing.Size(263, 17);
             this.toolStripStatuslblCredit.Text = "Copyright©2018  Credit : Pro. All rights reserved.";
             // 
-            // MST_DISTINATION
+            // MST004
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -370,12 +370,12 @@
             this.Controls.Add(this.txtDistinationFax);
             this.Controls.Add(this.txtDistinationTelNo);
             this.Controls.Add(this.txtDistinationPostcode);
-            this.Controls.Add(this.txtDistinationCounty);
-            this.Controls.Add(this.txtDistinationDistrictTwo);
-            this.Controls.Add(this.txtDistinationDistrictOne);
+            this.Controls.Add(this.txtDistinationProvince);
+            this.Controls.Add(this.txtDistinationDistrict);
+            this.Controls.Add(this.txtDistinationSubDistrict);
             this.Controls.Add(this.txtDistinationAddress);
             this.Controls.Add(this.txtDistinationName);
-            this.Name = "MST_DISTINATION";
+            this.Name = "MST004";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeScale";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -399,9 +399,9 @@
         private System.Windows.Forms.TextBox txtDistinationFax;
         private System.Windows.Forms.TextBox txtDistinationTelNo;
         private System.Windows.Forms.TextBox txtDistinationPostcode;
-        private System.Windows.Forms.TextBox txtDistinationCounty;
-        private System.Windows.Forms.TextBox txtDistinationDistrictTwo;
-        private System.Windows.Forms.TextBox txtDistinationDistrictOne;
+        private System.Windows.Forms.TextBox txtDistinationProvince;
+        private System.Windows.Forms.TextBox txtDistinationDistrict;
+        private System.Windows.Forms.TextBox txtDistinationSubDistrict;
         private System.Windows.Forms.TextBox txtDistinationAddress;
         private System.Windows.Forms.TextBox txtDistinationName;
         private System.Windows.Forms.Label lblHead;

@@ -1,6 +1,6 @@
 ﻿namespace HomeScale.view.master
 {
-    partial class MST_DATA_BASIC
+    partial class MST006
     {
         /// <summary>
         /// Required designer variable.
@@ -54,9 +54,9 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            this.textBox9 = new System.Windows.Forms.TextBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox7 = new System.Windows.Forms.TextBox();
+            this.txtBusinessTelNo = new System.Windows.Forms.TextBox();
+            this.txtBusinessAddress = new System.Windows.Forms.TextBox();
+            this.txtBusinessName = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -351,9 +351,9 @@
             // 
             this.groupBox3.Controls.Add(this.button1);
             this.groupBox3.Controls.Add(this.button2);
-            this.groupBox3.Controls.Add(this.textBox9);
-            this.groupBox3.Controls.Add(this.textBox8);
-            this.groupBox3.Controls.Add(this.textBox7);
+            this.groupBox3.Controls.Add(this.txtBusinessTelNo);
+            this.groupBox3.Controls.Add(this.txtBusinessAddress);
+            this.groupBox3.Controls.Add(this.txtBusinessName);
             this.groupBox3.Controls.Add(this.label9);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label7);
@@ -389,41 +389,41 @@
             this.button2.Text = "ยกเลิก";
             this.button2.UseVisualStyleBackColor = false;
             // 
-            // textBox9
+            // txtBusinessTelNo
             // 
-            this.textBox9.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox9.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox9.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.textBox9.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox9.Location = new System.Drawing.Point(203, 135);
-            this.textBox9.Multiline = true;
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(300, 33);
-            this.textBox9.TabIndex = 60;
+            this.txtBusinessTelNo.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBusinessTelNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBusinessTelNo.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
+            this.txtBusinessTelNo.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtBusinessTelNo.Location = new System.Drawing.Point(203, 135);
+            this.txtBusinessTelNo.Multiline = true;
+            this.txtBusinessTelNo.Name = "txtBusinessTelNo";
+            this.txtBusinessTelNo.Size = new System.Drawing.Size(300, 33);
+            this.txtBusinessTelNo.TabIndex = 60;
             // 
-            // textBox8
+            // txtBusinessAddress
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox8.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox8.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox8.Location = new System.Drawing.Point(203, 84);
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(550, 33);
-            this.textBox8.TabIndex = 59;
+            this.txtBusinessAddress.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBusinessAddress.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBusinessAddress.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusinessAddress.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtBusinessAddress.Location = new System.Drawing.Point(203, 84);
+            this.txtBusinessAddress.Multiline = true;
+            this.txtBusinessAddress.Name = "txtBusinessAddress";
+            this.txtBusinessAddress.Size = new System.Drawing.Size(550, 33);
+            this.txtBusinessAddress.TabIndex = 59;
             // 
-            // textBox7
+            // txtBusinessName
             // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox7.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox7.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.textBox7.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.textBox7.Location = new System.Drawing.Point(203, 31);
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(550, 33);
-            this.textBox7.TabIndex = 58;
+            this.txtBusinessName.BackColor = System.Drawing.SystemColors.Window;
+            this.txtBusinessName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBusinessName.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
+            this.txtBusinessName.ForeColor = System.Drawing.SystemColors.WindowText;
+            this.txtBusinessName.Location = new System.Drawing.Point(203, 31);
+            this.txtBusinessName.Multiline = true;
+            this.txtBusinessName.Name = "txtBusinessName";
+            this.txtBusinessName.Size = new System.Drawing.Size(550, 33);
+            this.txtBusinessName.TabIndex = 58;
             // 
             // label9
             // 
@@ -507,9 +507,9 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.TextBox textBox9;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox7;
+        private System.Windows.Forms.TextBox txtBusinessTelNo;
+        private System.Windows.Forms.TextBox txtBusinessAddress;
+        private System.Windows.Forms.TextBox txtBusinessName;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label7;

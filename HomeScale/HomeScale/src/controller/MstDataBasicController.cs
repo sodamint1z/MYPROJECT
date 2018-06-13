@@ -50,9 +50,8 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.MST_DATA_BASIC where row.BASIC_ID == param.BASIC_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
-                        form.BASIC_ID = param.BASIC_ID;
                         form.BASIC_CARD_NO = param.BASIC_CARD_NO;
                         form.BASIC_CARD_NO_SCOOP = param.BASIC_CARD_NO_SCOOP;
                         form.BASIC_RECEIPT_NO = param.BASIC_RECEIPT_NO;
@@ -64,8 +63,7 @@ namespace HomeScale.src.controller
                         form.BASIC_STATUS_PRINT_CARD_SEND = param.BASIC_STATUS_PRINT_CARD_SEND;
                         form.BASIC_STATIS_SHOW_CARD_FARE = param.BASIC_STATIS_SHOW_CARD_FARE;
                         form.BASIC_STATUS_PRINT_OUTLOOK_VENDOR = param.BASIC_STATUS_PRINT_OUTLOOK_VENDOR;
-                        Log.Info("Update Data form MST_DATA_BASIC"
-                            + " BASIC_ID : " + form.BASIC_ID
+                        Log.Info("Update Data form MST_DATA_BASIC WHERE " + form.BASIC_ID
                             + " BASIC_CARD_NO : " + form.BASIC_CARD_NO
                             + " BASIC_CARD_NO_SCOOP : " + form.BASIC_CARD_NO_SCOOP
                             + " BASIC_RECEIPT_NO : " + form.BASIC_RECEIPT_NO

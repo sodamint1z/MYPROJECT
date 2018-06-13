@@ -107,7 +107,7 @@ namespace HomeScale.src.controller
                     formUpdate = (from row in db.MST_CAR_REGISTERTION where row.CAR_REGISTERTION_ID == param.CAR_REGISTERTION_ID select row).FirstOrDefault();
                     if (flagAddEdit.Equals("A"))
                     {
-                        if (CheckUtil.isEmpty(formUpdate))
+                        if (Util.isEmpty(formUpdate))
                         {
                             formInsert.CAR_REGISTERTION_ID = param.CAR_REGISTERTION_ID;
                             formInsert.CAR_REGISTERTION_NAME = param.CAR_REGISTERTION_NAME;
@@ -122,7 +122,7 @@ namespace HomeScale.src.controller
                     }
                     else if (flagAddEdit.Equals("E"))
                     {
-                        if (CheckUtil.isNotEmpty(formUpdate))
+                        if (Util.isNotEmpty(formUpdate))
                         {
                             formUpdate.CAR_REGISTERTION_ID = param.CAR_REGISTERTION_ID;
                             formUpdate.CAR_REGISTERTION_NAME = param.CAR_REGISTERTION_NAME;
@@ -161,7 +161,7 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.MST_CAR_REGISTERTION where row.CAR_REGISTERTION_ID == param.CAR_REGISTERTION_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
                         form.CAR_REGISTERTION_NAME = param.CAR_REGISTERTION_NAME;
                         form.CAR_REGISTERTION_VENDOR_ID = param.CAR_REGISTERTION_VENDOR_ID;
@@ -193,7 +193,7 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.MST_CAR_REGISTERTION where row.CAR_REGISTERTION_ID == param.CAR_REGISTERTION_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
                         db.MST_CAR_REGISTERTION.Remove(form);
                     }

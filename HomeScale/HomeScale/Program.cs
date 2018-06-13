@@ -31,7 +31,7 @@ namespace HomeScale
 
             if (msgForm.statusFlag.Equals(1))
             {
-                if (CheckUtil.isNotEmpty(data))
+                if (Util.isNotEmpty(data))
                 {
                     if(data.STATUS_FLAG.Equals(1))
                     {

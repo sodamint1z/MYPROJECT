@@ -51,11 +51,16 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.MST_BUSINESS where row.BUSINESS_ID == param.BUSINESS_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
                         form.BUSINESS_NAME = param.BUSINESS_NAME;
                         form.BUSINESS_ADDRESS = param.BUSINESS_ADDRESS;
                         form.BUSINESS_TEL_NO = param.BUSINESS_TEL_NO;
+                        Log.Info("Update Data form MST_BUSINESS WHERE " + form.BUSINESS_ID
+                            + " BUSINESS_NAME : " + form.BUSINESS_NAME
+                            + " BUSINESS_ADDRESS : " + form.BUSINESS_ADDRESS
+                            + " BUSINESS_TEL_NO : " + form.BUSINESS_TEL_NO
+                            );
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;

@@ -1,6 +1,6 @@
 ﻿namespace HomeScale.view.master
 {
-    partial class MST_CAR_REGISTERTION
+    partial class MST005
     {
         /// <summary>
         /// Required designer variable.

@@ -67,12 +67,12 @@ namespace HomeScale.view
             USER_LOGIN form = new USER_LOGIN();
             try
             {
-                if (CheckUtil.isEmpty(txtUsername.Text))
+                if (Util.isEmpty(txtUsername.Text))
                 {
                     MessageBox.Show(CommonUtil.REQUIRE_MESSAGE_USER_LOGIN);
                     return;
                 }
-                if (CheckUtil.isEmpty(txtPassword.Text))
+                if (Util.isEmpty(txtPassword.Text))
                 {
                     MessageBox.Show(CommonUtil.REQUIRE_MESSAGE_PASSWORD_LOGIN);
                     return;
@@ -81,7 +81,7 @@ namespace HomeScale.view
                 form.USER_ID = txtUsername.Text;
                 form.USER_PASSWORD = txtPassword.Text;
 
-                if (CheckUtil.isEmpty(form))
+                if (Util.isEmpty(form))
                 {
                     MessageBox.Show(CommonUtil.REQUIRE_MESSAGE);
                     return;
@@ -94,7 +94,7 @@ namespace HomeScale.view
 
                 if (msgForm.statusFlag.Equals(1))
                 {
-                    if (CheckUtil.isEmpty(data))
+                    if (Util.isEmpty(data))
                     {
                         MessageBox.Show(CommonUtil.DATA_NOTFOUND_AGAIN_LOGIN);
                     }

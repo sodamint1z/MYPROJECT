@@ -15,36 +15,28 @@ using log4net;
 
 namespace HomeScale.view.master
 {
-    public partial class MST_VENDOR : Form
+    public partial class MST003 : Form
     {
-        public MST_VENDOR()
+        public MST003()
         {
             InitializeComponent();
             searchDataMstVendor();
         }
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        HomeScale.src.model.entities.MST_VENDOR formMstVendor = new src.model.entities.MST_VENDOR();
+        MST_VENDOR formMstVendor = new MST_VENDOR();
         string flagAddEdit = "A";
         public void resetDataMstVendor()
         {
             txtVendorId.Text = "";
             txtVendorName.Text = "";
             txtVendorAddress.Text = "";
-            txtVendorDistrictOne.Text = "";
-            txtVendorDistrictTwo.Text = "";
-            txtVendorCounty.Text = "";
+            txtVendorSubDistrict.Text = "";
+            txtVendorDistrict.Text = "";
+            txtVendorProvince.Text = "";
             txtVendorPostcode.Text = "";
             txtVendorTelNo.Text = "";
             txtVendorFax.Text = "";
-            formMstVendor.VENDOR_ID = "";
-            formMstVendor.VENDOR_NAME = "";
-            formMstVendor.VENDOR_ADDRESS = "";
-            formMstVendor.VENDOR_DISTRICT_ONE = "";
-            formMstVendor.VENDOR_DISTRICT_TWO = "";
-            formMstVendor.VENDOR_COUNTY = "";
-            formMstVendor.VENDOR_POSTCODE = "";
-            formMstVendor.VENDOR_TEL_NO = "";
-            formMstVendor.VENDOR_FAX = "";
+            formMstVendor = new MST_VENDOR();
             flagAddEdit = "A";
             txtVendorId.Enabled = true;
             txtVendorId.Focus();
@@ -58,7 +50,7 @@ namespace HomeScale.view.master
                 object[] result = mstVendorCtrl.searchDataMstVendor();
 
                 MsgForm msgForm = (MsgForm)result[0];
-                List<HomeScale.src.model.entities.MST_VENDOR> lstdata = (List<src.model.entities.MST_VENDOR>)result[1];
+                List<MST_VENDOR> lstdata = (List<MST_VENDOR>)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
@@ -77,7 +69,6 @@ namespace HomeScale.view.master
                     dataGridView1.Columns[6].HeaderCell.Value = "รหัสไปรษณีย์";
                     dataGridView1.Columns[7].HeaderCell.Value = "เบอร์โทรศัพท์";
                     dataGridView1.Columns[8].HeaderCell.Value = "แฟกซ์";
-                    //dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 16, FontStyle.Bold);
                     lblCountData.Text = "แสดงข้อมูลทั้งหมด " + lstdata.Count() + " รายการ";
                 }
                 else
@@ -99,30 +90,22 @@ namespace HomeScale.view.master
                 object[] result = mstVendorCtrl.queryDataMstVendorByVendorId(formMstVendor);
 
                 MsgForm msgForm = (MsgForm)result[0];
-                HomeScale.src.model.entities.MST_VENDOR data = (src.model.entities.MST_VENDOR)result[1];
+                MST_VENDOR data = (MST_VENDOR)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
-                    if (CheckUtil.isNotEmpty(result))
+                    if (Util.isNotEmpty(data))
                     {
                         txtVendorId.Text = data.VENDOR_ID;
                         txtVendorName.Text = data.VENDOR_NAME;
                         txtVendorAddress.Text = data.VENDOR_ADDRESS;
-                        txtVendorDistrictOne.Text = data.VENDOR_DISTRICT_ONE;
-                        txtVendorDistrictTwo.Text = data.VENDOR_DISTRICT_TWO;
-                        txtVendorCounty.Text = data.VENDOR_COUNTY;
+                        txtVendorSubDistrict.Text = data.VENDOR_SUB_DISTRICT;
+                        txtVendorDistrict.Text = data.VENDOR_DISTRICT;
+                        txtVendorProvince.Text = data.VENDOR_PROVINCE;
                         txtVendorPostcode.Text = data.VENDOR_POSTCODE;
                         txtVendorTelNo.Text = data.VENDOR_TEL_NO;
                         txtVendorFax.Text = data.VENDOR_FAX;
-                        formMstVendor.VENDOR_ID = data.VENDOR_ID;
-                        formMstVendor.VENDOR_NAME = data.VENDOR_NAME;
-                        formMstVendor.VENDOR_ADDRESS = data.VENDOR_ADDRESS;
-                        formMstVendor.VENDOR_DISTRICT_ONE = data.VENDOR_DISTRICT_ONE;
-                        formMstVendor.VENDOR_DISTRICT_TWO = data.VENDOR_DISTRICT_TWO;
-                        formMstVendor.VENDOR_COUNTY = data.VENDOR_COUNTY;
-                        formMstVendor.VENDOR_POSTCODE = data.VENDOR_POSTCODE;
-                        formMstVendor.VENDOR_TEL_NO = data.VENDOR_TEL_NO;
-                        formMstVendor.VENDOR_FAX = data.VENDOR_FAX;
+                        formMstVendor = data;
                     }
                 }
                 else
@@ -139,10 +122,10 @@ namespace HomeScale.view.master
         public void insertOrUpdateDataMstVendor()
         {
             MstVendorController mstVendorCtrl = new MstVendorController();
-            HomeScale.src.model.entities.MST_VENDOR form = new src.model.entities.MST_VENDOR();
+            MST_VENDOR form = new MST_VENDOR();
             try
             {
-                if (CheckUtil.isEmpty(txtVendorId.Text) || CheckUtil.isEmpty(txtVendorName.Text))
+                if (Util.isEmpty(txtVendorId.Text) || Util.isEmpty(txtVendorName.Text))
                 {
                     MessageBox.Show(CommonUtil.REQUIRE_MESSAGE);
                     return;
@@ -151,14 +134,14 @@ namespace HomeScale.view.master
                 form.VENDOR_ID = txtVendorId.Text;
                 form.VENDOR_NAME = txtVendorName.Text;
                 form.VENDOR_ADDRESS = txtVendorAddress.Text;
-                form.VENDOR_DISTRICT_ONE = txtVendorDistrictOne.Text;
-                form.VENDOR_DISTRICT_TWO = txtVendorDistrictTwo.Text;
-                form.VENDOR_COUNTY = txtVendorCounty.Text;
+                form.VENDOR_SUB_DISTRICT = txtVendorSubDistrict.Text;
+                form.VENDOR_DISTRICT = txtVendorDistrict.Text;
+                form.VENDOR_PROVINCE = txtVendorProvince.Text;
                 form.VENDOR_POSTCODE = txtVendorPostcode.Text;
                 form.VENDOR_TEL_NO = txtVendorTelNo.Text;
                 form.VENDOR_FAX = txtVendorFax.Text;
 
-                if (CheckUtil.isEmpty(form))
+                if (Util.isEmpty(form))
                 {
                     return;
                 }
@@ -166,11 +149,11 @@ namespace HomeScale.view.master
                 object[] result = mstVendorCtrl.insertOrUpdateDataMstVendor(form, flagAddEdit);
 
                 MsgForm msgForm = (MsgForm)result[0];
-                HomeScale.src.model.entities.MST_VENDOR data = (src.model.entities.MST_VENDOR)result[1];
+                MST_VENDOR data = (MST_VENDOR)result[1];
 
                 if (flagAddEdit.Equals("A"))
                 {
-                    if (CheckUtil.isNotEmpty(data))
+                    if (Util.isNotEmpty(data))
                     {
                         if (msgForm.statusFlag.Equals(1))
                         {
@@ -218,12 +201,12 @@ namespace HomeScale.view.master
         public void deleteDataMstVendor()
         {
             MstVendorController mstVendorCtrl = new MstVendorController();
-            HomeScale.src.model.entities.MST_VENDOR form = new src.model.entities.MST_VENDOR();
+            MST_VENDOR form = new MST_VENDOR();
             try
             {
                 form.VENDOR_ID = txtVendorId.Text;
 
-                if (CheckUtil.isEmpty(form.VENDOR_ID))
+                if (Util.isEmpty(form.VENDOR_ID))
                 {
                     MessageBox.Show(CommonUtil.SELECT_DATA_DELETE);
                     return;

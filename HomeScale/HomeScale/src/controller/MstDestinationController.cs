@@ -80,15 +80,15 @@ namespace HomeScale.src.controller
                     formUpdate = (from row in db.MST_DESTINATION where row.DESTINATION_ID == param.DESTINATION_ID select row).FirstOrDefault();
                     if (flagAddEdit.Equals("A"))
                     {
-                        if (CheckUtil.isEmpty(formUpdate))
+                        if (Util.isEmpty(formUpdate))
                         {
                             //formInsert.PRODUCT_ID = db.MST_PRODUCT.Count() + 1;
                             formInsert.DESTINATION_ID = param.DESTINATION_ID;
                             formInsert.DESTINATION_NAME = param.DESTINATION_NAME;
                             formInsert.DESTINATION_ADDRESS = param.DESTINATION_ADDRESS;
-                            formInsert.DESTINATION_DISTRICT_ONE = param.DESTINATION_DISTRICT_ONE;
-                            formInsert.DESTINATION_DISTRICT_TWO = param.DESTINATION_DISTRICT_TWO;
-                            formInsert.DESTINATION_COUNTY = param.DESTINATION_COUNTY;
+                            formInsert.DESTINATION_SUB_DISTRICT = param.DESTINATION_SUB_DISTRICT;
+                            formInsert.DESTINATION_DISTRICT = param.DESTINATION_DISTRICT;
+                            formInsert.DESTINATION_PROVINCE = param.DESTINATION_PROVINCE;
                             formInsert.DESTINATION_POSTCODE = param.DESTINATION_POSTCODE;
                             formInsert.DESTINATION_TEL_NO = param.DESTINATION_TEL_NO;
                             formInsert.DESTINATION_FAX = param.DESTINATION_FAX;
@@ -97,9 +97,9 @@ namespace HomeScale.src.controller
                             + " DESTINATION_ID : " + formInsert.DESTINATION_ID
                             + " DESTINATION_NAME : " + formInsert.DESTINATION_NAME
                             + " DESTINATION_ADDRESS : " + formInsert.DESTINATION_ADDRESS
-                            + " DESTINATION_DISTRICT_ONE : " + formInsert.DESTINATION_DISTRICT_ONE
-                            + " DESTINATION_DISTRICT_TWO : " + formInsert.DESTINATION_DISTRICT_TWO
-                            + " DESTINATION_COUNTY : " + formInsert.DESTINATION_COUNTY
+                            + " DESTINATION_SUB_DISTRICT : " + formInsert.DESTINATION_SUB_DISTRICT
+                            + " DESTINATION_DISTRICT : " + formInsert.DESTINATION_DISTRICT
+                            + " DESTINATION_PROVINCE : " + formInsert.DESTINATION_PROVINCE
                             + " DESTINATION_POSTCODE : " + formInsert.DESTINATION_POSTCODE
                             + " DESTINATION_TEL_NO : " + formInsert.DESTINATION_TEL_NO
                             + " DESTINATION_FAX : " + formInsert.DESTINATION_FAX
@@ -108,14 +108,14 @@ namespace HomeScale.src.controller
                     }
                     else if (flagAddEdit.Equals("E"))
                     {
-                        if (CheckUtil.isNotEmpty(formUpdate))
+                        if (Util.isNotEmpty(formUpdate))
                         {
                             formUpdate.DESTINATION_ID = param.DESTINATION_ID;
                             formUpdate.DESTINATION_NAME = param.DESTINATION_NAME;
                             formUpdate.DESTINATION_ADDRESS = param.DESTINATION_ADDRESS;
-                            formUpdate.DESTINATION_DISTRICT_ONE = param.DESTINATION_DISTRICT_ONE;
-                            formUpdate.DESTINATION_DISTRICT_TWO = param.DESTINATION_DISTRICT_TWO;
-                            formUpdate.DESTINATION_COUNTY = param.DESTINATION_COUNTY;
+                            formUpdate.DESTINATION_SUB_DISTRICT = param.DESTINATION_SUB_DISTRICT;
+                            formUpdate.DESTINATION_DISTRICT = param.DESTINATION_DISTRICT;
+                            formUpdate.DESTINATION_PROVINCE = param.DESTINATION_PROVINCE;
                             formUpdate.DESTINATION_POSTCODE = param.DESTINATION_POSTCODE;
                             formUpdate.DESTINATION_TEL_NO = param.DESTINATION_TEL_NO;
                             formUpdate.DESTINATION_FAX = param.DESTINATION_FAX;
@@ -123,9 +123,9 @@ namespace HomeScale.src.controller
                             + " DESTINATION_ID : " + formUpdate.DESTINATION_ID
                             + " DESTINATION_NAME : " + formUpdate.DESTINATION_NAME
                             + " DESTINATION_ADDRESS : " + formUpdate.DESTINATION_ADDRESS
-                            + " DESTINATION_DISTRICT_ONE : " + formUpdate.DESTINATION_DISTRICT_ONE
-                            + " DESTINATION_DISTRICT_TWO : " + formUpdate.DESTINATION_DISTRICT_TWO
-                            + " DESTINATION_COUNTY : " + formUpdate.DESTINATION_COUNTY
+                            + " DESTINATION_SUB_DISTRICT : " + formUpdate.DESTINATION_SUB_DISTRICT
+                            + " DESTINATION_DISTRICT : " + formUpdate.DESTINATION_DISTRICT
+                            + " DESTINATION_PROVINCE : " + formUpdate.DESTINATION_PROVINCE
                             + " DESTINATION_POSTCODE : " + formUpdate.DESTINATION_POSTCODE
                             + " DESTINATION_TEL_NO : " + formUpdate.DESTINATION_TEL_NO
                             + " DESTINATION_FAX : " + formUpdate.DESTINATION_FAX
@@ -159,7 +159,7 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.MST_DESTINATION where row.DESTINATION_ID == param.DESTINATION_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
                         db.MST_DESTINATION.Remove(form);
                     }

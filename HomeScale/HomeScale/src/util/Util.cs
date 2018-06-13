@@ -8,7 +8,7 @@ using HomeScale.src.util;
 
 namespace HomeScale.src.util
 {
-    public class CheckUtil
+    public class Util
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 

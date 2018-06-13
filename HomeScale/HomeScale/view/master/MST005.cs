@@ -15,25 +15,23 @@ using log4net;
 
 namespace HomeScale.view.master
 {
-    public partial class MST_CAR_REGISTERTION : Form
+    public partial class MST005 : Form
     {
-        public MST_CAR_REGISTERTION()
+        public MST005()
         {
             InitializeComponent();
             queryComboMstVendor();
             searchDataVwMstCarRegistertion();
         }
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        HomeScale.src.model.entities.MST_CAR_REGISTERTION formMstCarRegistertion = new src.model.entities.MST_CAR_REGISTERTION();
+        MST_CAR_REGISTERTION formMstCarRegistertion = new MST_CAR_REGISTERTION();
         string flagAddEdit = "A";
         public void resetDataMstCarRegistertion()
         {
             txtCarRegistertionId.Text = "";
             txtCarRegistertionName.Text = "";
             cboCarRegistertionVendorId.SelectedValue = "";
-            formMstCarRegistertion.CAR_REGISTERTION_ID = "";
-            formMstCarRegistertion.CAR_REGISTERTION_NAME = "";
-            formMstCarRegistertion.CAR_REGISTERTION_VENDOR_ID = Int32.Parse("0");
+            formMstCarRegistertion = new MST_CAR_REGISTERTION();
             flagAddEdit = "A";
             txtCarRegistertionId.Enabled = true;
             txtCarRegistertionId.Focus();
@@ -47,14 +45,13 @@ namespace HomeScale.view.master
                 object[] result = mstCarRegistertionCtrl.queryComboMstVendor();
 
                 MsgForm msgForm = (MsgForm)result[0];
-                List<HomeScale.src.model.entities.MST_VENDOR> lstdata = (List<src.model.entities.MST_VENDOR>)result[1];
+                List<MST_VENDOR> lstdata = (List<MST_VENDOR>)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
                     cboCarRegistertionVendorId.DataSource = lstdata;
                     cboCarRegistertionVendorId.ValueMember = "VENDOR_ID";
                     cboCarRegistertionVendorId.DisplayMember = "VENDOR_NAME";
-
                     cboCarRegistertionVendorId.SelectedValue = "";
                 }
                 else
@@ -76,7 +73,7 @@ namespace HomeScale.view.master
                 object[] result = mstCarRegistertionCtrl.searchDataVwMstCarRegistertion();
 
                 MsgForm msgForm = (MsgForm)result[0];
-                List<HomeScale.src.model.entities.VW_MST_CAR_REGISTERTION> lstdata = (List<src.model.entities.VW_MST_CAR_REGISTERTION>)result[1];
+                List<VW_MST_CAR_REGISTERTION> lstdata = (List<VW_MST_CAR_REGISTERTION>)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
@@ -90,7 +87,6 @@ namespace HomeScale.view.master
                     dataGridView1.Columns[1].HeaderCell.Value = "ทะเบียนรถ";
                     dataGridView1.Columns[2].HeaderCell.Value = "รหัสผู้ขาย";
                     dataGridView1.Columns[3].HeaderCell.Value = "ชื่อผู้ขาย";
-                    //dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 16, FontStyle.Bold);
                     lblCountData.Text = "แสดงข้อมูลทั้งหมด " + lstdata.Count() + " รายการ";
                 }
                 else
@@ -112,19 +108,16 @@ namespace HomeScale.view.master
                 object[] result = mstCarRegistertionCtrl.queryDataMstCarRegistertionByCarRegistertionId(formMstCarRegistertion);
 
                 MsgForm msgForm = (MsgForm)result[0];
-                HomeScale.src.model.entities.MST_CAR_REGISTERTION data = (src.model.entities.MST_CAR_REGISTERTION)result[1];
+                MST_CAR_REGISTERTION data = (MST_CAR_REGISTERTION)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
-                    if (CheckUtil.isNotEmpty(result))
+                    if (Util.isNotEmpty(result))
                     {
                         txtCarRegistertionId.Text = data.CAR_REGISTERTION_ID;
                         txtCarRegistertionName.Text = data.CAR_REGISTERTION_NAME;
-                        string convertVendorNameToString = data.CAR_REGISTERTION_VENDOR_ID.ToString();
-                        cboCarRegistertionVendorId.SelectedValue = convertVendorNameToString;
-                        formMstCarRegistertion.CAR_REGISTERTION_ID = data.CAR_REGISTERTION_ID;
-                        formMstCarRegistertion.CAR_REGISTERTION_NAME = data.CAR_REGISTERTION_NAME;
-                        formMstCarRegistertion.CAR_REGISTERTION_VENDOR_ID = data.CAR_REGISTERTION_VENDOR_ID;
+                        cboCarRegistertionVendorId.SelectedValue = data.CAR_REGISTERTION_VENDOR_ID.ToString();
+                        formMstCarRegistertion = data;
                     }
                 }
                 else
@@ -141,12 +134,12 @@ namespace HomeScale.view.master
         public void insertOrUpdateDataMstCarRegistertion()
         {
             MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
-            HomeScale.src.model.entities.MST_CAR_REGISTERTION form = new src.model.entities.MST_CAR_REGISTERTION();
+            MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
             try
             {
-                if (CheckUtil.isEmpty(txtCarRegistertionId.Text) 
-                    || CheckUtil.isEmpty(txtCarRegistertionName.Text) 
-                    || CheckUtil.isEmpty(cboCarRegistertionVendorId.Text))
+                if (Util.isEmpty(txtCarRegistertionId.Text) 
+                    || Util.isEmpty(txtCarRegistertionName.Text) 
+                    || Util.isEmpty(cboCarRegistertionVendorId.Text))
                 {
                     MessageBox.Show(CommonUtil.REQUIRE_MESSAGE);
                     return;
@@ -156,7 +149,7 @@ namespace HomeScale.view.master
                 form.CAR_REGISTERTION_NAME = txtCarRegistertionName.Text;
                 form.CAR_REGISTERTION_VENDOR_ID = Int32.Parse(cboCarRegistertionVendorId.SelectedValue.ToString());
 
-                if (CheckUtil.isEmpty(form))
+                if (Util.isEmpty(form))
                 {
                     return;
                 }
@@ -164,11 +157,11 @@ namespace HomeScale.view.master
                 object[] result = mstCarRegistertionCtrl.insertOrUpdateDataMstCarRegistertion(form, flagAddEdit);
 
                 MsgForm msgForm = (MsgForm)result[0];
-                HomeScale.src.model.entities.MST_CAR_REGISTERTION data = (src.model.entities.MST_CAR_REGISTERTION)result[1];
+                MST_CAR_REGISTERTION data = (MST_CAR_REGISTERTION)result[1];
 
                 if (flagAddEdit.Equals("A"))
                 {
-                    if (CheckUtil.isNotEmpty(data))
+                    if (Util.isNotEmpty(data))
                     {
                         if (msgForm.statusFlag.Equals(1))
                         {
@@ -216,12 +209,12 @@ namespace HomeScale.view.master
         public void deleteDataMstCarRegistertion()
         {
             MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
-            HomeScale.src.model.entities.MST_CAR_REGISTERTION form = new src.model.entities.MST_CAR_REGISTERTION();
+            MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
             try
             {
                 form.CAR_REGISTERTION_ID = txtCarRegistertionId.Text;
 
-                if (CheckUtil.isEmpty(form.CAR_REGISTERTION_ID))
+                if (Util.isEmpty(form.CAR_REGISTERTION_ID))
                 {
                     MessageBox.Show(CommonUtil.SELECT_DATA_DELETE);
                     return;

@@ -17,9 +17,9 @@ namespace HomeScale.src.model.entities
         public string DESTINATION_ID { get; set; }
         public string DESTINATION_NAME { get; set; }
         public string DESTINATION_ADDRESS { get; set; }
-        public string DESTINATION_DISTRICT_ONE { get; set; }
-        public string DESTINATION_DISTRICT_TWO { get; set; }
-        public string DESTINATION_COUNTY { get; set; }
+        public string DESTINATION_SUB_DISTRICT { get; set; }
+        public string DESTINATION_DISTRICT { get; set; }
+        public string DESTINATION_PROVINCE { get; set; }
         public string DESTINATION_POSTCODE { get; set; }
         public string DESTINATION_TEL_NO { get; set; }
         public string DESTINATION_FAX { get; set; }

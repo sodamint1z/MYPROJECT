@@ -80,7 +80,7 @@ namespace HomeScale.src.controller
                     formUpdate = (from row in db.MST_PRODUCT_UNIT where row.PRODUCT_UNIT_ID == param.PRODUCT_UNIT_ID select row).FirstOrDefault();
                     if (flagAddEdit.Equals("A"))
                     {
-                        if (CheckUtil.isEmpty(formUpdate))
+                        if (Util.isEmpty(formUpdate))
                         {
                             formInsert.PRODUCT_UNIT_ID = param.PRODUCT_UNIT_ID;
                             formInsert.PRODUCT_UNIT_NAME = param.PRODUCT_UNIT_NAME;
@@ -93,7 +93,7 @@ namespace HomeScale.src.controller
                     }
                     else if (flagAddEdit.Equals("E"))
                     {
-                        if (CheckUtil.isNotEmpty(formUpdate))
+                        if (Util.isNotEmpty(formUpdate))
                         {
                             formUpdate.PRODUCT_UNIT_ID = param.PRODUCT_UNIT_ID;
                             formUpdate.PRODUCT_UNIT_NAME = param.PRODUCT_UNIT_NAME;
@@ -130,7 +130,7 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.MST_PRODUCT_UNIT where row.PRODUCT_UNIT_ID == param.PRODUCT_UNIT_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
                         form.PRODUCT_UNIT_NAME = param.PRODUCT_UNIT_NAME;
                     }
@@ -161,7 +161,7 @@ namespace HomeScale.src.controller
                 using (var db = new HomeScaleDBEntities())
                 {
                     form = (from row in db.MST_PRODUCT_UNIT where row.PRODUCT_UNIT_ID == param.PRODUCT_UNIT_ID select row).FirstOrDefault();
-                    if (CheckUtil.isNotEmpty(form))
+                    if (Util.isNotEmpty(form))
                     {
                         Log.Info("Delete Data form MST_PRODUCT_UNIT"
                             + " PRODUCT_UNIT_ID : " + form.PRODUCT_UNIT_ID

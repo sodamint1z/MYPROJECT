@@ -15,36 +15,28 @@ using log4net;
 
 namespace HomeScale.view.master
 {
-    public partial class MST_DESTINATION : Form
+    public partial class MST004 : Form
     {
-        public MST_DESTINATION()
+        public MST004()
         {
             InitializeComponent();
             searchDataMstDestination();
         }
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
-        HomeScale.src.model.entities.MST_DESTINATION formMstDistination = new src.model.entities.MST_DESTINATION();
+        MST_DESTINATION formMstDistination = new MST_DESTINATION();
         string flagAddEdit = "A";
         public void resetDataMstDistination()
         {
             txtDistinationId.Text = "";
             txtDistinationName.Text = "";
             txtDistinationAddress.Text = "";
-            txtDistinationDistrictOne.Text = "";
-            txtDistinationDistrictTwo.Text = "";
-            txtDistinationCounty.Text = "";
+            txtDistinationSubDistrict.Text = "";
+            txtDistinationDistrict.Text = "";
+            txtDistinationProvince.Text = "";
             txtDistinationPostcode.Text = "";
             txtDistinationTelNo.Text = "";
             txtDistinationFax.Text = "";
-            formMstDistination.DESTINATION_ID = "";
-            formMstDistination.DESTINATION_NAME = "";
-            formMstDistination.DESTINATION_ADDRESS = "";
-            formMstDistination.DESTINATION_DISTRICT_ONE = "";
-            formMstDistination.DESTINATION_DISTRICT_TWO = "";
-            formMstDistination.DESTINATION_COUNTY = "";
-            formMstDistination.DESTINATION_POSTCODE = "";
-            formMstDistination.DESTINATION_TEL_NO = "";
-            formMstDistination.DESTINATION_FAX = "";
+            formMstDistination = new MST_DESTINATION();
             flagAddEdit = "A";
             txtDistinationId.Enabled = true;
             txtDistinationId.Focus();
@@ -58,7 +50,7 @@ namespace HomeScale.view.master
                 object[] result = mstDistinationCtrl.searchDataMstDestination();
 
                 MsgForm msgForm = (MsgForm)result[0];
-                List<HomeScale.src.model.entities.MST_DESTINATION> lstdata = (List<src.model.entities.MST_DESTINATION>)result[1];
+                List<MST_DESTINATION> lstdata = (List<MST_DESTINATION>)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
@@ -77,7 +69,6 @@ namespace HomeScale.view.master
                     dataGridView1.Columns[6].HeaderCell.Value = "รหัสไปรษณีย์";
                     dataGridView1.Columns[7].HeaderCell.Value = "เบอร์โทรศัพท์";
                     dataGridView1.Columns[8].HeaderCell.Value = "แฟกซ์";
-                    //dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 16, FontStyle.Bold);
                     lblCountData.Text = "แสดงข้อมูลทั้งหมด " + lstdata.Count() + " รายการ";
                 }
                 else
@@ -99,30 +90,22 @@ namespace HomeScale.view.master
                 object[] result = mstDestinationCtrl.queryDataMstDestinationByDestinationId(formMstDistination);
 
                 MsgForm msgForm = (MsgForm)result[0];
-                HomeScale.src.model.entities.MST_DESTINATION data = (src.model.entities.MST_DESTINATION)result[1];
+                MST_DESTINATION data = (MST_DESTINATION)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
-                    if (CheckUtil.isNotEmpty(result))
+                    if (Util.isNotEmpty(data))
                     {
                         txtDistinationId.Text = data.DESTINATION_ID;
                         txtDistinationName.Text = data.DESTINATION_NAME;
                         txtDistinationAddress.Text = data.DESTINATION_ADDRESS;
-                        txtDistinationDistrictOne.Text = data.DESTINATION_DISTRICT_ONE;
-                        txtDistinationDistrictTwo.Text = data.DESTINATION_DISTRICT_TWO;
-                        txtDistinationCounty.Text = data.DESTINATION_COUNTY;
+                        txtDistinationSubDistrict.Text = data.DESTINATION_SUB_DISTRICT;
+                        txtDistinationDistrict.Text = data.DESTINATION_DISTRICT;
+                        txtDistinationProvince.Text = data.DESTINATION_PROVINCE;
                         txtDistinationPostcode.Text = data.DESTINATION_POSTCODE;
                         txtDistinationTelNo.Text = data.DESTINATION_TEL_NO;
                         txtDistinationFax.Text = data.DESTINATION_FAX;
-                        formMstDistination.DESTINATION_ID = data.DESTINATION_ID;
-                        formMstDistination.DESTINATION_NAME = data.DESTINATION_NAME;
-                        formMstDistination.DESTINATION_ADDRESS = data.DESTINATION_ADDRESS;
-                        formMstDistination.DESTINATION_DISTRICT_ONE = data.DESTINATION_DISTRICT_ONE;
-                        formMstDistination.DESTINATION_DISTRICT_TWO = data.DESTINATION_DISTRICT_TWO;
-                        formMstDistination.DESTINATION_COUNTY = data.DESTINATION_COUNTY;
-                        formMstDistination.DESTINATION_POSTCODE = data.DESTINATION_POSTCODE;
-                        formMstDistination.DESTINATION_TEL_NO = data.DESTINATION_TEL_NO;
-                        formMstDistination.DESTINATION_FAX = data.DESTINATION_FAX;
+                        formMstDistination = data;
                     }
                 }
                 else
@@ -139,11 +122,11 @@ namespace HomeScale.view.master
         public void insertOrUpdateDataMstDestination()
         {
             MstDestinationController mstDestinationCtrl = new MstDestinationController();
-            HomeScale.src.model.entities.MST_DESTINATION form = new src.model.entities.MST_DESTINATION();
+            MST_DESTINATION form = new MST_DESTINATION();
             try
             {
-                if (CheckUtil.isEmpty(txtDistinationId.Text) 
-                    || CheckUtil.isEmpty(txtDistinationName.Text))
+                if (Util.isEmpty(txtDistinationId.Text) 
+                    || Util.isEmpty(txtDistinationName.Text))
                 {
                     MessageBox.Show(CommonUtil.REQUIRE_MESSAGE);
                     return;
@@ -152,14 +135,14 @@ namespace HomeScale.view.master
                 form.DESTINATION_ID = txtDistinationId.Text;
                 form.DESTINATION_NAME = txtDistinationName.Text;
                 form.DESTINATION_ADDRESS = txtDistinationAddress.Text;
-                form.DESTINATION_DISTRICT_ONE = txtDistinationDistrictOne.Text;
-                form.DESTINATION_DISTRICT_TWO = txtDistinationDistrictTwo.Text;
-                form.DESTINATION_COUNTY = txtDistinationCounty.Text;
+                form.DESTINATION_SUB_DISTRICT = txtDistinationSubDistrict.Text;
+                form.DESTINATION_DISTRICT = txtDistinationDistrict.Text;
+                form.DESTINATION_PROVINCE = txtDistinationProvince.Text;
                 form.DESTINATION_POSTCODE = txtDistinationPostcode.Text;
                 form.DESTINATION_TEL_NO = txtDistinationTelNo.Text;
                 form.DESTINATION_FAX = txtDistinationFax.Text;
 
-                if (CheckUtil.isEmpty(form))
+                if (Util.isEmpty(form))
                 {
                     return;
                 }
@@ -167,11 +150,11 @@ namespace HomeScale.view.master
                 object[] result = mstDestinationCtrl.insertOrUpdateDataMstDestination(form, flagAddEdit);
 
                 MsgForm msgForm = (MsgForm)result[0];
-                HomeScale.src.model.entities.MST_DESTINATION data = (src.model.entities.MST_DESTINATION)result[1];
+                MST_DESTINATION data = (MST_DESTINATION)result[1];
 
                 if (flagAddEdit.Equals("A"))
                 {
-                    if (CheckUtil.isNotEmpty(data))
+                    if (Util.isNotEmpty(data))
                     {
                         if (msgForm.statusFlag.Equals(1))
                         {
@@ -219,12 +202,12 @@ namespace HomeScale.view.master
         public void deleteDataMstDestination()
         {
             MstDestinationController mstDistinationCtrl = new MstDestinationController();
-            HomeScale.src.model.entities.MST_DESTINATION form = new src.model.entities.MST_DESTINATION();
+            MST_DESTINATION form = new MST_DESTINATION();
             try
             {
                 form.DESTINATION_ID = txtDistinationId.Text;
 
-                if (CheckUtil.isEmpty(form.DESTINATION_ID))
+                if (Util.isEmpty(form.DESTINATION_ID))
                 {
                     MessageBox.Show(CommonUtil.SELECT_DATA_DELETE);
                     return;
