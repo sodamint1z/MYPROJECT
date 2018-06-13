@@ -43,13 +43,13 @@
             this.txtBasicDecimal = new System.Windows.Forms.TextBox();
             this.txtBasicReceiptNo = new System.Windows.Forms.TextBox();
             this.txtBasicCardNoScoop = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.lblVendorId = new System.Windows.Forms.Label();
+            this.lblBasicFare = new System.Windows.Forms.Label();
+            this.lblBasicDeduction = new System.Windows.Forms.Label();
+            this.lblBasicMoveNo = new System.Windows.Forms.Label();
+            this.lblBasicDecimal = new System.Windows.Forms.Label();
+            this.lblBasicReceiptNo = new System.Windows.Forms.Label();
+            this.lblBasicCardNoScoop = new System.Windows.Forms.Label();
+            this.lblBasicCardNo = new System.Windows.Forms.Label();
             this.txtBasicCardNo = new System.Windows.Forms.TextBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -57,9 +57,9 @@
             this.txtBusinessTelNo = new System.Windows.Forms.TextBox();
             this.txtBusinessAddress = new System.Windows.Forms.TextBox();
             this.txtBusinessName = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.lblBusinessTelNo = new System.Windows.Forms.Label();
+            this.lblBusinessAddress = new System.Windows.Forms.Label();
+            this.lblBusinessName = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -78,13 +78,13 @@
             this.groupBox2.Controls.Add(this.txtBasicDecimal);
             this.groupBox2.Controls.Add(this.txtBasicReceiptNo);
             this.groupBox2.Controls.Add(this.txtBasicCardNoScoop);
-            this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.label4);
-            this.groupBox2.Controls.Add(this.label3);
-            this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label1);
-            this.groupBox2.Controls.Add(this.lblVendorId);
+            this.groupBox2.Controls.Add(this.lblBasicFare);
+            this.groupBox2.Controls.Add(this.lblBasicDeduction);
+            this.groupBox2.Controls.Add(this.lblBasicMoveNo);
+            this.groupBox2.Controls.Add(this.lblBasicDecimal);
+            this.groupBox2.Controls.Add(this.lblBasicReceiptNo);
+            this.groupBox2.Controls.Add(this.lblBasicCardNoScoop);
+            this.groupBox2.Controls.Add(this.lblBasicCardNo);
             this.groupBox2.Controls.Add(this.txtBasicCardNo);
             this.groupBox2.Font = new System.Drawing.Font("Verdana", 18F);
             this.groupBox2.Location = new System.Drawing.Point(26, 28);
@@ -258,82 +258,82 @@
             this.txtBasicCardNoScoop.Size = new System.Drawing.Size(150, 33);
             this.txtBasicCardNoScoop.TabIndex = 66;
             // 
-            // label6
+            // lblBasicFare
             // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label6.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(425, 93);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(59, 33);
-            this.label6.TabIndex = 65;
-            this.label6.Text = "ค่ารถ :";
+            this.lblBasicFare.AutoSize = true;
+            this.lblBasicFare.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBasicFare.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBasicFare.Location = new System.Drawing.Point(425, 93);
+            this.lblBasicFare.Name = "lblBasicFare";
+            this.lblBasicFare.Size = new System.Drawing.Size(59, 33);
+            this.lblBasicFare.TabIndex = 65;
+            this.lblBasicFare.Text = "ค่ารถ :";
             // 
-            // label5
+            // lblBasicDeduction
             // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label5.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(380, 42);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(104, 33);
-            this.label5.TabIndex = 64;
-            this.label5.Text = "หักสิ่งเจือปน :";
+            this.lblBasicDeduction.AutoSize = true;
+            this.lblBasicDeduction.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBasicDeduction.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBasicDeduction.Location = new System.Drawing.Point(380, 42);
+            this.lblBasicDeduction.Name = "lblBasicDeduction";
+            this.lblBasicDeduction.Size = new System.Drawing.Size(104, 33);
+            this.lblBasicDeduction.TabIndex = 64;
+            this.lblBasicDeduction.Text = "หักสิ่งเจือปน :";
             // 
-            // label4
+            // lblBasicMoveNo
             // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label4.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(40, 251);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(127, 33);
-            this.label4.TabIndex = 63;
-            this.label4.Text = "เลขที่ใบย้ายกอง :";
+            this.lblBasicMoveNo.AutoSize = true;
+            this.lblBasicMoveNo.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBasicMoveNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBasicMoveNo.Location = new System.Drawing.Point(40, 251);
+            this.lblBasicMoveNo.Name = "lblBasicMoveNo";
+            this.lblBasicMoveNo.Size = new System.Drawing.Size(127, 33);
+            this.lblBasicMoveNo.TabIndex = 63;
+            this.lblBasicMoveNo.Text = "เลขที่ใบย้ายกอง :";
             // 
-            // label3
+            // lblBasicDecimal
             // 
-            this.label3.AutoSize = true;
-            this.label3.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(30, 197);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(137, 33);
-            this.label3.TabIndex = 62;
-            this.label3.Text = "จำนวนจุดทศนิยม :";
+            this.lblBasicDecimal.AutoSize = true;
+            this.lblBasicDecimal.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBasicDecimal.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBasicDecimal.Location = new System.Drawing.Point(30, 197);
+            this.lblBasicDecimal.Name = "lblBasicDecimal";
+            this.lblBasicDecimal.Size = new System.Drawing.Size(137, 33);
+            this.lblBasicDecimal.TabIndex = 62;
+            this.lblBasicDecimal.Text = "จำนวนจุดทศนิยม :";
             // 
-            // label2
+            // lblBasicReceiptNo
             // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(19, 146);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(148, 33);
-            this.label2.TabIndex = 61;
-            this.label2.Text = "เลขที่ใบเสร็จรับเงิน :";
+            this.lblBasicReceiptNo.AutoSize = true;
+            this.lblBasicReceiptNo.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBasicReceiptNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBasicReceiptNo.Location = new System.Drawing.Point(19, 146);
+            this.lblBasicReceiptNo.Name = "lblBasicReceiptNo";
+            this.lblBasicReceiptNo.Size = new System.Drawing.Size(148, 33);
+            this.lblBasicReceiptNo.TabIndex = 61;
+            this.lblBasicReceiptNo.Text = "เลขที่ใบเสร็จรับเงิน :";
             // 
-            // label1
+            // lblBasicCardNoScoop
             // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label1.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(18, 94);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(149, 33);
-            this.label1.TabIndex = 60;
-            this.label1.Text = "เลขที่บัตรชั่งตักออก :";
+            this.lblBasicCardNoScoop.AutoSize = true;
+            this.lblBasicCardNoScoop.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBasicCardNoScoop.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBasicCardNoScoop.Location = new System.Drawing.Point(18, 94);
+            this.lblBasicCardNoScoop.Name = "lblBasicCardNoScoop";
+            this.lblBasicCardNoScoop.Size = new System.Drawing.Size(149, 33);
+            this.lblBasicCardNoScoop.TabIndex = 60;
+            this.lblBasicCardNoScoop.Text = "เลขที่บัตรชั่งตักออก :";
             // 
-            // lblVendorId
+            // lblBasicCardNo
             // 
-            this.lblVendorId.AutoSize = true;
-            this.lblVendorId.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblVendorId.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblVendorId.Location = new System.Drawing.Point(45, 42);
-            this.lblVendorId.Name = "lblVendorId";
-            this.lblVendorId.Size = new System.Drawing.Size(122, 33);
-            this.lblVendorId.TabIndex = 59;
-            this.lblVendorId.Text = "เลขที่บัตรชั่งรับ :";
+            this.lblBasicCardNo.AutoSize = true;
+            this.lblBasicCardNo.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBasicCardNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblBasicCardNo.Location = new System.Drawing.Point(45, 42);
+            this.lblBasicCardNo.Name = "lblBasicCardNo";
+            this.lblBasicCardNo.Size = new System.Drawing.Size(122, 33);
+            this.lblBasicCardNo.TabIndex = 59;
+            this.lblBasicCardNo.Text = "เลขที่บัตรชั่งรับ :";
             // 
             // txtBasicCardNo
             // 
@@ -354,9 +354,9 @@
             this.groupBox3.Controls.Add(this.txtBusinessTelNo);
             this.groupBox3.Controls.Add(this.txtBusinessAddress);
             this.groupBox3.Controls.Add(this.txtBusinessName);
-            this.groupBox3.Controls.Add(this.label9);
-            this.groupBox3.Controls.Add(this.label8);
-            this.groupBox3.Controls.Add(this.label7);
+            this.groupBox3.Controls.Add(this.lblBusinessTelNo);
+            this.groupBox3.Controls.Add(this.lblBusinessAddress);
+            this.groupBox3.Controls.Add(this.lblBusinessName);
             this.groupBox3.Font = new System.Drawing.Font("Verdana", 18F);
             this.groupBox3.Location = new System.Drawing.Point(26, 396);
             this.groupBox3.Name = "groupBox3";
@@ -425,40 +425,40 @@
             this.txtBusinessName.Size = new System.Drawing.Size(550, 33);
             this.txtBusinessName.TabIndex = 58;
             // 
-            // label9
+            // lblBusinessTelNo
             // 
-            this.label9.AutoSize = true;
-            this.label9.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label9.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.label9.Location = new System.Drawing.Point(95, 135);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(79, 33);
-            this.label9.TabIndex = 57;
-            this.label9.Text = "โทรศัพท์ :";
+            this.lblBusinessTelNo.AutoSize = true;
+            this.lblBusinessTelNo.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBusinessTelNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblBusinessTelNo.Location = new System.Drawing.Point(95, 135);
+            this.lblBusinessTelNo.Name = "lblBusinessTelNo";
+            this.lblBusinessTelNo.Size = new System.Drawing.Size(79, 33);
+            this.lblBusinessTelNo.TabIndex = 57;
+            this.lblBusinessTelNo.Text = "โทรศัพท์ :";
             // 
-            // label8
+            // lblBusinessAddress
             // 
-            this.label8.AutoSize = true;
-            this.label8.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label8.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.label8.Location = new System.Drawing.Point(121, 84);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(52, 33);
-            this.label8.TabIndex = 56;
-            this.label8.Text = "ที่อยู่ :";
+            this.lblBusinessAddress.AutoSize = true;
+            this.lblBusinessAddress.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBusinessAddress.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblBusinessAddress.Location = new System.Drawing.Point(121, 84);
+            this.lblBusinessAddress.Name = "lblBusinessAddress";
+            this.lblBusinessAddress.Size = new System.Drawing.Size(52, 33);
+            this.lblBusinessAddress.TabIndex = 56;
+            this.lblBusinessAddress.Text = "ที่อยู่ :";
             // 
-            // label7
+            // lblBusinessName
             // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.label7.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(93, 31);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(81, 33);
-            this.label7.TabIndex = 55;
-            this.label7.Text = "ชื่อบริษัท :";
+            this.lblBusinessName.AutoSize = true;
+            this.lblBusinessName.BackColor = System.Drawing.SystemColors.MenuHighlight;
+            this.lblBusinessName.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblBusinessName.Location = new System.Drawing.Point(93, 31);
+            this.lblBusinessName.Name = "lblBusinessName";
+            this.lblBusinessName.Size = new System.Drawing.Size(81, 33);
+            this.lblBusinessName.TabIndex = 55;
+            this.lblBusinessName.Text = "ชื่อบริษัท :";
             // 
-            // MST_DATA_BASIC
+            // MST006
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -466,7 +466,7 @@
             this.ClientSize = new System.Drawing.Size(1008, 641);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.groupBox2);
-            this.Name = "MST_DATA_BASIC";
+            this.Name = "MST006";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeScale";
             this.groupBox2.ResumeLayout(false);
@@ -496,13 +496,13 @@
         private System.Windows.Forms.TextBox txtBasicDecimal;
         private System.Windows.Forms.TextBox txtBasicReceiptNo;
         private System.Windows.Forms.TextBox txtBasicCardNoScoop;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label lblVendorId;
+        private System.Windows.Forms.Label lblBasicFare;
+        private System.Windows.Forms.Label lblBasicDeduction;
+        private System.Windows.Forms.Label lblBasicMoveNo;
+        private System.Windows.Forms.Label lblBasicDecimal;
+        private System.Windows.Forms.Label lblBasicReceiptNo;
+        private System.Windows.Forms.Label lblBasicCardNoScoop;
+        private System.Windows.Forms.Label lblBasicCardNo;
         private System.Windows.Forms.TextBox txtBasicCardNo;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.Button button1;
@@ -510,8 +510,8 @@
         private System.Windows.Forms.TextBox txtBusinessTelNo;
         private System.Windows.Forms.TextBox txtBusinessAddress;
         private System.Windows.Forms.TextBox txtBusinessName;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label lblBusinessTelNo;
+        private System.Windows.Forms.Label lblBusinessAddress;
+        private System.Windows.Forms.Label lblBusinessName;
     }
 }

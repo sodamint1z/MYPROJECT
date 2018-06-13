@@ -36,6 +36,7 @@
             this.btnDataDestination = new System.Windows.Forms.Button();
             this.btnDataLicensePlate = new System.Windows.Forms.Button();
             this.btnDataBasic = new System.Windows.Forms.Button();
+            this.btnUserLogin = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnDataProduct
@@ -144,12 +145,28 @@
             this.btnDataBasic.UseVisualStyleBackColor = false;
             this.btnDataBasic.Click += new System.EventHandler(this.btnDataBasic_Click);
             // 
+            // btnUserLogin
+            // 
+            this.btnUserLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnUserLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnUserLogin.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUserLogin.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnUserLogin.Location = new System.Drawing.Point(635, 97);
+            this.btnUserLogin.Name = "btnUserLogin";
+            this.btnUserLogin.Size = new System.Drawing.Size(180, 100);
+            this.btnUserLogin.TabIndex = 18;
+            this.btnUserLogin.Text = "ข้อมูลผู้ใช้งานระบบ";
+            this.btnUserLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnUserLogin.UseVisualStyleBackColor = false;
+            this.btnUserLogin.Click += new System.EventHandler(this.btnUserLogin_Click);
+            // 
             // MenuMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDark;
             this.ClientSize = new System.Drawing.Size(1008, 481);
+            this.Controls.Add(this.btnUserLogin);
             this.Controls.Add(this.btnDataBasic);
             this.Controls.Add(this.btnDataLicensePlate);
             this.Controls.Add(this.btnDataDestination);
@@ -173,5 +190,6 @@
         private System.Windows.Forms.Button btnDataDestination;
         private System.Windows.Forms.Button btnDataLicensePlate;
         private System.Windows.Forms.Button btnDataBasic;
+        private System.Windows.Forms.Button btnUserLogin;
     }
 }

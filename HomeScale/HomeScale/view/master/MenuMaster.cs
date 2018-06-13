@@ -73,6 +73,13 @@ namespace HomeScale.view.master
             menuMain.Show();
         }
 
+        public void callMenuUserLogin()
+        {
+            MST007 userLogin = new MST007();
+            this.Hide();
+            userLogin.Show();
+        }
+
         private void btnDataProduct_Click(object sender, EventArgs e)
         {
             callMenuMstProduct();
@@ -106,6 +113,11 @@ namespace HomeScale.view.master
         private void btnDataBasic_Click(object sender, EventArgs e)
         {
             callMenuMstDataBasic();
+        }
+
+        private void btnUserLogin_Click(object sender, EventArgs e)
+        {
+            callMenuUserLogin();
         }
     }
 }
