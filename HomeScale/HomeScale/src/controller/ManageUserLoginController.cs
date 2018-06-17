@@ -40,6 +40,33 @@ namespace HomeScale.src.controller
             return new object[] { msgError, resultList };
         }
 
+        public object[] queryDataManageUserLoginByUserId(USER_LOGIN param)
+        {
+            Log.Info("Start log INFO... queryDataManageUserLoginByUserId");
+            MsgForm msgError = new MsgForm();
+            USER_LOGIN form = new USER_LOGIN();
+            try
+            {
+                using (var db = new HomeScaleDBEntities())
+                {
+                    form = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                Log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                Log.Info("End log INFO... queryDataManageUserLoginByUserId");
+            }
+            return new object[] { msgError, form };
+        }
+
         public object[] insertOrUpdateDataManageUserLogin(USER_LOGIN param, string flagAddEdit)
         {
             Log.Info("Start log INFO... insertOrUpdateDataManageUserLogin");

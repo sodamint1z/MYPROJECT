@@ -183,6 +183,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(476, 234);
             this.dataGridView1.TabIndex = 70;
+            this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
             // statusStrip1
             // 
@@ -211,6 +212,7 @@
             this.btnBack.TabIndex = 75;
             this.btnBack.Text = "ย้อนกลับ";
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // btnSave
             // 
@@ -223,6 +225,7 @@
             this.btnSave.TabIndex = 74;
             this.btnSave.Text = "บันทึก";
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -235,6 +238,7 @@
             this.btnCancel.TabIndex = 73;
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnDelete
             // 
@@ -247,6 +251,7 @@
             this.btnDelete.TabIndex = 72;
             this.btnDelete.Text = "ลบ";
             this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblCountData
             // 
