@@ -6,9 +6,9 @@ using System.Threading.Tasks;
 
 namespace HomeScale.src.model.form
 {
-    public class ComboYesOrNoForm
+    public class ComboUseOrNotUseForm
     {
-        public int yeONId { get; set; }
-        public string yeONName { get; set; }
+        public int useOrNotUseId { get; set; }
+        public string useOrNotUseValue { get; set; }
     }
 }

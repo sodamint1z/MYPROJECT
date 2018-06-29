@@ -13,20 +13,12 @@ namespace HomeScale.src.util
     {
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
-        public static List<ComboYesOrNoForm> loadComboYesOrNo()
+        public static List<ComboUseOrNotUseForm> loadComboUseOrNotUse()
         {
-            List<ComboYesOrNoForm> lstCombo = new List<ComboYesOrNoForm>();
-            ComboYesOrNoForm comboForm0 = new ComboYesOrNoForm();
-            ComboYesOrNoForm comboForm1 = new ComboYesOrNoForm();
+            List<ComboUseOrNotUseForm> lstCombo = new List<ComboUseOrNotUseForm>();
 
-            comboForm0.yeONId = 0;
-            comboForm0.yeONName = "ไม่ใช้";
-            
-            comboForm1.yeONId = 1;
-            comboForm1.yeONName = "ใช้";
-
-            lstCombo.Add(comboForm0);
-            lstCombo.Add(comboForm1);
+            lstCombo.Add(new ComboUseOrNotUseForm() { useOrNotUseId = 0, useOrNotUseValue = "ไม่ใช้" });
+            lstCombo.Add(new ComboUseOrNotUseForm() { useOrNotUseId = 1, useOrNotUseValue = "ใช้" });
 
             return lstCombo;
         }

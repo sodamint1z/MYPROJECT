@@ -41,14 +41,14 @@ namespace HomeScale.view.master
 
         public void loadCombo()
         {
-            List<ComboYesOrNoForm> lstCombo = new List<ComboYesOrNoForm>();
+            List<ComboUseOrNotUseForm> lstCombo = new List<ComboUseOrNotUseForm>();
 
-            lstCombo = LoadComboUtil.loadComboYesOrNo();
+            lstCombo = LoadComboUtil.loadComboUseOrNotUse();
 
             cboStatusFlag.DataSource = lstCombo;
-            cboStatusFlag.ValueMember = "yeONId";
-            cboStatusFlag.DisplayMember = "yeONName";
-            cboStatusFlag.SelectedValue = "1";
+            cboStatusFlag.ValueMember = "useOrNotUseId";
+            cboStatusFlag.DisplayMember = "useOrNotUseValue";
+            cboStatusFlag.SelectedValue = 1;
         }
 
         public void searchDataManageUserLogin()
@@ -64,10 +64,10 @@ namespace HomeScale.view.master
                 if (msgForm.statusFlag.Equals(1))
                 {
                     dataGridView1.DataSource = lstdata;
-                    dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 18);
+                    dataGridView1.DefaultCellStyle.Font = new Font("TH SarabunPSK", 16);
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
                     dataGridView1.ColumnHeadersHeight = 150;
-                    dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Verdana", 18, FontStyle.Bold);
+                    dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("TH SarabunPSK", 16, FontStyle.Bold);
                     dataGridView1.RowTemplate.Height = 40;
                     dataGridView1.Columns[0].HeaderCell.Value = "ชื่อผู้ใช้งาน";
                     dataGridView1.Columns[1].HeaderCell.Value = "รหัสผ่าน";
@@ -105,7 +105,7 @@ namespace HomeScale.view.master
                         txtUserPassword.Text = data.USER_PASSWORD;
                         txtUserFirstname.Text = data.USER_FIRSTNAME;
                         txtUserLastname.Text = data.USER_LASTNAME;
-                        cboStatusFlag.SelectedValue = data.STATUS_FLAG.ToString();
+                        cboStatusFlag.SelectedValue = data.STATUS_FLAG;
                         formUserLogin = data;
                     }
                 }
