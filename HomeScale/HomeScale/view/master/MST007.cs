@@ -63,7 +63,18 @@ namespace HomeScale.view.master
 
                 if (msgForm.statusFlag.Equals(1))
                 {
-                    dataGridView1.DataSource = lstdata;
+                    List<UserLoginForm> lstUserLogin = new List<UserLoginForm>();
+                    foreach (USER_LOGIN data in lstdata) 
+                    {
+                        UserLoginForm userLoginForm = new UserLoginForm();
+                        userLoginForm.userId = data.USER_ID;
+                        userLoginForm.userPassword = data.USER_PASSWORD;
+                        userLoginForm.userFirstname = data.USER_FIRSTNAME;
+                        userLoginForm.userLastname = data.USER_LASTNAME;
+                        userLoginForm.status = data.STATUS_FLAG.Equals(0) ? "ไม่ใช้" : data.STATUS_FLAG.Equals(1) ? "ใช้" : "";
+                        lstUserLogin.Add(userLoginForm);
+                    }
+                    dataGridView1.DataSource = lstUserLogin;
                     dataGridView1.DefaultCellStyle.Font = new Font("TH SarabunPSK", 16);
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
                     dataGridView1.ColumnHeadersHeight = 150;
@@ -74,7 +85,7 @@ namespace HomeScale.view.master
                     dataGridView1.Columns[2].HeaderCell.Value = "ชื่อ";
                     dataGridView1.Columns[3].HeaderCell.Value = "นามสกุล";
                     dataGridView1.Columns[4].HeaderCell.Value = "แสดงหน้าล็อกอิน";
-                    lblCountData.Text = "แสดงข้อมูลทั้งหมด " + lstdata.Count() + " รายการ";
+                    lblCountData.Text = "แสดงข้อมูลทั้งหมด " + lstUserLogin.Count() + " รายการ";
                 }
                 else
                 {

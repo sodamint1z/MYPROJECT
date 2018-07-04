@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuMain));
-            this.btnProductScale = new System.Windows.Forms.Button();
+            this.btnMainScale = new System.Windows.Forms.Button();
             this.btnDataScale = new System.Windows.Forms.Button();
             this.btnDatabase = new System.Windows.Forms.Button();
             this.btnConfigScale = new System.Windows.Forms.Button();
@@ -41,21 +41,21 @@
             this.button3 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // btnProductScale
+            // btnMainScale
             // 
-            this.btnProductScale.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnProductScale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnProductScale.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.btnProductScale.Image = ((System.Drawing.Image)(resources.GetObject("btnProductScale.Image")));
-            this.btnProductScale.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnProductScale.Location = new System.Drawing.Point(45, 98);
-            this.btnProductScale.Name = "btnProductScale";
-            this.btnProductScale.Size = new System.Drawing.Size(180, 100);
-            this.btnProductScale.TabIndex = 9;
-            this.btnProductScale.Text = "ชั่งสินค้า";
-            this.btnProductScale.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProductScale.UseVisualStyleBackColor = false;
-            this.btnProductScale.Click += new System.EventHandler(this.btnProductScale_Click);
+            this.btnMainScale.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMainScale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMainScale.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.btnMainScale.Image = ((System.Drawing.Image)(resources.GetObject("btnMainScale.Image")));
+            this.btnMainScale.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnMainScale.Location = new System.Drawing.Point(45, 98);
+            this.btnMainScale.Name = "btnMainScale";
+            this.btnMainScale.Size = new System.Drawing.Size(180, 100);
+            this.btnMainScale.TabIndex = 9;
+            this.btnMainScale.Text = "ชั่งสินค้า";
+            this.btnMainScale.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnMainScale.UseVisualStyleBackColor = false;
+            this.btnMainScale.Click += new System.EventHandler(this.btnMainScale_Click);
             // 
             // btnDataScale
             // 
@@ -209,7 +209,7 @@
             this.Controls.Add(this.btnConfigScale);
             this.Controls.Add(this.btnDatabase);
             this.Controls.Add(this.btnDataScale);
-            this.Controls.Add(this.btnProductScale);
+            this.Controls.Add(this.btnMainScale);
             this.Name = "MenuMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeScale";
@@ -219,7 +219,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button btnProductScale;
+        private System.Windows.Forms.Button btnMainScale;
         private System.Windows.Forms.Button btnDataScale;
         private System.Windows.Forms.Button btnDatabase;
         private System.Windows.Forms.Button btnConfigScale;

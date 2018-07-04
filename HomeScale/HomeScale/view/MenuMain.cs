@@ -13,6 +13,7 @@ using HomeScale.src.model.form;
 using HomeScale.src.util;
 using HomeScale.view;
 using HomeScale.view.master;
+using HomeScale.view.scale;
 using log4net;
 
 namespace HomeScale.view
@@ -24,9 +25,11 @@ namespace HomeScale.view
             InitializeComponent();
         }
 
-        private void btnProductScale_Click(object sender, EventArgs e)
+        private void btnMainScale_Click(object sender, EventArgs e)
         {
-
+            LMS001 lms001 = new LMS001();
+            this.Hide();
+            lms001.Show();
         }
 
         private void btnDataScale_Click(object sender, EventArgs e)
@@ -40,5 +43,6 @@ namespace HomeScale.view
             this.Hide();
             menuMaster.Show();
         }
+
     }
 }
