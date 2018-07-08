@@ -21,11 +21,9 @@ namespace HomeScale.view.master
         {
             InitializeComponent();
             queryDataMstDataBasic();
-            queryDataMstBusiness();
         }
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         MST_DATA_BASIC formMstDataBasic = new MST_DATA_BASIC();
-        MST_BUSINESS formMstBusiness = new MST_BUSINESS();
 
         public void queryDataMstDataBasic()
         {
@@ -111,72 +109,14 @@ namespace HomeScale.view.master
             }
         }
 
-        public void queryDataMstBusiness()
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            MstBusinessController mstBusinessCtrl = new MstBusinessController();
-            formMstBusiness.BUSINESS_ID = 1;
-            try
-            {
-                object[] result = mstBusinessCtrl.queryDataMstBusiness(formMstBusiness);
-
-                MsgForm msgForm = (MsgForm)result[0];
-                MST_BUSINESS data = (MST_BUSINESS)result[1];
-
-                if (msgForm.statusFlag.Equals(1))
-                {
-                    if (Util.isNotEmpty(data))
-                    {
-                        formMstBusiness = data;
-
-                        txtBusinessName.Text = data.BUSINESS_NAME;
-                        txtBusinessAddress.Text = data.BUSINESS_ADDRESS;
-                        txtBusinessTelNo.Text = data.BUSINESS_TEL_NO;
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("Error : " + msgForm.messageDescription);
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex.ToString(), ex);
-            }
+            updateDataMstDataBasic();
         }
 
-        public void updateDataMstBusiness()
+        private void btnCancel_Click(object sender, EventArgs e)
         {
-            MstBusinessController mstBusinessCtrl = new MstBusinessController();
-            MST_BUSINESS form = new MST_BUSINESS();
-            try
-            {
-                form.BUSINESS_ID = formMstBusiness.BUSINESS_ID;
-                form.BUSINESS_NAME = txtBusinessName.Text;
-                form.BUSINESS_ADDRESS = txtBusinessAddress.Text;
-                form.BUSINESS_TEL_NO = txtBusinessTelNo.Text;
-
-                if (Util.isEmpty(form))
-                {
-                    return;
-                }
-
-                object[] result = mstBusinessCtrl.updateDataMstBusiness(form);
-
-                MsgForm msgForm = (MsgForm)result[0];
-
-                if (msgForm.statusFlag.Equals(1))
-                {
-                    MessageBox.Show(CommonUtil.SAVE_DATA_SUCCESS);
-                }
-                else
-                {
-                    MessageBox.Show("Error : " + msgForm.messageDescription);
-                }
-            }
-            catch (Exception ex)
-            {
-                Log.Error(ex.ToString(), ex);
-            }
+            queryDataMstDataBasic();
         }
     }
 }

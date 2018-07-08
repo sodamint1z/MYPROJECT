@@ -13,7 +13,7 @@ namespace HomeScale.src.util
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public static string DUPLICATE_DATA = "ไม่สามารถบันทึก กรุณาตรวจสอบข้อมูลซ้ำ";
-        public static string REQUIRE_MESSAGE = "กรุณากรอกข้อมูลที่มีให้ครบถ้วน";
+        public static string REQUIRE_MESSAGE = "กรุณากรอกข้อมูลที่มี * ให้ครบถ้วน";
         public static string SAVE_DATA_SUCCESS = "บันทึกข้อมูลเรียบร้อย";
         public static string DELETE_DATA_SUCCESS = "ลบข้อมูลเรียบร้อย";
         public static string SELECT_DATA_DELETE = "กรุณาเลือกข้อมูลที่ต้องการลบ!";

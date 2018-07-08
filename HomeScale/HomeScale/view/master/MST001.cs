@@ -78,10 +78,12 @@ namespace HomeScale.view.master
                 if (msgForm.statusFlag.Equals(1))
                 {
                     dataGridView1.DataSource = lstdata;
-                    dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 18);
+                    dataGridView1.DefaultCellStyle.Font = new Font("TH SarabunPSK", 16);
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                    dataGridView1.EnableHeadersVisualStyles = false;
+                    dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.SkyBlue;
                     dataGridView1.ColumnHeadersHeight = 150;
-                    dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Verdana", 18, FontStyle.Bold);
+                    dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("TH SarabunPSK", 16, FontStyle.Bold);
                     dataGridView1.RowTemplate.Height = 40;
                     dataGridView1.Columns[0].HeaderCell.Value = "รหัสสินค้า";
                     dataGridView1.Columns[1].HeaderCell.Value = "ชื่อสินค้า";
@@ -243,13 +245,6 @@ namespace HomeScale.view.master
             }
         }
 
-        public void callMenuMaster()
-        {
-            MenuMaster menuMaster = new MenuMaster();
-            this.Hide();
-            menuMaster.Show();
-        }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -275,11 +270,6 @@ namespace HomeScale.view.master
         private void btnDelete_Click(object sender, EventArgs e)
         {
             deleteDataMstProduct();
-        }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            callMenuMaster();
         }
     }
 }

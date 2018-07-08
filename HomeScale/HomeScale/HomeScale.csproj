@@ -196,6 +196,12 @@
     <Compile Include="view\master\MST007.Designer.cs">
       <DependentUpon>MST007.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\master\MST008.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\master\MST008.Designer.cs">
+      <DependentUpon>MST008.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\MenuMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -244,6 +250,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="view\master\MST007.resx">
       <DependentUpon>MST007.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="view\master\MST008.resx">
+      <DependentUpon>MST008.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="view\MenuMain.resx">
       <DependentUpon>MenuMain.cs</DependentUpon>

@@ -46,7 +46,7 @@
             // 
             // btnMainScale
             // 
-            this.btnMainScale.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnMainScale.BackColor = System.Drawing.Color.LightBlue;
             this.btnMainScale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnMainScale.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnMainScale.Image = ((System.Drawing.Image)(resources.GetObject("btnMainScale.Image")));
@@ -62,7 +62,7 @@
             // 
             // btnDataScale
             // 
-            this.btnDataScale.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDataScale.BackColor = System.Drawing.Color.LightBlue;
             this.btnDataScale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDataScale.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnDataScale.Image = ((System.Drawing.Image)(resources.GetObject("btnDataScale.Image")));
@@ -78,7 +78,7 @@
             // 
             // btnDatabase
             // 
-            this.btnDatabase.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnDatabase.BackColor = System.Drawing.Color.LightBlue;
             this.btnDatabase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnDatabase.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnDatabase.Image = ((System.Drawing.Image)(resources.GetObject("btnDatabase.Image")));
@@ -94,7 +94,7 @@
             // 
             // btnConfigScale
             // 
-            this.btnConfigScale.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnConfigScale.BackColor = System.Drawing.Color.LightBlue;
             this.btnConfigScale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnConfigScale.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnConfigScale.Image = ((System.Drawing.Image)(resources.GetObject("btnConfigScale.Image")));
@@ -109,7 +109,7 @@
             // 
             // btnReport
             // 
-            this.btnReport.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnReport.BackColor = System.Drawing.Color.LightBlue;
             this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnReport.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
@@ -124,7 +124,7 @@
             // 
             // button5
             // 
-            this.button5.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button5.BackColor = System.Drawing.Color.LightBlue;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button5.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
@@ -139,7 +139,7 @@
             // 
             // button6
             // 
-            this.button6.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button6.BackColor = System.Drawing.Color.LightBlue;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button6.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
@@ -154,7 +154,7 @@
             // 
             // button1
             // 
-            this.button1.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button1.BackColor = System.Drawing.Color.LightBlue;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button1.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
@@ -169,7 +169,7 @@
             // 
             // button2
             // 
-            this.button2.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button2.BackColor = System.Drawing.Color.LightBlue;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
@@ -184,7 +184,7 @@
             // 
             // button3
             // 
-            this.button3.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.button3.BackColor = System.Drawing.Color.LightBlue;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.button3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
@@ -217,7 +217,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1008, 481);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button3);

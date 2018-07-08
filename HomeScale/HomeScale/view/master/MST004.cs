@@ -55,10 +55,12 @@ namespace HomeScale.view.master
                 if (msgForm.statusFlag.Equals(1))
                 {
                     dataGridView1.DataSource = lstdata;
-                    dataGridView1.DefaultCellStyle.Font = new Font("Verdana", 18);
+                    dataGridView1.DefaultCellStyle.Font = new Font("TH SarabunPSK", 16);
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                    dataGridView1.EnableHeadersVisualStyles = false;
+                    dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.SkyBlue;
                     dataGridView1.ColumnHeadersHeight = 150;
-                    dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("Verdana", 18, FontStyle.Bold);
+                    dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("TH SarabunPSK", 16, FontStyle.Bold);
                     dataGridView1.RowTemplate.Height = 40;
                     dataGridView1.Columns[0].HeaderCell.Value = "รหัสปลายทาง";
                     dataGridView1.Columns[1].HeaderCell.Value = "ชื่อปลายทาง";

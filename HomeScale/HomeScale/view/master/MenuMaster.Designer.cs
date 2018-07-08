@@ -29,167 +29,91 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuMaster));
-            this.btnDataProduct = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.btnDataVendor = new System.Windows.Forms.Button();
-            this.btnDataUnitProduct = new System.Windows.Forms.Button();
-            this.btnDataDestination = new System.Windows.Forms.Button();
-            this.btnDataLicensePlate = new System.Windows.Forms.Button();
-            this.btnDataBasic = new System.Windows.Forms.Button();
-            this.btnUserLogin = new System.Windows.Forms.Button();
+            this.tabControl1 = new System.Windows.Forms.TabControl();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.toolStripStatuslblCredit = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblHead = new System.Windows.Forms.Label();
+            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // btnDataProduct
-            // 
-            this.btnDataProduct.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDataProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDataProduct.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDataProduct.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDataProduct.Location = new System.Drawing.Point(77, 97);
-            this.btnDataProduct.Name = "btnDataProduct";
-            this.btnDataProduct.Size = new System.Drawing.Size(180, 100);
-            this.btnDataProduct.TabIndex = 11;
-            this.btnDataProduct.Text = "ข้อมูลสินค้า";
-            this.btnDataProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDataProduct.UseVisualStyleBackColor = false;
-            this.btnDataProduct.Click += new System.EventHandler(this.btnDataProduct_Click);
             // 
             // btnBack
             // 
-            this.btnBack.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnBack.BackColor = System.Drawing.Color.Pink;
             this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnBack.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
             this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnBack.Location = new System.Drawing.Point(77, 309);
+            this.btnBack.Location = new System.Drawing.Point(913, 6);
             this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(180, 100);
+            this.btnBack.Size = new System.Drawing.Size(109, 70);
             this.btnBack.TabIndex = 12;
             this.btnBack.Text = "ย้อนกลับ";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBack.UseVisualStyleBackColor = false;
             this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // btnDataVendor
+            // tabControl1
             // 
-            this.btnDataVendor.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDataVendor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDataVendor.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDataVendor.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDataVendor.Location = new System.Drawing.Point(263, 97);
-            this.btnDataVendor.Name = "btnDataVendor";
-            this.btnDataVendor.Size = new System.Drawing.Size(180, 100);
-            this.btnDataVendor.TabIndex = 13;
-            this.btnDataVendor.Text = "ข้อมูลผู้ขาย";
-            this.btnDataVendor.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDataVendor.UseVisualStyleBackColor = false;
-            this.btnDataVendor.Click += new System.EventHandler(this.btnDataVendor_Click);
+            this.tabControl1.Location = new System.Drawing.Point(12, 78);
+            this.tabControl1.Name = "tabControl1";
+            this.tabControl1.SelectedIndex = 0;
+            this.tabControl1.Size = new System.Drawing.Size(1010, 650);
+            this.tabControl1.TabIndex = 13;
             // 
-            // btnDataUnitProduct
+            // statusStrip1
             // 
-            this.btnDataUnitProduct.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDataUnitProduct.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDataUnitProduct.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDataUnitProduct.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDataUnitProduct.Location = new System.Drawing.Point(77, 203);
-            this.btnDataUnitProduct.Name = "btnDataUnitProduct";
-            this.btnDataUnitProduct.Size = new System.Drawing.Size(180, 100);
-            this.btnDataUnitProduct.TabIndex = 14;
-            this.btnDataUnitProduct.Text = "ข้อมูลหน่วยสินค้า";
-            this.btnDataUnitProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDataUnitProduct.UseVisualStyleBackColor = false;
-            this.btnDataUnitProduct.Click += new System.EventHandler(this.btnDataUnitProduct_Click);
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.toolStripStatuslblCredit});
+            this.statusStrip1.Location = new System.Drawing.Point(0, 739);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
+            this.statusStrip1.TabIndex = 14;
+            this.statusStrip1.Text = "statusStrip1";
             // 
-            // btnDataDestination
+            // toolStripStatuslblCredit
             // 
-            this.btnDataDestination.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDataDestination.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDataDestination.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDataDestination.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDataDestination.Location = new System.Drawing.Point(263, 203);
-            this.btnDataDestination.Name = "btnDataDestination";
-            this.btnDataDestination.Size = new System.Drawing.Size(180, 100);
-            this.btnDataDestination.TabIndex = 15;
-            this.btnDataDestination.Text = "ข้อมูลปลายทาง";
-            this.btnDataDestination.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDataDestination.UseVisualStyleBackColor = false;
-            this.btnDataDestination.Click += new System.EventHandler(this.btnDataDestination_Click);
+            this.toolStripStatuslblCredit.Name = "toolStripStatuslblCredit";
+            this.toolStripStatuslblCredit.Size = new System.Drawing.Size(263, 17);
+            this.toolStripStatuslblCredit.Text = "Copyright©2018  Credit : Pro. All rights reserved.";
             // 
-            // btnDataLicensePlate
+            // lblHead
             // 
-            this.btnDataLicensePlate.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDataLicensePlate.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDataLicensePlate.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDataLicensePlate.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDataLicensePlate.Location = new System.Drawing.Point(449, 97);
-            this.btnDataLicensePlate.Name = "btnDataLicensePlate";
-            this.btnDataLicensePlate.Size = new System.Drawing.Size(180, 100);
-            this.btnDataLicensePlate.TabIndex = 16;
-            this.btnDataLicensePlate.Text = "ข้อมูลทะเบียนรถ";
-            this.btnDataLicensePlate.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDataLicensePlate.UseVisualStyleBackColor = false;
-            this.btnDataLicensePlate.Click += new System.EventHandler(this.btnDataLicensePlate_Click);
-            // 
-            // btnDataBasic
-            // 
-            this.btnDataBasic.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnDataBasic.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDataBasic.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDataBasic.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDataBasic.Location = new System.Drawing.Point(449, 203);
-            this.btnDataBasic.Name = "btnDataBasic";
-            this.btnDataBasic.Size = new System.Drawing.Size(180, 100);
-            this.btnDataBasic.TabIndex = 17;
-            this.btnDataBasic.Text = "ข้อมูลพื้นฐาน";
-            this.btnDataBasic.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnDataBasic.UseVisualStyleBackColor = false;
-            this.btnDataBasic.Click += new System.EventHandler(this.btnDataBasic_Click);
-            // 
-            // btnUserLogin
-            // 
-            this.btnUserLogin.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.btnUserLogin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnUserLogin.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUserLogin.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnUserLogin.Location = new System.Drawing.Point(635, 97);
-            this.btnUserLogin.Name = "btnUserLogin";
-            this.btnUserLogin.Size = new System.Drawing.Size(180, 100);
-            this.btnUserLogin.TabIndex = 18;
-            this.btnUserLogin.Text = "ข้อมูลผู้ใช้งานระบบ";
-            this.btnUserLogin.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnUserLogin.UseVisualStyleBackColor = false;
-            this.btnUserLogin.Click += new System.EventHandler(this.btnUserLogin_Click);
+            this.lblHead.AutoSize = true;
+            this.lblHead.BackColor = System.Drawing.Color.SkyBlue;
+            this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblHead.Location = new System.Drawing.Point(466, 35);
+            this.lblHead.Name = "lblHead";
+            this.lblHead.Size = new System.Drawing.Size(115, 33);
+            this.lblHead.TabIndex = 15;
+            this.lblHead.Text = "ฐานข้อมูลทั่วไป";
             // 
             // MenuMaster
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1008, 481);
-            this.Controls.Add(this.btnUserLogin);
-            this.Controls.Add(this.btnDataBasic);
-            this.Controls.Add(this.btnDataLicensePlate);
-            this.Controls.Add(this.btnDataDestination);
-            this.Controls.Add(this.btnDataUnitProduct);
-            this.Controls.Add(this.btnDataVendor);
+            this.BackColor = System.Drawing.Color.LightSteelBlue;
+            this.ClientSize = new System.Drawing.Size(1034, 761);
+            this.Controls.Add(this.lblHead);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.tabControl1);
             this.Controls.Add(this.btnBack);
-            this.Controls.Add(this.btnDataProduct);
             this.Name = "MenuMaster";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HomeScale";
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Button btnDataProduct;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.Button btnDataVendor;
-        private System.Windows.Forms.Button btnDataUnitProduct;
-        private System.Windows.Forms.Button btnDataDestination;
-        private System.Windows.Forms.Button btnDataLicensePlate;
-        private System.Windows.Forms.Button btnDataBasic;
-        private System.Windows.Forms.Button btnUserLogin;
+        private System.Windows.Forms.TabControl tabControl1;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel toolStripStatuslblCredit;
+        private System.Windows.Forms.Label lblHead;
     }
 }

@@ -22,48 +22,7 @@ namespace HomeScale.view.master
         public MenuMaster()
         {
             InitializeComponent();
-        }
-
-        public void callMenuMstProduct()
-        {
-            MST001 mstProduct = new MST001();
-            this.Hide();
-            mstProduct.Show();
-        }
-
-        public void callMenuMstVendor()
-        {
-            MST003 mstVendor = new MST003();
-            this.Hide();
-            mstVendor.Show();
-        }
-
-        public void callMenuMstDestination()
-        {
-            MST004 mstDestination = new MST004();
-            this.Hide();
-            mstDestination.Show();
-        }
-
-        public void callMenuMstProductUnit()
-        {
-            MST002 mstProductUnit = new MST002();
-            this.Hide();
-            mstProductUnit.Show();
-        }
-
-        public void callMenuMstCarRegistertion()
-        {
-            MST005 mstCarRegistertion = new MST005();
-            this.Hide();
-            mstCarRegistertion.Show();
-        }
-
-        public void callMenuMstDataBasic()
-        {
-            MST006 mstDataBasic = new MST006();
-            this.Hide();
-            mstDataBasic.Show();
+            showPageMst();
         }
 
         public void callMenuMain()
@@ -73,51 +32,50 @@ namespace HomeScale.view.master
             menuMain.Show();
         }
 
-        public void callMenuUserLogin()
+        private void showPageMst()
         {
-            MST007 userLogin = new MST007();
-            this.Hide();
-            userLogin.Show();
+            MST001 mst001 = new MST001();
+            MST002 mst002 = new MST002();
+            MST003 mst003 = new MST003();
+            MST004 mst004 = new MST004();
+            MST005 mst005 = new MST005();
+            MST006 mst006 = new MST006();
+            MST007 mst007 = new MST007();
+            MST008 mst008 = new MST008();
+
+            addNewTab(mst001);
+            addNewTab(mst002);
+            addNewTab(mst003);
+            addNewTab(mst004);
+            addNewTab(mst005);
+            addNewTab(mst006);
+            addNewTab(mst007);
+            addNewTab(mst008);
         }
 
-        private void btnDataProduct_Click(object sender, EventArgs e)
+        private void addNewTab(Form frm)
         {
-            callMenuMstProduct();
+
+            TabPage tab = new TabPage(frm.Text);
+            frm.TopLevel = false;
+            frm.Parent = tab;
+            frm.Visible = true;
+            frm.FormBorderStyle = FormBorderStyle.None;
+            frm.WindowState = FormWindowState.Maximized;
+            frm.ShowInTaskbar = false;
+
+            tabControl1.TabPages.Add(tab);
+
+
+            //frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
+
+            //tabControl1.SelectedTab = tab;
+
         }
 
         private void btnBack_Click(object sender, EventArgs e)
         {
             callMenuMain();
-        }
-
-        private void btnDataVendor_Click(object sender, EventArgs e)
-        {
-            callMenuMstVendor();
-        }
-
-        private void btnDataUnitProduct_Click(object sender, EventArgs e)
-        {
-            callMenuMstProductUnit();
-        }
-
-        private void btnDataDestination_Click(object sender, EventArgs e)
-        {
-            callMenuMstDestination();
-        }
-
-        private void btnDataLicensePlate_Click(object sender, EventArgs e)
-        {
-            callMenuMstCarRegistertion();
-        }
-
-        private void btnDataBasic_Click(object sender, EventArgs e)
-        {
-            callMenuMstDataBasic();
-        }
-
-        private void btnUserLogin_Click(object sender, EventArgs e)
-        {
-            callMenuUserLogin();
         }
     }
 }

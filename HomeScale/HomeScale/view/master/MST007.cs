@@ -32,7 +32,7 @@ namespace HomeScale.view.master
             txtUserPassword.Text = "";
             txtUserFirstname.Text = "";
             txtUserLastname.Text = "";
-            cboStatusFlag.SelectedValue = "1";
+            cboStatusFlag.SelectedValue = 1;
             formUserLogin = new USER_LOGIN();
             flagAddEdit = "A";
             txtUserId.Enabled = true;
@@ -77,6 +77,8 @@ namespace HomeScale.view.master
                     dataGridView1.DataSource = lstUserLogin;
                     dataGridView1.DefaultCellStyle.Font = new Font("TH SarabunPSK", 16);
                     dataGridView1.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.DisplayedCells;
+                    dataGridView1.EnableHeadersVisualStyles = false;
+                    dataGridView1.ColumnHeadersDefaultCellStyle.BackColor = Color.SkyBlue;
                     dataGridView1.ColumnHeadersHeight = 150;
                     dataGridView1.ColumnHeadersDefaultCellStyle.Font = new Font("TH SarabunPSK", 16, FontStyle.Bold);
                     dataGridView1.RowTemplate.Height = 40;
@@ -246,13 +248,6 @@ namespace HomeScale.view.master
             }
         }
 
-        public void callMenuMaster()
-        {
-            MenuMaster menuMaster = new MenuMaster();
-            this.Hide();
-            menuMaster.Show();
-        }
-
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
@@ -279,11 +274,5 @@ namespace HomeScale.view.master
         {
             deleteDataManageUserLogin();
         }
-
-        private void btnBack_Click(object sender, EventArgs e)
-        {
-            callMenuMaster();
-        }
-
     }
 }

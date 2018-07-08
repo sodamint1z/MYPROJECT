@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MST004));
             this.lblDistinationFax = new System.Windows.Forms.Label();
             this.lblDistinationTelNo = new System.Windows.Forms.Label();
             this.lblDistinationPostcode = new System.Windows.Forms.Label();
@@ -46,195 +47,200 @@
             this.txtDistinationName = new System.Windows.Forms.TextBox();
             this.lblHead = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnBack = new System.Windows.Forms.Button();
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblDistinationId = new System.Windows.Forms.Label();
             this.txtDistinationId = new System.Windows.Forms.TextBox();
             this.lblCountData = new System.Windows.Forms.Label();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatuslblCredit = new System.Windows.Forms.ToolStripStatusLabel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblDistinationFax
             // 
             this.lblDistinationFax.AutoSize = true;
-            this.lblDistinationFax.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDistinationFax.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistinationFax.Location = new System.Drawing.Point(579, 579);
+            this.lblDistinationFax.BackColor = System.Drawing.Color.Transparent;
+            this.lblDistinationFax.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDistinationFax.Location = new System.Drawing.Point(604, 576);
             this.lblDistinationFax.Name = "lblDistinationFax";
-            this.lblDistinationFax.Size = new System.Drawing.Size(73, 29);
+            this.lblDistinationFax.Size = new System.Drawing.Size(63, 33);
             this.lblDistinationFax.TabIndex = 31;
             this.lblDistinationFax.Text = "แฟกซ์ :";
             // 
             // lblDistinationTelNo
             // 
             this.lblDistinationTelNo.AutoSize = true;
-            this.lblDistinationTelNo.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDistinationTelNo.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistinationTelNo.Location = new System.Drawing.Point(560, 533);
+            this.lblDistinationTelNo.BackColor = System.Drawing.Color.Transparent;
+            this.lblDistinationTelNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDistinationTelNo.Location = new System.Drawing.Point(586, 530);
             this.lblDistinationTelNo.Name = "lblDistinationTelNo";
-            this.lblDistinationTelNo.Size = new System.Drawing.Size(92, 29);
+            this.lblDistinationTelNo.Size = new System.Drawing.Size(79, 33);
             this.lblDistinationTelNo.TabIndex = 30;
             this.lblDistinationTelNo.Text = "โทรศัพท์ :";
             // 
             // lblDistinationPostcode
             // 
             this.lblDistinationPostcode.AutoSize = true;
-            this.lblDistinationPostcode.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDistinationPostcode.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistinationPostcode.Location = new System.Drawing.Point(528, 487);
+            this.lblDistinationPostcode.BackColor = System.Drawing.Color.Transparent;
+            this.lblDistinationPostcode.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDistinationPostcode.Location = new System.Drawing.Point(557, 484);
             this.lblDistinationPostcode.Name = "lblDistinationPostcode";
-            this.lblDistinationPostcode.Size = new System.Drawing.Size(124, 29);
+            this.lblDistinationPostcode.Size = new System.Drawing.Size(108, 33);
             this.lblDistinationPostcode.TabIndex = 29;
             this.lblDistinationPostcode.Text = "รหัสไปรษณีย์ :";
             // 
             // lblDistinationCounty
             // 
             this.lblDistinationCounty.AutoSize = true;
-            this.lblDistinationCounty.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDistinationCounty.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistinationCounty.Location = new System.Drawing.Point(575, 441);
+            this.lblDistinationCounty.BackColor = System.Drawing.Color.Transparent;
+            this.lblDistinationCounty.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDistinationCounty.Location = new System.Drawing.Point(596, 438);
             this.lblDistinationCounty.Name = "lblDistinationCounty";
-            this.lblDistinationCounty.Size = new System.Drawing.Size(77, 29);
+            this.lblDistinationCounty.Size = new System.Drawing.Size(69, 33);
             this.lblDistinationCounty.TabIndex = 28;
             this.lblDistinationCounty.Text = "จังหวัด :";
             // 
             // lblDistinationDistrictTwo
             // 
             this.lblDistinationDistrictTwo.AutoSize = true;
-            this.lblDistinationDistrictTwo.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDistinationDistrictTwo.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistinationDistrictTwo.Location = new System.Drawing.Point(577, 395);
+            this.lblDistinationDistrictTwo.BackColor = System.Drawing.Color.Transparent;
+            this.lblDistinationDistrictTwo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDistinationDistrictTwo.Location = new System.Drawing.Point(600, 392);
             this.lblDistinationDistrictTwo.Name = "lblDistinationDistrictTwo";
-            this.lblDistinationDistrictTwo.Size = new System.Drawing.Size(75, 29);
+            this.lblDistinationDistrictTwo.Size = new System.Drawing.Size(65, 33);
             this.lblDistinationDistrictTwo.TabIndex = 27;
             this.lblDistinationDistrictTwo.Text = "อำเภอ :";
             // 
             // lblDistinationDistrictOne
             // 
             this.lblDistinationDistrictOne.AutoSize = true;
-            this.lblDistinationDistrictOne.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDistinationDistrictOne.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistinationDistrictOne.Location = new System.Drawing.Point(583, 349);
+            this.lblDistinationDistrictOne.BackColor = System.Drawing.Color.Transparent;
+            this.lblDistinationDistrictOne.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDistinationDistrictOne.Location = new System.Drawing.Point(604, 346);
             this.lblDistinationDistrictOne.Name = "lblDistinationDistrictOne";
-            this.lblDistinationDistrictOne.Size = new System.Drawing.Size(69, 29);
+            this.lblDistinationDistrictOne.Size = new System.Drawing.Size(61, 33);
             this.lblDistinationDistrictOne.TabIndex = 26;
             this.lblDistinationDistrictOne.Text = "ตำบล :";
             // 
             // lblDistinationAddress
             // 
             this.lblDistinationAddress.AutoSize = true;
-            this.lblDistinationAddress.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDistinationAddress.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistinationAddress.Location = new System.Drawing.Point(594, 303);
+            this.lblDistinationAddress.BackColor = System.Drawing.Color.Transparent;
+            this.lblDistinationAddress.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDistinationAddress.Location = new System.Drawing.Point(613, 300);
             this.lblDistinationAddress.Name = "lblDistinationAddress";
-            this.lblDistinationAddress.Size = new System.Drawing.Size(58, 29);
+            this.lblDistinationAddress.Size = new System.Drawing.Size(52, 33);
             this.lblDistinationAddress.TabIndex = 25;
             this.lblDistinationAddress.Text = "ที่อยู่ :";
             // 
             // lblDistinationName
             // 
             this.lblDistinationName.AutoSize = true;
-            this.lblDistinationName.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDistinationName.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistinationName.Location = new System.Drawing.Point(530, 256);
+            this.lblDistinationName.BackColor = System.Drawing.Color.Transparent;
+            this.lblDistinationName.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDistinationName.Location = new System.Drawing.Point(553, 253);
             this.lblDistinationName.Name = "lblDistinationName";
-            this.lblDistinationName.Size = new System.Drawing.Size(122, 29);
+            this.lblDistinationName.Size = new System.Drawing.Size(114, 33);
             this.lblDistinationName.TabIndex = 24;
-            this.lblDistinationName.Text = "ชื่อปลายทาง :";
+            this.lblDistinationName.Text = "ชื่อปลายทาง* :";
             // 
             // txtDistinationFax
             // 
-            this.txtDistinationFax.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationFax.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtDistinationFax.Location = new System.Drawing.Point(684, 576);
+            this.txtDistinationFax.MaxLength = 50;
             this.txtDistinationFax.Multiline = true;
             this.txtDistinationFax.Name = "txtDistinationFax";
-            this.txtDistinationFax.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationFax.Size = new System.Drawing.Size(300, 33);
             this.txtDistinationFax.TabIndex = 23;
             // 
             // txtDistinationTelNo
             // 
-            this.txtDistinationTelNo.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationTelNo.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtDistinationTelNo.Location = new System.Drawing.Point(684, 530);
+            this.txtDistinationTelNo.MaxLength = 50;
             this.txtDistinationTelNo.Multiline = true;
             this.txtDistinationTelNo.Name = "txtDistinationTelNo";
-            this.txtDistinationTelNo.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationTelNo.Size = new System.Drawing.Size(300, 33);
             this.txtDistinationTelNo.TabIndex = 22;
             // 
             // txtDistinationPostcode
             // 
-            this.txtDistinationPostcode.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationPostcode.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtDistinationPostcode.Location = new System.Drawing.Point(684, 484);
+            this.txtDistinationPostcode.MaxLength = 20;
             this.txtDistinationPostcode.Multiline = true;
             this.txtDistinationPostcode.Name = "txtDistinationPostcode";
-            this.txtDistinationPostcode.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationPostcode.Size = new System.Drawing.Size(300, 33);
             this.txtDistinationPostcode.TabIndex = 21;
             // 
             // txtDistinationProvince
             // 
-            this.txtDistinationProvince.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationProvince.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtDistinationProvince.Location = new System.Drawing.Point(684, 438);
+            this.txtDistinationProvince.MaxLength = 100;
             this.txtDistinationProvince.Multiline = true;
             this.txtDistinationProvince.Name = "txtDistinationProvince";
-            this.txtDistinationProvince.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationProvince.Size = new System.Drawing.Size(300, 33);
             this.txtDistinationProvince.TabIndex = 20;
             // 
             // txtDistinationDistrict
             // 
-            this.txtDistinationDistrict.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationDistrict.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtDistinationDistrict.Location = new System.Drawing.Point(684, 392);
+            this.txtDistinationDistrict.MaxLength = 100;
             this.txtDistinationDistrict.Multiline = true;
             this.txtDistinationDistrict.Name = "txtDistinationDistrict";
-            this.txtDistinationDistrict.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationDistrict.Size = new System.Drawing.Size(300, 33);
             this.txtDistinationDistrict.TabIndex = 19;
             // 
             // txtDistinationSubDistrict
             // 
-            this.txtDistinationSubDistrict.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationSubDistrict.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtDistinationSubDistrict.Location = new System.Drawing.Point(684, 346);
+            this.txtDistinationSubDistrict.MaxLength = 100;
             this.txtDistinationSubDistrict.Multiline = true;
             this.txtDistinationSubDistrict.Name = "txtDistinationSubDistrict";
-            this.txtDistinationSubDistrict.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationSubDistrict.Size = new System.Drawing.Size(300, 33);
             this.txtDistinationSubDistrict.TabIndex = 18;
             // 
             // txtDistinationAddress
             // 
-            this.txtDistinationAddress.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationAddress.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtDistinationAddress.Location = new System.Drawing.Point(684, 300);
+            this.txtDistinationAddress.MaxLength = 100;
             this.txtDistinationAddress.Multiline = true;
             this.txtDistinationAddress.Name = "txtDistinationAddress";
-            this.txtDistinationAddress.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationAddress.Size = new System.Drawing.Size(300, 33);
             this.txtDistinationAddress.TabIndex = 17;
             // 
             // txtDistinationName
             // 
             this.txtDistinationName.BackColor = System.Drawing.SystemColors.Window;
             this.txtDistinationName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDistinationName.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationName.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtDistinationName.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtDistinationName.Location = new System.Drawing.Point(684, 254);
+            this.txtDistinationName.MaxLength = 100;
             this.txtDistinationName.Multiline = true;
             this.txtDistinationName.Name = "txtDistinationName";
-            this.txtDistinationName.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationName.Size = new System.Drawing.Size(300, 33);
             this.txtDistinationName.TabIndex = 16;
             // 
             // lblHead
             // 
             this.lblHead.AutoSize = true;
-            this.lblHead.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblHead.Font = new System.Drawing.Font("Verdana", 18F);
-            this.lblHead.Location = new System.Drawing.Point(441, 41);
+            this.lblHead.BackColor = System.Drawing.Color.Transparent;
+            this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblHead.Location = new System.Drawing.Point(412, 42);
             this.lblHead.Name = "lblHead";
-            this.lblHead.Size = new System.Drawing.Size(134, 29);
+            this.lblHead.Size = new System.Drawing.Size(191, 33);
             this.lblHead.TabIndex = 38;
-            this.lblHead.Text = "ข้อมูลปลายทาง";
+            this.lblHead.Text = "MST004 : ข้อมูลปลายทาง";
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(9, 207);
             this.dataGridView1.Name = "dataGridView1";
@@ -242,29 +248,19 @@
             this.dataGridView1.TabIndex = 39;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
-            // btnBack
-            // 
-            this.btnBack.BackColor = System.Drawing.Color.Wheat;
-            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnBack.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnBack.Location = new System.Drawing.Point(685, 90);
-            this.btnBack.Name = "btnBack";
-            this.btnBack.Size = new System.Drawing.Size(150, 80);
-            this.btnBack.TabIndex = 43;
-            this.btnBack.Text = "ย้อนกลับ";
-            this.btnBack.UseVisualStyleBackColor = false;
-            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
-            // 
             // btnSave
             // 
-            this.btnSave.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.btnSave.BackColor = System.Drawing.Color.SkyBlue;
             this.btnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnSave.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnSave.Location = new System.Drawing.Point(175, 90);
+            this.btnSave.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnSave.Location = new System.Drawing.Point(330, 98);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(150, 80);
+            this.btnSave.Size = new System.Drawing.Size(109, 70);
             this.btnSave.TabIndex = 42;
             this.btnSave.Text = "บันทึก";
+            this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
@@ -272,12 +268,15 @@
             // 
             this.btnCancel.BackColor = System.Drawing.Color.LightGreen;
             this.btnCancel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnCancel.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnCancel.Location = new System.Drawing.Point(345, 90);
+            this.btnCancel.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
+            this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnCancel.Location = new System.Drawing.Point(440, 98);
             this.btnCancel.Name = "btnCancel";
-            this.btnCancel.Size = new System.Drawing.Size(150, 80);
+            this.btnCancel.Size = new System.Drawing.Size(109, 70);
             this.btnCancel.TabIndex = 41;
             this.btnCancel.Text = "ยกเลิก";
+            this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = false;
             this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
@@ -285,75 +284,61 @@
             // 
             this.btnDelete.BackColor = System.Drawing.Color.Salmon;
             this.btnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.btnDelete.Font = new System.Drawing.Font("Verdana", 18F);
-            this.btnDelete.Location = new System.Drawing.Point(515, 90);
+            this.btnDelete.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnDelete.Location = new System.Drawing.Point(550, 98);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(150, 80);
+            this.btnDelete.Size = new System.Drawing.Size(109, 70);
             this.btnDelete.TabIndex = 40;
             this.btnDelete.Text = "ลบ";
+            this.btnDelete.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnDelete.UseVisualStyleBackColor = false;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // lblDistinationId
             // 
             this.lblDistinationId.AutoSize = true;
-            this.lblDistinationId.BackColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lblDistinationId.Font = new System.Drawing.Font("Verdana", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDistinationId.Location = new System.Drawing.Point(522, 209);
+            this.lblDistinationId.BackColor = System.Drawing.Color.Transparent;
+            this.lblDistinationId.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDistinationId.Location = new System.Drawing.Point(544, 207);
             this.lblDistinationId.Name = "lblDistinationId";
-            this.lblDistinationId.Size = new System.Drawing.Size(130, 29);
+            this.lblDistinationId.Size = new System.Drawing.Size(123, 33);
             this.lblDistinationId.TabIndex = 45;
-            this.lblDistinationId.Text = "รหัสปลายทาง :";
+            this.lblDistinationId.Text = "รหัสปลายทาง* :";
             // 
             // txtDistinationId
             // 
             this.txtDistinationId.BackColor = System.Drawing.SystemColors.Window;
             this.txtDistinationId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDistinationId.Font = new System.Drawing.Font("Verdana", 18F);
+            this.txtDistinationId.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtDistinationId.ForeColor = System.Drawing.SystemColors.WindowText;
             this.txtDistinationId.Location = new System.Drawing.Point(684, 207);
+            this.txtDistinationId.MaxLength = 10;
             this.txtDistinationId.Multiline = true;
             this.txtDistinationId.Name = "txtDistinationId";
-            this.txtDistinationId.Size = new System.Drawing.Size(300, 40);
+            this.txtDistinationId.Size = new System.Drawing.Size(300, 33);
             this.txtDistinationId.TabIndex = 0;
             // 
             // lblCountData
             // 
             this.lblCountData.AutoSize = true;
-            this.lblCountData.Font = new System.Drawing.Font("Verdana", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountData.Location = new System.Drawing.Point(352, 179);
+            this.lblCountData.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold);
+            this.lblCountData.Location = new System.Drawing.Point(355, 179);
             this.lblCountData.Name = "lblCountData";
-            this.lblCountData.Size = new System.Drawing.Size(95, 18);
+            this.lblCountData.Size = new System.Drawing.Size(65, 22);
             this.lblCountData.TabIndex = 46;
             this.lblCountData.Text = "CountData";
-            // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatuslblCredit});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 619);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(1008, 22);
-            this.statusStrip1.TabIndex = 47;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // toolStripStatuslblCredit
-            // 
-            this.toolStripStatuslblCredit.Name = "toolStripStatuslblCredit";
-            this.toolStripStatuslblCredit.Size = new System.Drawing.Size(263, 17);
-            this.toolStripStatuslblCredit.Text = "Copyright©2018  Credit : Pro. All rights reserved.";
             // 
             // MST004
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ControlDark;
-            this.ClientSize = new System.Drawing.Size(1008, 641);
-            this.Controls.Add(this.statusStrip1);
+            this.BackColor = System.Drawing.Color.AliceBlue;
+            this.ClientSize = new System.Drawing.Size(1008, 626);
             this.Controls.Add(this.lblCountData);
             this.Controls.Add(this.lblDistinationId);
             this.Controls.Add(this.txtDistinationId);
-            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.btnDelete);
@@ -377,10 +362,8 @@
             this.Controls.Add(this.txtDistinationName);
             this.Name = "MST004";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomeScale";
+            this.Text = "ข้อมูลปลายทาง";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -406,14 +389,11 @@
         private System.Windows.Forms.TextBox txtDistinationName;
         private System.Windows.Forms.Label lblHead;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lblDistinationId;
         private System.Windows.Forms.TextBox txtDistinationId;
         private System.Windows.Forms.Label lblCountData;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatuslblCredit;
     }
 }
