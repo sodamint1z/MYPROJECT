@@ -44,5 +44,12 @@ namespace HomeScale.view
             menuMaster.Show();
         }
 
+        private void btnConfigScale_Click(object sender, EventArgs e)
+        {
+            STS001 sts001 = new STS001();
+            this.Hide();
+            sts001.Show();
+        }
+
     }
 }

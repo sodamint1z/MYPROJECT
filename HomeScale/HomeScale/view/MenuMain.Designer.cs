@@ -106,6 +106,7 @@
             this.btnConfigScale.Text = "ปรับแต่งเครื่องชั่ง";
             this.btnConfigScale.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnConfigScale.UseVisualStyleBackColor = false;
+            this.btnConfigScale.Click += new System.EventHandler(this.btnConfigScale_Click);
             // 
             // btnReport
             // 
