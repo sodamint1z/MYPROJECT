@@ -33,15 +33,15 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
-            this.cboProductUnit = new System.Windows.Forms.ComboBox();
+            this.cboPorts = new System.Windows.Forms.ComboBox();
             this.lblProductUnit = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cboBaudRate = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.cboDataBits = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cboParity = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.cboStopBits = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtProductId = new System.Windows.Forms.TextBox();
             this.lblProductId = new System.Windows.Forms.Label();
@@ -59,11 +59,17 @@
             this.label10 = new System.Windows.Forms.Label();
             this.comboBox5 = new System.Windows.Forms.ComboBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.chkStatusPrintCardNo = new System.Windows.Forms.CheckBox();
+            this.richTextBox2 = new System.Windows.Forms.RichTextBox();
+            this.chkStatusConnectScale = new System.Windows.Forms.CheckBox();
+            this.cboHandShaking = new System.Windows.Forms.ComboBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.lblBreakStatus = new System.Windows.Forms.Label();
+            this.lblCTSStatus = new System.Windows.Forms.Label();
+            this.lblDSRStatus = new System.Windows.Forms.Label();
+            this.lblRIStatus = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -93,6 +99,7 @@
             this.btnSave.Text = "บันทึก";
             this.btnSave.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
             // 
             // btnCancel
             // 
@@ -108,6 +115,7 @@
             this.btnCancel.Text = "ยกเลิก";
             this.btnCancel.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCancel.UseVisualStyleBackColor = false;
+            this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
             // 
             // btnBack
             // 
@@ -123,17 +131,18 @@
             this.btnBack.Text = "ย้อนกลับ";
             this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
-            // cboProductUnit
+            // cboPorts
             // 
-            this.cboProductUnit.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboProductUnit.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
-            this.cboProductUnit.FormattingEnabled = true;
-            this.cboProductUnit.Location = new System.Drawing.Point(149, 105);
-            this.cboProductUnit.MaxLength = 50;
-            this.cboProductUnit.Name = "cboProductUnit";
-            this.cboProductUnit.Size = new System.Drawing.Size(150, 34);
-            this.cboProductUnit.TabIndex = 98;
+            this.cboPorts.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboPorts.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
+            this.cboPorts.FormattingEnabled = true;
+            this.cboPorts.Location = new System.Drawing.Point(149, 105);
+            this.cboPorts.MaxLength = 50;
+            this.cboPorts.Name = "cboPorts";
+            this.cboPorts.Size = new System.Drawing.Size(150, 34);
+            this.cboPorts.TabIndex = 98;
             // 
             // lblProductUnit
             // 
@@ -146,16 +155,16 @@
             this.lblProductUnit.TabIndex = 97;
             this.lblProductUnit.Text = "PortNo :";
             // 
-            // comboBox1
+            // cboBaudRate
             // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(149, 155);
-            this.comboBox1.MaxLength = 50;
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(150, 34);
-            this.comboBox1.TabIndex = 100;
+            this.cboBaudRate.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBaudRate.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
+            this.cboBaudRate.FormattingEnabled = true;
+            this.cboBaudRate.Location = new System.Drawing.Point(149, 155);
+            this.cboBaudRate.MaxLength = 50;
+            this.cboBaudRate.Name = "cboBaudRate";
+            this.cboBaudRate.Size = new System.Drawing.Size(150, 34);
+            this.cboBaudRate.TabIndex = 100;
             // 
             // label1
             // 
@@ -168,16 +177,16 @@
             this.label1.TabIndex = 99;
             this.label1.Text = "BaudRate :";
             // 
-            // comboBox2
+            // cboDataBits
             // 
-            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox2.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(149, 205);
-            this.comboBox2.MaxLength = 50;
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(150, 34);
-            this.comboBox2.TabIndex = 102;
+            this.cboDataBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboDataBits.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
+            this.cboDataBits.FormattingEnabled = true;
+            this.cboDataBits.Location = new System.Drawing.Point(149, 205);
+            this.cboDataBits.MaxLength = 50;
+            this.cboDataBits.Name = "cboDataBits";
+            this.cboDataBits.Size = new System.Drawing.Size(150, 34);
+            this.cboDataBits.TabIndex = 102;
             // 
             // label2
             // 
@@ -190,45 +199,45 @@
             this.label2.TabIndex = 101;
             this.label2.Text = "DataBit :";
             // 
-            // comboBox3
+            // cboParity
             // 
-            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox3.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(149, 255);
-            this.comboBox3.MaxLength = 50;
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(150, 34);
-            this.comboBox3.TabIndex = 104;
+            this.cboParity.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboParity.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
+            this.cboParity.FormattingEnabled = true;
+            this.cboParity.Location = new System.Drawing.Point(149, 305);
+            this.cboParity.MaxLength = 50;
+            this.cboParity.Name = "cboParity";
+            this.cboParity.Size = new System.Drawing.Size(150, 34);
+            this.cboParity.TabIndex = 104;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(76, 254);
+            this.label3.Location = new System.Drawing.Point(76, 305);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(67, 33);
             this.label3.TabIndex = 103;
             this.label3.Text = "Parity :";
             // 
-            // comboBox4
+            // cboStopBits
             // 
-            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox4.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
-            this.comboBox4.FormattingEnabled = true;
-            this.comboBox4.Location = new System.Drawing.Point(149, 305);
-            this.comboBox4.MaxLength = 50;
-            this.comboBox4.Name = "comboBox4";
-            this.comboBox4.Size = new System.Drawing.Size(150, 34);
-            this.comboBox4.TabIndex = 106;
+            this.cboStopBits.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboStopBits.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
+            this.cboStopBits.FormattingEnabled = true;
+            this.cboStopBits.Location = new System.Drawing.Point(149, 255);
+            this.cboStopBits.MaxLength = 50;
+            this.cboStopBits.Name = "cboStopBits";
+            this.cboStopBits.Size = new System.Drawing.Size(150, 34);
+            this.cboStopBits.TabIndex = 106;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(64, 304);
+            this.label4.Location = new System.Drawing.Point(64, 255);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(79, 33);
             this.label4.TabIndex = 105;
@@ -410,58 +419,122 @@
             this.label11.TabIndex = 121;
             this.label11.Text = "Indicator :";
             // 
-            // textBox7
-            // 
-            this.textBox7.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox7.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.textBox7.Location = new System.Drawing.Point(17, 19);
-            this.textBox7.MaxLength = 10;
-            this.textBox7.Multiline = true;
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(241, 82);
-            this.textBox7.TabIndex = 123;
-            // 
             // groupBox1
             // 
-            this.groupBox1.Controls.Add(this.textBox7);
+            this.groupBox1.Controls.Add(this.richTextBox1);
             this.groupBox1.Location = new System.Drawing.Point(654, 156);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(270, 118);
+            this.groupBox1.Size = new System.Drawing.Size(301, 158);
             this.groupBox1.TabIndex = 125;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Digital Indicator";
             // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Font = new System.Drawing.Font("TH SarabunPSK", 93.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.richTextBox1.ForeColor = System.Drawing.Color.Red;
+            this.richTextBox1.Location = new System.Drawing.Point(6, 19);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.richTextBox1.Size = new System.Drawing.Size(289, 132);
+            this.richTextBox1.TabIndex = 0;
+            this.richTextBox1.Text = "";
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox8);
-            this.groupBox2.Location = new System.Drawing.Point(654, 288);
+            this.groupBox2.Controls.Add(this.richTextBox2);
+            this.groupBox2.Location = new System.Drawing.Point(654, 320);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(270, 186);
             this.groupBox2.TabIndex = 126;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Connect Indicator";
             // 
-            // textBox8
+            // richTextBox2
             // 
-            this.textBox8.BackColor = System.Drawing.SystemColors.Window;
-            this.textBox8.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.textBox8.Location = new System.Drawing.Point(17, 19);
-            this.textBox8.MaxLength = 10;
-            this.textBox8.Multiline = true;
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(241, 149);
-            this.textBox8.TabIndex = 124;
+            this.richTextBox2.Location = new System.Drawing.Point(6, 19);
+            this.richTextBox2.Name = "richTextBox2";
+            this.richTextBox2.Size = new System.Drawing.Size(258, 161);
+            this.richTextBox2.TabIndex = 1;
+            this.richTextBox2.Text = "";
             // 
-            // chkStatusPrintCardNo
+            // chkStatusConnectScale
             // 
-            this.chkStatusPrintCardNo.AutoSize = true;
-            this.chkStatusPrintCardNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.chkStatusPrintCardNo.Location = new System.Drawing.Point(654, 491);
-            this.chkStatusPrintCardNo.Name = "chkStatusPrintCardNo";
-            this.chkStatusPrintCardNo.Size = new System.Drawing.Size(242, 37);
-            this.chkStatusPrintCardNo.TabIndex = 127;
-            this.chkStatusPrintCardNo.Text = "รับสัญญาณน้ำหนักจากเครื่องชั่ง";
-            this.chkStatusPrintCardNo.UseVisualStyleBackColor = true;
+            this.chkStatusConnectScale.AutoSize = true;
+            this.chkStatusConnectScale.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.chkStatusConnectScale.Location = new System.Drawing.Point(27, 404);
+            this.chkStatusConnectScale.Name = "chkStatusConnectScale";
+            this.chkStatusConnectScale.Size = new System.Drawing.Size(242, 37);
+            this.chkStatusConnectScale.TabIndex = 127;
+            this.chkStatusConnectScale.Text = "รับสัญญาณน้ำหนักจากเครื่องชั่ง";
+            this.chkStatusConnectScale.UseVisualStyleBackColor = true;
+            this.chkStatusConnectScale.CheckedChanged += new System.EventHandler(this.chkStatusConnectScale_CheckedChanged);
+            // 
+            // cboHandShaking
+            // 
+            this.cboHandShaking.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboHandShaking.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
+            this.cboHandShaking.FormattingEnabled = true;
+            this.cboHandShaking.Location = new System.Drawing.Point(149, 355);
+            this.cboHandShaking.MaxLength = 50;
+            this.cboHandShaking.Name = "cboHandShaking";
+            this.cboHandShaking.Size = new System.Drawing.Size(150, 34);
+            this.cboHandShaking.TabIndex = 129;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.BackColor = System.Drawing.Color.Transparent;
+            this.label12.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.label12.Location = new System.Drawing.Point(21, 355);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(122, 33);
+            this.label12.TabIndex = 128;
+            this.label12.Text = "HandShaking :";
+            // 
+            // lblBreakStatus
+            // 
+            this.lblBreakStatus.AutoSize = true;
+            this.lblBreakStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblBreakStatus.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblBreakStatus.Location = new System.Drawing.Point(22, 501);
+            this.lblBreakStatus.Name = "lblBreakStatus";
+            this.lblBreakStatus.Size = new System.Drawing.Size(57, 33);
+            this.lblBreakStatus.TabIndex = 130;
+            this.lblBreakStatus.Text = "Break";
+            // 
+            // lblCTSStatus
+            // 
+            this.lblCTSStatus.AutoSize = true;
+            this.lblCTSStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblCTSStatus.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblCTSStatus.Location = new System.Drawing.Point(86, 501);
+            this.lblCTSStatus.Name = "lblCTSStatus";
+            this.lblCTSStatus.Size = new System.Drawing.Size(44, 33);
+            this.lblCTSStatus.TabIndex = 131;
+            this.lblCTSStatus.Text = "CTS";
+            // 
+            // lblDSRStatus
+            // 
+            this.lblDSRStatus.AutoSize = true;
+            this.lblDSRStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblDSRStatus.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblDSRStatus.Location = new System.Drawing.Point(143, 501);
+            this.lblDSRStatus.Name = "lblDSRStatus";
+            this.lblDSRStatus.Size = new System.Drawing.Size(44, 33);
+            this.lblDSRStatus.TabIndex = 132;
+            this.lblDSRStatus.Text = "DSR";
+            // 
+            // lblRIStatus
+            // 
+            this.lblRIStatus.AutoSize = true;
+            this.lblRIStatus.BackColor = System.Drawing.Color.Transparent;
+            this.lblRIStatus.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblRIStatus.Location = new System.Drawing.Point(203, 501);
+            this.lblRIStatus.Name = "lblRIStatus";
+            this.lblRIStatus.Size = new System.Drawing.Size(28, 33);
+            this.lblRIStatus.TabIndex = 133;
+            this.lblRIStatus.Text = "RI";
             // 
             // STS001
             // 
@@ -469,7 +542,13 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1008, 626);
-            this.Controls.Add(this.chkStatusPrintCardNo);
+            this.Controls.Add(this.lblRIStatus);
+            this.Controls.Add(this.lblDSRStatus);
+            this.Controls.Add(this.lblCTSStatus);
+            this.Controls.Add(this.lblBreakStatus);
+            this.Controls.Add(this.cboHandShaking);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.chkStatusConnectScale);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.comboBox5);
@@ -488,15 +567,15 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txtProductId);
             this.Controls.Add(this.lblProductId);
-            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.cboStopBits);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.cboParity);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.cboDataBits);
             this.Controls.Add(this.label2);
-            this.Controls.Add(this.comboBox1);
+            this.Controls.Add(this.cboBaudRate);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cboProductUnit);
+            this.Controls.Add(this.cboPorts);
             this.Controls.Add(this.lblProductUnit);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSave);
@@ -506,9 +585,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "STS001";
             this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
             this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -520,15 +597,15 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.ComboBox cboProductUnit;
+        private System.Windows.Forms.ComboBox cboPorts;
         private System.Windows.Forms.Label lblProductUnit;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cboBaudRate;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox cboDataBits;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cboParity;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.ComboBox cboStopBits;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtProductId;
         private System.Windows.Forms.Label lblProductId;
@@ -546,10 +623,16 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.ComboBox comboBox5;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.CheckBox chkStatusPrintCardNo;
+        private System.Windows.Forms.CheckBox chkStatusConnectScale;
+        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBox2;
+        private System.Windows.Forms.ComboBox cboHandShaking;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label lblBreakStatus;
+        private System.Windows.Forms.Label lblCTSStatus;
+        private System.Windows.Forms.Label lblDSRStatus;
+        private System.Windows.Forms.Label lblRIStatus;
     }
 }

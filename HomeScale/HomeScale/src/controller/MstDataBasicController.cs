@@ -12,10 +12,10 @@ namespace HomeScale.src.controller
 {
     public class MstDataBasicController
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public object[] queryDataMstDataBasic(MST_DATA_BASIC param)
         {
-            Log.Info("Start log INFO... queryDataMstDataBasic");
+            log.Info("Start log INFO... queryDataMstDataBasic");
             MsgForm msgError = new MsgForm();
             MST_DATA_BASIC form = new MST_DATA_BASIC();
             try
@@ -29,20 +29,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... queryDataMstDataBasic");
+                log.Info("End log INFO... queryDataMstDataBasic");
             }
             return new object[] { msgError, form };
         }
 
         public object[] updateDataMstDataBasic(MST_DATA_BASIC param)
         {
-            Log.Info("Start log INFO... updateDataMstDataBasic");
+            log.Info("Start log INFO... updateDataMstDataBasic");
             MsgForm msgError = new MsgForm();
             MST_DATA_BASIC form = new MST_DATA_BASIC();
             try
@@ -63,7 +63,7 @@ namespace HomeScale.src.controller
                         form.BASIC_STATUS_PRINT_CARD_SEND = param.BASIC_STATUS_PRINT_CARD_SEND;
                         form.BASIC_STATIS_SHOW_CARD_FARE = param.BASIC_STATIS_SHOW_CARD_FARE;
                         form.BASIC_STATUS_PRINT_OUTLOOK_VENDOR = param.BASIC_STATUS_PRINT_OUTLOOK_VENDOR;
-                        Log.Info("Update Data form MST_DATA_BASIC WHERE " + form.BASIC_ID
+                        log.Info("Update Data form MST_DATA_BASIC WHERE " + form.BASIC_ID
                             + " BASIC_CARD_NO : " + form.BASIC_CARD_NO
                             + " BASIC_CARD_NO_SCOOP : " + form.BASIC_CARD_NO_SCOOP
                             + " BASIC_RECEIPT_NO : " + form.BASIC_RECEIPT_NO
@@ -83,13 +83,13 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... updateDataMstDataBasic");
+                log.Info("End log INFO... updateDataMstDataBasic");
             }
             return new object[] { msgError };
         }

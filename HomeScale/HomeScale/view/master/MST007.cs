@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using HomeScale.src.model.entities;
 using HomeScale.src.controller;
 using HomeScale.src.model.form;
+using HomeScale.src.model.form.combo;
 using HomeScale.src.util;
 using log4net;
 

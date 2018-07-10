@@ -12,10 +12,10 @@ namespace HomeScale.src.controller
 {
     public class MstProductUnitController
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public object[] searchDataMstProductUnit()
         {
-            Log.Info("Start log INFO... searchDataMstProductUnit");
+            log.Info("Start log INFO... searchDataMstProductUnit");
             MsgForm msgError = new MsgForm();
             List<MST_PRODUCT_UNIT> resultList = new List<MST_PRODUCT_UNIT>();
             try
@@ -29,20 +29,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... searchDataMstProductUnit");
+                log.Info("End log INFO... searchDataMstProductUnit");
             }
             return new object[] { msgError, resultList };
         }
 
         public object[] queryDataMstProductUnitByProductUnitId(MST_PRODUCT_UNIT param)
         {
-            Log.Info("Start log INFO... queryDataMstProductUnitByProductUnitId");
+            log.Info("Start log INFO... queryDataMstProductUnitByProductUnitId");
             MsgForm msgError = new MsgForm();
             MST_PRODUCT_UNIT form = new MST_PRODUCT_UNIT();
             try
@@ -56,20 +56,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... queryDataMstProductUnitByProductUnitId");
+                log.Info("End log INFO... queryDataMstProductUnitByProductUnitId");
             }
             return new object[] { msgError, form };
         }
 
         public object[] insertOrUpdateDataMstProductUnit(MST_PRODUCT_UNIT param, string flagAddEdit)
         {
-            Log.Info("Start log INFO... insertOrUpdateDataMstProductUnit");
+            log.Info("Start log INFO... insertOrUpdateDataMstProductUnit");
             MsgForm msgError = new MsgForm();
             MST_PRODUCT_UNIT formInsert = new MST_PRODUCT_UNIT();
             MST_PRODUCT_UNIT formUpdate = new MST_PRODUCT_UNIT();
@@ -85,7 +85,7 @@ namespace HomeScale.src.controller
                             formInsert.PRODUCT_UNIT_ID = param.PRODUCT_UNIT_ID;
                             formInsert.PRODUCT_UNIT_NAME = param.PRODUCT_UNIT_NAME;
                             db.MST_PRODUCT_UNIT.Add(formInsert);
-                            Log.Info("Insert Data form MST_PRODUCT_UNIT"
+                            log.Info("Insert Data form MST_PRODUCT_UNIT"
                             + " PRODUCT_UNIT_ID : " + formInsert.PRODUCT_UNIT_ID
                             + " PRODUCT_UNIT_NAME : " + formInsert.PRODUCT_UNIT_NAME
                             );
@@ -97,7 +97,7 @@ namespace HomeScale.src.controller
                         {
                             formUpdate.PRODUCT_UNIT_ID = param.PRODUCT_UNIT_ID;
                             formUpdate.PRODUCT_UNIT_NAME = param.PRODUCT_UNIT_NAME;
-                            Log.Info("Update Data form MST_PRODUCT_UNIT"
+                            log.Info("Update Data form MST_PRODUCT_UNIT"
                             + " PRODUCT_UNIT_ID : " + formUpdate.PRODUCT_UNIT_ID
                             + " PRODUCT_UNIT_NAME : " + formUpdate.PRODUCT_UNIT_NAME
                             );
@@ -109,20 +109,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... insertOrUpdateDataMstProductUnit");
+                log.Info("End log INFO... insertOrUpdateDataMstProductUnit");
             }
             return new object[] { msgError, formUpdate };
         }
 
         public object[] updateDataMstProductUnit(MST_PRODUCT_UNIT param)
         {
-            Log.Info("Start log INFO... updateDataMstProductUnit");
+            log.Info("Start log INFO... updateDataMstProductUnit");
             MsgForm msgError = new MsgForm();
             MST_PRODUCT_UNIT form = new MST_PRODUCT_UNIT();
             try
@@ -140,20 +140,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... updateDataMstProductUnit");
+                log.Info("End log INFO... updateDataMstProductUnit");
             }
             return new object[] { msgError };
         }
 
         public object[] deleteDataMstProductUnit(MST_PRODUCT_UNIT param)
         {
-            Log.Info("Start log INFO... deleteDataMstProductUnit");
+            log.Info("Start log INFO... deleteDataMstProductUnit");
             MsgForm msgError = new MsgForm();
             MST_PRODUCT_UNIT form = new MST_PRODUCT_UNIT();
             try
@@ -163,7 +163,7 @@ namespace HomeScale.src.controller
                     form = (from row in db.MST_PRODUCT_UNIT where row.PRODUCT_UNIT_ID == param.PRODUCT_UNIT_ID select row).FirstOrDefault();
                     if (Util.isNotEmpty(form))
                     {
-                        Log.Info("Delete Data form MST_PRODUCT_UNIT"
+                        log.Info("Delete Data form MST_PRODUCT_UNIT"
                             + " PRODUCT_UNIT_ID : " + form.PRODUCT_UNIT_ID
                             );
                         db.MST_PRODUCT_UNIT.Remove(form);
@@ -174,13 +174,13 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... deleteDataMstProductUnit");
+                log.Info("End log INFO... deleteDataMstProductUnit");
             }
             return new object[] { msgError };
         }

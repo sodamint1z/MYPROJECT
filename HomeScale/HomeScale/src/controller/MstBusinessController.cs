@@ -12,11 +12,11 @@ namespace HomeScale.src.controller
 {
     public class MstBusinessController
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         public object[] queryDataMstBusiness(MST_BUSINESS param)
         {
-            Log.Info("Start log INFO... queryDataMstBusiness");
+            log.Info("Start log INFO... queryDataMstBusiness");
             MsgForm msgError = new MsgForm();
             MST_BUSINESS form = new MST_BUSINESS();
             try
@@ -30,20 +30,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... queryDataMstBusiness");
+                log.Info("End log INFO... queryDataMstBusiness");
             }
             return new object[] { msgError, form };
         }
 
         public object[] updateDataMstBusiness(MST_BUSINESS param)
         {
-            Log.Info("Start log INFO... updateDataMstBusiness");
+            log.Info("Start log INFO... updateDataMstBusiness");
             MsgForm msgError = new MsgForm();
             MST_BUSINESS form = new MST_BUSINESS();
             try
@@ -56,7 +56,7 @@ namespace HomeScale.src.controller
                         form.BUSINESS_NAME = param.BUSINESS_NAME;
                         form.BUSINESS_ADDRESS = param.BUSINESS_ADDRESS;
                         form.BUSINESS_TEL_NO = param.BUSINESS_TEL_NO;
-                        Log.Info("Update Data form MST_BUSINESS WHERE " + form.BUSINESS_ID
+                        log.Info("Update Data form MST_BUSINESS WHERE " + form.BUSINESS_ID
                             + " BUSINESS_NAME : " + form.BUSINESS_NAME
                             + " BUSINESS_ADDRESS : " + form.BUSINESS_ADDRESS
                             + " BUSINESS_TEL_NO : " + form.BUSINESS_TEL_NO
@@ -68,13 +68,13 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... updateDataMstBusiness");
+                log.Info("End log INFO... updateDataMstBusiness");
             }
             return new object[] { msgError };
         }

@@ -70,13 +70,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\controller\STS001Controller.cs" />
     <Compile Include="src\model\entities\MST_DATA_BASIC.cs">
       <DependentUpon>HomeScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\entities\MST_DESTINATION.cs">
       <DependentUpon>HomeScaleDB.tt</DependentUpon>
     </Compile>
-    <Compile Include="src\model\form\ComboUseOrNotUseForm.cs" />
+    <Compile Include="src\model\entities\STS_SERIAL_PORT.cs">
+      <DependentUpon>HomeScaleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\form\combo\ComboUseOrNotUseForm.cs" />
+    <Compile Include="src\model\form\combo\ComboBaudRateForm.cs" />
+    <Compile Include="src\model\form\combo\ComboDataBitsForm.cs" />
+    <Compile Include="src\model\form\combo\ComboHandShakingForm.cs" />
+    <Compile Include="src\model\form\combo\ComboParityForm.cs" />
+    <Compile Include="src\model\form\combo\ComboStopBitsForm.cs" />
     <Compile Include="src\model\form\UserLoginForm.cs" />
     <Compile Include="src\util\LoadComboUtil.cs" />
     <Compile Include="view\Login.cs">
@@ -269,6 +278,7 @@
     <EmbeddedResource Include="view\scale\STS001.resx">
       <DependentUpon>STS001.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="ClassDiagram1.cd" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>

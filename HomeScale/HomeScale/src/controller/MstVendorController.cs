@@ -12,10 +12,10 @@ namespace HomeScale.src.controller
 {
     public class MstVendorController
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public object[] searchDataMstVendor()
         {
-            Log.Info("Start log INFO... searchDataMstVendor");
+            log.Info("Start log INFO... searchDataMstVendor");
             MsgForm msgError = new MsgForm();
             List<MST_VENDOR> resultList = new List<MST_VENDOR>();
             try
@@ -29,20 +29,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... searchDataMstVendor");
+                log.Info("End log INFO... searchDataMstVendor");
             }
             return new object[] { msgError, resultList };
         }
 
         public object[] queryDataMstVendorByVendorId(MST_VENDOR param)
         {
-            Log.Info("Start log INFO... queryDataMstVendorByVendorId");
+            log.Info("Start log INFO... queryDataMstVendorByVendorId");
             MsgForm msgError = new MsgForm();
             MST_VENDOR form = new MST_VENDOR();
             try
@@ -56,20 +56,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... queryDataMstVendorByVendorId");
+                log.Info("End log INFO... queryDataMstVendorByVendorId");
             }
             return new object[] { msgError, form };
         }
 
         public object[] insertOrUpdateDataMstVendor(MST_VENDOR param, string flagAddEdit)
         {
-            Log.Info("Start log INFO... insertOrUpdateDataMstVendor");
+            log.Info("Start log INFO... insertOrUpdateDataMstVendor");
             MsgForm msgError = new MsgForm();
             MST_VENDOR formInsert = new MST_VENDOR();
             MST_VENDOR formUpdate = new MST_VENDOR();
@@ -92,7 +92,7 @@ namespace HomeScale.src.controller
                             formInsert.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
                             formInsert.VENDOR_FAX = param.VENDOR_FAX;
                             db.MST_VENDOR.Add(formInsert);
-                            Log.Info("Insert Data form MST_VENDOR"
+                            log.Info("Insert Data form MST_VENDOR"
                                 + " VENDOR_ID : " + formInsert.VENDOR_ID
                                 + " VENDOR_NAME : " + formInsert.VENDOR_NAME
                                 + " VENDOR_ADDRESS : " + formInsert.VENDOR_ADDRESS
@@ -118,7 +118,7 @@ namespace HomeScale.src.controller
                             formUpdate.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
                             formUpdate.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
                             formUpdate.VENDOR_FAX = param.VENDOR_FAX;
-                            Log.Info("Update Data form MST_VENDOR"
+                            log.Info("Update Data form MST_VENDOR"
                                 + " VENDOR_ID : " + formUpdate.VENDOR_ID
                                 + " VENDOR_NAME : " + formUpdate.VENDOR_NAME
                                 + " VENDOR_ADDRESS : " + formUpdate.VENDOR_ADDRESS
@@ -137,20 +137,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... insertOrUpdateDataMstVendor");
+                log.Info("End log INFO... insertOrUpdateDataMstVendor");
             }
             return new object[] { msgError, formUpdate };
         }
 
         public object[] updateDataMstVendor(MST_VENDOR param)
         {
-            Log.Info("Start log INFO... updateDataMstVendor");
+            log.Info("Start log INFO... updateDataMstVendor");
             MsgForm msgError = new MsgForm();
             MST_VENDOR form = new MST_VENDOR();
             try
@@ -175,20 +175,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... updateDataMstVendor");
+                log.Info("End log INFO... updateDataMstVendor");
             }
             return new object[] { msgError };
         }
 
         public object[] deleteDataMstVendor(MST_VENDOR param)
         {
-            Log.Info("Start log INFO... deleteDataMstVendor");
+            log.Info("Start log INFO... deleteDataMstVendor");
             MsgForm msgError = new MsgForm();
             MST_VENDOR form = new MST_VENDOR();
             try
@@ -198,7 +198,7 @@ namespace HomeScale.src.controller
                     form = (from row in db.MST_VENDOR where row.VENDOR_ID == param.VENDOR_ID select row).FirstOrDefault();
                     if (Util.isNotEmpty(form))
                     {
-                        Log.Info("Delete Data form MST_VENDOR"
+                        log.Info("Delete Data form MST_VENDOR"
                             + " VENDOR_ID : " + form.VENDOR_ID
                             );
                         db.MST_VENDOR.Remove(form);
@@ -209,13 +209,13 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... deleteDataMstVendor");
+                log.Info("End log INFO... deleteDataMstVendor");
             }
             return new object[] { msgError };
         }

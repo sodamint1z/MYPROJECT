@@ -12,10 +12,10 @@ namespace HomeScale.src.controller
 {
     public class MstCarRegistertionController
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public object[] queryComboMstVendor()
         {
-            Log.Info("Start log INFO... queryComboMstVendor");
+            log.Info("Start log INFO... queryComboMstVendor");
             MsgForm msgError = new MsgForm();
             List<MST_VENDOR> resultList = new List<MST_VENDOR>();
             try
@@ -29,20 +29,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... queryComboMstVendor");
+                log.Info("End log INFO... queryComboMstVendor");
             }
             return new object[] { msgError, resultList };
         }
 
         public object[] searchDataVwMstCarRegistertion()
         {
-            Log.Info("Start log INFO... searchDataVwMstCarRegistertion");
+            log.Info("Start log INFO... searchDataVwMstCarRegistertion");
             MsgForm msgError = new MsgForm();
             List<VW_MST_CAR_REGISTERTION> resultList = new List<VW_MST_CAR_REGISTERTION>();
             try
@@ -56,20 +56,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... searchDataVwMstCarRegistertion");
+                log.Info("End log INFO... searchDataVwMstCarRegistertion");
             }
             return new object[] { msgError, resultList };
         }
 
         public object[] queryDataMstCarRegistertionByCarRegistertionId(MST_CAR_REGISTERTION param)
         {
-            Log.Info("Start log INFO... queryDataMstCarRegistertionBycarRegistertionId");
+            log.Info("Start log INFO... queryDataMstCarRegistertionBycarRegistertionId");
             MsgForm msgError = new MsgForm();
             MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
             try
@@ -83,20 +83,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... queryDataMstCarRegistertionBycarRegistertionId");
+                log.Info("End log INFO... queryDataMstCarRegistertionBycarRegistertionId");
             }
             return new object[] { msgError, form };
         }
 
         public object[] insertOrUpdateDataMstCarRegistertion(MST_CAR_REGISTERTION param, string flagAddEdit)
         {
-            Log.Info("Start log INFO... insertOrUpdateDataMstCarRegistertion");
+            log.Info("Start log INFO... insertOrUpdateDataMstCarRegistertion");
             MsgForm msgError = new MsgForm();
             MST_CAR_REGISTERTION formInsert = new MST_CAR_REGISTERTION();
             MST_CAR_REGISTERTION formUpdate = new MST_CAR_REGISTERTION();
@@ -113,7 +113,7 @@ namespace HomeScale.src.controller
                             formInsert.CAR_REGISTERTION_NAME = param.CAR_REGISTERTION_NAME;
                             formInsert.CAR_REGISTERTION_VENDOR_ID = param.CAR_REGISTERTION_VENDOR_ID;
                             db.MST_CAR_REGISTERTION.Add(formInsert);
-                            Log.Info("Insert Data form MST_CAR_REGISTERTION"
+                            log.Info("Insert Data form MST_CAR_REGISTERTION"
                             + " CAR_REGISTERTION_ID : " + formInsert.CAR_REGISTERTION_ID
                             + " CAR_REGISTERTION_NAME : " + formInsert.CAR_REGISTERTION_NAME
                             + " CAR_REGISTERTION_VENDOR_ID : " + formInsert.CAR_REGISTERTION_VENDOR_ID
@@ -127,7 +127,7 @@ namespace HomeScale.src.controller
                             formUpdate.CAR_REGISTERTION_ID = param.CAR_REGISTERTION_ID;
                             formUpdate.CAR_REGISTERTION_NAME = param.CAR_REGISTERTION_NAME;
                             formUpdate.CAR_REGISTERTION_VENDOR_ID = param.CAR_REGISTERTION_VENDOR_ID;
-                            Log.Info("Update Data form MST_CAR_REGISTERTION"
+                            log.Info("Update Data form MST_CAR_REGISTERTION"
                             + " CAR_REGISTERTION_ID : " + formUpdate.CAR_REGISTERTION_ID
                             + " CAR_REGISTERTION_NAME : " + formUpdate.CAR_REGISTERTION_NAME
                             + " CAR_REGISTERTION_VENDOR_ID : " + formUpdate.CAR_REGISTERTION_VENDOR_ID
@@ -140,20 +140,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... insertOrUpdateDataMstCarRegistertion");
+                log.Info("End log INFO... insertOrUpdateDataMstCarRegistertion");
             }
             return new object[] { msgError, formUpdate };
         }
 
         public object[] updateDataMstCarRegistertion(MST_CAR_REGISTERTION param)
         {
-            Log.Info("Start log INFO... updateDataMstCarRegistertion");
+            log.Info("Start log INFO... updateDataMstCarRegistertion");
             MsgForm msgError = new MsgForm();
             MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
             try
@@ -172,20 +172,20 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... updateDataMstCarRegistertion");
+                log.Info("End log INFO... updateDataMstCarRegistertion");
             }
             return new object[] { msgError };
         }
 
         public object[] deleteDataMstCarRegistertion(MST_CAR_REGISTERTION param)
         {
-            Log.Info("Start log INFO... deleteDataMstCarRegistertion");
+            log.Info("Start log INFO... deleteDataMstCarRegistertion");
             MsgForm msgError = new MsgForm();
             MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
             try
@@ -203,13 +203,13 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... deleteDataMstCarRegistertion");
+                log.Info("End log INFO... deleteDataMstCarRegistertion");
             }
             return new object[] { msgError };
         }

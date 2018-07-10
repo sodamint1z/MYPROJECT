@@ -12,10 +12,10 @@ namespace HomeScale.src.controller
 {
     public class LoginController
     {
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public object[] checkLogin(USER_LOGIN param)
         {
-            Log.Info("Start log INFO... checkLogin");
+            log.Info("Start log INFO... checkLogin");
             MsgForm msgError = new MsgForm();
             USER_LOGIN result = new USER_LOGIN();
             try
@@ -28,13 +28,13 @@ namespace HomeScale.src.controller
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
                 msgError.statusFlag = MsgForm.STATUS_ERROR;
                 msgError.messageDescription = ex.ToString();
             }
             finally
             {
-                Log.Info("End log INFO... checkLogin");
+                log.Info("End log INFO... checkLogin");
             }
             return new object[] { msgError, result };
         }
