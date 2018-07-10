@@ -44,7 +44,7 @@ namespace HomeScale.view.master
 
         public void searchDataMstVendor()
         {
-            MstVendorController mstVendorCtrl = new MstVendorController();
+            MST003Controller mstVendorCtrl = new MST003Controller();
             try
             {
                 object[] result = mstVendorCtrl.searchDataMstVendor();
@@ -86,7 +86,7 @@ namespace HomeScale.view.master
 
         public void queryDataMstVendorByVendorId()
         {
-            MstVendorController mstVendorCtrl = new MstVendorController();
+            MST003Controller mstVendorCtrl = new MST003Controller();
             try
             {
                 object[] result = mstVendorCtrl.queryDataMstVendorByVendorId(formMstVendor);
@@ -123,7 +123,7 @@ namespace HomeScale.view.master
 
         public void insertOrUpdateDataMstVendor()
         {
-            MstVendorController mstVendorCtrl = new MstVendorController();
+            MST003Controller mstVendorCtrl = new MST003Controller();
             MST_VENDOR form = new MST_VENDOR();
             try
             {
@@ -202,7 +202,7 @@ namespace HomeScale.view.master
 
         public void deleteDataMstVendor()
         {
-            MstVendorController mstVendorCtrl = new MstVendorController();
+            MST003Controller mstVendorCtrl = new MST003Controller();
             MST_VENDOR form = new MST_VENDOR();
             try
             {

@@ -22,12 +22,12 @@ namespace HomeScale.view.master
             InitializeComponent();
             queryDataMstBusiness();
         }
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         MST_BUSINESS formMstBusiness = new MST_BUSINESS();
 
         public void queryDataMstBusiness()
         {
-            MstBusinessController mstBusinessCtrl = new MstBusinessController();
+            MST008Controller mstBusinessCtrl = new MST008Controller();
             formMstBusiness.BUSINESS_ID = 1;
             try
             {
@@ -54,13 +54,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void updateDataMstBusiness()
         {
-            MstBusinessController mstBusinessCtrl = new MstBusinessController();
+            MST008Controller mstBusinessCtrl = new MST008Controller();
             MST_BUSINESS form = new MST_BUSINESS();
             try
             {
@@ -89,7 +89,7 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 

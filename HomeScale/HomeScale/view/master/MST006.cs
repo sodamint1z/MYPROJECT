@@ -22,12 +22,12 @@ namespace HomeScale.view.master
             InitializeComponent();
             queryDataMstDataBasic();
         }
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         MST_DATA_BASIC formMstDataBasic = new MST_DATA_BASIC();
 
         public void queryDataMstDataBasic()
         {
-            MstDataBasicController mstDataBasicCtrl = new MstDataBasicController();
+            MST006Controller mstDataBasicCtrl = new MST006Controller();
             formMstDataBasic.BASIC_ID = 1;
             try
             {
@@ -62,13 +62,13 @@ namespace HomeScale.view.master
             }
             catch(Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void updateDataMstDataBasic()
         {
-            MstDataBasicController mstDataBasicCtrl = new MstDataBasicController();
+            MST006Controller mstDataBasicCtrl = new MST006Controller();
             MST_DATA_BASIC form = new MST_DATA_BASIC();
             try
             {
@@ -105,7 +105,7 @@ namespace HomeScale.view.master
             }
             catch(Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 

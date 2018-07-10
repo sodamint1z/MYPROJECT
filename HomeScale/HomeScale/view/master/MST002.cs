@@ -37,7 +37,7 @@ namespace HomeScale.view.master
 
         public void searchDataMstProductUnit()
         {
-            MstProductUnitController mstProductUnitCtrl = new MstProductUnitController();
+            MST002Controller mstProductUnitCtrl = new MST002Controller();
             try
             {
                 object[] result = mstProductUnitCtrl.searchDataMstProductUnit();
@@ -72,7 +72,7 @@ namespace HomeScale.view.master
 
         public void queryDataMstProductUnitByProductUnitId()
         {
-            MstProductUnitController mstProductUnitCtrl = new MstProductUnitController();
+            MST002Controller mstProductUnitCtrl = new MST002Controller();
             try
             {
                 object[] result = mstProductUnitCtrl.queryDataMstProductUnitByProductUnitId(formMstProductUnit);
@@ -102,7 +102,7 @@ namespace HomeScale.view.master
 
         public void insertOrUpdateDataMstProductUnit()
         {
-            MstProductUnitController mstProductUnitCtrl = new MstProductUnitController();
+            MST002Controller mstProductUnitCtrl = new MST002Controller();
             MST_PRODUCT_UNIT form = new MST_PRODUCT_UNIT();
             try
             {
@@ -175,7 +175,7 @@ namespace HomeScale.view.master
 
         public void deleteDataMstProductUnit()
         {
-            MstProductUnitController mstProductUnitCtrl = new MstProductUnitController();
+            MST002Controller mstProductUnitCtrl = new MST002Controller();
             MST_PRODUCT_UNIT form = new MST_PRODUCT_UNIT();
             try
             {

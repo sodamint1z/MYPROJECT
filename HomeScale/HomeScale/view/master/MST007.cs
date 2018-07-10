@@ -24,7 +24,7 @@ namespace HomeScale.view.master
             searchDataManageUserLogin();
             loadCombo();
         }
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         USER_LOGIN formUserLogin = new USER_LOGIN();
         string flagAddEdit = "A";
         public void resetDataManageUserLogin()
@@ -54,7 +54,7 @@ namespace HomeScale.view.master
 
         public void searchDataManageUserLogin()
         {
-            ManageUserLoginController manageUserLoginCtrl = new ManageUserLoginController();
+            MST007Controller manageUserLoginCtrl = new MST007Controller();
             try
             {
                 object[] result = manageUserLoginCtrl.searchDataManageUserLogin();
@@ -97,13 +97,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void queryDataManageUserLoginByUserId()
         {
-            ManageUserLoginController manageUserLoginCtrl = new ManageUserLoginController();
+            MST007Controller manageUserLoginCtrl = new MST007Controller();
             try
             {
                 object[] result = manageUserLoginCtrl.queryDataManageUserLoginByUserId(formUserLogin);
@@ -130,13 +130,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void insertOrUpdateDataManageUserLogin()
         {
-            ManageUserLoginController manageUserLoginCtrl = new ManageUserLoginController();
+            MST007Controller manageUserLoginCtrl = new MST007Controller();
             USER_LOGIN form = new USER_LOGIN();
             try
             {
@@ -207,13 +207,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void deleteDataManageUserLogin()
         {
-            ManageUserLoginController manageUserLoginCtrl = new ManageUserLoginController();
+            MST007Controller manageUserLoginCtrl = new MST007Controller();
             USER_LOGIN form = new USER_LOGIN();
             try
             {
@@ -245,7 +245,7 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 

@@ -22,7 +22,7 @@ namespace HomeScale.view.master
             InitializeComponent();
             searchDataMstDestination();
         }
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         MST_DESTINATION formMstDistination = new MST_DESTINATION();
         string flagAddEdit = "A";
         public void resetDataMstDistination()
@@ -44,7 +44,7 @@ namespace HomeScale.view.master
 
         public void searchDataMstDestination()
         {
-            MstDestinationController mstDistinationCtrl = new MstDestinationController();
+            MST004Controller mstDistinationCtrl = new MST004Controller();
             try
             {
                 object[] result = mstDistinationCtrl.searchDataMstDestination();
@@ -80,13 +80,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void queryDataMstDistinationByDestinationId()
         {
-            MstDestinationController mstDestinationCtrl = new MstDestinationController();
+            MST004Controller mstDestinationCtrl = new MST004Controller();
             try
             {
                 object[] result = mstDestinationCtrl.queryDataMstDestinationByDestinationId(formMstDistination);
@@ -117,13 +117,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void insertOrUpdateDataMstDestination()
         {
-            MstDestinationController mstDestinationCtrl = new MstDestinationController();
+            MST004Controller mstDestinationCtrl = new MST004Controller();
             MST_DESTINATION form = new MST_DESTINATION();
             try
             {
@@ -197,13 +197,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void deleteDataMstDestination()
         {
-            MstDestinationController mstDistinationCtrl = new MstDestinationController();
+            MST004Controller mstDistinationCtrl = new MST004Controller();
             MST_DESTINATION form = new MST_DESTINATION();
             try
             {
@@ -235,7 +235,7 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 

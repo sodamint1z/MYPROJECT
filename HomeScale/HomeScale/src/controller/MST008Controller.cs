@@ -10,7 +10,7 @@ using HomeScale.src.util;
 
 namespace HomeScale.src.controller
 {
-    public class MstBusinessController
+    public class MST008Controller
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 

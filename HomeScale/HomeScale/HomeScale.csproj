@@ -97,14 +97,14 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="src\controller\LoginController.cs" />
-    <Compile Include="src\controller\ManageUserLoginController.cs" />
-    <Compile Include="src\controller\MstBusinessController.cs" />
-    <Compile Include="src\controller\MstCarRegistertionController.cs" />
-    <Compile Include="src\controller\MstDataBasicController.cs" />
-    <Compile Include="src\controller\MstDestinationController.cs" />
-    <Compile Include="src\controller\MstProductController.cs" />
-    <Compile Include="src\controller\MstProductUnitController.cs" />
-    <Compile Include="src\controller\MstVendorController.cs" />
+    <Compile Include="src\controller\MST007Controller.cs" />
+    <Compile Include="src\controller\MST008Controller.cs" />
+    <Compile Include="src\controller\MST005Controller.cs" />
+    <Compile Include="src\controller\MST006Controller.cs" />
+    <Compile Include="src\controller\MST004Controller.cs" />
+    <Compile Include="src\controller\MST001Controller.cs" />
+    <Compile Include="src\controller\MST002Controller.cs" />
+    <Compile Include="src\controller\MST003Controller.cs" />
     <Compile Include="src\model\configDatabase\SQLiteConfiguration.cs" />
     <Compile Include="src\model\entities\HomeScaleDB.Context.cs">
       <AutoGen>True</AutoGen>

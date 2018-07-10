@@ -10,7 +10,7 @@ using HomeScale.src.util;
 
 namespace HomeScale.src.controller
 {
-    public class MstCarRegistertionController
+    public class MST005Controller
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public object[] queryComboMstVendor()

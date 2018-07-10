@@ -23,7 +23,7 @@ namespace HomeScale.view.master
             queryComboMstVendor();
             searchDataVwMstCarRegistertion();
         }
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         MST_CAR_REGISTERTION formMstCarRegistertion = new MST_CAR_REGISTERTION();
         string flagAddEdit = "A";
         public void resetDataMstCarRegistertion()
@@ -39,7 +39,7 @@ namespace HomeScale.view.master
 
         public void queryComboMstVendor()
         {
-            MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
+            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
             try
             {
                 object[] result = mstCarRegistertionCtrl.queryComboMstVendor();
@@ -61,13 +61,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void searchDataVwMstCarRegistertion()
         {
-            MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
+            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
             try
             {
                 object[] result = mstCarRegistertionCtrl.searchDataVwMstCarRegistertion();
@@ -98,13 +98,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void queryDataMstCarRegistertionByCarRegistertionId()
         {
-            MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
+            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
             try
             {
                 object[] result = mstCarRegistertionCtrl.queryDataMstCarRegistertionByCarRegistertionId(formMstCarRegistertion);
@@ -129,13 +129,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void insertOrUpdateDataMstCarRegistertion()
         {
-            MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
+            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
             MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
             try
             {
@@ -204,13 +204,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void deleteDataMstCarRegistertion()
         {
-            MstCarRegistertionController mstCarRegistertionCtrl = new MstCarRegistertionController();
+            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
             MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
             try
             {
@@ -242,7 +242,7 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 

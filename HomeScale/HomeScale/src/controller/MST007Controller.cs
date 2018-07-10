@@ -10,7 +10,7 @@ using HomeScale.src.util;
 
 namespace HomeScale.src.controller
 {
-    public class ManageUserLoginController
+    public class MST007Controller
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public object[] searchDataManageUserLogin()

@@ -10,7 +10,7 @@ using HomeScale.src.util;
 
 namespace HomeScale.src.controller
 {
-    public class MstDataBasicController
+    public class MST006Controller
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         public object[] queryDataMstDataBasic(MST_DATA_BASIC param)

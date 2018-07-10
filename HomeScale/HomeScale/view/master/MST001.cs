@@ -23,7 +23,7 @@ namespace HomeScale.view.master
             queryComboMstProductUnit();
             searchDataVwMstProduct();
         }
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         MST_PRODUCT formMstProduct = new MST_PRODUCT();
         string flagAddEdit = "A";
         public void resetDataMstProduct()
@@ -39,7 +39,7 @@ namespace HomeScale.view.master
 
         public void queryComboMstProductUnit()
         {
-            MstProductController mstProductCtrl = new MstProductController();
+            MST001Controller mstProductCtrl = new MST001Controller();
             try
             {
                 object[] result = mstProductCtrl.queryComboMstProductUnit();
@@ -61,13 +61,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex) 
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void searchDataVwMstProduct()
         {
-            MstProductController mstProductCtrl = new MstProductController();
+            MST001Controller mstProductCtrl = new MST001Controller();
             try
             {
                 object[] result = mstProductCtrl.searchDataVwMstProduct();
@@ -97,13 +97,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void queryDataMstProductByProductId()
         {
-            MstProductController mstProductCtrl = new MstProductController();
+            MST001Controller mstProductCtrl = new MST001Controller();
             try
             {
                 object[] result = mstProductCtrl.queryDataMstProductByProductId(formMstProduct);
@@ -128,13 +128,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void insertOrUpdateDataMstProduct()
         {
-            MstProductController mstProductCtrl = new MstProductController();
+            MST001Controller mstProductCtrl = new MST001Controller();
             MST_PRODUCT form = new MST_PRODUCT();
             try
             {
@@ -203,13 +203,13 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
         public void deleteDataMstProduct()
         {
-            MstProductController mstProductCtrl = new MstProductController();
+            MST001Controller mstProductCtrl = new MST001Controller();
             MST_PRODUCT form = new MST_PRODUCT();
             try
             {
@@ -241,7 +241,7 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
             }
         }
 
