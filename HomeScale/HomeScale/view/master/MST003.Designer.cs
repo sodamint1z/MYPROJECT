@@ -62,17 +62,17 @@
             this.txtVendorName.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVendorName.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtVendorName.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtVendorName.Location = new System.Drawing.Point(684, 254);
+            this.txtVendorName.Location = new System.Drawing.Point(412, 50);
             this.txtVendorName.MaxLength = 100;
             this.txtVendorName.Multiline = true;
             this.txtVendorName.Name = "txtVendorName";
-            this.txtVendorName.Size = new System.Drawing.Size(300, 33);
+            this.txtVendorName.Size = new System.Drawing.Size(150, 33);
             this.txtVendorName.TabIndex = 1;
             // 
             // txtVendorAddress
             // 
             this.txtVendorAddress.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtVendorAddress.Location = new System.Drawing.Point(684, 300);
+            this.txtVendorAddress.Location = new System.Drawing.Point(682, 50);
             this.txtVendorAddress.MaxLength = 100;
             this.txtVendorAddress.Multiline = true;
             this.txtVendorAddress.Name = "txtVendorAddress";
@@ -82,61 +82,61 @@
             // txtVendorSubDistrict
             // 
             this.txtVendorSubDistrict.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtVendorSubDistrict.Location = new System.Drawing.Point(684, 346);
+            this.txtVendorSubDistrict.Location = new System.Drawing.Point(134, 92);
             this.txtVendorSubDistrict.MaxLength = 100;
             this.txtVendorSubDistrict.Multiline = true;
             this.txtVendorSubDistrict.Name = "txtVendorSubDistrict";
-            this.txtVendorSubDistrict.Size = new System.Drawing.Size(300, 33);
+            this.txtVendorSubDistrict.Size = new System.Drawing.Size(150, 33);
             this.txtVendorSubDistrict.TabIndex = 3;
             // 
             // txtVendorDistrict
             // 
             this.txtVendorDistrict.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtVendorDistrict.Location = new System.Drawing.Point(684, 392);
+            this.txtVendorDistrict.Location = new System.Drawing.Point(412, 92);
             this.txtVendorDistrict.MaxLength = 100;
             this.txtVendorDistrict.Multiline = true;
             this.txtVendorDistrict.Name = "txtVendorDistrict";
-            this.txtVendorDistrict.Size = new System.Drawing.Size(300, 33);
+            this.txtVendorDistrict.Size = new System.Drawing.Size(150, 33);
             this.txtVendorDistrict.TabIndex = 4;
             // 
             // txtVendorProvince
             // 
             this.txtVendorProvince.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtVendorProvince.Location = new System.Drawing.Point(684, 438);
+            this.txtVendorProvince.Location = new System.Drawing.Point(682, 92);
             this.txtVendorProvince.MaxLength = 100;
             this.txtVendorProvince.Multiline = true;
             this.txtVendorProvince.Name = "txtVendorProvince";
-            this.txtVendorProvince.Size = new System.Drawing.Size(300, 33);
+            this.txtVendorProvince.Size = new System.Drawing.Size(150, 33);
             this.txtVendorProvince.TabIndex = 5;
             // 
             // txtVendorPostcode
             // 
             this.txtVendorPostcode.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtVendorPostcode.Location = new System.Drawing.Point(684, 484);
+            this.txtVendorPostcode.Location = new System.Drawing.Point(134, 135);
             this.txtVendorPostcode.MaxLength = 20;
             this.txtVendorPostcode.Multiline = true;
             this.txtVendorPostcode.Name = "txtVendorPostcode";
-            this.txtVendorPostcode.Size = new System.Drawing.Size(300, 33);
+            this.txtVendorPostcode.Size = new System.Drawing.Size(150, 33);
             this.txtVendorPostcode.TabIndex = 6;
             // 
             // txtVendorTelNo
             // 
             this.txtVendorTelNo.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtVendorTelNo.Location = new System.Drawing.Point(684, 530);
+            this.txtVendorTelNo.Location = new System.Drawing.Point(412, 135);
             this.txtVendorTelNo.MaxLength = 50;
             this.txtVendorTelNo.Multiline = true;
             this.txtVendorTelNo.Name = "txtVendorTelNo";
-            this.txtVendorTelNo.Size = new System.Drawing.Size(300, 33);
+            this.txtVendorTelNo.Size = new System.Drawing.Size(150, 33);
             this.txtVendorTelNo.TabIndex = 7;
             // 
             // txtVendorFax
             // 
             this.txtVendorFax.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtVendorFax.Location = new System.Drawing.Point(684, 576);
+            this.txtVendorFax.Location = new System.Drawing.Point(682, 135);
             this.txtVendorFax.MaxLength = 50;
             this.txtVendorFax.Multiline = true;
             this.txtVendorFax.Name = "txtVendorFax";
-            this.txtVendorFax.Size = new System.Drawing.Size(300, 33);
+            this.txtVendorFax.Size = new System.Drawing.Size(150, 33);
             this.txtVendorFax.TabIndex = 8;
             // 
             // lblVendorName
@@ -144,7 +144,7 @@
             this.lblVendorName.AutoSize = true;
             this.lblVendorName.BackColor = System.Drawing.Color.Transparent;
             this.lblVendorName.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblVendorName.Location = new System.Drawing.Point(577, 254);
+            this.lblVendorName.Location = new System.Drawing.Point(318, 50);
             this.lblVendorName.Name = "lblVendorName";
             this.lblVendorName.Size = new System.Drawing.Size(88, 33);
             this.lblVendorName.TabIndex = 8;
@@ -155,7 +155,7 @@
             this.lblVendorAddress.AutoSize = true;
             this.lblVendorAddress.BackColor = System.Drawing.Color.Transparent;
             this.lblVendorAddress.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblVendorAddress.Location = new System.Drawing.Point(613, 300);
+            this.lblVendorAddress.Location = new System.Drawing.Point(624, 49);
             this.lblVendorAddress.Name = "lblVendorAddress";
             this.lblVendorAddress.Size = new System.Drawing.Size(52, 33);
             this.lblVendorAddress.TabIndex = 9;
@@ -166,7 +166,7 @@
             this.lblVendorDistrictOne.AutoSize = true;
             this.lblVendorDistrictOne.BackColor = System.Drawing.Color.Transparent;
             this.lblVendorDistrictOne.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblVendorDistrictOne.Location = new System.Drawing.Point(604, 346);
+            this.lblVendorDistrictOne.Location = new System.Drawing.Point(71, 92);
             this.lblVendorDistrictOne.Name = "lblVendorDistrictOne";
             this.lblVendorDistrictOne.Size = new System.Drawing.Size(61, 33);
             this.lblVendorDistrictOne.TabIndex = 10;
@@ -177,7 +177,7 @@
             this.lblVendorDistrictTwo.AutoSize = true;
             this.lblVendorDistrictTwo.BackColor = System.Drawing.Color.Transparent;
             this.lblVendorDistrictTwo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblVendorDistrictTwo.Location = new System.Drawing.Point(600, 392);
+            this.lblVendorDistrictTwo.Location = new System.Drawing.Point(341, 92);
             this.lblVendorDistrictTwo.Name = "lblVendorDistrictTwo";
             this.lblVendorDistrictTwo.Size = new System.Drawing.Size(65, 33);
             this.lblVendorDistrictTwo.TabIndex = 11;
@@ -188,7 +188,7 @@
             this.lblVendorCounty.AutoSize = true;
             this.lblVendorCounty.BackColor = System.Drawing.Color.Transparent;
             this.lblVendorCounty.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblVendorCounty.Location = new System.Drawing.Point(596, 438);
+            this.lblVendorCounty.Location = new System.Drawing.Point(607, 92);
             this.lblVendorCounty.Name = "lblVendorCounty";
             this.lblVendorCounty.Size = new System.Drawing.Size(69, 33);
             this.lblVendorCounty.TabIndex = 12;
@@ -199,7 +199,7 @@
             this.lblVendorPostcode.AutoSize = true;
             this.lblVendorPostcode.BackColor = System.Drawing.Color.Transparent;
             this.lblVendorPostcode.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblVendorPostcode.Location = new System.Drawing.Point(557, 484);
+            this.lblVendorPostcode.Location = new System.Drawing.Point(20, 135);
             this.lblVendorPostcode.Name = "lblVendorPostcode";
             this.lblVendorPostcode.Size = new System.Drawing.Size(108, 33);
             this.lblVendorPostcode.TabIndex = 13;
@@ -210,7 +210,7 @@
             this.lblVendorTelNo.AutoSize = true;
             this.lblVendorTelNo.BackColor = System.Drawing.Color.Transparent;
             this.lblVendorTelNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblVendorTelNo.Location = new System.Drawing.Point(586, 530);
+            this.lblVendorTelNo.Location = new System.Drawing.Point(327, 135);
             this.lblVendorTelNo.Name = "lblVendorTelNo";
             this.lblVendorTelNo.Size = new System.Drawing.Size(79, 33);
             this.lblVendorTelNo.TabIndex = 14;
@@ -221,7 +221,7 @@
             this.lblVendorFax.AutoSize = true;
             this.lblVendorFax.BackColor = System.Drawing.Color.Transparent;
             this.lblVendorFax.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblVendorFax.Location = new System.Drawing.Point(602, 576);
+            this.lblVendorFax.Location = new System.Drawing.Point(613, 135);
             this.lblVendorFax.Name = "lblVendorFax";
             this.lblVendorFax.Size = new System.Drawing.Size(63, 33);
             this.lblVendorFax.TabIndex = 15;
@@ -232,7 +232,7 @@
             this.lblHead.AutoSize = true;
             this.lblHead.BackColor = System.Drawing.Color.Transparent;
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblHead.Location = new System.Drawing.Point(415, 42);
+            this.lblHead.Location = new System.Drawing.Point(415, 3);
             this.lblHead.Name = "lblHead";
             this.lblHead.Size = new System.Drawing.Size(165, 33);
             this.lblHead.TabIndex = 30;
@@ -242,9 +242,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(9, 207);
+            this.dataGridView1.Location = new System.Drawing.Point(72, 272);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(500, 408);
+            this.dataGridView1.Size = new System.Drawing.Size(855, 242);
             this.dataGridView1.TabIndex = 31;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -254,11 +254,11 @@
             this.txtVendorId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtVendorId.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtVendorId.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtVendorId.Location = new System.Drawing.Point(684, 209);
+            this.txtVendorId.Location = new System.Drawing.Point(134, 49);
             this.txtVendorId.MaxLength = 10;
             this.txtVendorId.Multiline = true;
             this.txtVendorId.Name = "txtVendorId";
-            this.txtVendorId.Size = new System.Drawing.Size(300, 33);
+            this.txtVendorId.Size = new System.Drawing.Size(150, 33);
             this.txtVendorId.TabIndex = 0;
             // 
             // lblVendorId
@@ -266,7 +266,7 @@
             this.lblVendorId.AutoSize = true;
             this.lblVendorId.BackColor = System.Drawing.Color.Transparent;
             this.lblVendorId.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblVendorId.Location = new System.Drawing.Point(568, 209);
+            this.lblVendorId.Location = new System.Drawing.Point(35, 48);
             this.lblVendorId.Name = "lblVendorId";
             this.lblVendorId.Size = new System.Drawing.Size(97, 33);
             this.lblVendorId.TabIndex = 33;
@@ -279,7 +279,7 @@
             this.btnSave.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(330, 98);
+            this.btnSave.Location = new System.Drawing.Point(325, 183);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 70);
             this.btnSave.TabIndex = 36;
@@ -295,7 +295,7 @@
             this.btnCancel.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(440, 98);
+            this.btnCancel.Location = new System.Drawing.Point(435, 183);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 70);
             this.btnCancel.TabIndex = 35;
@@ -311,7 +311,7 @@
             this.btnDelete.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(550, 98);
+            this.btnDelete.Location = new System.Drawing.Point(545, 183);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 70);
             this.btnDelete.TabIndex = 34;
@@ -324,7 +324,7 @@
             // 
             this.lblCountData.AutoSize = true;
             this.lblCountData.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCountData.Location = new System.Drawing.Point(361, 179);
+            this.lblCountData.Location = new System.Drawing.Point(780, 247);
             this.lblCountData.Name = "lblCountData";
             this.lblCountData.Size = new System.Drawing.Size(65, 22);
             this.lblCountData.TabIndex = 38;
@@ -335,7 +335,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1008, 626);
+            this.ClientSize = new System.Drawing.Size(1008, 526);
             this.Controls.Add(this.lblCountData);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);

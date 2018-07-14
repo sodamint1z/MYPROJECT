@@ -60,7 +60,7 @@
             this.groupBox1.Controls.Add(this.chkStatusShowCardFare);
             this.groupBox1.Controls.Add(this.chkStatusPrintCardSend);
             this.groupBox1.Controls.Add(this.chkStatusPrintCardNo);
-            this.groupBox1.Location = new System.Drawing.Point(518, 217);
+            this.groupBox1.Location = new System.Drawing.Point(518, 178);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(281, 181);
             this.groupBox1.TabIndex = 87;
@@ -116,7 +116,7 @@
             this.txtBasicFare.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBasicFare.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtBasicFare.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBasicFare.Location = new System.Drawing.Point(648, 165);
+            this.txtBasicFare.Location = new System.Drawing.Point(648, 126);
             this.txtBasicFare.Multiline = true;
             this.txtBasicFare.Name = "txtBasicFare";
             this.txtBasicFare.Size = new System.Drawing.Size(150, 33);
@@ -128,7 +128,7 @@
             this.txtBasicDeduction.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBasicDeduction.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtBasicDeduction.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBasicDeduction.Location = new System.Drawing.Point(648, 111);
+            this.txtBasicDeduction.Location = new System.Drawing.Point(648, 72);
             this.txtBasicDeduction.Multiline = true;
             this.txtBasicDeduction.Name = "txtBasicDeduction";
             this.txtBasicDeduction.Size = new System.Drawing.Size(150, 33);
@@ -140,7 +140,7 @@
             this.txtBasicMoveNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBasicMoveNo.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtBasicMoveNo.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBasicMoveNo.Location = new System.Drawing.Point(335, 322);
+            this.txtBasicMoveNo.Location = new System.Drawing.Point(335, 283);
             this.txtBasicMoveNo.Multiline = true;
             this.txtBasicMoveNo.Name = "txtBasicMoveNo";
             this.txtBasicMoveNo.Size = new System.Drawing.Size(150, 33);
@@ -152,7 +152,7 @@
             this.txtBasicDecimal.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBasicDecimal.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtBasicDecimal.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBasicDecimal.Location = new System.Drawing.Point(335, 268);
+            this.txtBasicDecimal.Location = new System.Drawing.Point(335, 229);
             this.txtBasicDecimal.Multiline = true;
             this.txtBasicDecimal.Name = "txtBasicDecimal";
             this.txtBasicDecimal.Size = new System.Drawing.Size(150, 33);
@@ -164,7 +164,7 @@
             this.txtBasicReceiptNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBasicReceiptNo.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtBasicReceiptNo.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBasicReceiptNo.Location = new System.Drawing.Point(335, 217);
+            this.txtBasicReceiptNo.Location = new System.Drawing.Point(335, 178);
             this.txtBasicReceiptNo.Multiline = true;
             this.txtBasicReceiptNo.Name = "txtBasicReceiptNo";
             this.txtBasicReceiptNo.Size = new System.Drawing.Size(150, 33);
@@ -176,7 +176,7 @@
             this.txtBasicCardNoScoop.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBasicCardNoScoop.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtBasicCardNoScoop.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBasicCardNoScoop.Location = new System.Drawing.Point(335, 165);
+            this.txtBasicCardNoScoop.Location = new System.Drawing.Point(335, 126);
             this.txtBasicCardNoScoop.Multiline = true;
             this.txtBasicCardNoScoop.Name = "txtBasicCardNoScoop";
             this.txtBasicCardNoScoop.Size = new System.Drawing.Size(150, 33);
@@ -187,7 +187,7 @@
             this.lblBasicFare.AutoSize = true;
             this.lblBasicFare.BackColor = System.Drawing.Color.Transparent;
             this.lblBasicFare.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBasicFare.Location = new System.Drawing.Point(557, 164);
+            this.lblBasicFare.Location = new System.Drawing.Point(557, 125);
             this.lblBasicFare.Name = "lblBasicFare";
             this.lblBasicFare.Size = new System.Drawing.Size(59, 33);
             this.lblBasicFare.TabIndex = 80;
@@ -198,7 +198,7 @@
             this.lblBasicDeduction.AutoSize = true;
             this.lblBasicDeduction.BackColor = System.Drawing.Color.Transparent;
             this.lblBasicDeduction.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBasicDeduction.Location = new System.Drawing.Point(512, 113);
+            this.lblBasicDeduction.Location = new System.Drawing.Point(512, 74);
             this.lblBasicDeduction.Name = "lblBasicDeduction";
             this.lblBasicDeduction.Size = new System.Drawing.Size(104, 33);
             this.lblBasicDeduction.TabIndex = 79;
@@ -209,7 +209,7 @@
             this.lblBasicMoveNo.AutoSize = true;
             this.lblBasicMoveNo.BackColor = System.Drawing.Color.Transparent;
             this.lblBasicMoveNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBasicMoveNo.Location = new System.Drawing.Point(172, 322);
+            this.lblBasicMoveNo.Location = new System.Drawing.Point(172, 283);
             this.lblBasicMoveNo.Name = "lblBasicMoveNo";
             this.lblBasicMoveNo.Size = new System.Drawing.Size(127, 33);
             this.lblBasicMoveNo.TabIndex = 78;
@@ -220,7 +220,7 @@
             this.lblBasicDecimal.AutoSize = true;
             this.lblBasicDecimal.BackColor = System.Drawing.Color.Transparent;
             this.lblBasicDecimal.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBasicDecimal.Location = new System.Drawing.Point(162, 268);
+            this.lblBasicDecimal.Location = new System.Drawing.Point(162, 229);
             this.lblBasicDecimal.Name = "lblBasicDecimal";
             this.lblBasicDecimal.Size = new System.Drawing.Size(137, 33);
             this.lblBasicDecimal.TabIndex = 77;
@@ -231,7 +231,7 @@
             this.lblBasicReceiptNo.AutoSize = true;
             this.lblBasicReceiptNo.BackColor = System.Drawing.Color.Transparent;
             this.lblBasicReceiptNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBasicReceiptNo.Location = new System.Drawing.Point(151, 217);
+            this.lblBasicReceiptNo.Location = new System.Drawing.Point(151, 178);
             this.lblBasicReceiptNo.Name = "lblBasicReceiptNo";
             this.lblBasicReceiptNo.Size = new System.Drawing.Size(148, 33);
             this.lblBasicReceiptNo.TabIndex = 76;
@@ -242,7 +242,7 @@
             this.lblBasicCardNoScoop.AutoSize = true;
             this.lblBasicCardNoScoop.BackColor = System.Drawing.Color.Transparent;
             this.lblBasicCardNoScoop.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBasicCardNoScoop.Location = new System.Drawing.Point(150, 165);
+            this.lblBasicCardNoScoop.Location = new System.Drawing.Point(150, 126);
             this.lblBasicCardNoScoop.Name = "lblBasicCardNoScoop";
             this.lblBasicCardNoScoop.Size = new System.Drawing.Size(149, 33);
             this.lblBasicCardNoScoop.TabIndex = 75;
@@ -253,7 +253,7 @@
             this.lblBasicCardNo.AutoSize = true;
             this.lblBasicCardNo.BackColor = System.Drawing.Color.Transparent;
             this.lblBasicCardNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblBasicCardNo.Location = new System.Drawing.Point(177, 113);
+            this.lblBasicCardNo.Location = new System.Drawing.Point(177, 74);
             this.lblBasicCardNo.Name = "lblBasicCardNo";
             this.lblBasicCardNo.Size = new System.Drawing.Size(122, 33);
             this.lblBasicCardNo.TabIndex = 74;
@@ -265,7 +265,7 @@
             this.txtBasicCardNo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBasicCardNo.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtBasicCardNo.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtBasicCardNo.Location = new System.Drawing.Point(335, 113);
+            this.txtBasicCardNo.Location = new System.Drawing.Point(335, 74);
             this.txtBasicCardNo.Multiline = true;
             this.txtBasicCardNo.Name = "txtBasicCardNo";
             this.txtBasicCardNo.Size = new System.Drawing.Size(150, 33);
@@ -278,7 +278,7 @@
             this.btnSave.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(395, 415);
+            this.btnSave.Location = new System.Drawing.Point(395, 376);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 70);
             this.btnSave.TabIndex = 89;
@@ -294,7 +294,7 @@
             this.btnCancel.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(505, 415);
+            this.btnCancel.Location = new System.Drawing.Point(505, 376);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 70);
             this.btnCancel.TabIndex = 88;
@@ -308,7 +308,7 @@
             this.lblHead.AutoSize = true;
             this.lblHead.BackColor = System.Drawing.Color.Transparent;
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblHead.Location = new System.Drawing.Point(421, 42);
+            this.lblHead.Location = new System.Drawing.Point(421, 3);
             this.lblHead.Name = "lblHead";
             this.lblHead.Size = new System.Drawing.Size(175, 33);
             this.lblHead.TabIndex = 90;
@@ -319,7 +319,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1008, 626);
+            this.ClientSize = new System.Drawing.Size(1008, 526);
             this.Controls.Add(this.lblHead);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);

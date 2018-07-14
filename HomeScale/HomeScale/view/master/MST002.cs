@@ -22,7 +22,7 @@ namespace HomeScale.view.master
             InitializeComponent();
             searchDataMstProductUnit();
         }
-        private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         MST_PRODUCT_UNIT formMstProductUnit = new MST_PRODUCT_UNIT();
         string flagAddEdit = "A";
         public void resetDataMstProductUnit()
@@ -37,10 +37,10 @@ namespace HomeScale.view.master
 
         public void searchDataMstProductUnit()
         {
-            MST002Controller mstProductUnitCtrl = new MST002Controller();
+            MST002Controller mst002Ctrl = new MST002Controller();
             try
             {
-                object[] result = mstProductUnitCtrl.searchDataMstProductUnit();
+                object[] result = mst002Ctrl.searchDataMstProductUnit();
 
                 MsgForm msgForm = (MsgForm)result[0];
                 List<MST_PRODUCT_UNIT> lstdata = (List<MST_PRODUCT_UNIT>)result[1];
@@ -66,16 +66,17 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void queryDataMstProductUnitByProductUnitId()
         {
-            MST002Controller mstProductUnitCtrl = new MST002Controller();
+            MST002Controller mst002Ctrl = new MST002Controller();
             try
             {
-                object[] result = mstProductUnitCtrl.queryDataMstProductUnitByProductUnitId(formMstProductUnit);
+                object[] result = mst002Ctrl.queryDataMstProductUnitByProductUnitId(formMstProductUnit);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_PRODUCT_UNIT data = (MST_PRODUCT_UNIT)result[1];
@@ -96,13 +97,14 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void insertOrUpdateDataMstProductUnit()
         {
-            MST002Controller mstProductUnitCtrl = new MST002Controller();
+            MST002Controller mst002Ctrl = new MST002Controller();
             MST_PRODUCT_UNIT form = new MST_PRODUCT_UNIT();
             try
             {
@@ -121,7 +123,7 @@ namespace HomeScale.view.master
                     return;
                 }
 
-                object[] result = mstProductUnitCtrl.insertOrUpdateDataMstProductUnit(form, flagAddEdit);
+                object[] result = mst002Ctrl.insertOrUpdateDataMstProductUnit(form, flagAddEdit);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_PRODUCT_UNIT data = (MST_PRODUCT_UNIT)result[1];
@@ -169,13 +171,14 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void deleteDataMstProductUnit()
         {
-            MST002Controller mstProductUnitCtrl = new MST002Controller();
+            MST002Controller mst002Ctrl = new MST002Controller();
             MST_PRODUCT_UNIT form = new MST_PRODUCT_UNIT();
             try
             {
@@ -189,7 +192,7 @@ namespace HomeScale.view.master
 
                 if (MessageBox.Show(CommonUtil.CONFIRM_DELETE_DATA, CommonUtil.TITLE_DELETE, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    object[] result = mstProductUnitCtrl.deleteDataMstProductUnit(form);
+                    object[] result = mst002Ctrl.deleteDataMstProductUnit(form);
 
                     MsgForm msgForm = (MsgForm)result[0];
 
@@ -207,7 +210,8 @@ namespace HomeScale.view.master
             }
             catch (Exception ex)
             {
-                Log.Error(ex.ToString(), ex);
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 

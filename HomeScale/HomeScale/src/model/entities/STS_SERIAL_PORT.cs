@@ -18,9 +18,9 @@ namespace HomeScale.src.model.entities
         public string SERIAL_PORT_PORT_NO { get; set; }
         public int SERIAL_PORT_BAUD_RATE { get; set; }
         public int SERIAL_PORT_DATA_BITS { get; set; }
-        public int SERIAL_PORT_STOP_BITS { get; set; }
-        public int SERIAL_PORT_PARITY { get; set; }
-        public int SERIAL_PORT_HAND_SHAKING { get; set; }
+        public string SERIAL_PORT_STOP_BITS { get; set; }
+        public string SERIAL_PORT_PARITY { get; set; }
+        public string SERIAL_PORT_HAND_SHAKING { get; set; }
         public Nullable<int> SERIAL_PORT_STATUS_FLAG { get; set; }
     }
 }

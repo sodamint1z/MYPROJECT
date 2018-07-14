@@ -55,17 +55,21 @@
             // 
             // tabControl1
             // 
-            this.tabControl1.Location = new System.Drawing.Point(12, 78);
+            this.tabControl1.Appearance = System.Windows.Forms.TabAppearance.FlatButtons;
+            this.tabControl1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.tabControl1.Location = new System.Drawing.Point(12, 82);
+            this.tabControl1.Multiline = true;
             this.tabControl1.Name = "tabControl1";
+            this.tabControl1.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(1010, 650);
+            this.tabControl1.Size = new System.Drawing.Size(1010, 554);
             this.tabControl1.TabIndex = 13;
             // 
             // statusStrip1
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatuslblCredit});
-            this.statusStrip1.Location = new System.Drawing.Point(0, 739);
+            this.statusStrip1.Location = new System.Drawing.Point(0, 639);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(1034, 22);
             this.statusStrip1.TabIndex = 14;
@@ -80,7 +84,7 @@
             // lblHead
             // 
             this.lblHead.AutoSize = true;
-            this.lblHead.BackColor = System.Drawing.Color.SkyBlue;
+            this.lblHead.BackColor = System.Drawing.Color.Transparent;
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblHead.Location = new System.Drawing.Point(466, 35);
             this.lblHead.Name = "lblHead";
@@ -93,7 +97,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
-            this.ClientSize = new System.Drawing.Size(1034, 761);
+            this.ClientSize = new System.Drawing.Size(1034, 661);
             this.Controls.Add(this.lblHead);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.tabControl1);

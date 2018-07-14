@@ -118,9 +118,9 @@ warning 6002: The table/view 'main.MST_DESTINATION' does not have a primary key 
           <Property Name="SERIAL_PORT_PORT_NO" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="SERIAL_PORT_BAUD_RATE" Type="int" Nullable="false" />
           <Property Name="SERIAL_PORT_DATA_BITS" Type="int" Nullable="false" />
-          <Property Name="SERIAL_PORT_STOP_BITS" Type="int" Nullable="false" />
-          <Property Name="SERIAL_PORT_PARITY" Type="int" Nullable="false" />
-          <Property Name="SERIAL_PORT_HAND_SHAKING" Type="int" Nullable="false" />
+          <Property Name="SERIAL_PORT_STOP_BITS" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SERIAL_PORT_PARITY" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="SERIAL_PORT_HAND_SHAKING" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="SERIAL_PORT_STATUS_FLAG" Type="int" />
         </EntityType>
         <EntityType Name="USER_LOGIN">
@@ -353,9 +353,9 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <Property Name="SERIAL_PORT_PORT_NO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="SERIAL_PORT_BAUD_RATE" Type="Int32" Nullable="false" />
           <Property Name="SERIAL_PORT_DATA_BITS" Type="Int32" Nullable="false" />
-          <Property Name="SERIAL_PORT_STOP_BITS" Type="Int32" Nullable="false" />
-          <Property Name="SERIAL_PORT_PARITY" Type="Int32" Nullable="false" />
-          <Property Name="SERIAL_PORT_HAND_SHAKING" Type="Int32" Nullable="false" />
+          <Property Name="SERIAL_PORT_STOP_BITS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_PORT_PARITY" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_PORT_HAND_SHAKING" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
           <Property Name="SERIAL_PORT_STATUS_FLAG" Type="Int32" />
         </EntityType>
         </Schema>

@@ -44,10 +44,10 @@ namespace HomeScale.view.master
 
         public void searchDataMstDestination()
         {
-            MST004Controller mstDistinationCtrl = new MST004Controller();
+            MST004Controller mst004Ctrl = new MST004Controller();
             try
             {
-                object[] result = mstDistinationCtrl.searchDataMstDestination();
+                object[] result = mst004Ctrl.searchDataMstDestination();
 
                 MsgForm msgForm = (MsgForm)result[0];
                 List<MST_DESTINATION> lstdata = (List<MST_DESTINATION>)result[1];
@@ -81,15 +81,16 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void queryDataMstDistinationByDestinationId()
         {
-            MST004Controller mstDestinationCtrl = new MST004Controller();
+            MST004Controller mst004Ctrl = new MST004Controller();
             try
             {
-                object[] result = mstDestinationCtrl.queryDataMstDestinationByDestinationId(formMstDistination);
+                object[] result = mst004Ctrl.queryDataMstDestinationByDestinationId(formMstDistination);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_DESTINATION data = (MST_DESTINATION)result[1];
@@ -118,12 +119,13 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void insertOrUpdateDataMstDestination()
         {
-            MST004Controller mstDestinationCtrl = new MST004Controller();
+            MST004Controller mst004Ctrl = new MST004Controller();
             MST_DESTINATION form = new MST_DESTINATION();
             try
             {
@@ -149,7 +151,7 @@ namespace HomeScale.view.master
                     return;
                 }
 
-                object[] result = mstDestinationCtrl.insertOrUpdateDataMstDestination(form, flagAddEdit);
+                object[] result = mst004Ctrl.insertOrUpdateDataMstDestination(form, flagAddEdit);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_DESTINATION data = (MST_DESTINATION)result[1];
@@ -198,12 +200,13 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void deleteDataMstDestination()
         {
-            MST004Controller mstDistinationCtrl = new MST004Controller();
+            MST004Controller mst004Ctrl = new MST004Controller();
             MST_DESTINATION form = new MST_DESTINATION();
             try
             {
@@ -217,7 +220,7 @@ namespace HomeScale.view.master
 
                 if (MessageBox.Show(CommonUtil.CONFIRM_DELETE_DATA, CommonUtil.TITLE_DELETE, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    object[] result = mstDistinationCtrl.deleteDataMstDestination(form);
+                    object[] result = mst004Ctrl.deleteDataMstDestination(form);
 
                     MsgForm msgForm = (MsgForm)result[0];
 
@@ -236,6 +239,7 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 

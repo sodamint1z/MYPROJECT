@@ -39,10 +39,10 @@ namespace HomeScale.view.master
 
         public void queryComboMstVendor()
         {
-            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
+            MST005Controller mst005Ctrl = new MST005Controller();
             try
             {
-                object[] result = mstCarRegistertionCtrl.queryComboMstVendor();
+                object[] result = mst005Ctrl.queryComboMstVendor();
 
                 MsgForm msgForm = (MsgForm)result[0];
                 List<MST_VENDOR> lstdata = (List<MST_VENDOR>)result[1];
@@ -62,15 +62,16 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void searchDataVwMstCarRegistertion()
         {
-            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
+            MST005Controller mst005Ctrl = new MST005Controller();
             try
             {
-                object[] result = mstCarRegistertionCtrl.searchDataVwMstCarRegistertion();
+                object[] result = mst005Ctrl.searchDataVwMstCarRegistertion();
 
                 MsgForm msgForm = (MsgForm)result[0];
                 List<VW_MST_CAR_REGISTERTION> lstdata = (List<VW_MST_CAR_REGISTERTION>)result[1];
@@ -99,15 +100,16 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void queryDataMstCarRegistertionByCarRegistertionId()
         {
-            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
+            MST005Controller mst005Ctrl = new MST005Controller();
             try
             {
-                object[] result = mstCarRegistertionCtrl.queryDataMstCarRegistertionByCarRegistertionId(formMstCarRegistertion);
+                object[] result = mst005Ctrl.queryDataMstCarRegistertionByCarRegistertionId(formMstCarRegistertion);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_CAR_REGISTERTION data = (MST_CAR_REGISTERTION)result[1];
@@ -130,12 +132,13 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void insertOrUpdateDataMstCarRegistertion()
         {
-            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
+            MST005Controller mst005Ctrl = new MST005Controller();
             MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
             try
             {
@@ -156,7 +159,7 @@ namespace HomeScale.view.master
                     return;
                 }
 
-                object[] result = mstCarRegistertionCtrl.insertOrUpdateDataMstCarRegistertion(form, flagAddEdit);
+                object[] result = mst005Ctrl.insertOrUpdateDataMstCarRegistertion(form, flagAddEdit);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_CAR_REGISTERTION data = (MST_CAR_REGISTERTION)result[1];
@@ -205,12 +208,13 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void deleteDataMstCarRegistertion()
         {
-            MST005Controller mstCarRegistertionCtrl = new MST005Controller();
+            MST005Controller mst005Ctrl = new MST005Controller();
             MST_CAR_REGISTERTION form = new MST_CAR_REGISTERTION();
             try
             {
@@ -224,7 +228,7 @@ namespace HomeScale.view.master
 
                 if (MessageBox.Show(CommonUtil.CONFIRM_DELETE_DATA, CommonUtil.TITLE_DELETE, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    object[] result = mstCarRegistertionCtrl.deleteDataMstCarRegistertion(form);
+                    object[] result = mst005Ctrl.deleteDataMstCarRegistertion(form);
 
                     MsgForm msgForm = (MsgForm)result[0];
 
@@ -243,6 +247,7 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 

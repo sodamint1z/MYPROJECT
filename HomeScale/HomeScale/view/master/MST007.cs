@@ -43,21 +43,28 @@ namespace HomeScale.view.master
         public void loadCombo()
         {
             List<ComboUseOrNotUseForm> lstCombo = new List<ComboUseOrNotUseForm>();
+            try
+            {
+                lstCombo = LoadComboUtil.loadComboUseOrNotUse();
 
-            lstCombo = LoadComboUtil.loadComboUseOrNotUse();
-
-            cboStatusFlag.DataSource = lstCombo;
-            cboStatusFlag.ValueMember = "useOrNotUseId";
-            cboStatusFlag.DisplayMember = "useOrNotUseValue";
-            cboStatusFlag.SelectedValue = 1;
+                cboStatusFlag.DataSource = lstCombo;
+                cboStatusFlag.ValueMember = "useOrNotUseId";
+                cboStatusFlag.DisplayMember = "useOrNotUseValue";
+                cboStatusFlag.SelectedValue = 1;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
+            }
         }
 
         public void searchDataManageUserLogin()
         {
-            MST007Controller manageUserLoginCtrl = new MST007Controller();
+            MST007Controller mst007Ctrl = new MST007Controller();
             try
             {
-                object[] result = manageUserLoginCtrl.searchDataManageUserLogin();
+                object[] result = mst007Ctrl.searchDataManageUserLogin();
 
                 MsgForm msgForm = (MsgForm)result[0];
                 List<USER_LOGIN> lstdata = (List<USER_LOGIN>)result[1];
@@ -98,15 +105,16 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void queryDataManageUserLoginByUserId()
         {
-            MST007Controller manageUserLoginCtrl = new MST007Controller();
+            MST007Controller mst007Ctrl = new MST007Controller();
             try
             {
-                object[] result = manageUserLoginCtrl.queryDataManageUserLoginByUserId(formUserLogin);
+                object[] result = mst007Ctrl.queryDataManageUserLoginByUserId(formUserLogin);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 USER_LOGIN data = (USER_LOGIN)result[1];
@@ -131,12 +139,13 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void insertOrUpdateDataManageUserLogin()
         {
-            MST007Controller manageUserLoginCtrl = new MST007Controller();
+            MST007Controller mst007Ctrl = new MST007Controller();
             USER_LOGIN form = new USER_LOGIN();
             try
             {
@@ -159,7 +168,7 @@ namespace HomeScale.view.master
                     return;
                 }
 
-                object[] result = manageUserLoginCtrl.insertOrUpdateDataManageUserLogin(form, flagAddEdit);
+                object[] result = mst007Ctrl.insertOrUpdateDataManageUserLogin(form, flagAddEdit);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 USER_LOGIN data = (USER_LOGIN)result[1];
@@ -208,12 +217,13 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void deleteDataManageUserLogin()
         {
-            MST007Controller manageUserLoginCtrl = new MST007Controller();
+            MST007Controller mst007Ctrl = new MST007Controller();
             USER_LOGIN form = new USER_LOGIN();
             try
             {
@@ -227,7 +237,7 @@ namespace HomeScale.view.master
 
                 if (MessageBox.Show(CommonUtil.CONFIRM_DELETE_DATA, CommonUtil.TITLE_DELETE, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    object[] result = manageUserLoginCtrl.deleteDataManageUserLogin(form);
+                    object[] result = mst007Ctrl.deleteDataManageUserLogin(form);
 
                     MsgForm msgForm = (MsgForm)result[0];
 
@@ -246,6 +256,7 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 

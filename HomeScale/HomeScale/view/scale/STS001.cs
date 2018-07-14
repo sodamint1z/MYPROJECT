@@ -32,7 +32,7 @@ namespace HomeScale.view.scale
             getSerialPorts();
             loadCombo();
             queryDataStsSerialPort();
-            serialPinChangedEventHandler1 = new SerialPinChangedEventHandler(pinChanged);
+            //serialPinChangedEventHandler1 = new SerialPinChangedEventHandler(pinChanged);
             comPort.DataReceived += new System.IO.Ports.SerialDataReceivedEventHandler(port_DataReceived_1);
         }
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
@@ -133,45 +133,45 @@ namespace HomeScale.view.scale
 
         private void setText(string text)
         {
-            this.richTextBox1.Text = text;
+            this.rtbDigital.Text = text;
         }
 
-        internal void pinChanged(object sender, SerialPinChangedEventArgs e)
-        {
-            SerialPinChange SerialPinChange1 = 0;
-            bool signalState = false;
+        //internal void pinChanged(object sender, SerialPinChangedEventArgs e)
+        //{
+        //    SerialPinChange SerialPinChange1 = 0;
+        //    bool signalState = false;
 
-            SerialPinChange1 = e.EventType;
-            lblCTSStatus.BackColor = Color.Green;
-            lblDSRStatus.BackColor = Color.Green;
-            lblRIStatus.BackColor = Color.Green;
-            lblBreakStatus.BackColor = Color.Green;
-            switch (SerialPinChange1)
-            {
-                case SerialPinChange.Break:
-                    lblBreakStatus.BackColor = Color.Red;
-                    //MessageBox.Show("Break is Set");
-                    break;
-                case SerialPinChange.CDChanged:
-                    signalState = comPort.CtsHolding;
-                    //  MessageBox.Show("CD = " + signalState.ToString());
-                    break;
-                case SerialPinChange.CtsChanged:
-                    signalState = comPort.CDHolding;
-                    lblCTSStatus.BackColor = Color.Red;
-                    //MessageBox.Show("CTS = " + signalState.ToString());
-                    break;
-                case SerialPinChange.DsrChanged:
-                    signalState = comPort.DsrHolding;
-                    lblDSRStatus.BackColor = Color.Red;
-                    // MessageBox.Show("DSR = " + signalState.ToString());
-                    break;
-                case SerialPinChange.Ring:
-                    lblRIStatus.BackColor = Color.Red;
-                    //MessageBox.Show("Ring Detected");
-                    break;
-            }
-        }
+        //    SerialPinChange1 = e.EventType;
+        //    lblCTSStatus.BackColor = Color.Green;
+        //    lblDSRStatus.BackColor = Color.Green;
+        //    lblRIStatus.BackColor = Color.Green;
+        //    lblBreakStatus.BackColor = Color.Green;
+        //    switch (SerialPinChange1)
+        //    {
+        //        case SerialPinChange.Break:
+        //            lblBreakStatus.BackColor = Color.Red;
+        //            //MessageBox.Show("Break is Set");
+        //            break;
+        //        case SerialPinChange.CDChanged:
+        //            signalState = comPort.CtsHolding;
+        //            //  MessageBox.Show("CD = " + signalState.ToString());
+        //            break;
+        //        case SerialPinChange.CtsChanged:
+        //            signalState = comPort.CDHolding;
+        //            lblCTSStatus.BackColor = Color.Red;
+        //            //MessageBox.Show("CTS = " + signalState.ToString());
+        //            break;
+        //        case SerialPinChange.DsrChanged:
+        //            signalState = comPort.DsrHolding;
+        //            lblDSRStatus.BackColor = Color.Red;
+        //            // MessageBox.Show("DSR = " + signalState.ToString());
+        //            break;
+        //        case SerialPinChange.Ring:
+        //            lblRIStatus.BackColor = Color.Red;
+        //            //MessageBox.Show("Ring Detected");
+        //            break;
+        //    }
+        //}
 
         public void loadCombo()
         {
@@ -180,37 +180,44 @@ namespace HomeScale.view.scale
             List<ComboStopBitsForm> lstComboStopBits = new List<ComboStopBitsForm>();
             List<ComboParityForm> lstComboParity = new List<ComboParityForm>();
             List<ComboHandShakingForm> lstComboHandShaking = new List<ComboHandShakingForm>();
+            try
+            {
+                lstComboBaudRate = LoadComboUtil.loadComboBaudRate();
+                lstComboDataBits = LoadComboUtil.loadComboDataBits();
+                lstComboStopBits = LoadComboUtil.loadComboStopBits();
+                lstComboParity = LoadComboUtil.loadComboParity();
+                lstComboHandShaking = LoadComboUtil.loadComboHandShaking();
 
-            lstComboBaudRate = LoadComboUtil.loadComboBaudRate();
-            lstComboDataBits = LoadComboUtil.loadComboDataBits();
-            lstComboStopBits = LoadComboUtil.loadComboStopBits();
-            lstComboParity = LoadComboUtil.loadComboParity();
-            lstComboHandShaking = LoadComboUtil.loadComboHandShaking();
+                cboBaudRate.DataSource = lstComboBaudRate;
+                cboBaudRate.ValueMember = "baudRateId";
+                cboBaudRate.DisplayMember = "baudRateValue";
+                cboBaudRate.SelectedValue = 0;
 
-            cboBaudRate.DataSource = lstComboBaudRate;
-            cboBaudRate.ValueMember = "baudRateId";
-            cboBaudRate.DisplayMember = "baudRateValue";
-            cboBaudRate.SelectedValue = 0;
+                cboDataBits.DataSource = lstComboDataBits;
+                cboDataBits.ValueMember = "dataBitsId";
+                cboDataBits.DisplayMember = "dataBitsValue";
+                cboDataBits.SelectedValue = 0;
 
-            cboDataBits.DataSource = lstComboDataBits;
-            cboDataBits.ValueMember = "dataBitsId";
-            cboDataBits.DisplayMember = "dataBitsValue";
-            cboDataBits.SelectedValue = 0;
+                cboStopBits.DataSource = lstComboStopBits;
+                cboStopBits.ValueMember = "stopBitsId";
+                cboStopBits.DisplayMember = "stopBitsValue";
+                cboStopBits.SelectedValue = 0;
 
-            cboStopBits.DataSource = lstComboStopBits;
-            cboStopBits.ValueMember = "stopBitsId";
-            cboStopBits.DisplayMember = "stopBitsValue";
-            cboStopBits.SelectedValue = 0;
+                cboParity.DataSource = lstComboParity;
+                cboParity.ValueMember = "parityId";
+                cboParity.DisplayMember = "parityValue";
+                cboParity.SelectedValue = 0;
 
-            cboParity.DataSource = lstComboParity;
-            cboParity.ValueMember = "parityId";
-            cboParity.DisplayMember = "parityValue";
-            cboParity.SelectedValue = 0;
-
-            cboHandShaking.DataSource = lstComboHandShaking;
-            cboHandShaking.ValueMember = "handShakingId";
-            cboHandShaking.DisplayMember = "handShakingValue";
-            cboHandShaking.SelectedValue = 0;
+                cboHandShaking.DataSource = lstComboHandShaking;
+                cboHandShaking.ValueMember = "handShakingId";
+                cboHandShaking.DisplayMember = "handShakingValue";
+                cboHandShaking.SelectedValue = 0;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
+            }
         }
 
         public void queryDataStsSerialPort()
@@ -231,28 +238,54 @@ namespace HomeScale.view.scale
                         formStsSerialPort = data;
 
                         cboPorts.Text = data.SERIAL_PORT_PORT_NO.ToString();
-                        cboBaudRate.SelectedValue = data.SERIAL_PORT_BAUD_RATE;
-                        cboDataBits.SelectedValue = data.SERIAL_PORT_DATA_BITS;
-                        cboStopBits.SelectedValue = data.SERIAL_PORT_STOP_BITS;
-                        cboParity.SelectedValue = data.SERIAL_PORT_PARITY;
-                        cboHandShaking.SelectedValue = data.SERIAL_PORT_HAND_SHAKING;
+                        cboBaudRate.Text = data.SERIAL_PORT_BAUD_RATE.ToString();
+                        cboDataBits.Text = data.SERIAL_PORT_DATA_BITS.ToString();
+                        cboStopBits.Text = data.SERIAL_PORT_STOP_BITS;
+                        cboParity.Text = data.SERIAL_PORT_PARITY;
+                        cboHandShaking.Text = data.SERIAL_PORT_HAND_SHAKING;
                         chkStatusConnectScale.Checked = Util.chkboxToBool(data.SERIAL_PORT_STATUS_FLAG);
-
-                        //if (formStsSerialPort.SERIAL_PORT_STATUS_FLAG.Equals(1))
-                        //{
-                        //    comPort.PortName = formStsSerialPort.SERIAL_PORT_PORT_NO;
-                        //    comPort.BaudRate = Convert.ToInt32(formStsSerialPort.SERIAL_PORT_BAUD_RATE);
-                        //    comPort.DataBits = Convert.ToInt16(formStsSerialPort.SERIAL_PORT_DATA_BITS);
-                        //    comPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), formStsSerialPort.SERIAL_PORT_STOP_BITS.ToString());
-                        //    comPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), formStsSerialPort.SERIAL_PORT_HAND_SHAKING.ToString());
-                        //    comPort.Parity = (Parity)Enum.Parse(typeof(Parity), formStsSerialPort.SERIAL_PORT_PARITY.ToString());
-                        //    comPort.Open();
-                        //}
-                        //else if (formStsSerialPort.SERIAL_PORT_STATUS_FLAG.Equals(0))
-                        //{
-                        //    comPort.Close();
-                        //}
                     }
+                }
+                else
+                {
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
+            }
+        }
+
+        public void updateDataStsSerialPort()
+        {
+            STS001Controller sts001Ctrl = new STS001Controller();
+            STS_SERIAL_PORT form = new STS_SERIAL_PORT();
+            Cursor.Current = Cursors.WaitCursor;
+            try
+            {
+                form.SERIAL_PORT_ID = formStsSerialPort.SERIAL_PORT_ID;
+                form.SERIAL_PORT_PORT_NO = cboPorts.Text;
+                form.SERIAL_PORT_BAUD_RATE = Int32.Parse(cboBaudRate.Text);
+                form.SERIAL_PORT_DATA_BITS = Int32.Parse(cboDataBits.Text);
+                form.SERIAL_PORT_STOP_BITS = cboStopBits.Text;
+                form.SERIAL_PORT_PARITY = cboParity.Text;
+                form.SERIAL_PORT_HAND_SHAKING = cboHandShaking.Text;
+                form.SERIAL_PORT_STATUS_FLAG = Util.chkboxToNumber(chkStatusConnectScale.Checked);
+
+                if (Util.isEmpty(form))
+                {
+                    return;
+                }
+
+                object[] result = sts001Ctrl.updateDataStsSerialPort(form);
+
+                MsgForm msgForm = (MsgForm)result[0];
+
+                if (msgForm.statusFlag.Equals(1))
+                {
+                    MessageBox.Show(CommonUtil.SAVE_DATA_SUCCESS);
                 }
                 else
                 {
@@ -268,14 +301,7 @@ namespace HomeScale.view.scale
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-            try
-            {
-                comPort.WriteLine("TEST");
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.ToString());
-            }
+            updateDataStsSerialPort();
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -293,8 +319,8 @@ namespace HomeScale.view.scale
                     comPort.BaudRate = Convert.ToInt32(cboBaudRate.Text);
                     comPort.DataBits = Convert.ToInt16(cboDataBits.Text);
                     comPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cboStopBits.Text);
-                    comPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), cboHandShaking.Text);
                     comPort.Parity = (Parity)Enum.Parse(typeof(Parity), cboParity.Text);
+                    comPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), cboHandShaking.Text);
                     comPort.Open();
                 }
                 else if (comPort.IsOpen)
@@ -312,6 +338,7 @@ namespace HomeScale.view.scale
 
         private void btnBack_Click(object sender, EventArgs e)
         {
+            comPort.Close();
             MenuMain menuMain = new MenuMain();
             this.Hide();
             menuMain.Show();

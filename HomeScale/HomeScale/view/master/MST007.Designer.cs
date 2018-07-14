@@ -54,7 +54,7 @@
             this.txtUserId.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserId.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtUserId.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUserId.Location = new System.Drawing.Point(194, 94);
+            this.txtUserId.Location = new System.Drawing.Point(194, 55);
             this.txtUserId.MaxLength = 50;
             this.txtUserId.Multiline = true;
             this.txtUserId.Name = "txtUserId";
@@ -67,7 +67,7 @@
             this.txtUserPassword.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserPassword.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtUserPassword.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUserPassword.Location = new System.Drawing.Point(630, 95);
+            this.txtUserPassword.Location = new System.Drawing.Point(630, 56);
             this.txtUserPassword.MaxLength = 50;
             this.txtUserPassword.Multiline = true;
             this.txtUserPassword.Name = "txtUserPassword";
@@ -80,7 +80,7 @@
             this.txtUserFirstname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserFirstname.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtUserFirstname.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUserFirstname.Location = new System.Drawing.Point(195, 140);
+            this.txtUserFirstname.Location = new System.Drawing.Point(195, 101);
             this.txtUserFirstname.MaxLength = 50;
             this.txtUserFirstname.Multiline = true;
             this.txtUserFirstname.Name = "txtUserFirstname";
@@ -93,7 +93,7 @@
             this.txtUserLastname.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtUserLastname.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
             this.txtUserLastname.ForeColor = System.Drawing.SystemColors.WindowText;
-            this.txtUserLastname.Location = new System.Drawing.Point(631, 140);
+            this.txtUserLastname.Location = new System.Drawing.Point(631, 101);
             this.txtUserLastname.MaxLength = 50;
             this.txtUserLastname.Multiline = true;
             this.txtUserLastname.Name = "txtUserLastname";
@@ -106,7 +106,7 @@
             this.cboStatusFlag.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboStatusFlag.FormattingEnabled = true;
             this.cboStatusFlag.IntegralHeight = false;
-            this.cboStatusFlag.Location = new System.Drawing.Point(194, 185);
+            this.cboStatusFlag.Location = new System.Drawing.Point(194, 146);
             this.cboStatusFlag.MaxLength = 50;
             this.cboStatusFlag.Name = "cboStatusFlag";
             this.cboStatusFlag.Size = new System.Drawing.Size(300, 34);
@@ -117,7 +117,7 @@
             this.lblUserId.AutoSize = true;
             this.lblUserId.BackColor = System.Drawing.Color.Transparent;
             this.lblUserId.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserId.Location = new System.Drawing.Point(74, 94);
+            this.lblUserId.Location = new System.Drawing.Point(74, 55);
             this.lblUserId.Name = "lblUserId";
             this.lblUserId.Size = new System.Drawing.Size(103, 33);
             this.lblUserId.TabIndex = 64;
@@ -128,7 +128,7 @@
             this.lblUserPassword.AutoSize = true;
             this.lblUserPassword.BackColor = System.Drawing.Color.Transparent;
             this.lblUserPassword.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserPassword.Location = new System.Drawing.Point(526, 94);
+            this.lblUserPassword.Location = new System.Drawing.Point(526, 55);
             this.lblUserPassword.Name = "lblUserPassword";
             this.lblUserPassword.Size = new System.Drawing.Size(88, 33);
             this.lblUserPassword.TabIndex = 65;
@@ -139,7 +139,7 @@
             this.lblUserFirstname.AutoSize = true;
             this.lblUserFirstname.BackColor = System.Drawing.Color.Transparent;
             this.lblUserFirstname.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserFirstname.Location = new System.Drawing.Point(134, 140);
+            this.lblUserFirstname.Location = new System.Drawing.Point(134, 101);
             this.lblUserFirstname.Name = "lblUserFirstname";
             this.lblUserFirstname.Size = new System.Drawing.Size(43, 33);
             this.lblUserFirstname.TabIndex = 66;
@@ -150,7 +150,7 @@
             this.lblUserLastname.AutoSize = true;
             this.lblUserLastname.BackColor = System.Drawing.Color.Transparent;
             this.lblUserLastname.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUserLastname.Location = new System.Drawing.Point(533, 140);
+            this.lblUserLastname.Location = new System.Drawing.Point(533, 101);
             this.lblUserLastname.Name = "lblUserLastname";
             this.lblUserLastname.Size = new System.Drawing.Size(81, 33);
             this.lblUserLastname.TabIndex = 67;
@@ -161,7 +161,7 @@
             this.lblStatusFlag.AutoSize = true;
             this.lblStatusFlag.BackColor = System.Drawing.Color.Transparent;
             this.lblStatusFlag.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblStatusFlag.Location = new System.Drawing.Point(34, 186);
+            this.lblStatusFlag.Location = new System.Drawing.Point(34, 147);
             this.lblStatusFlag.Name = "lblStatusFlag";
             this.lblStatusFlag.Size = new System.Drawing.Size(143, 33);
             this.lblStatusFlag.TabIndex = 68;
@@ -172,7 +172,7 @@
             this.lblHead.AutoSize = true;
             this.lblHead.BackColor = System.Drawing.Color.Transparent;
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHead.Location = new System.Drawing.Point(380, 42);
+            this.lblHead.Location = new System.Drawing.Point(380, 3);
             this.lblHead.Name = "lblHead";
             this.lblHead.Size = new System.Drawing.Size(216, 33);
             this.lblHead.TabIndex = 69;
@@ -182,9 +182,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(57, 339);
+            this.dataGridView1.Location = new System.Drawing.Point(57, 300);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(885, 275);
+            this.dataGridView1.Size = new System.Drawing.Size(885, 214);
             this.dataGridView1.TabIndex = 70;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -195,7 +195,7 @@
             this.btnSave.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(330, 235);
+            this.btnSave.Location = new System.Drawing.Point(330, 196);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 70);
             this.btnSave.TabIndex = 74;
@@ -211,7 +211,7 @@
             this.btnCancel.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(440, 235);
+            this.btnCancel.Location = new System.Drawing.Point(440, 196);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 70);
             this.btnCancel.TabIndex = 73;
@@ -227,7 +227,7 @@
             this.btnDelete.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(550, 235);
+            this.btnDelete.Location = new System.Drawing.Point(550, 196);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 70);
             this.btnDelete.TabIndex = 72;
@@ -240,7 +240,7 @@
             // 
             this.lblCountData.AutoSize = true;
             this.lblCountData.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCountData.Location = new System.Drawing.Point(800, 310);
+            this.lblCountData.Location = new System.Drawing.Point(800, 271);
             this.lblCountData.Name = "lblCountData";
             this.lblCountData.Size = new System.Drawing.Size(65, 22);
             this.lblCountData.TabIndex = 76;
@@ -251,7 +251,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1008, 626);
+            this.ClientSize = new System.Drawing.Size(1008, 526);
             this.Controls.Add(this.lblCountData);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);

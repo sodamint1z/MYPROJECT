@@ -39,10 +39,10 @@ namespace HomeScale.view.master
 
         public void queryComboMstProductUnit()
         {
-            MST001Controller mstProductCtrl = new MST001Controller();
+            MST001Controller mst001Ctrl = new MST001Controller();
             try
             {
-                object[] result = mstProductCtrl.queryComboMstProductUnit();
+                object[] result = mst001Ctrl.queryComboMstProductUnit();
 
                 MsgForm msgForm = (MsgForm)result[0];
                 List<MST_PRODUCT_UNIT> lstdata = (List<MST_PRODUCT_UNIT>)result[1];
@@ -62,15 +62,16 @@ namespace HomeScale.view.master
             catch (Exception ex) 
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void searchDataVwMstProduct()
         {
-            MST001Controller mstProductCtrl = new MST001Controller();
+            MST001Controller mst001Ctrl = new MST001Controller();
             try
             {
-                object[] result = mstProductCtrl.searchDataVwMstProduct();
+                object[] result = mst001Ctrl.searchDataVwMstProduct();
 
                 MsgForm msgForm = (MsgForm)result[0];
                 List<VW_MST_PRODUCT> lstdata = (List<VW_MST_PRODUCT>)result[1];
@@ -98,15 +99,16 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void queryDataMstProductByProductId()
         {
-            MST001Controller mstProductCtrl = new MST001Controller();
+            MST001Controller mst001Ctrl = new MST001Controller();
             try
             {
-                object[] result = mstProductCtrl.queryDataMstProductByProductId(formMstProduct);
+                object[] result = mst001Ctrl.queryDataMstProductByProductId(formMstProduct);
                 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_PRODUCT data = (MST_PRODUCT)result[1];
@@ -129,12 +131,13 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void insertOrUpdateDataMstProduct()
         {
-            MST001Controller mstProductCtrl = new MST001Controller();
+            MST001Controller mst001Ctrl = new MST001Controller();
             MST_PRODUCT form = new MST_PRODUCT();
             try
             {
@@ -155,7 +158,7 @@ namespace HomeScale.view.master
                     return;
                 }
 
-                object[] result = mstProductCtrl.insertOrUpdateDataMstProduct(form, flagAddEdit);
+                object[] result = mst001Ctrl.insertOrUpdateDataMstProduct(form, flagAddEdit);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_PRODUCT data = (MST_PRODUCT)result[1];
@@ -204,12 +207,13 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void deleteDataMstProduct()
         {
-            MST001Controller mstProductCtrl = new MST001Controller();
+            MST001Controller mst001Ctrl = new MST001Controller();
             MST_PRODUCT form = new MST_PRODUCT();
             try
             {
@@ -223,7 +227,7 @@ namespace HomeScale.view.master
 
                 if (MessageBox.Show(CommonUtil.CONFIRM_DELETE_DATA, CommonUtil.TITLE_DELETE, MessageBoxButtons.YesNo) == DialogResult.Yes)
                 {
-                    object[] result = mstProductCtrl.deleteDataMstProduct(form);
+                    object[] result = mst001Ctrl.deleteDataMstProduct(form);
 
                     MsgForm msgForm = (MsgForm)result[0];
 
@@ -242,6 +246,7 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 

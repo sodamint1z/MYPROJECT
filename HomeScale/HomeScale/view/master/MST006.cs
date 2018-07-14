@@ -27,11 +27,11 @@ namespace HomeScale.view.master
 
         public void queryDataMstDataBasic()
         {
-            MST006Controller mstDataBasicCtrl = new MST006Controller();
+            MST006Controller mst006Ctrl = new MST006Controller();
             formMstDataBasic.BASIC_ID = 1;
             try
             {
-                object[] result = mstDataBasicCtrl.queryDataMstDataBasic(formMstDataBasic);
+                object[] result = mst006Ctrl.queryDataMstDataBasic(formMstDataBasic);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_DATA_BASIC data = (MST_DATA_BASIC)result[1];
@@ -68,7 +68,7 @@ namespace HomeScale.view.master
 
         public void updateDataMstDataBasic()
         {
-            MST006Controller mstDataBasicCtrl = new MST006Controller();
+            MST006Controller mst006Ctrl = new MST006Controller();
             MST_DATA_BASIC form = new MST_DATA_BASIC();
             try
             {
@@ -90,7 +90,7 @@ namespace HomeScale.view.master
                     return;
                 }
 
-                object[] result = mstDataBasicCtrl.updateDataMstDataBasic(form);
+                object[] result = mst006Ctrl.updateDataMstDataBasic(form);
 
                 MsgForm msgForm = (MsgForm)result[0];
 

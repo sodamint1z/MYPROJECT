@@ -46,7 +46,7 @@
             // 
             this.txtProductUnitName.BackColor = System.Drawing.SystemColors.Window;
             this.txtProductUnitName.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtProductUnitName.Location = new System.Drawing.Point(665, 96);
+            this.txtProductUnitName.Location = new System.Drawing.Point(665, 57);
             this.txtProductUnitName.MaxLength = 50;
             this.txtProductUnitName.Multiline = true;
             this.txtProductUnitName.Name = "txtProductUnitName";
@@ -58,7 +58,7 @@
             this.lblProductUnitName.AutoSize = true;
             this.lblProductUnitName.BackColor = System.Drawing.Color.Transparent;
             this.lblProductUnitName.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblProductUnitName.Location = new System.Drawing.Point(513, 96);
+            this.lblProductUnitName.Location = new System.Drawing.Point(513, 57);
             this.lblProductUnitName.Name = "lblProductUnitName";
             this.lblProductUnitName.Size = new System.Drawing.Size(127, 33);
             this.lblProductUnitName.TabIndex = 3;
@@ -69,7 +69,7 @@
             this.lblHead.AutoSize = true;
             this.lblHead.BackColor = System.Drawing.Color.Transparent;
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblHead.Location = new System.Drawing.Point(403, 42);
+            this.lblHead.Location = new System.Drawing.Point(403, 3);
             this.lblHead.Name = "lblHead";
             this.lblHead.Size = new System.Drawing.Size(204, 33);
             this.lblHead.TabIndex = 16;
@@ -79,9 +79,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 293);
+            this.dataGridView1.Location = new System.Drawing.Point(66, 254);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(855, 321);
+            this.dataGridView1.Size = new System.Drawing.Size(855, 260);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -89,7 +89,7 @@
             // 
             this.lblCountData.AutoSize = true;
             this.lblCountData.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCountData.Location = new System.Drawing.Point(787, 265);
+            this.lblCountData.Location = new System.Drawing.Point(787, 226);
             this.lblCountData.Name = "lblCountData";
             this.lblCountData.Size = new System.Drawing.Size(65, 22);
             this.lblCountData.TabIndex = 18;
@@ -102,7 +102,7 @@
             this.btnSave.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(330, 190);
+            this.btnSave.Location = new System.Drawing.Point(330, 151);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 70);
             this.btnSave.TabIndex = 21;
@@ -118,7 +118,7 @@
             this.btnCancel.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(440, 190);
+            this.btnCancel.Location = new System.Drawing.Point(440, 151);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 70);
             this.btnCancel.TabIndex = 20;
@@ -134,7 +134,7 @@
             this.btnDelete.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(550, 190);
+            this.btnDelete.Location = new System.Drawing.Point(550, 151);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 70);
             this.btnDelete.TabIndex = 19;
@@ -148,7 +148,7 @@
             this.label1.AutoSize = true;
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(35, 96);
+            this.label1.Location = new System.Drawing.Point(35, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(136, 33);
             this.label1.TabIndex = 23;
@@ -158,7 +158,7 @@
             // 
             this.txtProductUnitId.BackColor = System.Drawing.SystemColors.Window;
             this.txtProductUnitId.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtProductUnitId.Location = new System.Drawing.Point(196, 96);
+            this.txtProductUnitId.Location = new System.Drawing.Point(196, 57);
             this.txtProductUnitId.MaxLength = 10;
             this.txtProductUnitId.Multiline = true;
             this.txtProductUnitId.Name = "txtProductUnitId";
@@ -170,7 +170,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1008, 626);
+            this.ClientSize = new System.Drawing.Size(1008, 526);
             this.Controls.Add(this.txtProductUnitId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);

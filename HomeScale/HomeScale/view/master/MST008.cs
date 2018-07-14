@@ -27,11 +27,11 @@ namespace HomeScale.view.master
 
         public void queryDataMstBusiness()
         {
-            MST008Controller mstBusinessCtrl = new MST008Controller();
+            MST008Controller mst008Ctrl = new MST008Controller();
             formMstBusiness.BUSINESS_ID = 1;
             try
             {
-                object[] result = mstBusinessCtrl.queryDataMstBusiness(formMstBusiness);
+                object[] result = mst008Ctrl.queryDataMstBusiness(formMstBusiness);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 MST_BUSINESS data = (MST_BUSINESS)result[1];
@@ -55,12 +55,13 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
         public void updateDataMstBusiness()
         {
-            MST008Controller mstBusinessCtrl = new MST008Controller();
+            MST008Controller mst008Ctrl = new MST008Controller();
             MST_BUSINESS form = new MST_BUSINESS();
             try
             {
@@ -74,7 +75,7 @@ namespace HomeScale.view.master
                     return;
                 }
 
-                object[] result = mstBusinessCtrl.updateDataMstBusiness(form);
+                object[] result = mst008Ctrl.updateDataMstBusiness(form);
 
                 MsgForm msgForm = (MsgForm)result[0];
 
@@ -90,6 +91,7 @@ namespace HomeScale.view.master
             catch (Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 

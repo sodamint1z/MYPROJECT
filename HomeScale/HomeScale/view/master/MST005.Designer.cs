@@ -48,7 +48,7 @@
             // 
             this.txtCarRegistertionName.BackColor = System.Drawing.SystemColors.Window;
             this.txtCarRegistertionName.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtCarRegistertionName.Location = new System.Drawing.Point(651, 95);
+            this.txtCarRegistertionName.Location = new System.Drawing.Point(651, 56);
             this.txtCarRegistertionName.MaxLength = 50;
             this.txtCarRegistertionName.Multiline = true;
             this.txtCarRegistertionName.Name = "txtCarRegistertionName";
@@ -60,7 +60,7 @@
             this.lblCarRegistertionName.AutoSize = true;
             this.lblCarRegistertionName.BackColor = System.Drawing.Color.Transparent;
             this.lblCarRegistertionName.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblCarRegistertionName.Location = new System.Drawing.Point(533, 98);
+            this.lblCarRegistertionName.Location = new System.Drawing.Point(533, 59);
             this.lblCarRegistertionName.Name = "lblCarRegistertionName";
             this.lblCarRegistertionName.Size = new System.Drawing.Size(101, 33);
             this.lblCarRegistertionName.TabIndex = 5;
@@ -71,7 +71,7 @@
             this.lblCarRegistertionVendorId.AutoSize = true;
             this.lblCarRegistertionVendorId.BackColor = System.Drawing.Color.Transparent;
             this.lblCarRegistertionVendorId.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblCarRegistertionVendorId.Location = new System.Drawing.Point(99, 142);
+            this.lblCarRegistertionVendorId.Location = new System.Drawing.Point(99, 103);
             this.lblCarRegistertionVendorId.Name = "lblCarRegistertionVendorId";
             this.lblCarRegistertionVendorId.Size = new System.Drawing.Size(88, 33);
             this.lblCarRegistertionVendorId.TabIndex = 7;
@@ -82,7 +82,7 @@
             this.cboCarRegistertionVendorId.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cboCarRegistertionVendorId.Font = new System.Drawing.Font("TH SarabunPSK", 14.25F);
             this.cboCarRegistertionVendorId.FormattingEnabled = true;
-            this.cboCarRegistertionVendorId.Location = new System.Drawing.Point(207, 141);
+            this.cboCarRegistertionVendorId.Location = new System.Drawing.Point(207, 102);
             this.cboCarRegistertionVendorId.MaxLength = 100;
             this.cboCarRegistertionVendorId.Name = "cboCarRegistertionVendorId";
             this.cboCarRegistertionVendorId.Size = new System.Drawing.Size(300, 34);
@@ -93,7 +93,7 @@
             this.lblHead.AutoSize = true;
             this.lblHead.BackColor = System.Drawing.Color.Transparent;
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblHead.Location = new System.Drawing.Point(374, 42);
+            this.lblHead.Location = new System.Drawing.Point(374, 3);
             this.lblHead.Name = "lblHead";
             this.lblHead.Size = new System.Drawing.Size(243, 33);
             this.lblHead.TabIndex = 23;
@@ -103,9 +103,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 290);
+            this.dataGridView1.Location = new System.Drawing.Point(66, 251);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(855, 324);
+            this.dataGridView1.Size = new System.Drawing.Size(855, 263);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -113,7 +113,7 @@
             // 
             this.txtCarRegistertionId.BackColor = System.Drawing.SystemColors.Window;
             this.txtCarRegistertionId.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtCarRegistertionId.Location = new System.Drawing.Point(207, 95);
+            this.txtCarRegistertionId.Location = new System.Drawing.Point(207, 56);
             this.txtCarRegistertionId.MaxLength = 10;
             this.txtCarRegistertionId.Multiline = true;
             this.txtCarRegistertionId.Name = "txtCarRegistertionId";
@@ -125,7 +125,7 @@
             this.lblCarRegistertionId.AutoSize = true;
             this.lblCarRegistertionId.BackColor = System.Drawing.Color.Transparent;
             this.lblCarRegistertionId.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
-            this.lblCarRegistertionId.Location = new System.Drawing.Point(58, 98);
+            this.lblCarRegistertionId.Location = new System.Drawing.Point(58, 59);
             this.lblCarRegistertionId.Name = "lblCarRegistertionId";
             this.lblCarRegistertionId.Size = new System.Drawing.Size(129, 33);
             this.lblCarRegistertionId.TabIndex = 25;
@@ -138,7 +138,7 @@
             this.btnSave.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(330, 190);
+            this.btnSave.Location = new System.Drawing.Point(330, 151);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 70);
             this.btnSave.TabIndex = 29;
@@ -154,7 +154,7 @@
             this.btnCancel.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(440, 190);
+            this.btnCancel.Location = new System.Drawing.Point(440, 151);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 70);
             this.btnCancel.TabIndex = 28;
@@ -170,7 +170,7 @@
             this.btnDelete.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(550, 190);
+            this.btnDelete.Location = new System.Drawing.Point(550, 151);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 70);
             this.btnDelete.TabIndex = 27;
@@ -183,7 +183,7 @@
             // 
             this.lblCountData.AutoSize = true;
             this.lblCountData.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCountData.Location = new System.Drawing.Point(776, 265);
+            this.lblCountData.Location = new System.Drawing.Point(776, 226);
             this.lblCountData.Name = "lblCountData";
             this.lblCountData.Size = new System.Drawing.Size(65, 22);
             this.lblCountData.TabIndex = 31;
@@ -194,7 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1008, 626);
+            this.ClientSize = new System.Drawing.Size(1008, 526);
             this.Controls.Add(this.lblCountData);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
