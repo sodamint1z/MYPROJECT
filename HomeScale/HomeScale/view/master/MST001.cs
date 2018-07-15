@@ -139,6 +139,7 @@ namespace HomeScale.view.master
         {
             MST001Controller mst001Ctrl = new MST001Controller();
             MST_PRODUCT form = new MST_PRODUCT();
+            Cursor.Current = Cursors.WaitCursor;
             try
             {
                 if (Util.isEmpty(txtProductId.Text) 

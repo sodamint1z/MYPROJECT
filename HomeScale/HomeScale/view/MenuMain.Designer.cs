@@ -41,6 +41,8 @@
             this.button3 = new System.Windows.Forms.Button();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
             this.toolStripStatuslblCredit = new System.Windows.Forms.ToolStripStatusLabel();
+            this.lblBusiness = new System.Windows.Forms.Label();
+            this.lblTime = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -48,6 +50,7 @@
             // 
             this.btnMainScale.BackColor = System.Drawing.Color.LightBlue;
             this.btnMainScale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnMainScale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMainScale.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnMainScale.Image = ((System.Drawing.Image)(resources.GetObject("btnMainScale.Image")));
             this.btnMainScale.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -64,6 +67,7 @@
             // 
             this.btnDataScale.BackColor = System.Drawing.Color.LightBlue;
             this.btnDataScale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDataScale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDataScale.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnDataScale.Image = ((System.Drawing.Image)(resources.GetObject("btnDataScale.Image")));
             this.btnDataScale.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -80,6 +84,7 @@
             // 
             this.btnDatabase.BackColor = System.Drawing.Color.LightBlue;
             this.btnDatabase.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnDatabase.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnDatabase.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnDatabase.Image = ((System.Drawing.Image)(resources.GetObject("btnDatabase.Image")));
             this.btnDatabase.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -96,6 +101,7 @@
             // 
             this.btnConfigScale.BackColor = System.Drawing.Color.LightBlue;
             this.btnConfigScale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnConfigScale.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnConfigScale.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnConfigScale.Image = ((System.Drawing.Image)(resources.GetObject("btnConfigScale.Image")));
             this.btnConfigScale.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -112,6 +118,7 @@
             // 
             this.btnReport.BackColor = System.Drawing.Color.LightBlue;
             this.btnReport.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnReport.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnReport.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnReport.Image = ((System.Drawing.Image)(resources.GetObject("btnReport.Image")));
             this.btnReport.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -127,6 +134,7 @@
             // 
             this.button5.BackColor = System.Drawing.Color.LightBlue;
             this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button5.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button5.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.button5.Image = ((System.Drawing.Image)(resources.GetObject("button5.Image")));
             this.button5.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -142,6 +150,7 @@
             // 
             this.button6.BackColor = System.Drawing.Color.LightBlue;
             this.button6.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button6.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button6.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.button6.Image = ((System.Drawing.Image)(resources.GetObject("button6.Image")));
             this.button6.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -157,6 +166,7 @@
             // 
             this.button1.BackColor = System.Drawing.Color.LightBlue;
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button1.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
             this.button1.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -172,6 +182,7 @@
             // 
             this.button2.BackColor = System.Drawing.Color.LightBlue;
             this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button2.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.button2.Image = ((System.Drawing.Image)(resources.GetObject("button2.Image")));
             this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -187,6 +198,7 @@
             // 
             this.button3.BackColor = System.Drawing.Color.LightBlue;
             this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
             this.button3.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button3.Image = ((System.Drawing.Image)(resources.GetObject("button3.Image")));
             this.button3.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -214,12 +226,38 @@
             this.toolStripStatuslblCredit.Size = new System.Drawing.Size(263, 17);
             this.toolStripStatuslblCredit.Text = "Copyright©2018  Credit : Pro. All rights reserved.";
             // 
+            // lblBusiness
+            // 
+            this.lblBusiness.AutoSize = true;
+            this.lblBusiness.BackColor = System.Drawing.Color.Transparent;
+            this.lblBusiness.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblBusiness.Location = new System.Drawing.Point(421, 34);
+            this.lblBusiness.Name = "lblBusiness";
+            this.lblBusiness.Size = new System.Drawing.Size(72, 33);
+            this.lblBusiness.TabIndex = 20;
+            this.lblBusiness.Text = "ชื่อบริษัท";
+            this.lblBusiness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // lblTime
+            // 
+            this.lblTime.AutoSize = true;
+            this.lblTime.BackColor = System.Drawing.Color.Transparent;
+            this.lblTime.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.lblTime.Location = new System.Drawing.Point(39, 34);
+            this.lblTime.Name = "lblTime";
+            this.lblTime.Size = new System.Drawing.Size(72, 33);
+            this.lblTime.TabIndex = 21;
+            this.lblTime.Text = "ชื่อบริษัท";
+            this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // MenuMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1008, 481);
+            this.Controls.Add(this.lblTime);
+            this.Controls.Add(this.lblBusiness);
             this.Controls.Add(this.statusStrip1);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
@@ -255,5 +293,7 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatuslblCredit;
+        private System.Windows.Forms.Label lblBusiness;
+        private System.Windows.Forms.Label lblTime;
     }
 }

@@ -70,6 +70,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\controller\MenuMainController.cs" />
     <Compile Include="src\controller\STS001Controller.cs" />
     <Compile Include="src\model\entities\MST_DATA_BASIC.cs">
       <DependentUpon>HomeScaleDB.tt</DependentUpon>

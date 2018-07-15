@@ -21,29 +21,18 @@ namespace HomeScale.view.scale
         public LMS001()
         {
             InitializeComponent();
-            MST001 mst001 = new MST001();
-            MST002 mst002 = new MST002();
-            AddNewTab(mst001);
-            AddNewTab(mst002);
         }
 
-        private void AddNewTab(Form frm)
+        public void callMenuMain()
         {
+            MenuMain menuMain = new MenuMain();
+            this.Hide();
+            menuMain.Show();
+        }
 
-            TabPage tab = new TabPage(frm.Text);
-
-            frm.TopLevel = false;
-
-            frm.Parent = tab;
-
-            frm.Visible = true;
-
-            tabControl1.TabPages.Add(tab);
-
-            //frm.Location = new Point((tab.Width - frm.Width) / 2, (tab.Height - frm.Height) / 2);
-
-            //tabControl1.SelectedTab = tab;
-
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            callMenuMain();
         }
     }
 }

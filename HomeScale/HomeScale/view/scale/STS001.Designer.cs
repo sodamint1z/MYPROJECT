@@ -123,6 +123,7 @@
             this.cboPorts.Name = "cboPorts";
             this.cboPorts.Size = new System.Drawing.Size(150, 34);
             this.cboPorts.TabIndex = 98;
+            this.cboPorts.SelectedIndexChanged += new System.EventHandler(this.cboPorts_SelectedIndexChanged);
             // 
             // lblProductUnit
             // 
@@ -145,6 +146,7 @@
             this.cboBaudRate.Name = "cboBaudRate";
             this.cboBaudRate.Size = new System.Drawing.Size(150, 34);
             this.cboBaudRate.TabIndex = 100;
+            this.cboBaudRate.SelectedIndexChanged += new System.EventHandler(this.cboBaudRate_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -167,6 +169,7 @@
             this.cboDataBits.Name = "cboDataBits";
             this.cboDataBits.Size = new System.Drawing.Size(150, 34);
             this.cboDataBits.TabIndex = 102;
+            this.cboDataBits.SelectedIndexChanged += new System.EventHandler(this.cboDataBits_SelectedIndexChanged);
             // 
             // label2
             // 
@@ -189,6 +192,7 @@
             this.cboParity.Name = "cboParity";
             this.cboParity.Size = new System.Drawing.Size(150, 34);
             this.cboParity.TabIndex = 104;
+            this.cboParity.SelectedIndexChanged += new System.EventHandler(this.cboParity_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -211,6 +215,7 @@
             this.cboStopBits.Name = "cboStopBits";
             this.cboStopBits.Size = new System.Drawing.Size(150, 34);
             this.cboStopBits.TabIndex = 106;
+            this.cboStopBits.SelectedIndexChanged += new System.EventHandler(this.cboStopBits_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -268,6 +273,7 @@
             this.cboHandShaking.Name = "cboHandShaking";
             this.cboHandShaking.Size = new System.Drawing.Size(150, 34);
             this.cboHandShaking.TabIndex = 129;
+            this.cboHandShaking.SelectedIndexChanged += new System.EventHandler(this.cboHandShaking_SelectedIndexChanged);
             // 
             // label12
             // 

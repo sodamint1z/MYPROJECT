@@ -40,84 +40,37 @@ namespace HomeScale.view.scale
 
         public void getSerialPorts()
         {
-            string[] ArrayComPortsNames = null;
+            string[] arrayComPortsNames = null;
             int index = -1;
             string comPortName = null;
             try
             {
                 //Com Ports
-            ArrayComPortsNames = SerialPort.GetPortNames();
+            arrayComPortsNames = SerialPort.GetPortNames();
+
+            if (arrayComPortsNames.Count() < 1) 
+            {
+                return;
+            }
+
             do
             {
                 index += 1;
-                cboPorts.Items.Add(ArrayComPortsNames[index]);
+                cboPorts.Items.Add(arrayComPortsNames[index]);
 
+            } while (!((arrayComPortsNames[index] == comPortName) || (index == arrayComPortsNames.GetUpperBound(0))));
+            Array.Sort(arrayComPortsNames);
 
-            } while (!((ArrayComPortsNames[index] == comPortName) || (index == ArrayComPortsNames.GetUpperBound(0))));
-            Array.Sort(ArrayComPortsNames);
-
-            if (index == ArrayComPortsNames.GetUpperBound(0))
+            if (index == arrayComPortsNames.GetUpperBound(0))
             {
-                comPortName = ArrayComPortsNames[0];
+                comPortName = arrayComPortsNames[0];
             }
             //get first item print in text
-            cboPorts.Text = ArrayComPortsNames[0];
-            //Baud Rate
-            //cboBaudRate.Items.Add(300);
-            //cboBaudRate.Items.Add(600);
-            //cboBaudRate.Items.Add(1200);
-            //cboBaudRate.Items.Add(2400);
-            //cboBaudRate.Items.Add(9600);
-            //cboBaudRate.Items.Add(14400);
-            //cboBaudRate.Items.Add(19200);
-            //cboBaudRate.Items.Add(38400);
-            //cboBaudRate.Items.Add(57600);
-            //cboBaudRate.Items.Add(115200);
-            //cboBaudRate.Items.ToString();
-            ////get first item print in text
-            //cboBaudRate.Text = cboBaudRate.Items[0].ToString();
-            ////Data Bits
-            //cboDataBits.Items.Add(7);
-            //cboDataBits.Items.Add(8);
-            ////get the first item print it in the text 
-            //cboDataBits.Text = cboDataBits.Items[0].ToString();
-
-            ////Stop Bits
-            //cboStopBits.Items.Add("One");
-            //cboStopBits.Items.Add("OnePointFive");
-            //cboStopBits.Items.Add("Two");
-            ////get the first item print in the text
-            //cboStopBits.Text = cboStopBits.Items[0].ToString();
-            ////Parity 
-            //cboParity.Items.Add("None");
-            //cboParity.Items.Add("Even");
-            //cboParity.Items.Add("Mark");
-            //cboParity.Items.Add("Odd");
-            //cboParity.Items.Add("Space");
-            ////get the first item print in the text
-            //cboParity.Text = cboParity.Items[0].ToString();
-            ////Handshake
-            //cboHandShaking.Items.Add("None");
-            //cboHandShaking.Items.Add("XOnXOff");
-            //cboHandShaking.Items.Add("RequestToSend");
-            //cboHandShaking.Items.Add("RequestToSendXOnXOff");
-            ////get the first item print it in the text 
-            //cboHandShaking.Text = cboHandShaking.Items[0].ToString();
-
-            //if (comPort.IsOpen)
-            //{
-            //    comPort.PortName = Convert.ToString(cboPorts.Text);
-            //    comPort.BaudRate = Convert.ToInt32(cboBaudRate.Text);
-            //    comPort.DataBits = Convert.ToInt16(cboDataBits.Text);
-            //    comPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cboStopBits.Text);
-            //    comPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), cboHandShaking.Text);
-            //    comPort.Parity = (Parity)Enum.Parse(typeof(Parity), cboParity.Text);
-            //    comPort.Open();
-            //}
-
+            cboPorts.Text = arrayComPortsNames[0];
             }
             catch (Exception ex)
             {
+                log.Error(ex.ToString(), ex);
                 MessageBox.Show("Error : " + ex.ToString());
             }
         }
@@ -299,31 +252,29 @@ namespace HomeScale.view.scale
             }
         }
 
-        private void btnSave_Click(object sender, EventArgs e)
-        {
-            updateDataStsSerialPort();
-        }
-
-        private void btnCancel_Click(object sender, EventArgs e)
-        {
-            queryDataStsSerialPort();
-        }
-
-        private void chkStatusConnectScale_CheckedChanged(object sender, EventArgs e)
+        public void connectSerialPort()
         {
             try
             {
-                if (!comPort.IsOpen)
+                if (chkStatusConnectScale.Checked)
                 {
-                    comPort.PortName = Convert.ToString(cboPorts.Text);
-                    comPort.BaudRate = Convert.ToInt32(cboBaudRate.Text);
-                    comPort.DataBits = Convert.ToInt16(cboDataBits.Text);
-                    comPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cboStopBits.Text);
-                    comPort.Parity = (Parity)Enum.Parse(typeof(Parity), cboParity.Text);
-                    comPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), cboHandShaking.Text);
-                    comPort.Open();
+                    if (Util.isNotEmpty(cboPorts.Text) &&
+                        Util.isNotEmpty(cboBaudRate.Text) &&
+                        Util.isNotEmpty(cboDataBits.Text) &&
+                        Util.isNotEmpty(cboStopBits.Text) &&
+                        Util.isNotEmpty(cboParity.Text) &&
+                        Util.isNotEmpty(cboHandShaking.Text))
+                    {
+                        comPort.PortName = Convert.ToString(cboPorts.Text);
+                        comPort.BaudRate = Convert.ToInt32(cboBaudRate.Text);
+                        comPort.DataBits = Convert.ToInt16(cboDataBits.Text);
+                        comPort.StopBits = (StopBits)Enum.Parse(typeof(StopBits), cboStopBits.Text);
+                        comPort.Parity = (Parity)Enum.Parse(typeof(Parity), cboParity.Text);
+                        comPort.Handshake = (Handshake)Enum.Parse(typeof(Handshake), cboHandShaking.Text);
+                        comPort.Open();
+                    }
                 }
-                else if (comPort.IsOpen)
+                else if (!chkStatusConnectScale.Checked)
                 {
                     comPort.Close();
                 }
@@ -336,12 +287,63 @@ namespace HomeScale.view.scale
             }
         }
 
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            updateDataStsSerialPort();
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            queryDataStsSerialPort();
+        }
+
+        private void chkStatusConnectScale_CheckedChanged(object sender, EventArgs e)
+        {
+            connectSerialPort();
+        }
+
         private void btnBack_Click(object sender, EventArgs e)
         {
             comPort.Close();
             MenuMain menuMain = new MenuMain();
             this.Hide();
             menuMain.Show();
+        }
+
+        private void cboPorts_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comPort.Close();
+            connectSerialPort();
+        }
+
+        private void cboBaudRate_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comPort.Close();
+            connectSerialPort();
+        }
+
+        private void cboDataBits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comPort.Close();
+            connectSerialPort();
+        }
+
+        private void cboStopBits_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comPort.Close();
+            connectSerialPort();
+        }
+
+        private void cboParity_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comPort.Close();
+            connectSerialPort();
+        }
+
+        private void cboHandShaking_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            comPort.Close();
+            connectSerialPort();
         }
     }
 }

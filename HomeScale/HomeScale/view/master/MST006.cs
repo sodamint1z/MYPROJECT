@@ -63,6 +63,7 @@ namespace HomeScale.view.master
             catch(Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
@@ -73,13 +74,13 @@ namespace HomeScale.view.master
             try
             {
                 form.BASIC_ID = formMstDataBasic.BASIC_ID;
-                form.BASIC_CARD_NO = Int32.Parse(txtBasicCardNo.ToString());
-                form.BASIC_CARD_NO_SCOOP = Int32.Parse(txtBasicCardNoScoop.ToString());
-                form.BASIC_RECEIPT_NO = Int32.Parse(txtBasicReceiptNo.ToString());
-                form.BASIC_DECIMAL = Int32.Parse(txtBasicDecimal.ToString());
-                form.BASIC_MOVE_NO = Int32.Parse(txtBasicMoveNo.ToString());
-                form.BASIC_DEDUCTION = Int32.Parse(txtBasicDeduction.ToString());
-                form.BASIC_FARE = Int32.Parse(txtBasicFare.ToString());
+                form.BASIC_CARD_NO = Int32.Parse(txtBasicCardNo.Text);
+                form.BASIC_CARD_NO_SCOOP = Int32.Parse(txtBasicCardNoScoop.Text);
+                form.BASIC_RECEIPT_NO = Int32.Parse(txtBasicReceiptNo.Text);
+                form.BASIC_DECIMAL = Int32.Parse(txtBasicDecimal.Text);
+                form.BASIC_MOVE_NO = Int32.Parse(txtBasicMoveNo.Text);
+                form.BASIC_DEDUCTION = Int32.Parse(txtBasicDeduction.Text);
+                form.BASIC_FARE = Int32.Parse(txtBasicFare.Text);
                 form.BASIC_STATUS_PRINT_CARD_NO = Util.chkboxToNumber(chkStatusPrintCardNo.Checked);
                 form.BASIC_STATUS_PRINT_CARD_SEND = Util.chkboxToNumber(chkStatusPrintCardSend.Checked);
                 form.BASIC_STATIS_SHOW_CARD_FARE = Util.chkboxToNumber(chkStatusShowCardFare.Checked);
@@ -106,6 +107,7 @@ namespace HomeScale.view.master
             catch(Exception ex)
             {
                 log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
             }
         }
 
