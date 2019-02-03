@@ -14,6 +14,8 @@ using HomeScale.src.model.form;
 using HomeScale.src.model.form.combo;
 using HomeScale.src.util;
 using log4net;
+using System.Text.RegularExpressions;
+using System.IO;
 
 namespace HomeScale.view.scale
 {
@@ -26,6 +28,12 @@ namespace HomeScale.view.scale
         private SerialPinChangedEventHandler serialPinChangedEventHandler1;
         delegate void SetTextCallback(string text);
         string inputData = String.Empty;
+
+        const int singleDataLength = 12;    // from 0x02 to 0x03
+        const int weightDataLength = 7;     // +/-, and 6 digit weight
+        const int decimalPositionIndex = 8; // index from 0x02
+        static Regex rx = new Regex(@"\x02[+-][0-9]{6}[0-4][0-9A-F]{2}\x03", RegexOptions.Compiled | RegexOptions.IgnoreCase);
+        static string fragmentString = "";
         public STS001()
         {
             InitializeComponent();
@@ -86,8 +94,65 @@ namespace HomeScale.view.scale
 
         private void setText(string text)
         {
-            this.rtbDigital.Text = text;
+            //this.rtbConnection.Text += string.Format("{0:X2} ",text);
+            this.rtbConnection.Text += text.Trim();
+
+            
+
+            //List<string> foundList = GetAvailableDataList(text, ref fragmentString);
+
+            //this.rtbConnection.Text = foundList;
+
+            if (rtbConnection.Text.Count() > 70)
+            {
+                this.rtbConnection.Text = "";
+            }
+
+            rtbDigital.Text = rtbConnection.Text;
+
+
+            //int lastSTXIndex = text.LastIndexOf('\x02');
+            //if (lastSTXIndex >= 0)
+            //{
+            //    MatchCollection mc = rx.Matches(text);
+            //    foreach (Match m in mc)
+            //    {
+            //        if (m.Success)
+            //        {
+            //            // ToDo: XRL check must be implemented
+            //            // bool checked = checkXRL(m.Value);
+            //            // if (checked)
+            //            // {
+            //            string formatedData = m.Value.Substring(1, weightDataLength);
+            //            int decimalPoint = int.Parse(m.Value.Substring(decimalPositionIndex, 1));
+            //            if (decimalPoint > 0)
+            //            {
+            //                formatedData = formatedData.Insert((weightDataLength - decimalPoint), ".");
+            //            }
+            //            resultList.Add(formatedData);
+            //            if (m.Index == lastSTXIndex)
+            //            {
+            //                lastSTXIndex = -1;
+            //            }
+            //            // }
+            //        }
+            //    }
+            //}
+            //if ((lastSTXIndex >= 0) && ((text.Length - lastSTXIndex) < singleDataLength))
+            //{
+            //    fragmentString = text.Substring(lastSTXIndex);
+            //}
+            //else
+            //{
+            //    fragmentString = "";
+            //}
+
+            //this.rtbConnection.Text += fragmentString;
+
+            //rtbDigital.Text = rtbConnection.Text;
         }
+
+    
 
         //internal void pinChanged(object sender, SerialPinChangedEventArgs e)
         //{

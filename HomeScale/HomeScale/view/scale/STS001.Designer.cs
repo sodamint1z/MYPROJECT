@@ -48,7 +48,10 @@
             this.chkStatusConnectScale = new System.Windows.Forms.CheckBox();
             this.cboHandShaking = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.rtbConnection = new System.Windows.Forms.RichTextBox();
             this.groupBox1.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblHead
@@ -231,9 +234,9 @@
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.rtbDigital);
-            this.groupBox1.Location = new System.Drawing.Point(250, 260);
+            this.groupBox1.Location = new System.Drawing.Point(420, 254);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(522, 158);
+            this.groupBox1.Size = new System.Drawing.Size(352, 158);
             this.groupBox1.TabIndex = 125;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Digital Indicator";
@@ -247,7 +250,7 @@
             this.rtbDigital.Name = "rtbDigital";
             this.rtbDigital.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.rtbDigital.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
-            this.rtbDigital.Size = new System.Drawing.Size(510, 132);
+            this.rtbDigital.Size = new System.Drawing.Size(340, 132);
             this.rtbDigital.TabIndex = 0;
             this.rtbDigital.Text = "";
             // 
@@ -286,12 +289,36 @@
             this.label12.TabIndex = 128;
             this.label12.Text = "HandShaking :";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.rtbConnection);
+            this.groupBox2.Location = new System.Drawing.Point(201, 254);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(210, 158);
+            this.groupBox2.TabIndex = 126;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Connection Indicator";
+            // 
+            // rtbConnection
+            // 
+            this.rtbConnection.Enabled = false;
+            this.rtbConnection.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(222)));
+            this.rtbConnection.ForeColor = System.Drawing.Color.Red;
+            this.rtbConnection.Location = new System.Drawing.Point(6, 19);
+            this.rtbConnection.Name = "rtbConnection";
+            this.rtbConnection.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.rtbConnection.ScrollBars = System.Windows.Forms.RichTextBoxScrollBars.None;
+            this.rtbConnection.Size = new System.Drawing.Size(197, 132);
+            this.rtbConnection.TabIndex = 0;
+            this.rtbConnection.Text = "";
+            // 
             // STS001
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
             this.ClientSize = new System.Drawing.Size(1008, 626);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.cboHandShaking);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.chkStatusConnectScale);
@@ -314,6 +341,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "STS001";
             this.groupBox1.ResumeLayout(false);
+            this.groupBox2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -340,5 +368,7 @@
         private System.Windows.Forms.RichTextBox rtbDigital;
         private System.Windows.Forms.ComboBox cboHandShaking;
         private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.RichTextBox rtbConnection;
     }
 }

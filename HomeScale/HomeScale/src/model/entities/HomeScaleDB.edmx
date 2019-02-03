@@ -5,6 +5,13 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="HomeScaleDBModel.Store" Provider="System.Data.SQLite.EF6" ProviderManifestToken="data source=C:\HomeScale\database\HomeScaleDB.db" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="LOGIN_STATUS">
+          <Key>
+            <PropertyRef Name="LOGIN_STATUS_ID" />
+          </Key>
+          <Property Name="LOGIN_STATUS_ID" Type="int" Nullable="false" />
+          <Property Name="LOGIN_STATUS_VALUE" Type="int" Nullable="false" />
+        </EntityType>
         <EntityType Name="MST_BUSINESS">
           <Key>
             <PropertyRef Name="BUSINESS_ID" />
@@ -26,7 +33,7 @@
           <Key>
             <PropertyRef Name="BASIC_ID" />
           </Key>
-          <Property Name="BASIC_ID" Type="integer" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="BASIC_ID" Type="int" Nullable="false" />
           <Property Name="BASIC_CARD_NO" Type="int" />
           <Property Name="BASIC_CARD_NO_SCOOP" Type="int" />
           <Property Name="BASIC_RECEIPT_NO" Type="int" />
@@ -155,6 +162,7 @@ warning 6002: The table/view 'main.VW_MST_PRODUCT' does not have a primary key d
           <Property Name="PRODUCT_UNIT_NAME" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityContainer Name="HomeScaleDBModelStoreContainer">
+          <EntitySet Name="LOGIN_STATUS" EntityType="Self.LOGIN_STATUS" store:Type="Tables" />
           <EntitySet Name="MST_BUSINESS" EntityType="Self.MST_BUSINESS" store:Type="Tables" />
           <EntitySet Name="MST_CAR_REGISTERTION" EntityType="Self.MST_CAR_REGISTERTION" store:Type="Tables" />
           <EntitySet Name="MST_DATA_BASIC" EntityType="Self.MST_DATA_BASIC" store:Type="Tables" />
@@ -200,6 +208,7 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
     <edmx:ConceptualModels>
       <Schema Namespace="HomeScaleDBModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="HomeScaleDBEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="LOGIN_STATUS" EntityType="HomeScaleDBModel.LOGIN_STATUS" />
           <EntitySet Name="MST_BUSINESS" EntityType="HomeScaleDBModel.MST_BUSINESS" />
           <EntitySet Name="MST_CAR_REGISTERTION" EntityType="HomeScaleDBModel.MST_CAR_REGISTERTION" />
           <EntitySet Name="MST_DATA_BASIC" EntityType="HomeScaleDBModel.MST_DATA_BASIC" />
@@ -209,12 +218,19 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <EntitySet Name="MST_PRODUCT_UNIT" EntityType="HomeScaleDBModel.MST_PRODUCT_UNIT" />
           <EntitySet Name="MST_SERVICE_CHARGE" EntityType="HomeScaleDBModel.MST_SERVICE_CHARGE" />
           <EntitySet Name="MST_VENDOR" EntityType="HomeScaleDBModel.MST_VENDOR" />
+          <EntitySet Name="STS_SERIAL_PORT" EntityType="HomeScaleDBModel.STS_SERIAL_PORT" />
           <EntitySet Name="USER_LOGIN" EntityType="HomeScaleDBModel.USER_LOGIN" />
           <EntitySet Name="MST_DESTINATION" EntityType="HomeScaleDBModel.MST_DESTINATION" />
           <EntitySet Name="VW_MST_CAR_REGISTERTION" EntityType="HomeScaleDBModel.VW_MST_CAR_REGISTERTION" />
           <EntitySet Name="VW_MST_PRODUCT" EntityType="HomeScaleDBModel.VW_MST_PRODUCT" />
-          <EntitySet Name="STS_SERIAL_PORT" EntityType="HomeScaleDBModel.STS_SERIAL_PORT" />
         </EntityContainer>
+        <EntityType Name="LOGIN_STATUS">
+          <Key>
+            <PropertyRef Name="LOGIN_STATUS_ID" />
+          </Key>
+          <Property Name="LOGIN_STATUS_ID" Type="Int32" Nullable="false" />
+          <Property Name="LOGIN_STATUS_VALUE" Type="Int32" Nullable="false" />
+        </EntityType>
         <EntityType Name="MST_BUSINESS">
           <Key>
             <PropertyRef Name="BUSINESS_ID" />
@@ -236,7 +252,7 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <Key>
             <PropertyRef Name="BASIC_ID" />
           </Key>
-          <Property Name="BASIC_ID" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="BASIC_ID" Type="Int32" Nullable="false" />
           <Property Name="BASIC_CARD_NO" Type="Int32" />
           <Property Name="BASIC_CARD_NO_SCOOP" Type="Int32" />
           <Property Name="BASIC_RECEIPT_NO" Type="Int32" />
@@ -304,6 +320,19 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <Property Name="VENDOR_TEL_NO" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="VENDOR_FAX" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
+        <EntityType Name="STS_SERIAL_PORT">
+          <Key>
+            <PropertyRef Name="SERIAL_PORT_ID" />
+          </Key>
+          <Property Name="SERIAL_PORT_ID" Type="Int32" Nullable="false" />
+          <Property Name="SERIAL_PORT_PORT_NO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_PORT_BAUD_RATE" Type="Int32" Nullable="false" />
+          <Property Name="SERIAL_PORT_DATA_BITS" Type="Int32" Nullable="false" />
+          <Property Name="SERIAL_PORT_STOP_BITS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_PORT_PARITY" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_PORT_HAND_SHAKING" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
+          <Property Name="SERIAL_PORT_STATUS_FLAG" Type="Int32" />
+        </EntityType>
         <EntityType Name="USER_LOGIN">
           <Key>
             <PropertyRef Name="USER_ID" />
@@ -345,25 +374,20 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
           <Property Name="PRODUCT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="PRODUCT_UNIT_NAME" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="STS_SERIAL_PORT">
-          <Key>
-            <PropertyRef Name="SERIAL_PORT_ID" />
-          </Key>
-          <Property Name="SERIAL_PORT_ID" Type="Int32" Nullable="false" />
-          <Property Name="SERIAL_PORT_PORT_NO" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="SERIAL_PORT_BAUD_RATE" Type="Int32" Nullable="false" />
-          <Property Name="SERIAL_PORT_DATA_BITS" Type="Int32" Nullable="false" />
-          <Property Name="SERIAL_PORT_STOP_BITS" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="SERIAL_PORT_PARITY" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="SERIAL_PORT_HAND_SHAKING" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="false" />
-          <Property Name="SERIAL_PORT_STATUS_FLAG" Type="Int32" />
-        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="HomeScaleDBModelStoreContainer" CdmEntityContainer="HomeScaleDBEntities">
+          <EntitySetMapping Name="LOGIN_STATUS">
+            <EntityTypeMapping TypeName="HomeScaleDBModel.LOGIN_STATUS">
+              <MappingFragment StoreEntitySet="LOGIN_STATUS">
+                <ScalarProperty Name="LOGIN_STATUS_VALUE" ColumnName="LOGIN_STATUS_VALUE" />
+                <ScalarProperty Name="LOGIN_STATUS_ID" ColumnName="LOGIN_STATUS_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="MST_BUSINESS">
             <EntityTypeMapping TypeName="HomeScaleDBModel.MST_BUSINESS">
               <MappingFragment StoreEntitySet="MST_BUSINESS">
@@ -462,6 +486,20 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="STS_SERIAL_PORT">
+            <EntityTypeMapping TypeName="HomeScaleDBModel.STS_SERIAL_PORT">
+              <MappingFragment StoreEntitySet="STS_SERIAL_PORT">
+                <ScalarProperty Name="SERIAL_PORT_STATUS_FLAG" ColumnName="SERIAL_PORT_STATUS_FLAG" />
+                <ScalarProperty Name="SERIAL_PORT_HAND_SHAKING" ColumnName="SERIAL_PORT_HAND_SHAKING" />
+                <ScalarProperty Name="SERIAL_PORT_PARITY" ColumnName="SERIAL_PORT_PARITY" />
+                <ScalarProperty Name="SERIAL_PORT_STOP_BITS" ColumnName="SERIAL_PORT_STOP_BITS" />
+                <ScalarProperty Name="SERIAL_PORT_DATA_BITS" ColumnName="SERIAL_PORT_DATA_BITS" />
+                <ScalarProperty Name="SERIAL_PORT_BAUD_RATE" ColumnName="SERIAL_PORT_BAUD_RATE" />
+                <ScalarProperty Name="SERIAL_PORT_PORT_NO" ColumnName="SERIAL_PORT_PORT_NO" />
+                <ScalarProperty Name="SERIAL_PORT_ID" ColumnName="SERIAL_PORT_ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="USER_LOGIN">
             <EntityTypeMapping TypeName="HomeScaleDBModel.USER_LOGIN">
               <MappingFragment StoreEntitySet="USER_LOGIN">
@@ -504,20 +542,6 @@ FROM [VW_MST_PRODUCT] AS [VW_MST_PRODUCT]</DefiningQuery>
                 <ScalarProperty Name="PRODUCT_UNIT_NAME" ColumnName="PRODUCT_UNIT_NAME" />
                 <ScalarProperty Name="PRODUCT_NAME" ColumnName="PRODUCT_NAME" />
                 <ScalarProperty Name="PRODUCT_ID" ColumnName="PRODUCT_ID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="STS_SERIAL_PORT">
-            <EntityTypeMapping TypeName="HomeScaleDBModel.STS_SERIAL_PORT">
-              <MappingFragment StoreEntitySet="STS_SERIAL_PORT">
-                <ScalarProperty Name="SERIAL_PORT_STATUS_FLAG" ColumnName="SERIAL_PORT_STATUS_FLAG" />
-                <ScalarProperty Name="SERIAL_PORT_HAND_SHAKING" ColumnName="SERIAL_PORT_HAND_SHAKING" />
-                <ScalarProperty Name="SERIAL_PORT_PARITY" ColumnName="SERIAL_PORT_PARITY" />
-                <ScalarProperty Name="SERIAL_PORT_STOP_BITS" ColumnName="SERIAL_PORT_STOP_BITS" />
-                <ScalarProperty Name="SERIAL_PORT_DATA_BITS" ColumnName="SERIAL_PORT_DATA_BITS" />
-                <ScalarProperty Name="SERIAL_PORT_BAUD_RATE" ColumnName="SERIAL_PORT_BAUD_RATE" />
-                <ScalarProperty Name="SERIAL_PORT_PORT_NO" ColumnName="SERIAL_PORT_PORT_NO" />
-                <ScalarProperty Name="SERIAL_PORT_ID" ColumnName="SERIAL_PORT_ID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

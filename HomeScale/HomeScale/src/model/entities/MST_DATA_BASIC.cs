@@ -14,7 +14,7 @@ namespace HomeScale.src.model.entities
     
     public partial class MST_DATA_BASIC
     {
-        public long BASIC_ID { get; set; }
+        public int BASIC_ID { get; set; }
         public Nullable<int> BASIC_CARD_NO { get; set; }
         public Nullable<int> BASIC_CARD_NO_SCOOP { get; set; }
         public Nullable<int> BASIC_RECEIPT_NO { get; set; }

@@ -73,11 +73,13 @@ namespace HomeScale.src.controller
             MsgForm msgError = new MsgForm();
             USER_LOGIN formInsert = new USER_LOGIN();
             USER_LOGIN formUpdate = new USER_LOGIN();
+            //LOGIN_STATUS updateStatusLogin = new LOGIN_STATUS();
             try
             {
                 using (var db = new HomeScaleDBEntities())
                 {
                     formUpdate = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
+                    //updateStatusLogin = (from row in db.LOGIN_STATUS where row.LOGIN_STATUS_ID == 1 select row).FirstOrDefault();
                     if (flagAddEdit.Equals("A"))
                     {
                         if (Util.isEmpty(formUpdate))

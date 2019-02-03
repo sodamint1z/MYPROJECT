@@ -25,6 +25,7 @@ namespace HomeScale.src.model.entities
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<LOGIN_STATUS> LOGIN_STATUS { get; set; }
         public virtual DbSet<MST_BUSINESS> MST_BUSINESS { get; set; }
         public virtual DbSet<MST_CAR_REGISTERTION> MST_CAR_REGISTERTION { get; set; }
         public virtual DbSet<MST_DATA_BASIC> MST_DATA_BASIC { get; set; }
@@ -34,10 +35,10 @@ namespace HomeScale.src.model.entities
         public virtual DbSet<MST_PRODUCT_UNIT> MST_PRODUCT_UNIT { get; set; }
         public virtual DbSet<MST_SERVICE_CHARGE> MST_SERVICE_CHARGE { get; set; }
         public virtual DbSet<MST_VENDOR> MST_VENDOR { get; set; }
+        public virtual DbSet<STS_SERIAL_PORT> STS_SERIAL_PORT { get; set; }
         public virtual DbSet<USER_LOGIN> USER_LOGIN { get; set; }
         public virtual DbSet<MST_DESTINATION> MST_DESTINATION { get; set; }
         public virtual DbSet<VW_MST_CAR_REGISTERTION> VW_MST_CAR_REGISTERTION { get; set; }
         public virtual DbSet<VW_MST_PRODUCT> VW_MST_PRODUCT { get; set; }
-        public virtual DbSet<STS_SERIAL_PORT> STS_SERIAL_PORT { get; set; }
     }
 }

@@ -72,6 +72,10 @@
   <ItemGroup>
     <Compile Include="src\controller\MenuMainController.cs" />
     <Compile Include="src\controller\STS001Controller.cs" />
+    <Compile Include="src\model\configDatabase\MySqlLiteConnectionFactory.cs" />
+    <Compile Include="src\model\entities\LOGIN_STATUS.cs">
+      <DependentUpon>HomeScaleDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="src\model\entities\MST_DATA_BASIC.cs">
       <DependentUpon>HomeScaleDB.tt</DependentUpon>
     </Compile>
