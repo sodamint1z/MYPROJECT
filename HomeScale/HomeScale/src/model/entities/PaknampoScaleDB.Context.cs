@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HomeScale.src.model.entities
+namespace PaknampoScale.src.model.entities
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class HomeScaleDBEntities : DbContext
+    public partial class PaknampoScaleDBEntities : DbContext
     {
-        public HomeScaleDBEntities()
-            : base("name=HomeScaleDBEntities")
+        public PaknampoScaleDBEntities()
+            : base("name=PaknampoScaleDBEntities")
         {
         }
     
@@ -35,6 +35,7 @@ namespace HomeScale.src.model.entities
         public virtual DbSet<MST_PRODUCT_UNIT> MST_PRODUCT_UNIT { get; set; }
         public virtual DbSet<MST_SERVICE_CHARGE> MST_SERVICE_CHARGE { get; set; }
         public virtual DbSet<MST_VENDOR> MST_VENDOR { get; set; }
+        public virtual DbSet<REGISTER> REGISTERs { get; set; }
         public virtual DbSet<STS_SERIAL_PORT> STS_SERIAL_PORT { get; set; }
         public virtual DbSet<USER_LOGIN> USER_LOGIN { get; set; }
         public virtual DbSet<MST_DESTINATION> MST_DESTINATION { get; set; }

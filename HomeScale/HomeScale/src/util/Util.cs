@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
-using HomeScale.src.util;
+using PaknampoScale.src.util;
 
-namespace HomeScale.src.util
+namespace PaknampoScale.src.util
 {
     public class Util
     {
@@ -71,6 +71,22 @@ namespace HomeScale.src.util
             else
             {
                 return false;
+            }
+        }
+
+        public static string toString(String data)
+        {
+            try
+            {
+                if (null != data)
+                {
+                    return data.Trim();
+                }
+                return "";
+            }
+            catch (Exception e)
+            {
+                return "";
             }
         }
 

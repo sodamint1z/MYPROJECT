@@ -7,15 +7,15 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HomeScale.src.model.entities;
-using HomeScale.src.controller;
-using HomeScale.src.model.form;
-using HomeScale.src.util;
-using HomeScale.view;
-using HomeScale.view.master;
+using PaknampoScale.src.model.entities;
+using PaknampoScale.src.controller;
+using PaknampoScale.src.model.form;
+using PaknampoScale.src.util;
+using PaknampoScale.view;
+using PaknampoScale.view.master;
 using log4net;
 
-namespace HomeScale.view.master
+namespace PaknampoScale.view.master
 {
     public partial class MenuMaster : Form
     {

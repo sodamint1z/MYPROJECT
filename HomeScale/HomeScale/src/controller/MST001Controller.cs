@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
-using HomeScale.src.model.entities;
-using HomeScale.src.model.form;
-using HomeScale.src.util;
+using PaknampoScale.src.model.entities;
+using PaknampoScale.src.model.form;
+using PaknampoScale.src.util;
 
-namespace HomeScale.src.controller
+namespace PaknampoScale.src.controller
 {
     public class MST001Controller
     {
@@ -20,7 +20,7 @@ namespace HomeScale.src.controller
             List<MST_PRODUCT_UNIT> resultList = new List<MST_PRODUCT_UNIT>();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     resultList = (from row in db.MST_PRODUCT_UNIT select row).ToList();
                     db.Dispose();
@@ -47,7 +47,7 @@ namespace HomeScale.src.controller
             List<VW_MST_PRODUCT> resultList = new List<VW_MST_PRODUCT>();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     resultList = (from row in db.VW_MST_PRODUCT select row).ToList();
                     db.Dispose();
@@ -74,7 +74,7 @@ namespace HomeScale.src.controller
             MST_PRODUCT form = new MST_PRODUCT();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
                     db.Dispose();
@@ -102,7 +102,7 @@ namespace HomeScale.src.controller
             MST_PRODUCT formUpdate = new MST_PRODUCT();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     formUpdate = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
                     if (flagAddEdit.Equals("A"))
@@ -174,7 +174,7 @@ namespace HomeScale.src.controller
             MST_PRODUCT form = new MST_PRODUCT();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
                     if (Util.isNotEmpty(form))
@@ -206,7 +206,7 @@ namespace HomeScale.src.controller
             MST_PRODUCT form = new MST_PRODUCT();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.MST_PRODUCT where row.PRODUCT_ID == param.PRODUCT_ID select row).FirstOrDefault();
                     if (Util.isNotEmpty(form))

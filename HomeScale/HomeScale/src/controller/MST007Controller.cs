@@ -4,15 +4,42 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
-using HomeScale.src.model.entities;
-using HomeScale.src.model.form;
-using HomeScale.src.util;
+using PaknampoScale.src.model.entities;
+using PaknampoScale.src.model.form;
+using PaknampoScale.src.util;
 
-namespace HomeScale.src.controller
+namespace PaknampoScale.src.controller
 {
     public class MST007Controller
     {
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+        public object[] queryDataLoginStatus()
+        {
+            log.Info("Start log INFO... queryDataLoginStatus");
+            MsgForm msgError = new MsgForm();
+            LOGIN_STATUS form = new LOGIN_STATUS();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    form = (from row in db.LOGIN_STATUS where row.LOGIN_STATUS_ID == 1 select row).FirstOrDefault();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... queryDataLoginStatus");
+            }
+            return new object[] { msgError, form };
+        }
+
         public object[] searchDataManageUserLogin()
         {
             log.Info("Start log INFO... searchDataManageUserLogin");
@@ -20,7 +47,7 @@ namespace HomeScale.src.controller
             List<USER_LOGIN> resultList = new List<USER_LOGIN>();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     resultList = (from row in db.USER_LOGIN select row).ToList();
                     db.Dispose();
@@ -47,7 +74,7 @@ namespace HomeScale.src.controller
             USER_LOGIN form = new USER_LOGIN();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
                     db.Dispose();
@@ -67,19 +94,19 @@ namespace HomeScale.src.controller
             return new object[] { msgError, form };
         }
 
-        public object[] insertOrUpdateDataManageUserLogin(USER_LOGIN param, string flagAddEdit)
+        public object[] insertOrUpdateDataManageUserLogin(USER_LOGIN param, LOGIN_STATUS paramStatus, string flagAddEdit)
         {
             log.Info("Start log INFO... insertOrUpdateDataManageUserLogin");
             MsgForm msgError = new MsgForm();
             USER_LOGIN formInsert = new USER_LOGIN();
             USER_LOGIN formUpdate = new USER_LOGIN();
-            //LOGIN_STATUS updateStatusLogin = new LOGIN_STATUS();
+            LOGIN_STATUS formUpdateStatusLogin = new LOGIN_STATUS();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     formUpdate = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
-                    //updateStatusLogin = (from row in db.LOGIN_STATUS where row.LOGIN_STATUS_ID == 1 select row).FirstOrDefault();
+                    formUpdateStatusLogin = (from row in db.LOGIN_STATUS where row.LOGIN_STATUS_ID == 1 select row).FirstOrDefault();
                     if (flagAddEdit.Equals("A"))
                     {
                         if (Util.isEmpty(formUpdate))
@@ -107,7 +134,7 @@ namespace HomeScale.src.controller
                             formUpdate.USER_FIRSTNAME = param.USER_FIRSTNAME;
                             formUpdate.USER_LASTNAME = param.USER_LASTNAME;
                             formUpdate.STATUS_FLAG = param.STATUS_FLAG;
-                            log.Info("Insert Data form USER_LOGIN"
+                            log.Info("Update Data form USER_LOGIN"
                             + " USER_ID : " + formUpdate.USER_ID
                             + " USER_PASSWORD : " + formUpdate.USER_PASSWORD
                             + " USER_FIRSTNAME : " + formUpdate.USER_FIRSTNAME
@@ -116,6 +143,11 @@ namespace HomeScale.src.controller
                             );
                         }
                     }
+                    formUpdateStatusLogin.LOGIN_STATUS_VALUE = paramStatus.LOGIN_STATUS_VALUE;
+                    log.Info("Update Data form LOGIN_STATUS"
+                            + " LOGIN_STATUS_ID : " + paramStatus.LOGIN_STATUS_ID
+                            + " LOGIN_STATUS_VALUE : " + paramStatus.LOGIN_STATUS_VALUE
+                            );
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;
                 }
@@ -140,7 +172,7 @@ namespace HomeScale.src.controller
             USER_LOGIN form = new USER_LOGIN();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.USER_LOGIN where row.USER_ID == param.USER_ID select row).FirstOrDefault();
                     if (Util.isNotEmpty(form))

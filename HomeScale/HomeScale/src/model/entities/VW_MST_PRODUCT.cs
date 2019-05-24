@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HomeScale.src.model.entities
+namespace PaknampoScale.src.model.entities
 {
     using System;
     using System.Collections.Generic;

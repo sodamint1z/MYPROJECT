@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
-using HomeScale.src.model.entities;
-using HomeScale.src.model.form;
-using HomeScale.src.util;
+using PaknampoScale.src.model.entities;
+using PaknampoScale.src.model.form;
+using PaknampoScale.src.util;
 
-namespace HomeScale.src.controller
+namespace PaknampoScale.src.controller
 {
     public class MST003Controller
     {
@@ -20,7 +20,7 @@ namespace HomeScale.src.controller
             List<MST_VENDOR> resultList = new List<MST_VENDOR>();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     resultList = (from row in db.MST_VENDOR select row).ToList();
                     db.Dispose();
@@ -47,7 +47,7 @@ namespace HomeScale.src.controller
             MST_VENDOR form = new MST_VENDOR();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.MST_VENDOR where row.VENDOR_ID == param.VENDOR_ID select row).FirstOrDefault();
                     db.Dispose();
@@ -75,7 +75,7 @@ namespace HomeScale.src.controller
             MST_VENDOR formUpdate = new MST_VENDOR();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     formUpdate = (from row in db.MST_VENDOR where row.VENDOR_ID == param.VENDOR_ID select row).FirstOrDefault();
                     if (flagAddEdit.Equals("A"))
@@ -155,7 +155,7 @@ namespace HomeScale.src.controller
             MST_VENDOR form = new MST_VENDOR();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.MST_VENDOR where row.VENDOR_ID == param.VENDOR_ID select row).FirstOrDefault();
                     if (Util.isNotEmpty(form))
@@ -193,7 +193,7 @@ namespace HomeScale.src.controller
             MST_VENDOR form = new MST_VENDOR();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.MST_VENDOR where row.VENDOR_ID == param.VENDOR_ID select row).FirstOrDefault();
                     if (Util.isNotEmpty(form))

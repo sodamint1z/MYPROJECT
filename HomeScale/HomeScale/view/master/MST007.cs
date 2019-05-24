@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HomeScale.src.model.entities;
-using HomeScale.src.controller;
-using HomeScale.src.model.form;
-using HomeScale.src.model.form.combo;
-using HomeScale.src.util;
+using PaknampoScale.src.model.entities;
+using PaknampoScale.src.controller;
+using PaknampoScale.src.model.form;
+using PaknampoScale.src.model.form.combo;
+using PaknampoScale.src.util;
 using log4net;
 
-namespace HomeScale.view.master
+namespace PaknampoScale.view.master
 {
     public partial class MST007 : Form
     {
@@ -23,9 +23,11 @@ namespace HomeScale.view.master
             InitializeComponent();
             searchDataManageUserLogin();
             loadCombo();
+            queryDataLoginStatus();
         }
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         USER_LOGIN formUserLogin = new USER_LOGIN();
+        LOGIN_STATUS formLoginStatus = new LOGIN_STATUS();
         string flagAddEdit = "A";
         public void resetDataManageUserLogin()
         {
@@ -38,6 +40,7 @@ namespace HomeScale.view.master
             flagAddEdit = "A";
             txtUserId.Enabled = true;
             txtUserId.Focus();
+            queryDataLoginStatus();
         }
 
         public void loadCombo()
@@ -51,6 +54,36 @@ namespace HomeScale.view.master
                 cboStatusFlag.ValueMember = "useOrNotUseId";
                 cboStatusFlag.DisplayMember = "useOrNotUseValue";
                 cboStatusFlag.SelectedValue = 1;
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
+            }
+        }
+
+        public void queryDataLoginStatus()
+        {
+            MST007Controller mst007Ctrl = new MST007Controller();
+            try
+            {
+                object[] result = mst007Ctrl.queryDataLoginStatus();
+
+                MsgForm msgForm = (MsgForm)result[0];
+                LOGIN_STATUS data = (LOGIN_STATUS)result[1];
+
+                if (msgForm.statusFlag.Equals(1))
+                {
+                    if (Util.isNotEmpty(data))
+                    {
+                        cboStatusFlag.SelectedValue = data.LOGIN_STATUS_VALUE;
+                        formLoginStatus = data;
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
+                }
             }
             catch (Exception ex)
             {
@@ -79,7 +112,7 @@ namespace HomeScale.view.master
                         userLoginForm.userPassword = data.USER_PASSWORD;
                         userLoginForm.userFirstname = data.USER_FIRSTNAME;
                         userLoginForm.userLastname = data.USER_LASTNAME;
-                        userLoginForm.status = data.STATUS_FLAG.Equals(0) ? "ไม่ใช้" : data.STATUS_FLAG.Equals(1) ? "ใช้" : "";
+                        userLoginForm.status = data.STATUS_FLAG.Equals(0) ? "ไม่ใช้งาน" : data.STATUS_FLAG.Equals(1) ? "ใช้งาน" : "";
                         lstUserLogin.Add(userLoginForm);
                     }
                     dataGridView1.DataSource = lstUserLogin;
@@ -94,7 +127,7 @@ namespace HomeScale.view.master
                     dataGridView1.Columns[1].HeaderCell.Value = "รหัสผ่าน";
                     dataGridView1.Columns[2].HeaderCell.Value = "ชื่อ";
                     dataGridView1.Columns[3].HeaderCell.Value = "นามสกุล";
-                    dataGridView1.Columns[4].HeaderCell.Value = "แสดงหน้าล็อกอิน";
+                    dataGridView1.Columns[4].HeaderCell.Value = "สถานะ";
                     lblCountData.Text = "แสดงข้อมูลทั้งหมด " + lstUserLogin.Count() + " รายการ";
                 }
                 else
@@ -127,7 +160,7 @@ namespace HomeScale.view.master
                         txtUserPassword.Text = data.USER_PASSWORD;
                         txtUserFirstname.Text = data.USER_FIRSTNAME;
                         txtUserLastname.Text = data.USER_LASTNAME;
-                        cboStatusFlag.SelectedValue = data.STATUS_FLAG;
+                        //cboStatusFlag.SelectedValue = data.STATUS_FLAG;
                         formUserLogin = data;
                     }
                 }
@@ -147,6 +180,7 @@ namespace HomeScale.view.master
         {
             MST007Controller mst007Ctrl = new MST007Controller();
             USER_LOGIN form = new USER_LOGIN();
+            LOGIN_STATUS formUpdateStatusLogin = new LOGIN_STATUS();
             try
             {
                 if (Util.isEmpty(txtUserId.Text)
@@ -161,14 +195,16 @@ namespace HomeScale.view.master
                 form.USER_PASSWORD = txtUserPassword.Text;
                 form.USER_FIRSTNAME = txtUserFirstname.Text;
                 form.USER_LASTNAME = txtUserLastname.Text;
-                form.STATUS_FLAG = Int32.Parse(cboStatusFlag.SelectedValue.ToString());
+                //form.STATUS_FLAG = Int32.Parse(cboStatusFlag.SelectedValue.ToString());
+                form.STATUS_FLAG = Int32.Parse("1");
+                formUpdateStatusLogin.LOGIN_STATUS_VALUE = Int32.Parse(cboStatusFlag.SelectedValue.ToString());
 
-                if (Util.isEmpty(form))
+                if (Util.isEmpty(form) && Util.isEmpty(formUpdateStatusLogin.LOGIN_STATUS_VALUE))
                 {
                     return;
                 }
 
-                object[] result = mst007Ctrl.insertOrUpdateDataManageUserLogin(form, flagAddEdit);
+                object[] result = mst007Ctrl.insertOrUpdateDataManageUserLogin(form, formUpdateStatusLogin, flagAddEdit);
 
                 MsgForm msgForm = (MsgForm)result[0];
                 USER_LOGIN data = (USER_LOGIN)result[1];

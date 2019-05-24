@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HomeScale.Properties {
+namespace PaknampoScale.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]

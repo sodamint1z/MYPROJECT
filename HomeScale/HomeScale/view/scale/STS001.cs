@@ -8,16 +8,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO.Ports;
-using HomeScale.src.model.entities;
-using HomeScale.src.controller;
-using HomeScale.src.model.form;
-using HomeScale.src.model.form.combo;
-using HomeScale.src.util;
+using PaknampoScale.src.model.entities;
+using PaknampoScale.src.controller;
+using PaknampoScale.src.model.form;
+using PaknampoScale.src.model.form.combo;
+using PaknampoScale.src.util;
 using log4net;
 using System.Text.RegularExpressions;
 using System.IO;
 
-namespace HomeScale.view.scale
+namespace PaknampoScale.view.scale
 {
     public partial class STS001 : Form
     {

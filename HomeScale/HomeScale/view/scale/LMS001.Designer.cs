@@ -1,4 +1,4 @@
-﻿namespace HomeScale.view.scale
+﻿namespace PaknampoScale.view.scale
 {
     partial class LMS001
     {

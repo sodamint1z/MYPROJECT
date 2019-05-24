@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeScale.src.model.form.combo
+namespace PaknampoScale.src.model.form.combo
 {
     public class ComboHandShakingForm
     {

@@ -7,14 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using HomeScale.src.model.entities;
-using HomeScale.src.controller;
-using HomeScale.src.model.form;
-using HomeScale.src.util;
-using HomeScale.view;
+using PaknampoScale.src.model.entities;
+using PaknampoScale.src.controller;
+using PaknampoScale.src.model.form;
+using PaknampoScale.src.util;
+using PaknampoScale.view;
 using log4net;
 
-namespace HomeScale.view
+namespace PaknampoScale.view
 {
     public partial class Login : Form
     {
@@ -63,6 +63,7 @@ namespace HomeScale.view
 
         public void checkLogin()
         {
+            Cursor.Current = Cursors.WaitCursor;
             LoginController loginCtrl = new LoginController();
             USER_LOGIN form = new USER_LOGIN();
             try
@@ -90,7 +91,7 @@ namespace HomeScale.view
                 object[] result = loginCtrl.checkLogin(form);
 
                 MsgForm msgForm = (MsgForm)result[0];
-                HomeScale.src.model.entities.USER_LOGIN data = (src.model.entities.USER_LOGIN)result[1];
+                PaknampoScale.src.model.entities.USER_LOGIN data = (src.model.entities.USER_LOGIN)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {

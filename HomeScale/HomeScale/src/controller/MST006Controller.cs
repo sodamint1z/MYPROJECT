@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
-using HomeScale.src.model.entities;
-using HomeScale.src.model.form;
-using HomeScale.src.util;
+using PaknampoScale.src.model.entities;
+using PaknampoScale.src.model.form;
+using PaknampoScale.src.util;
 
-namespace HomeScale.src.controller
+namespace PaknampoScale.src.controller
 {
     public class MST006Controller
     {
@@ -20,7 +20,7 @@ namespace HomeScale.src.controller
             MST_DATA_BASIC form = new MST_DATA_BASIC();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.MST_DATA_BASIC where row.BASIC_ID == param.BASIC_ID select row).FirstOrDefault();
                     db.Dispose();
@@ -47,7 +47,7 @@ namespace HomeScale.src.controller
             MST_DATA_BASIC form = new MST_DATA_BASIC();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.MST_DATA_BASIC where row.BASIC_ID == param.BASIC_ID select row).FirstOrDefault();
                     if (Util.isNotEmpty(form))

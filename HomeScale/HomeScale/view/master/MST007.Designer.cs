@@ -1,4 +1,4 @@
-﻿namespace HomeScale.view.master
+﻿namespace PaknampoScale.view.master
 {
     partial class MST007
     {

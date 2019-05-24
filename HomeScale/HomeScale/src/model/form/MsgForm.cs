@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeScale.src.model.form
+namespace PaknampoScale.src.model.form
 {
     public class MsgForm
     {

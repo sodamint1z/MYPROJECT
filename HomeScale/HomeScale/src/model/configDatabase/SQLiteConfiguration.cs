@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace HomeScale.src.model.configDatabase
+namespace PaknampoScale.src.model.configDatabase
 {
     public class SQLiteConfiguration : DbConfiguration
     {

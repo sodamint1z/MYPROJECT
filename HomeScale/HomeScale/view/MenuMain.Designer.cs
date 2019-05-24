@@ -1,4 +1,4 @@
-﻿namespace HomeScale.view
+﻿namespace PaknampoScale.view
 {
     partial class MenuMain
     {

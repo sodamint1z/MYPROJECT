@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
-using HomeScale.src.model.entities;
-using HomeScale.src.model.form;
-using HomeScale.src.util;
+using PaknampoScale.src.model.entities;
+using PaknampoScale.src.model.form;
+using PaknampoScale.src.util;
 
-namespace HomeScale.src.controller
+namespace PaknampoScale.src.controller
 {
     public class STS001Controller
     {
@@ -20,7 +20,7 @@ namespace HomeScale.src.controller
             STS_SERIAL_PORT form = new STS_SERIAL_PORT();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.STS_SERIAL_PORT where row.SERIAL_PORT_ID == param.SERIAL_PORT_ID select row).FirstOrDefault();
                     db.Dispose();
@@ -47,7 +47,7 @@ namespace HomeScale.src.controller
             STS_SERIAL_PORT form = new STS_SERIAL_PORT();
             try
             {
-                using (var db = new HomeScaleDBEntities())
+                using (var db = new PaknampoScaleDBEntities())
                 {
                     form = (from row in db.STS_SERIAL_PORT where row.SERIAL_PORT_ID == param.SERIAL_PORT_ID select row).FirstOrDefault();
                     if (Util.isNotEmpty(form))

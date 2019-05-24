@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using log4net;
-using HomeScale.src.util;
+using PaknampoScale.src.util;
 
-namespace HomeScale.src.util
+namespace PaknampoScale.src.util
 {
     public class CommonUtil
     {
