@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Register));
             this.txtSerialNo = new System.Windows.Forms.TextBox();
             this.txtRegister = new System.Windows.Forms.TextBox();
             this.btnRegister = new System.Windows.Forms.Button();
@@ -57,24 +58,32 @@
             // 
             // btnRegister
             // 
+            this.btnRegister.BackColor = System.Drawing.Color.SkyBlue;
             this.btnRegister.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.btnRegister.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister.Image")));
+            this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnRegister.Location = new System.Drawing.Point(133, 204);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(109, 70);
             this.btnRegister.TabIndex = 2;
             this.btnRegister.Text = "ลงทะเบียน";
-            this.btnRegister.UseVisualStyleBackColor = true;
+            this.btnRegister.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnRegister.UseVisualStyleBackColor = false;
             this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
             // 
             // btnExit
             // 
+            this.btnExit.BackColor = System.Drawing.Color.Salmon;
             this.btnExit.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
+            this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExit.Location = new System.Drawing.Point(287, 204);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(146, 70);
             this.btnExit.TabIndex = 3;
             this.btnExit.Text = "ออกจากโปรแกรม";
-            this.btnExit.UseVisualStyleBackColor = true;
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.UseVisualStyleBackColor = false;
             // 
             // lblDigit
             // 

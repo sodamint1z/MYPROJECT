@@ -25,13 +25,19 @@ namespace PaknampoScale.view
         {
             InitializeComponent();
             queryDataMstBusiness();
-            
-            lblTime.Text = DateTime.Now.ToString();
-            Stopwatch sw = Stopwatch.StartNew();
-            
+            timer1.Start();
+            //System.Timers.Timer timer = new System.Timers.Timer();
+            //timer.Interval = 1000;
+            //timer.Elapsed += ;
+            //timer.Start();
         }
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         MST_BUSINESS formMstBusiness = new MST_BUSINESS();
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblTime.Text = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+        } 
 
         public void queryDataMstBusiness()
         {

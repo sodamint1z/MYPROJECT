@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuMain));
             this.btnMainScale = new System.Windows.Forms.Button();
             this.btnDataScale = new System.Windows.Forms.Button();
@@ -43,6 +44,7 @@
             this.toolStripStatuslblCredit = new System.Windows.Forms.ToolStripStatusLabel();
             this.lblBusiness = new System.Windows.Forms.Label();
             this.lblTime = new System.Windows.Forms.Label();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -233,7 +235,7 @@
             this.lblBusiness.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblBusiness.Location = new System.Drawing.Point(421, 34);
             this.lblBusiness.Name = "lblBusiness";
-            this.lblBusiness.Size = new System.Drawing.Size(72, 33);
+            this.lblBusiness.Size = new System.Drawing.Size(69, 27);
             this.lblBusiness.TabIndex = 20;
             this.lblBusiness.Text = "ชื่อบริษัท";
             this.lblBusiness.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -245,10 +247,14 @@
             this.lblTime.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblTime.Location = new System.Drawing.Point(39, 34);
             this.lblTime.Name = "lblTime";
-            this.lblTime.Size = new System.Drawing.Size(72, 33);
+            this.lblTime.Size = new System.Drawing.Size(189, 27);
             this.lblTime.TabIndex = 21;
-            this.lblTime.Text = "ชื่อบริษัท";
+            this.lblTime.Text = "MM/dd/yyyy HH:mm:ss";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
             // 
             // MenuMain
             // 
@@ -295,5 +301,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatuslblCredit;
         private System.Windows.Forms.Label lblBusiness;
         private System.Windows.Forms.Label lblTime;
+        private System.Windows.Forms.Timer timer1;
     }
 }

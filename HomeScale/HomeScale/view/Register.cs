@@ -37,8 +37,9 @@ namespace PaknampoScale.view
         {
             try
             {
-                String physicalName = ("\\\\.\\PHYSICALDRIVE1").Replace("\\", "\\\\");
-                ManagementObjectSearcher manageObj = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive WHERE DeviceID = \"" + physicalName + "\"");
+                //String physicalName = ("\\\\.\\PHYSICALDRIVE1").Replace("\\", "\\\\");
+                //ManagementObjectSearcher manageObj = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive WHERE DeviceID = \"" + physicalName + "\"");
+                ManagementObjectSearcher manageObj = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive");
 
                 foreach (ManagementObject obj in manageObj.Get())
                 {
