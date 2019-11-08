@@ -11,8 +11,10 @@
     <AssemblyName>PaknampoScale</AssemblyName>
     <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <NuGetPackageImportStamp>7b61ed4a</NuGetPackageImportStamp>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
     <TargetFrameworkProfile />
+    <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
     <Install>true</Install>
     <InstallFrom>Disk</InstallFrom>
@@ -25,7 +27,6 @@
     <MapFileExtensions>true</MapFileExtensions>
     <ApplicationRevision>0</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
-    <IsWebBootstrapper>false</IsWebBootstrapper>
     <UseApplicationTrust>false</UseApplicationTrust>
     <BootstrapperEnabled>true</BootstrapperEnabled>
   </PropertyGroup>
@@ -50,31 +51,34 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="BCrypt.Net-Next">
-      <HintPath>..\packages\BCrypt.Net-Next.3.1.3\lib\net40\BCrypt.Net-Next.dll</HintPath>
+      <HintPath>..\packages\BCrypt.Net-Next.3.2.1\lib\net40\BCrypt.Net-Next.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    <Reference Include="EntityFramework">
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework.SqlServer">
-      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <HintPath>..\packages\EntityFramework.6.3.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
-    <Reference Include="log4net, Version=2.0.8.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
+    <Reference Include="log4net">
       <HintPath>..\packages\log4net.2.0.8\lib\net45-full\log4net.dll</HintPath>
+      <Private>True</Private>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.5.1\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
-    <Reference Include="System.Data.SQLite, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
-      <HintPath>..\packages\System.Data.SQLite.Core.1.0.108.0\lib\net451\System.Data.SQLite.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Data.SQLite.EF6, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+    <Reference Include="System.Data.SQLite">
+      <HintPath>..\packages\System.Data.SQLite.Core.1.0.112.0\lib\net451\System.Data.SQLite.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.108.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
     </Reference>
-    <Reference Include="System.Data.SQLite.Linq, Version=1.0.108.0, Culture=neutral, PublicKeyToken=db937bc2d44ff139, processorArchitecture=MSIL">
+    <Reference Include="System.Data.SQLite.EF6">
+      <HintPath>..\packages\System.Data.SQLite.EF6.1.0.112.0\lib\net451\System.Data.SQLite.EF6.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Data.SQLite.Linq">
+      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.112.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
       <Private>True</Private>
-      <HintPath>..\packages\System.Data.SQLite.Linq.1.0.108.0\lib\net451\System.Data.SQLite.Linq.dll</HintPath>
     </Reference>
     <Reference Include="System.Management" />
     <Reference Include="System.Management.Instrumentation" />
@@ -91,6 +95,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="src\controller\MenuMainController.cs" />
+    <Compile Include="src\controller\MST009Controller.cs" />
     <Compile Include="src\controller\RegisterController.cs" />
     <Compile Include="src\controller\STS001Controller.cs" />
     <Compile Include="src\model\configDatabase\MySqlLiteConnectionFactory.cs" />
@@ -103,6 +108,12 @@
     <Compile Include="src\model\entities\MST_CAR_REGISTERTION.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\model\entities\MST_CUSTOMER.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\entities\MST_CUSTOMER_SERVICE.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="src\model\entities\MST_DATA_BASIC.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
@@ -110,6 +121,9 @@
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\entities\MST_LINE_DOWN.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\entities\MST_MENU.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\entities\MST_MOISTURE.cs">
@@ -154,9 +168,13 @@
     <Compile Include="src\model\entities\VW_MST_CAR_REGISTERTION.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\model\entities\VW_MST_CUSTOMER.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="src\model\entities\VW_MST_PRODUCT.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\model\form\combo\ComboStatementOrNotStatementForm.cs" />
     <Compile Include="src\model\form\combo\ComboUseOrNotUseForm.cs" />
     <Compile Include="src\model\form\combo\ComboBaudRateForm.cs" />
     <Compile Include="src\model\form\combo\ComboDataBitsForm.cs" />
@@ -167,6 +185,7 @@
     <Compile Include="src\model\form\UserLoginForm.cs" />
     <Compile Include="src\util\CryptoUtil.cs" />
     <Compile Include="src\util\LoadComboUtil.cs" />
+    <Compile Include="src\util\SessionUtil.cs" />
     <Compile Include="view\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -242,6 +261,12 @@
     <Compile Include="view\master\MST008.Designer.cs">
       <DependentUpon>MST008.cs</DependentUpon>
     </Compile>
+    <Compile Include="view\master\MST009.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\master\MST009.Designer.cs">
+      <DependentUpon>MST009.cs</DependentUpon>
+    </Compile>
     <Compile Include="view\MenuMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -253,6 +278,12 @@
     </Compile>
     <Compile Include="view\Register.Designer.cs">
       <DependentUpon>Register.cs</DependentUpon>
+    </Compile>
+    <Compile Include="view\report\MenuReport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="view\report\MenuReport.Designer.cs">
+      <DependentUpon>MenuReport.cs</DependentUpon>
     </Compile>
     <Compile Include="view\scale\LMS001.cs">
       <SubType>Form</SubType>
@@ -306,6 +337,9 @@
     <EmbeddedResource Include="view\master\MST008.resx">
       <DependentUpon>MST008.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="view\master\MST009.resx">
+      <DependentUpon>MST009.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="view\MenuMain.resx">
       <DependentUpon>MenuMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -348,7 +382,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="view\message\" />
-    <Folder Include="view\report\" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include=".NETFramework,Version=v4.5.1">
@@ -380,13 +413,18 @@
     </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.108.0\build\net451\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.3.0\build\EntityFramework.targets'))" />
   </Target>
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net46\System.Data.SQLite.Core.targets')" />
+  <Import Project="..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets" Condition="Exists('..\packages\System.Data.SQLite.Core.1.0.112.0\build\net451\System.Data.SQLite.Core.targets')" />
+  <Import Project="..\packages\EntityFramework.6.3.0\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.3.0\build\EntityFramework.targets')" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">

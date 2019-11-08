@@ -88,7 +88,7 @@
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblHead.Location = new System.Drawing.Point(466, 35);
             this.lblHead.Name = "lblHead";
-            this.lblHead.Size = new System.Drawing.Size(115, 33);
+            this.lblHead.Size = new System.Drawing.Size(112, 27);
             this.lblHead.TabIndex = 15;
             this.lblHead.Text = "ฐานข้อมูลทั่วไป";
             // 

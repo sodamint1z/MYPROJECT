@@ -14,6 +14,7 @@ using PaknampoScale.src.util;
 using PaknampoScale.view;
 using PaknampoScale.view.master;
 using PaknampoScale.view.scale;
+using PaknampoScale.view.report;
 using log4net;
 using System.Diagnostics;
 
@@ -36,7 +37,7 @@ namespace PaknampoScale.view
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            lblTime.Text = DateTime.Now.ToString("MM/dd/yyyy HH:mm:ss");
+            lblTime.Text = DateTime.Now.ToString("dd/MM/yyyy HH:mm:ss");
         } 
 
         public void queryDataMstBusiness()
@@ -98,6 +99,14 @@ namespace PaknampoScale.view
             STS001 sts001 = new STS001();
             this.Hide();
             sts001.Show();
+        }
+
+        private void btnReport_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            MenuReport menuReport = new MenuReport();
+            this.Hide();
+            menuReport.Show();
         }
 
     }

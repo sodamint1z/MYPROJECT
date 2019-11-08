@@ -131,6 +131,7 @@
             this.btnReport.Text = "รายงานทั่วไป";
             this.btnReport.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnReport.UseVisualStyleBackColor = false;
+            this.btnReport.Click += new System.EventHandler(this.btnReport_Click);
             // 
             // button5
             // 
@@ -249,7 +250,7 @@
             this.lblTime.Name = "lblTime";
             this.lblTime.Size = new System.Drawing.Size(189, 27);
             this.lblTime.TabIndex = 21;
-            this.lblTime.Text = "MM/dd/yyyy HH:mm:ss";
+            this.lblTime.Text = "dd/MM/yyyy HH:mm:ss";
             this.lblTime.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // timer1
@@ -277,7 +278,7 @@
             this.Controls.Add(this.btnMainScale);
             this.Name = "MenuMain";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomeScale";
+            this.Text = "PaknampoScale";
             this.statusStrip1.ResumeLayout(false);
             this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);

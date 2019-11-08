@@ -15,7 +15,7 @@ namespace PaknampoScale.src.model.entities
     public partial class MST_SERVICE_CHARGE
     {
         public long SERVICE_CHARGE_ID { get; set; }
-        public string SERVICE_CHARGE_NAME { get; set; }
+        public string SERVICE_CHARGE_VALUE { get; set; }
         public Nullable<int> SERVICE_CHARGE_STATUS { get; set; }
     }
 }

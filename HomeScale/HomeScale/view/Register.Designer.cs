@@ -34,12 +34,13 @@
             this.btnRegister = new System.Windows.Forms.Button();
             this.btnExit = new System.Windows.Forms.Button();
             this.lblDigit = new System.Windows.Forms.Label();
+            this.txtNameHarddisk = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // txtSerialNo
             // 
             this.txtSerialNo.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtSerialNo.Location = new System.Drawing.Point(133, 100);
+            this.txtSerialNo.Location = new System.Drawing.Point(133, 122);
             this.txtSerialNo.MaxLength = 100;
             this.txtSerialNo.Name = "txtSerialNo";
             this.txtSerialNo.ReadOnly = true;
@@ -49,10 +50,11 @@
             // txtRegister
             // 
             this.txtRegister.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
-            this.txtRegister.Location = new System.Drawing.Point(133, 145);
+            this.txtRegister.Location = new System.Drawing.Point(133, 167);
             this.txtRegister.MaxLength = 100;
+            this.txtRegister.Multiline = true;
             this.txtRegister.Name = "txtRegister";
-            this.txtRegister.Size = new System.Drawing.Size(300, 31);
+            this.txtRegister.Size = new System.Drawing.Size(300, 62);
             this.txtRegister.TabIndex = 0;
             this.txtRegister.TextChanged += new System.EventHandler(this.txtRegister_TextChanged);
             // 
@@ -62,7 +64,7 @@
             this.btnRegister.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnRegister.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister.Image")));
             this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnRegister.Location = new System.Drawing.Point(133, 204);
+            this.btnRegister.Location = new System.Drawing.Point(133, 240);
             this.btnRegister.Name = "btnRegister";
             this.btnRegister.Size = new System.Drawing.Size(109, 70);
             this.btnRegister.TabIndex = 2;
@@ -77,7 +79,7 @@
             this.btnExit.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnExit.Image = ((System.Drawing.Image)(resources.GetObject("btnExit.Image")));
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnExit.Location = new System.Drawing.Point(287, 204);
+            this.btnExit.Location = new System.Drawing.Point(287, 240);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(146, 70);
             this.btnExit.TabIndex = 3;
@@ -89,17 +91,28 @@
             // 
             this.lblDigit.AutoSize = true;
             this.lblDigit.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold);
-            this.lblDigit.Location = new System.Drawing.Point(449, 152);
+            this.lblDigit.Location = new System.Drawing.Point(449, 206);
             this.lblDigit.Name = "lblDigit";
             this.lblDigit.Size = new System.Drawing.Size(46, 18);
             this.lblDigit.TabIndex = 4;
             this.lblDigit.Text = "ตัวอักษร";
+            // 
+            // txtNameHarddisk
+            // 
+            this.txtNameHarddisk.Font = new System.Drawing.Font("TH SarabunPSK", 15.75F);
+            this.txtNameHarddisk.Location = new System.Drawing.Point(133, 76);
+            this.txtNameHarddisk.MaxLength = 100;
+            this.txtNameHarddisk.Name = "txtNameHarddisk";
+            this.txtNameHarddisk.ReadOnly = true;
+            this.txtNameHarddisk.Size = new System.Drawing.Size(300, 31);
+            this.txtNameHarddisk.TabIndex = 5;
             // 
             // Register
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 361);
+            this.Controls.Add(this.txtNameHarddisk);
             this.Controls.Add(this.lblDigit);
             this.Controls.Add(this.btnExit);
             this.Controls.Add(this.btnRegister);
@@ -120,5 +133,6 @@
         private System.Windows.Forms.Button btnRegister;
         private System.Windows.Forms.Button btnExit;
         private System.Windows.Forms.Label lblDigit;
+        private System.Windows.Forms.TextBox txtNameHarddisk;
     }
 }

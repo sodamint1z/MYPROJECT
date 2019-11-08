@@ -50,6 +50,7 @@ namespace PaknampoScale.view
 
                     lstHD.Add(formHardDrive);
 
+                    txtNameHarddisk.Text = Util.toString(formHardDrive.model);
                     txtSerialNo.Text = Util.toString(formHardDrive.serialNo);
                 }
             }
@@ -93,6 +94,11 @@ namespace PaknampoScale.view
 
         public void checkRegister()
         {
+            if (Util.isEmpty(txtRegister.Text)) 
+            {
+                MessageBox.Show(CommonUtil.REQUIRE_MESSAGE_REGISTER);
+                return;
+            }
             Cursor.Current = Cursors.WaitCursor;
             try
             {
@@ -103,19 +109,19 @@ namespace PaknampoScale.view
                     if (checkHash.Equals(true))
                     {
                         updateDataRegister();
-                        MessageBox.Show("รหัสถูกต้อง ลงทะเบียนสำเร็จ");
+                        MessageBox.Show(CommonUtil.MESSAGE_REGISTER_SUCCESS);
                         Login login = new Login();
                         this.Hide();
                         login.Show();
                     }
                     else
                     {
-                        MessageBox.Show("รหัสไม่ถูกต้อง! กรุณากรอกใหม่อีกครั้ง");
+                        MessageBox.Show(CommonUtil.MESSAGE_REGISTER_FAILED);
                     }
                 }
                 else
                 {
-                    MessageBox.Show("กรุณากรอกรหัส 60 ตัวอักษรเท่านั้น");
+                    MessageBox.Show(CommonUtil.REQUIRE_MESSAGE_CHAR_DIGIT);
                 }
             }
             catch (Exception ex)

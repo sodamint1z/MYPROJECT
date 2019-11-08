@@ -44,7 +44,7 @@
             this.lblUsername.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblUsername.Location = new System.Drawing.Point(67, 56);
             this.lblUsername.Name = "lblUsername";
-            this.lblUsername.Size = new System.Drawing.Size(69, 33);
+            this.lblUsername.Size = new System.Drawing.Size(66, 27);
             this.lblUsername.TabIndex = 0;
             this.lblUsername.Text = "ขื่อผู้ใช้ :";
             // 
@@ -55,7 +55,7 @@
             this.lblPassword.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblPassword.Location = new System.Drawing.Point(56, 123);
             this.lblPassword.Name = "lblPassword";
-            this.lblPassword.Size = new System.Drawing.Size(80, 33);
+            this.lblPassword.Size = new System.Drawing.Size(77, 27);
             this.lblPassword.TabIndex = 1;
             this.lblPassword.Text = "รหัสผ่าน :";
             // 
@@ -127,7 +127,7 @@
             this.DoubleBuffered = true;
             this.Name = "Login";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "HomeScale";
+            this.Text = "PaknampoScale";
             this.ResumeLayout(false);
             this.PerformLayout();
 

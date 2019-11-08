@@ -23,6 +23,16 @@ namespace PaknampoScale.src.util
             return lstCombo;
         }
 
+        public static List<ComboStatementOrNotStatementForm> loadComboStatement()
+        {
+            List<ComboStatementOrNotStatementForm> lstCombo = new List<ComboStatementOrNotStatementForm>();
+
+            lstCombo.Add(new ComboStatementOrNotStatementForm() { statementId = 0, statementValue = "ไม่มีบัญชี" });
+            lstCombo.Add(new ComboStatementOrNotStatementForm() { statementId = 1, statementValue = "มีบัญชี" });
+
+            return lstCombo;
+        }
+
         public static List<ComboBaudRateForm> loadComboBaudRate()
         {
             List<ComboBaudRateForm> lstCombo = new List<ComboBaudRateForm>();

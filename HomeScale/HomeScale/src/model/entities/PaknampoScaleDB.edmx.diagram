@@ -4,23 +4,27 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="d2827f8b04e64fdaabdca27d31d8c8a9" Name="Diagram1">
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.LOGIN_STATUS" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_BUSINESS" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_CAR_REGISTERTION" Width="1.5" PointX="0.75" PointY="3.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_DATA_BASIC" Width="1.5" PointX="2.75" PointY="3.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_LINE_DOWN" Width="1.5" PointX="4.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_MOISTURE" Width="1.5" PointX="4.75" PointY="3.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_PRODUCT" Width="1.5" PointX="6.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_PRODUCT_UNIT" Width="1.5" PointX="6.75" PointY="3.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_SERVICE_CHARGE" Width="1.5" PointX="4.75" PointY="6.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_VENDOR" Width="1.5" PointX="6.75" PointY="6.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.REGISTER" Width="1.5" PointX="8.75" PointY="0.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.STS_SERIAL_PORT" Width="1.5" PointX="0.75" PointY="8.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.USER_LOGIN" Width="1.5" PointX="8.75" PointY="4.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_DESTINATION" Width="1.5" PointX="8.75" PointY="7.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.VW_MST_CAR_REGISTERTION" Width="1.5" PointX="2.75" PointY="9.75" />
-        <EntityTypeShape EntityType="PaknampoScaleDBModel.VW_MST_PRODUCT" Width="1.5" PointX="10.75" PointY="0.75" />
+      <Diagram DiagramId="ebde314ea9d840cda141911565f608b4" Name="Diagram1">
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.LOGIN_STATUS" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_BUSINESS" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_CAR_REGISTERTION" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_CUSTOMER" Width="1.5" PointX="2.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_CUSTOMER_SERVICE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_DATA_BASIC" Width="1.5" PointX="4.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_LINE_DOWN" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_MENU" Width="1.5" PointX="6.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_MOISTURE" Width="1.5" PointX="0.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_PRODUCT" Width="1.5" PointX="6.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_PRODUCT_UNIT" Width="1.5" PointX="8.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_SERVICE_CHARGE" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_VENDOR" Width="1.5" PointX="8.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.REGISTER" Width="1.5" PointX="8.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.STS_SERIAL_PORT" Width="1.5" PointX="10.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.USER_LOGIN" Width="1.5" PointX="10.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.MST_DESTINATION" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.VW_MST_CAR_REGISTERTION" Width="1.5" PointX="10.75" PointY="7.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.VW_MST_CUSTOMER" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="PaknampoScaleDBModel.VW_MST_PRODUCT" Width="1.5" PointX="0.75" PointY="11.75" IsExpanded="true" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -22,5 +22,9 @@ namespace PaknampoScale.src.util
         public static string DATA_NOTFOUND_AGAIN_LOGIN = "ไม่พบข้อมูลกรุณาล็อกอินอีกครั้ง";
         public static string REQUIRE_MESSAGE_USER_LOGIN = "กรุณากรอกบัญชีผู้ใช้";
         public static string REQUIRE_MESSAGE_PASSWORD_LOGIN = "กรุณากรอกรหัสผ่าน";
+        public static string REQUIRE_MESSAGE_REGISTER = "กรุณากรอกรหัสลงทะเบียน";
+        public static string MESSAGE_REGISTER_SUCCESS = "รหัสถูกต้อง ลงทะเบียนสำเร็จ";
+        public static string MESSAGE_REGISTER_FAILED = "รหัสไม่ถูกต้อง! กรุณากรอกใหม่อีกครั้ง";
+        public static string REQUIRE_MESSAGE_CHAR_DIGIT = "กรุณากรอกรหัส 60 ตัวอักษรเท่านั้น";
     }
 }

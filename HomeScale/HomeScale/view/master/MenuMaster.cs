@@ -42,6 +42,7 @@ namespace PaknampoScale.view.master
             MST006 mst006 = new MST006();
             MST007 mst007 = new MST007();
             MST008 mst008 = new MST008();
+            MST009 mst009 = new MST009();
 
             addNewTab(mst001);
             addNewTab(mst002);
@@ -51,18 +52,19 @@ namespace PaknampoScale.view.master
             addNewTab(mst006);
             addNewTab(mst007);
             addNewTab(mst008);
+            addNewTab(mst009);
         }
 
-        private void addNewTab(Form frm)
+        private void addNewTab(Form form)
         {
 
-            TabPage tab = new TabPage(frm.Text);
-            frm.TopLevel = false;
-            frm.Parent = tab;
-            frm.Visible = true;
-            frm.FormBorderStyle = FormBorderStyle.None;
-            frm.WindowState = FormWindowState.Maximized;
-            frm.ShowInTaskbar = false;
+            TabPage tab = new TabPage(form.Text);
+            form.TopLevel = false;
+            form.Parent = tab;
+            form.Visible = true;
+            form.FormBorderStyle = FormBorderStyle.None;
+            form.WindowState = FormWindowState.Maximized;
+            form.ShowInTaskbar = false;
 
             tabControl1.TabPages.Add(tab);
 

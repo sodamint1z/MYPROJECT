@@ -22,8 +22,9 @@ namespace PaknampoScale
         {
             List<HardDriveForm> lstHD = new List<HardDriveForm>();
             HardDriveForm form = new HardDriveForm();
-            String physicalName = ("\\\\.\\PHYSICALDRIVE1").Replace("\\", "\\\\");
-            ManagementObjectSearcher manageObj = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive WHERE DeviceID = \"" + physicalName + "\"");
+            //String physicalName = ("\\\\.\\PHYSICALDRIVE0").Replace("\\", "\\\\");
+            //ManagementObjectSearcher manageObj = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive WHERE DeviceID = \"" + physicalName + "\"");
+            ManagementObjectSearcher manageObj = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive");
 
             foreach (ManagementObject obj in manageObj.Get())
             {
@@ -52,8 +53,15 @@ namespace PaknampoScale
 
                     string passwordNew = form.serialNo + dataRegister.REGISTER_CODE;
                     string passwordOld = dataRegister.REGISTER_SERIAL_NO + dataRegister.REGISTER_CODE;
+                    bool checkHash = false;
 
-                    bool checkHash = BCrypt.Net.BCrypt.Verify(Util.toString(passwordNew), dataRegister.REGISTER_PASSWORD_HASH);
+                    if (Util.isNotEmpty(Util.toString(passwordNew)) && Util.isNotEmpty(dataRegister.REGISTER_PASSWORD_HASH)) 
+                    {
+                        if (dataRegister.REGISTER_PASSWORD_HASH.Length.Equals(60))
+                        {
+                            checkHash = BCrypt.Net.BCrypt.Verify(Util.toString(passwordNew), dataRegister.REGISTER_PASSWORD_HASH);
+                        }
+                    }
 
                     if (Util.isNotEmpty(passwordNew) && Util.isNotEmpty(passwordOld))
                     {
