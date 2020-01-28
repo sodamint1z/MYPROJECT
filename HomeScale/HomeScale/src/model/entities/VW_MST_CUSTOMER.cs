@@ -18,9 +18,9 @@ namespace PaknampoScale.src.model.entities
         public int CUSTOMER_STATEMENT_STATUS { get; set; }
         public string CUSTOMER_NAME { get; set; }
         public string CUSTOMER_ADDRESS { get; set; }
-        public string CUSTOMER_SUB_DISTRICT { get; set; }
-        public string CUSTOMER_DISTRICT { get; set; }
-        public string CUSTOMER_PROVINCE { get; set; }
+        public string DISTRICT_TH { get; set; }
+        public string AMPHURE_TH { get; set; }
+        public string PROVINCE_TH { get; set; }
         public string CUSTOMER_POSTCODE { get; set; }
         public string CUSTOMER_TEL_NO { get; set; }
         public string CUSTOMER_FAX { get; set; }

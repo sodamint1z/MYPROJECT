@@ -39,6 +39,7 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtProductUnitId = new System.Windows.Forms.TextBox();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -60,7 +61,7 @@
             this.lblProductUnitName.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblProductUnitName.Location = new System.Drawing.Point(513, 57);
             this.lblProductUnitName.Name = "lblProductUnitName";
-            this.lblProductUnitName.Size = new System.Drawing.Size(127, 33);
+            this.lblProductUnitName.Size = new System.Drawing.Size(124, 27);
             this.lblProductUnitName.TabIndex = 3;
             this.lblProductUnitName.Text = "ชื่อหน่วยสินค้า* :";
             // 
@@ -71,7 +72,7 @@
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblHead.Location = new System.Drawing.Point(403, 3);
             this.lblHead.Name = "lblHead";
-            this.lblHead.Size = new System.Drawing.Size(204, 33);
+            this.lblHead.Size = new System.Drawing.Size(201, 27);
             this.lblHead.TabIndex = 16;
             this.lblHead.Text = "MST002 : ข้อมูลหน่วยสินค้า";
             // 
@@ -79,9 +80,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 254);
+            this.dataGridView1.Location = new System.Drawing.Point(74, 254);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(855, 260);
+            this.dataGridView1.Size = new System.Drawing.Size(855, 395);
             this.dataGridView1.TabIndex = 17;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -91,7 +92,7 @@
             this.lblCountData.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold);
             this.lblCountData.Location = new System.Drawing.Point(787, 226);
             this.lblCountData.Name = "lblCountData";
-            this.lblCountData.Size = new System.Drawing.Size(65, 22);
+            this.lblCountData.Size = new System.Drawing.Size(63, 18);
             this.lblCountData.TabIndex = 18;
             this.lblCountData.Text = "CountData";
             // 
@@ -102,7 +103,7 @@
             this.btnSave.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(330, 151);
+            this.btnSave.Location = new System.Drawing.Point(295, 151);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 70);
             this.btnSave.TabIndex = 21;
@@ -118,7 +119,7 @@
             this.btnCancel.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(440, 151);
+            this.btnCancel.Location = new System.Drawing.Point(405, 151);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 70);
             this.btnCancel.TabIndex = 20;
@@ -134,7 +135,7 @@
             this.btnDelete.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(550, 151);
+            this.btnDelete.Location = new System.Drawing.Point(515, 151);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 70);
             this.btnDelete.TabIndex = 19;
@@ -150,7 +151,7 @@
             this.label1.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(35, 57);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(136, 33);
+            this.label1.Size = new System.Drawing.Size(133, 27);
             this.label1.TabIndex = 23;
             this.label1.Text = "รหัสหน่วยสินค้า* :";
             // 
@@ -165,12 +166,30 @@
             this.txtProductUnitId.Size = new System.Drawing.Size(300, 33);
             this.txtProductUnitId.TabIndex = 1;
             // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Pink;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBack.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBack.Location = new System.Drawing.Point(625, 151);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(109, 70);
+            this.btnBack.TabIndex = 24;
+            this.btnBack.Text = "ย้อนกลับ";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
+            // 
             // MST002
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoScaleDimensions = new System.Drawing.SizeF(96F, 96F);
+            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.AutoSize = true;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1008, 526);
+            this.ClientSize = new System.Drawing.Size(1034, 661);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.txtProductUnitId);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnSave);
@@ -202,5 +221,6 @@
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtProductUnitId;
+        private System.Windows.Forms.Button btnBack;
     }
 }

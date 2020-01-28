@@ -51,6 +51,7 @@
             this.btnSave = new System.Windows.Forms.Button();
             this.btnCancel = new System.Windows.Forms.Button();
             this.lblHead = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -72,7 +73,7 @@
             this.chkStatusPrintOutlookVendor.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkStatusPrintOutlookVendor.Location = new System.Drawing.Point(31, 137);
             this.chkStatusPrintOutlookVendor.Name = "chkStatusPrintOutlookVendor";
-            this.chkStatusPrintOutlookVendor.Size = new System.Drawing.Size(203, 37);
+            this.chkStatusPrintOutlookVendor.Size = new System.Drawing.Size(200, 31);
             this.chkStatusPrintOutlookVendor.TabIndex = 3;
             this.chkStatusPrintOutlookVendor.Text = "พิมพ์ทัศนะพ่อค้าในบัตรชั่ง";
             this.chkStatusPrintOutlookVendor.UseVisualStyleBackColor = true;
@@ -83,7 +84,7 @@
             this.chkStatusShowCardFare.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkStatusShowCardFare.Location = new System.Drawing.Point(31, 98);
             this.chkStatusShowCardFare.Name = "chkStatusShowCardFare";
-            this.chkStatusShowCardFare.Size = new System.Drawing.Size(166, 37);
+            this.chkStatusShowCardFare.Size = new System.Drawing.Size(163, 31);
             this.chkStatusShowCardFare.TabIndex = 2;
             this.chkStatusShowCardFare.Text = "แสดงค่ารถในบัตรชั่ง";
             this.chkStatusShowCardFare.UseVisualStyleBackColor = true;
@@ -94,7 +95,7 @@
             this.chkStatusPrintCardSend.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkStatusPrintCardSend.Location = new System.Drawing.Point(31, 59);
             this.chkStatusPrintCardSend.Name = "chkStatusPrintCardSend";
-            this.chkStatusPrintCardSend.Size = new System.Drawing.Size(195, 37);
+            this.chkStatusPrintCardSend.Size = new System.Drawing.Size(192, 31);
             this.chkStatusPrintCardSend.TabIndex = 1;
             this.chkStatusPrintCardSend.Text = "ดูภาพก่อนพิมพ์บัตรชั่งส่ง";
             this.chkStatusPrintCardSend.UseVisualStyleBackColor = true;
@@ -105,7 +106,7 @@
             this.chkStatusPrintCardNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.chkStatusPrintCardNo.Location = new System.Drawing.Point(31, 20);
             this.chkStatusPrintCardNo.Name = "chkStatusPrintCardNo";
-            this.chkStatusPrintCardNo.Size = new System.Drawing.Size(195, 37);
+            this.chkStatusPrintCardNo.Size = new System.Drawing.Size(192, 31);
             this.chkStatusPrintCardNo.TabIndex = 0;
             this.chkStatusPrintCardNo.Text = "ดูภาพก่อนพิมพ์บัตรชั่งรับ";
             this.chkStatusPrintCardNo.UseVisualStyleBackColor = true;
@@ -189,7 +190,7 @@
             this.lblBasicFare.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBasicFare.Location = new System.Drawing.Point(557, 125);
             this.lblBasicFare.Name = "lblBasicFare";
-            this.lblBasicFare.Size = new System.Drawing.Size(59, 33);
+            this.lblBasicFare.Size = new System.Drawing.Size(56, 27);
             this.lblBasicFare.TabIndex = 80;
             this.lblBasicFare.Text = "ค่ารถ :";
             // 
@@ -200,7 +201,7 @@
             this.lblBasicDeduction.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBasicDeduction.Location = new System.Drawing.Point(512, 74);
             this.lblBasicDeduction.Name = "lblBasicDeduction";
-            this.lblBasicDeduction.Size = new System.Drawing.Size(104, 33);
+            this.lblBasicDeduction.Size = new System.Drawing.Size(101, 27);
             this.lblBasicDeduction.TabIndex = 79;
             this.lblBasicDeduction.Text = "หักสิ่งเจือปน :";
             // 
@@ -211,7 +212,7 @@
             this.lblBasicMoveNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBasicMoveNo.Location = new System.Drawing.Point(172, 283);
             this.lblBasicMoveNo.Name = "lblBasicMoveNo";
-            this.lblBasicMoveNo.Size = new System.Drawing.Size(127, 33);
+            this.lblBasicMoveNo.Size = new System.Drawing.Size(124, 27);
             this.lblBasicMoveNo.TabIndex = 78;
             this.lblBasicMoveNo.Text = "เลขที่ใบย้ายกอง :";
             // 
@@ -222,7 +223,7 @@
             this.lblBasicDecimal.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBasicDecimal.Location = new System.Drawing.Point(162, 229);
             this.lblBasicDecimal.Name = "lblBasicDecimal";
-            this.lblBasicDecimal.Size = new System.Drawing.Size(137, 33);
+            this.lblBasicDecimal.Size = new System.Drawing.Size(134, 27);
             this.lblBasicDecimal.TabIndex = 77;
             this.lblBasicDecimal.Text = "จำนวนจุดทศนิยม :";
             // 
@@ -233,7 +234,7 @@
             this.lblBasicReceiptNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBasicReceiptNo.Location = new System.Drawing.Point(151, 178);
             this.lblBasicReceiptNo.Name = "lblBasicReceiptNo";
-            this.lblBasicReceiptNo.Size = new System.Drawing.Size(148, 33);
+            this.lblBasicReceiptNo.Size = new System.Drawing.Size(145, 27);
             this.lblBasicReceiptNo.TabIndex = 76;
             this.lblBasicReceiptNo.Text = "เลขที่ใบเสร็จรับเงิน :";
             // 
@@ -244,7 +245,7 @@
             this.lblBasicCardNoScoop.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBasicCardNoScoop.Location = new System.Drawing.Point(150, 126);
             this.lblBasicCardNoScoop.Name = "lblBasicCardNoScoop";
-            this.lblBasicCardNoScoop.Size = new System.Drawing.Size(149, 33);
+            this.lblBasicCardNoScoop.Size = new System.Drawing.Size(146, 27);
             this.lblBasicCardNoScoop.TabIndex = 75;
             this.lblBasicCardNoScoop.Text = "เลขที่บัตรชั่งตักออก :";
             // 
@@ -255,7 +256,7 @@
             this.lblBasicCardNo.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBasicCardNo.Location = new System.Drawing.Point(177, 74);
             this.lblBasicCardNo.Name = "lblBasicCardNo";
-            this.lblBasicCardNo.Size = new System.Drawing.Size(122, 33);
+            this.lblBasicCardNo.Size = new System.Drawing.Size(119, 27);
             this.lblBasicCardNo.TabIndex = 74;
             this.lblBasicCardNo.Text = "เลขที่บัตรชั่งรับ :";
             // 
@@ -278,7 +279,7 @@
             this.btnSave.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(395, 376);
+            this.btnSave.Location = new System.Drawing.Point(332, 376);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 70);
             this.btnSave.TabIndex = 89;
@@ -294,7 +295,7 @@
             this.btnCancel.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(505, 376);
+            this.btnCancel.Location = new System.Drawing.Point(442, 376);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 70);
             this.btnCancel.TabIndex = 88;
@@ -310,16 +311,33 @@
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblHead.Location = new System.Drawing.Point(421, 3);
             this.lblHead.Name = "lblHead";
-            this.lblHead.Size = new System.Drawing.Size(175, 33);
+            this.lblHead.Size = new System.Drawing.Size(172, 27);
             this.lblHead.TabIndex = 90;
             this.lblHead.Text = "MST006 : ข้อมูลพื้นฐาน";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Pink;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBack.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBack.Location = new System.Drawing.Point(552, 376);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(109, 70);
+            this.btnBack.TabIndex = 91;
+            this.btnBack.Text = "ย้อนกลับ";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // MST006
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1008, 526);
+            this.ClientSize = new System.Drawing.Size(1034, 661);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblHead);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
@@ -372,5 +390,6 @@
         private System.Windows.Forms.Button btnSave;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Label lblHead;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -277,5 +277,13 @@ namespace PaknampoScale.view.master
         {
             deleteDataMstProduct();
         }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            MenuMaster menuMaster = new MenuMaster();
+            this.Hide();
+            menuMaster.Show();
+        }
     }
 }

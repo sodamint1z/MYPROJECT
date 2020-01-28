@@ -12,16 +12,12 @@ namespace PaknampoScale.src.model.entities
     using System;
     using System.Collections.Generic;
     
-    public partial class MST_BUSINESS
+    public partial class MST_DISTRICTS
     {
-        public int BUSINESS_ID { get; set; }
-        public string BUSINESS_NAME { get; set; }
-        public string BUSINESS_ADDRESS { get; set; }
-        public Nullable<int> BUSINESS_DISTRICT { get; set; }
-        public Nullable<int> BUSINESS_AMPHURE { get; set; }
-        public Nullable<int> BUSINESS_PROVINCE { get; set; }
-        public string BUSINESS_POSTCODE { get; set; }
-        public string BUSINESS_TEL_NO { get; set; }
-        public string BUSINESS_FAX { get; set; }
+        public int DISTRICT_ID { get; set; }
+        public Nullable<int> ZIP_CODE { get; set; }
+        public string NAME_TH { get; set; }
+        public string NAME_EN { get; set; }
+        public Nullable<int> AMPHURE_ID { get; set; }
     }
 }

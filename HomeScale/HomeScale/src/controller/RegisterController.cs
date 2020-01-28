@@ -58,14 +58,18 @@ namespace PaknampoScale.src.controller
                         form.REGISTER_DEVICE_ID = Util.toString(CryptoUtil.encrypt(param.REGISTER_DEVICE_ID));
                         form.REGISTER_PASSWORD_HASH = param.REGISTER_PASSWORD_HASH;
                         form.REGISTER_CODE = Util.toString(CryptoUtil.encrypt(param.REGISTER_CODE));
-                        log.Info("Update Data form REGISTER WHERE " + form.REGISTER_ID
-                            + " REGISTER_MODEL : " + form.REGISTER_MODEL
-                            + " REGISTER_TYPE : " + form.REGISTER_TYPE
-                            + " REGISTER_SERIAL_NO : " + form.REGISTER_SERIAL_NO
-                            + " REGISTER_DEVICE_ID : " + form.REGISTER_DEVICE_ID
-                            + " REGISTER_PASSWORD_HASH : " + form.REGISTER_PASSWORD_HASH
-                            + " REGISTER_CODE : " + form.REGISTER_CODE
-                            );
+                        //form.CREATE_DATE = param.CREATE_DATE;
+                        //form.UPDATE_DATE = new DateTime();
+                        //log.Info("Update Data form REGISTER WHERE " + form.REGISTER_ID
+                        //    + " REGISTER_MODEL : " + form.REGISTER_MODEL
+                        //    + " REGISTER_TYPE : " + form.REGISTER_TYPE
+                        //    + " REGISTER_SERIAL_NO : " + form.REGISTER_SERIAL_NO
+                        //    + " REGISTER_DEVICE_ID : " + form.REGISTER_DEVICE_ID
+                        //    + " REGISTER_PASSWORD_HASH : " + form.REGISTER_PASSWORD_HASH
+                        //    + " REGISTER_CODE : " + form.REGISTER_CODE
+                        //    + " CREATE_DATE : " + form.CREATE_DATE
+                        //    + " UPDATE_DATE : " + form.UPDATE_DATE
+                        //    );
                     }
                     db.SaveChanges();
                     msgError.statusFlag = MsgForm.STATUS_SUCCESS;

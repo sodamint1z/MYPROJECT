@@ -23,6 +23,7 @@ namespace PaknampoScale.view
             InitializeComponent();
         }
         private static readonly ILog Log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
             checkLogin();

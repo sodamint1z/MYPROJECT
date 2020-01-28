@@ -89,7 +89,6 @@ namespace PaknampoScale.src.util
                 return "";
             }
         }
-
     }
 }
 

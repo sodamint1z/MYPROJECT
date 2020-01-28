@@ -40,6 +40,33 @@ namespace PaknampoScale.src.controller
             return new object[] { msgError, resultList };
         }
 
+        public object[] searchDataVwMstVendor()
+        {
+            log.Info("Start log INFO... searchDataVwMstVendor");
+            MsgForm msgError = new MsgForm();
+            List<VW_MST_VENDOR> resultList = new List<VW_MST_VENDOR>();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    resultList = (from row in db.VW_MST_VENDOR select row).ToList();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... searchDataVwMstVendor");
+            }
+            return new object[] { msgError, resultList };
+        }
+
         public object[] queryDataMstVendorByVendorId(MST_VENDOR param)
         {
             log.Info("Start log INFO... queryDataMstVendorByVendorId");
@@ -67,6 +94,114 @@ namespace PaknampoScale.src.controller
             return new object[] { msgError, form };
         }
 
+        public object[] queryComboMstGeographies()
+        {
+            log.Info("Start log INFO... queryComboMstGeographies");
+            MsgForm msgError = new MsgForm();
+            List<MST_GEOGRAPHIES> resultList = new List<MST_GEOGRAPHIES>();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    resultList = (from row in db.MST_GEOGRAPHIES select row).ToList();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... queryComboMstGeographies");
+            }
+            return new object[] { msgError, resultList };
+        }
+
+        public object[] queryComboMstProvinces()
+        {
+            log.Info("Start log INFO... queryComboMstProvinces");
+            MsgForm msgError = new MsgForm();
+            List<MST_PROVINCES> resultList = new List<MST_PROVINCES>();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    resultList = (from row in db.MST_PROVINCES select row).ToList();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... queryComboMstProvinces");
+            }
+            return new object[] { msgError, resultList };
+        }
+
+        public object[] queryComboMstAmphures(MST_AMPHURES param)
+        {
+            log.Info("Start log INFO... queryComboMstAmphures");
+            MsgForm msgError = new MsgForm();
+            List<MST_AMPHURES> resultList = new List<MST_AMPHURES>();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    resultList = (from row in db.MST_AMPHURES where row.PROVINCE_ID == param.PROVINCE_ID select row).ToList();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... queryComboMstAmphures");
+            }
+            return new object[] { msgError, resultList };
+        }
+
+        public object[] queryComboMstDistricts(MST_DISTRICTS param)
+        {
+            log.Info("Start log INFO... queryComboMstDistricts");
+            MsgForm msgError = new MsgForm();
+            List<MST_DISTRICTS> resultList = new List<MST_DISTRICTS>();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    resultList = (from row in db.MST_DISTRICTS where row.AMPHURE_ID == param.AMPHURE_ID select row).ToList();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... queryComboMstDistricts");
+            }
+            return new object[] { msgError, resultList };
+        }
+
         public object[] insertOrUpdateDataMstVendor(MST_VENDOR param, string flagAddEdit)
         {
             log.Info("Start log INFO... insertOrUpdateDataMstVendor");
@@ -85,8 +220,8 @@ namespace PaknampoScale.src.controller
                             formInsert.VENDOR_ID = param.VENDOR_ID;
                             formInsert.VENDOR_NAME = param.VENDOR_NAME;
                             formInsert.VENDOR_ADDRESS = param.VENDOR_ADDRESS;
-                            formInsert.VENDOR_SUB_DISTRICT = param.VENDOR_SUB_DISTRICT;
                             formInsert.VENDOR_DISTRICT = param.VENDOR_DISTRICT;
+                            formInsert.VENDOR_AMPHURE = param.VENDOR_AMPHURE;
                             formInsert.VENDOR_PROVINCE = param.VENDOR_PROVINCE;
                             formInsert.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
                             formInsert.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
@@ -96,8 +231,8 @@ namespace PaknampoScale.src.controller
                                 + " VENDOR_ID : " + formInsert.VENDOR_ID
                                 + " VENDOR_NAME : " + formInsert.VENDOR_NAME
                                 + " VENDOR_ADDRESS : " + formInsert.VENDOR_ADDRESS
-                                + " VENDOR_SUB_DISTRICT : " + formInsert.VENDOR_SUB_DISTRICT
                                 + " VENDOR_DISTRICT : " + formInsert.VENDOR_DISTRICT
+                                + " VENDOR_AMPHURE : " + formInsert.VENDOR_AMPHURE
                                 + " VENDOR_PROVINCE : " + formInsert.VENDOR_PROVINCE
                                 + " VENDOR_POSTCODE : " + formInsert.VENDOR_POSTCODE
                                 + " VENDOR_TEL_NO : " + formInsert.VENDOR_TEL_NO
@@ -112,8 +247,8 @@ namespace PaknampoScale.src.controller
                             formUpdate.VENDOR_ID = param.VENDOR_ID;
                             formUpdate.VENDOR_NAME = param.VENDOR_NAME;
                             formUpdate.VENDOR_ADDRESS = param.VENDOR_ADDRESS;
-                            formUpdate.VENDOR_SUB_DISTRICT = param.VENDOR_SUB_DISTRICT;
                             formUpdate.VENDOR_DISTRICT = param.VENDOR_DISTRICT;
+                            formUpdate.VENDOR_AMPHURE = param.VENDOR_AMPHURE;
                             formUpdate.VENDOR_PROVINCE = param.VENDOR_PROVINCE;
                             formUpdate.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
                             formUpdate.VENDOR_TEL_NO = param.VENDOR_TEL_NO;
@@ -122,8 +257,8 @@ namespace PaknampoScale.src.controller
                                 + " VENDOR_ID : " + formUpdate.VENDOR_ID
                                 + " VENDOR_NAME : " + formUpdate.VENDOR_NAME
                                 + " VENDOR_ADDRESS : " + formUpdate.VENDOR_ADDRESS
-                                + " VENDOR_SUB_DISTRICT : " + formUpdate.VENDOR_SUB_DISTRICT
                                 + " VENDOR_DISTRICT : " + formUpdate.VENDOR_DISTRICT
+                                + " VENDOR_AMPHURE : " + formUpdate.VENDOR_AMPHURE
                                 + " VENDOR_PROVINCE : " + formUpdate.VENDOR_PROVINCE
                                 + " VENDOR_POSTCODE : " + formUpdate.VENDOR_POSTCODE
                                 + " VENDOR_TEL_NO : " + formUpdate.VENDOR_TEL_NO
@@ -162,8 +297,8 @@ namespace PaknampoScale.src.controller
                     {
                         form.VENDOR_NAME = param.VENDOR_NAME;
                         form.VENDOR_ADDRESS = param.VENDOR_ADDRESS;
-                        form.VENDOR_SUB_DISTRICT = param.VENDOR_SUB_DISTRICT;
                         form.VENDOR_DISTRICT = param.VENDOR_DISTRICT;
+                        form.VENDOR_AMPHURE = param.VENDOR_AMPHURE;
                         form.VENDOR_PROVINCE = param.VENDOR_PROVINCE;
                         form.VENDOR_POSTCODE = param.VENDOR_POSTCODE;
                         form.VENDOR_TEL_NO = param.VENDOR_TEL_NO;

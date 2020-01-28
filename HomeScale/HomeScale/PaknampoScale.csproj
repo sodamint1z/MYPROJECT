@@ -98,8 +98,10 @@
     <Compile Include="src\controller\MST009Controller.cs" />
     <Compile Include="src\controller\RegisterController.cs" />
     <Compile Include="src\controller\STS001Controller.cs" />
-    <Compile Include="src\model\configDatabase\MySqlLiteConnectionFactory.cs" />
     <Compile Include="src\model\entities\LOGIN_STATUS.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\entities\MST_AMPHURES.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\entities\MST_BUSINESS.cs">
@@ -120,6 +122,12 @@
     <Compile Include="src\model\entities\MST_DESTINATION.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\model\entities\MST_DISTRICTS.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\entities\MST_GEOGRAPHIES.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="src\model\entities\MST_LINE_DOWN.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
@@ -133,6 +141,9 @@
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\entities\MST_PRODUCT_UNIT.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\entities\MST_PROVINCES.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\entities\MST_SERVICE_CHARGE.cs">
@@ -171,7 +182,13 @@
     <Compile Include="src\model\entities\VW_MST_CUSTOMER.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
+    <Compile Include="src\model\entities\VW_MST_DESTINATION.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
     <Compile Include="src\model\entities\VW_MST_PRODUCT.cs">
+      <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
+    </Compile>
+    <Compile Include="src\model\entities\VW_MST_VENDOR.cs">
       <DependentUpon>PaknampoScaleDB.tt</DependentUpon>
     </Compile>
     <Compile Include="src\model\form\combo\ComboStatementOrNotStatementForm.cs" />

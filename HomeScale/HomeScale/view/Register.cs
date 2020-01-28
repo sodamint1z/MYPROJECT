@@ -108,11 +108,13 @@ namespace PaknampoScale.view
                 {
                     if (checkHash.Equals(true))
                     {
-                        updateDataRegister();
-                        MessageBox.Show(CommonUtil.MESSAGE_REGISTER_SUCCESS);
-                        Login login = new Login();
-                        this.Hide();
-                        login.Show();
+                        if (updateDataRegister())
+                        {
+                            MessageBox.Show(CommonUtil.MESSAGE_REGISTER_SUCCESS);
+                            Login login = new Login();
+                            this.Hide();
+                            login.Show();
+                        }
                     }
                     else
                     {
@@ -131,7 +133,7 @@ namespace PaknampoScale.view
             }
         }
 
-        public void updateDataRegister()
+        public bool updateDataRegister()
         {
             RegisterController registerCtrl = new RegisterController();
             REGISTER form = new REGISTER();
@@ -144,10 +146,11 @@ namespace PaknampoScale.view
                 form.REGISTER_DEVICE_ID = formHardDrive.deviceID;
                 form.REGISTER_PASSWORD_HASH = txtRegister.Text;
                 form.REGISTER_CODE = formRegister.REGISTER_CODE;
+                //form.CREATE_DATE = formRegister.CREATE_DATE;
 
                 if (Util.isEmpty(form))
                 {
-                    return;
+                    return false;
                 }
 
                 object[] result = registerCtrl.updateDataRegister(form);
@@ -157,10 +160,12 @@ namespace PaknampoScale.view
                 if (msgForm.statusFlag.Equals(1))
                 {
                     //MessageBox.Show(CommonUtil.SAVE_DATA_SUCCESS);
+                    return true;
                 }
                 else
                 {
                     MessageBox.Show("Error : " + msgForm.messageDescription);
+                    return false;
                 }
             }
             catch (Exception ex)
@@ -168,6 +173,7 @@ namespace PaknampoScale.view
                 log.Error(ex.ToString(), ex);
                 MessageBox.Show("Error : " + ex.ToString());
             }
+            return false;
         }
 
         private void txtRegister_TextChanged(object sender, EventArgs e)

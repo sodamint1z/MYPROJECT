@@ -17,9 +17,9 @@ namespace PaknampoScale.src.model.entities
         public string VENDOR_ID { get; set; }
         public string VENDOR_NAME { get; set; }
         public string VENDOR_ADDRESS { get; set; }
-        public string VENDOR_SUB_DISTRICT { get; set; }
-        public string VENDOR_DISTRICT { get; set; }
-        public string VENDOR_PROVINCE { get; set; }
+        public Nullable<int> VENDOR_DISTRICT { get; set; }
+        public Nullable<int> VENDOR_AMPHURE { get; set; }
+        public Nullable<int> VENDOR_PROVINCE { get; set; }
         public string VENDOR_POSTCODE { get; set; }
         public string VENDOR_TEL_NO { get; set; }
         public string VENDOR_FAX { get; set; }

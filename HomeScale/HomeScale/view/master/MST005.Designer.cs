@@ -41,6 +41,7 @@
             this.btnCancel = new System.Windows.Forms.Button();
             this.btnDelete = new System.Windows.Forms.Button();
             this.lblCountData = new System.Windows.Forms.Label();
+            this.btnBack = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -62,7 +63,7 @@
             this.lblCarRegistertionName.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblCarRegistertionName.Location = new System.Drawing.Point(533, 59);
             this.lblCarRegistertionName.Name = "lblCarRegistertionName";
-            this.lblCarRegistertionName.Size = new System.Drawing.Size(101, 33);
+            this.lblCarRegistertionName.Size = new System.Drawing.Size(98, 27);
             this.lblCarRegistertionName.TabIndex = 5;
             this.lblCarRegistertionName.Text = "ทะเบียนรถ* :";
             // 
@@ -73,7 +74,7 @@
             this.lblCarRegistertionVendorId.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblCarRegistertionVendorId.Location = new System.Drawing.Point(99, 103);
             this.lblCarRegistertionVendorId.Name = "lblCarRegistertionVendorId";
-            this.lblCarRegistertionVendorId.Size = new System.Drawing.Size(88, 33);
+            this.lblCarRegistertionVendorId.Size = new System.Drawing.Size(85, 27);
             this.lblCarRegistertionVendorId.TabIndex = 7;
             this.lblCarRegistertionVendorId.Text = "ชื่อผู้ขาย* :";
             // 
@@ -85,7 +86,7 @@
             this.cboCarRegistertionVendorId.Location = new System.Drawing.Point(207, 102);
             this.cboCarRegistertionVendorId.MaxLength = 100;
             this.cboCarRegistertionVendorId.Name = "cboCarRegistertionVendorId";
-            this.cboCarRegistertionVendorId.Size = new System.Drawing.Size(300, 34);
+            this.cboCarRegistertionVendorId.Size = new System.Drawing.Size(300, 30);
             this.cboCarRegistertionVendorId.TabIndex = 2;
             // 
             // lblHead
@@ -95,7 +96,7 @@
             this.lblHead.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblHead.Location = new System.Drawing.Point(374, 3);
             this.lblHead.Name = "lblHead";
-            this.lblHead.Size = new System.Drawing.Size(243, 33);
+            this.lblHead.Size = new System.Drawing.Size(240, 27);
             this.lblHead.TabIndex = 23;
             this.lblHead.Text = "MST005 : ข้อมูลกำหนดทะเบียนรถ";
             // 
@@ -103,9 +104,9 @@
             // 
             this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(66, 251);
+            this.dataGridView1.Location = new System.Drawing.Point(84, 271);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(855, 263);
+            this.dataGridView1.Size = new System.Drawing.Size(855, 378);
             this.dataGridView1.TabIndex = 24;
             this.dataGridView1.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellClick);
             // 
@@ -127,7 +128,7 @@
             this.lblCarRegistertionId.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.lblCarRegistertionId.Location = new System.Drawing.Point(58, 59);
             this.lblCarRegistertionId.Name = "lblCarRegistertionId";
-            this.lblCarRegistertionId.Size = new System.Drawing.Size(129, 33);
+            this.lblCarRegistertionId.Size = new System.Drawing.Size(126, 27);
             this.lblCarRegistertionId.TabIndex = 25;
             this.lblCarRegistertionId.Text = "รหัสทะเบียนรถ* :";
             // 
@@ -138,7 +139,7 @@
             this.btnSave.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnSave.Image = ((System.Drawing.Image)(resources.GetObject("btnSave.Image")));
             this.btnSave.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnSave.Location = new System.Drawing.Point(330, 151);
+            this.btnSave.Location = new System.Drawing.Point(290, 151);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(109, 70);
             this.btnSave.TabIndex = 29;
@@ -154,7 +155,7 @@
             this.btnCancel.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnCancel.Image = ((System.Drawing.Image)(resources.GetObject("btnCancel.Image")));
             this.btnCancel.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnCancel.Location = new System.Drawing.Point(440, 151);
+            this.btnCancel.Location = new System.Drawing.Point(400, 151);
             this.btnCancel.Name = "btnCancel";
             this.btnCancel.Size = new System.Drawing.Size(109, 70);
             this.btnCancel.TabIndex = 28;
@@ -170,7 +171,7 @@
             this.btnDelete.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold);
             this.btnDelete.Image = ((System.Drawing.Image)(resources.GetObject("btnDelete.Image")));
             this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.btnDelete.Location = new System.Drawing.Point(550, 151);
+            this.btnDelete.Location = new System.Drawing.Point(510, 151);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(109, 70);
             this.btnDelete.TabIndex = 27;
@@ -183,18 +184,35 @@
             // 
             this.lblCountData.AutoSize = true;
             this.lblCountData.Font = new System.Drawing.Font("TH SarabunPSK", 12F, System.Drawing.FontStyle.Bold);
-            this.lblCountData.Location = new System.Drawing.Point(776, 226);
+            this.lblCountData.Location = new System.Drawing.Point(757, 240);
             this.lblCountData.Name = "lblCountData";
-            this.lblCountData.Size = new System.Drawing.Size(65, 22);
+            this.lblCountData.Size = new System.Drawing.Size(63, 18);
             this.lblCountData.TabIndex = 31;
             this.lblCountData.Text = "CountData";
+            // 
+            // btnBack
+            // 
+            this.btnBack.BackColor = System.Drawing.Color.Pink;
+            this.btnBack.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnBack.Font = new System.Drawing.Font("TH SarabunPSK", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBack.Image = ((System.Drawing.Image)(resources.GetObject("btnBack.Image")));
+            this.btnBack.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnBack.Location = new System.Drawing.Point(620, 151);
+            this.btnBack.Name = "btnBack";
+            this.btnBack.Size = new System.Drawing.Size(109, 70);
+            this.btnBack.TabIndex = 40;
+            this.btnBack.Text = "ย้อนกลับ";
+            this.btnBack.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnBack.UseVisualStyleBackColor = false;
+            this.btnBack.Click += new System.EventHandler(this.btnBack_Click);
             // 
             // MST005
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.AliceBlue;
-            this.ClientSize = new System.Drawing.Size(1008, 526);
+            this.ClientSize = new System.Drawing.Size(1034, 661);
+            this.Controls.Add(this.btnBack);
             this.Controls.Add(this.lblCountData);
             this.Controls.Add(this.btnSave);
             this.Controls.Add(this.btnCancel);
@@ -230,5 +248,6 @@
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnDelete;
         private System.Windows.Forms.Label lblCountData;
+        private System.Windows.Forms.Button btnBack;
     }
 }

@@ -22,7 +22,7 @@ namespace PaknampoScale
         {
             List<HardDriveForm> lstHD = new List<HardDriveForm>();
             HardDriveForm form = new HardDriveForm();
-            //String physicalName = ("\\\\.\\PHYSICALDRIVE0").Replace("\\", "\\\\");
+            //string physicalname = ("\\\\.\\physicaldrive0").replace("\\", "\\\\");
             //ManagementObjectSearcher manageObj = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive WHERE DeviceID = \"" + physicalName + "\"");
             ManagementObjectSearcher manageObj = new ManagementObjectSearcher("SELECT * FROM Win32_DiskDrive");
 

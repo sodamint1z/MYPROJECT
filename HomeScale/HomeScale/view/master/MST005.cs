@@ -152,7 +152,7 @@ namespace PaknampoScale.view.master
 
                 form.CAR_REGISTERTION_ID = txtCarRegistertionId.Text;
                 form.CAR_REGISTERTION_NAME = txtCarRegistertionName.Text;
-                form.CAR_REGISTERTION_VENDOR_ID = Int32.Parse(cboCarRegistertionVendorId.SelectedValue.ToString());
+                form.CAR_REGISTERTION_VENDOR_ID = cboCarRegistertionVendorId.SelectedValue.ToString();
 
                 if (Util.isEmpty(form))
                 {
@@ -276,6 +276,14 @@ namespace PaknampoScale.view.master
         private void btnDelete_Click(object sender, EventArgs e)
         {
             deleteDataMstCarRegistertion();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            MenuMaster menuMaster = new MenuMaster();
+            this.Hide();
+            menuMaster.Show();
         }
     }
 }

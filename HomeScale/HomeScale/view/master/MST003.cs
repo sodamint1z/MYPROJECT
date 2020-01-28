@@ -20,19 +20,23 @@ namespace PaknampoScale.view.master
         public MST003()
         {
             InitializeComponent();
-            searchDataMstVendor();
+            searchDataVwMstVendor();
+            queryComboMstProvinces();
         }
         private static readonly ILog log = LogManager.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
         MST_VENDOR formMstVendor = new MST_VENDOR();
+        List<MST_AMPHURES> lstdataAmphure = new List<MST_AMPHURES>();
+        List<MST_DISTRICTS> lstdataDistricts = new List<MST_DISTRICTS>();
         string flagAddEdit = "A";
+
         public void resetDataMstVendor()
         {
             txtVendorId.Text = "";
             txtVendorName.Text = "";
             txtVendorAddress.Text = "";
-            txtVendorSubDistrict.Text = "";
-            txtVendorDistrict.Text = "";
-            txtVendorProvince.Text = "";
+            cboDistricts.SelectedValue = "";
+            cboAmphure.SelectedValue = "";
+            cboProvince.SelectedValue = "";
             txtVendorPostcode.Text = "";
             txtVendorTelNo.Text = "";
             txtVendorFax.Text = "";
@@ -40,17 +44,30 @@ namespace PaknampoScale.view.master
             flagAddEdit = "A";
             txtVendorId.Enabled = true;
             txtVendorId.Focus();
+
+            lstdataAmphure = new List<MST_AMPHURES>();
+            lstdataDistricts = new List<MST_DISTRICTS>();
+
+            cboAmphure.DataSource = lstdataAmphure;
+            cboAmphure.ValueMember = "AMPHURE_ID";
+            cboAmphure.DisplayMember = "NAME_TH";
+            cboAmphure.SelectedValue = "";
+
+            cboDistricts.DataSource = lstdataDistricts;
+            cboDistricts.ValueMember = "DISTRICT_ID";
+            cboDistricts.DisplayMember = "NAME_TH";
+            cboDistricts.SelectedValue = "";
         }
 
-        public void searchDataMstVendor()
+        public void searchDataVwMstVendor()
         {
             MST003Controller mst003Ctrl = new MST003Controller();
             try
             {
-                object[] result = mst003Ctrl.searchDataMstVendor();
+                object[] result = mst003Ctrl.searchDataVwMstVendor();
 
                 MsgForm msgForm = (MsgForm)result[0];
-                List<MST_VENDOR> lstdata = (List<MST_VENDOR>)result[1];
+                List<VW_MST_VENDOR> lstdata = (List<VW_MST_VENDOR>)result[1];
 
                 if (msgForm.statusFlag.Equals(1))
                 {
@@ -102,13 +119,24 @@ namespace PaknampoScale.view.master
                         txtVendorId.Text = data.VENDOR_ID;
                         txtVendorName.Text = data.VENDOR_NAME;
                         txtVendorAddress.Text = data.VENDOR_ADDRESS;
-                        txtVendorSubDistrict.Text = data.VENDOR_SUB_DISTRICT;
-                        txtVendorDistrict.Text = data.VENDOR_DISTRICT;
-                        txtVendorProvince.Text = data.VENDOR_PROVINCE;
+                        //cboDistricts.SelectedValue = data.VENDOR_DISTRICT;
+                        //cboAmphure.SelectedValue = data.VENDOR_AMPHURE;
+                        //cboProvince.SelectedValue = data.VENDOR_PROVINCE;
                         txtVendorPostcode.Text = data.VENDOR_POSTCODE;
                         txtVendorTelNo.Text = data.VENDOR_TEL_NO;
                         txtVendorFax.Text = data.VENDOR_FAX;
                         formMstVendor = data;
+
+                        formMstVendor.VENDOR_PROVINCE = data.VENDOR_PROVINCE;
+                        formMstVendor.VENDOR_AMPHURE = data.VENDOR_AMPHURE;
+                        formMstVendor.VENDOR_DISTRICT = data.VENDOR_DISTRICT;
+
+                        queryComboMstAmphures();
+                        queryComboMstDistricts();
+
+                        cboDistricts.SelectedValue = data.VENDOR_DISTRICT;
+                        cboAmphure.SelectedValue = data.VENDOR_AMPHURE;
+                        cboProvince.SelectedValue = data.VENDOR_PROVINCE;
                     }
                 }
                 else
@@ -138,9 +166,9 @@ namespace PaknampoScale.view.master
                 form.VENDOR_ID = txtVendorId.Text;
                 form.VENDOR_NAME = txtVendorName.Text;
                 form.VENDOR_ADDRESS = txtVendorAddress.Text;
-                form.VENDOR_SUB_DISTRICT = txtVendorSubDistrict.Text;
-                form.VENDOR_DISTRICT = txtVendorDistrict.Text;
-                form.VENDOR_PROVINCE = txtVendorProvince.Text;
+                form.VENDOR_DISTRICT = Int32.Parse(cboDistricts.SelectedValue.ToString());
+                form.VENDOR_AMPHURE = Int32.Parse(cboAmphure.SelectedValue.ToString());
+                form.VENDOR_PROVINCE = Int32.Parse(cboProvince.SelectedValue.ToString());
                 form.VENDOR_POSTCODE = txtVendorPostcode.Text;
                 form.VENDOR_TEL_NO = txtVendorTelNo.Text;
                 form.VENDOR_FAX = txtVendorFax.Text;
@@ -173,7 +201,7 @@ namespace PaknampoScale.view.master
                         if (msgForm.statusFlag.Equals(1))
                         {
                             resetDataMstVendor();
-                            searchDataMstVendor();
+                            searchDataVwMstVendor();
                             MessageBox.Show(CommonUtil.SAVE_DATA_SUCCESS);
                         }
                         else
@@ -187,7 +215,7 @@ namespace PaknampoScale.view.master
                     if (msgForm.statusFlag.Equals(1))
                     {
                         resetDataMstVendor();
-                        searchDataMstVendor();
+                        searchDataVwMstVendor();
                         MessageBox.Show(CommonUtil.SAVE_DATA_SUCCESS);
                     }
                     else
@@ -226,7 +254,7 @@ namespace PaknampoScale.view.master
                     if (msgForm.statusFlag.Equals(1))
                     {
                         resetDataMstVendor();
-                        searchDataMstVendor();
+                        searchDataVwMstVendor();
                         MessageBox.Show(CommonUtil.DELETE_DATA_SUCCESS);
                     }
                     else
@@ -242,13 +270,170 @@ namespace PaknampoScale.view.master
             }
         }
 
+        //public void queryComboMstGeographies()
+        //{
+        //    MST003Controller mst003Ctrl = new MST003Controller();
+        //    try
+        //    {
+        //        object[] result = mst003Ctrl.queryComboMstGeographies();
+
+        //        MsgForm msgForm = (MsgForm)result[0];
+        //        List<MST_GEOGRAPHIES> lstdata = (List<MST_GEOGRAPHIES>)result[1];
+
+        //        if (msgForm.statusFlag.Equals(1))
+        //        {
+        //            cboGeography.DataSource = lstdata;
+        //            cboGeography.ValueMember = "GEOGRAPHY_ID";
+        //            cboGeography.DisplayMember = "NAME";
+        //            cboGeography.SelectedValue = "";
+        //            cboGeography.Text = "---กรุณาเลือก---";
+        //        }
+        //        else
+        //        {
+        //            MessageBox.Show("Error : " + msgForm.messageDescription);
+        //        }
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        log.Error(ex.ToString(), ex);
+        //        MessageBox.Show("Error : " + ex.ToString());
+        //    }
+        //}
+
+        public void queryComboMstProvinces()
+        {
+            MST003Controller mst003Ctrl = new MST003Controller();
+            try
+            {
+                object[] result = mst003Ctrl.queryComboMstProvinces();
+
+                MsgForm msgForm = (MsgForm)result[0];
+                List<MST_PROVINCES> lstdata = (List<MST_PROVINCES>)result[1];
+
+                if (msgForm.statusFlag.Equals(1))
+                {
+                    cboProvince.DataSource = lstdata;
+                    cboProvince.ValueMember = "PROVINCE_ID";
+                    cboProvince.DisplayMember = "NAME_TH";
+                    cboProvince.SelectedValue = "";
+                }
+                else
+                {
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
+            }
+        }
+
+        public void queryComboMstAmphures()
+        {
+            MST003Controller mst003Ctrl = new MST003Controller();
+            MST_AMPHURES form = new MST_AMPHURES();
+            try
+            {
+                if (!formMstVendor.VENDOR_PROVINCE.Equals(0))
+                {
+                    form.PROVINCE_ID = formMstVendor.VENDOR_PROVINCE;
+                }
+                else
+                {
+                    form.PROVINCE_ID = Int32.Parse(cboProvince.SelectedValue.ToString());
+                }
+
+                if (Util.isEmpty(form.PROVINCE_ID))
+                {
+                    return;
+                }
+
+                object[] result = mst003Ctrl.queryComboMstAmphures(form);
+
+                MsgForm msgForm = (MsgForm)result[0];
+                lstdataAmphure = (List<MST_AMPHURES>)result[1];
+
+                if (msgForm.statusFlag.Equals(1))
+                {
+                    cboAmphure.DataSource = lstdataAmphure;
+                    cboAmphure.ValueMember = "AMPHURE_ID";
+                    cboAmphure.DisplayMember = "NAME_TH";
+                    cboAmphure.SelectedValue = "";
+                }
+                else
+                {
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
+            }
+        }
+
+        public void queryComboMstDistricts()
+        {
+            MST003Controller mst003Ctrl = new MST003Controller();
+            MST_DISTRICTS form = new MST_DISTRICTS();
+            try
+            {
+                if (!formMstVendor.VENDOR_AMPHURE.Equals(0))
+                {
+                    form.AMPHURE_ID = formMstVendor.VENDOR_AMPHURE;
+                }
+                else
+                {
+                    form.AMPHURE_ID = Int32.Parse(cboAmphure.SelectedValue.ToString());
+                }
+
+                if (Util.isEmpty(form.AMPHURE_ID))
+                {
+                    return;
+                }
+
+                object[] result = mst003Ctrl.queryComboMstDistricts(form);
+
+                MsgForm msgForm = (MsgForm)result[0];
+                //List<MST_DISTRICTS> lstdata = (List<MST_DISTRICTS>)result[1];
+                lstdataDistricts = (List<MST_DISTRICTS>)result[1];
+
+                if (msgForm.statusFlag.Equals(1))
+                {
+                    cboDistricts.DataSource = lstdataDistricts;
+                    cboDistricts.ValueMember = "DISTRICT_ID";
+                    cboDistricts.DisplayMember = "NAME_TH";
+                    cboDistricts.SelectedValue = "";
+                }
+                else
+                {
+                    MessageBox.Show("Error : " + msgForm.messageDescription);
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                MessageBox.Show("Error : " + ex.ToString());
+            }
+        }
+
         private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
                 DataGridViewRow row = this.dataGridView1.Rows[e.RowIndex];
                 formMstVendor.VENDOR_ID = row.Cells[0].Value.ToString();
+
+                //formMstVendor.VENDOR_DISTRICT = Int32.Parse(row.Cells[3].Value.ToString());
+                //formMstVendor.VENDOR_AMPHURE = Int32.Parse(row.Cells[4].Value.ToString());
+                //formMstVendor.VENDOR_PROVINCE = Int32.Parse(row.Cells[5].Value.ToString());
+
                 queryDataMstVendorByVendorId();
+
+                //queryComboMstAmphures();
+                //queryComboMstDistricts();
+                
                 flagAddEdit = "E";
                 txtVendorId.Enabled = false;
             }
@@ -267,6 +452,64 @@ namespace PaknampoScale.view.master
         private void btnDelete_Click(object sender, EventArgs e)
         {
             deleteDataMstVendor();
+        }
+
+        private void btnBack_Click(object sender, EventArgs e)
+        {
+            Cursor.Current = Cursors.WaitCursor;
+            MenuMaster menuMaster = new MenuMaster();
+            this.Hide();
+            menuMaster.Show();
+        }
+
+        private void cboProvince_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            formMstVendor = new MST_VENDOR();
+            lstdataAmphure = new List<MST_AMPHURES>();
+            lstdataDistricts = new List<MST_DISTRICTS>();
+
+            cboAmphure.DataSource = lstdataAmphure;
+            cboAmphure.ValueMember = "AMPHURE_ID";
+            cboAmphure.DisplayMember = "NAME_TH";
+            cboAmphure.SelectedValue = "";
+
+            cboDistricts.DataSource = lstdataDistricts;
+            cboDistricts.ValueMember = "DISTRICT_ID";
+            cboDistricts.DisplayMember = "NAME_TH";
+            cboDistricts.SelectedValue = "";
+
+            txtVendorPostcode.Text = "";
+
+            queryComboMstAmphures();
+        }
+
+        private void cboAmphure_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            formMstVendor = new MST_VENDOR();
+            lstdataDistricts = new List<MST_DISTRICTS>();
+
+            cboDistricts.DataSource = lstdataDistricts;
+            cboDistricts.ValueMember = "DISTRICT_ID";
+            cboDistricts.DisplayMember = "NAME_TH";
+            cboDistricts.SelectedValue = "";
+
+            txtVendorPostcode.Text = "";
+
+            queryComboMstDistricts();
+        }
+
+        private void cboDistricts_SelectionChangeCommitted(object sender, EventArgs e)
+        {
+            txtVendorPostcode.Text = "";
+
+            foreach (MST_DISTRICTS data in lstdataDistricts)
+            {
+                if (cboDistricts.SelectedValue.ToString().Equals(data.DISTRICT_ID.ToString()))
+                {
+                    txtVendorPostcode.Text = data.ZIP_CODE.ToString();
+                    break;
+                }
+            }
         }
     }
 }

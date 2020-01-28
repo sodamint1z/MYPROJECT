@@ -40,6 +40,33 @@ namespace PaknampoScale.src.controller
             return new object[] { msgError, resultList };
         }
 
+        public object[] searchDataVwMstDestination()
+        {
+            log.Info("Start log INFO... searchDataVwMstDestination");
+            MsgForm msgError = new MsgForm();
+            List<VW_MST_DESTINATION> resultList = new List<VW_MST_DESTINATION>();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    resultList = (from row in db.VW_MST_DESTINATION select row).ToList();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... searchDataVwMstDestination");
+            }
+            return new object[] { msgError, resultList };
+        }
+
         public object[] queryDataMstDestinationByDestinationId(MST_DESTINATION param)
         {
             log.Info("Start log INFO... queryDataMstDestinationByDestinationId");
@@ -67,6 +94,87 @@ namespace PaknampoScale.src.controller
             return new object[] { msgError, form };
         }
 
+        public object[] queryComboMstProvinces()
+        {
+            log.Info("Start log INFO... queryComboMstProvinces");
+            MsgForm msgError = new MsgForm();
+            List<MST_PROVINCES> resultList = new List<MST_PROVINCES>();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    resultList = (from row in db.MST_PROVINCES select row).ToList();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... queryComboMstProvinces");
+            }
+            return new object[] { msgError, resultList };
+        }
+
+        public object[] queryComboMstAmphures(MST_AMPHURES param)
+        {
+            log.Info("Start log INFO... queryComboMstAmphures");
+            MsgForm msgError = new MsgForm();
+            List<MST_AMPHURES> resultList = new List<MST_AMPHURES>();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    resultList = (from row in db.MST_AMPHURES where row.PROVINCE_ID == param.PROVINCE_ID select row).ToList();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... queryComboMstAmphures");
+            }
+            return new object[] { msgError, resultList };
+        }
+
+        public object[] queryComboMstDistricts(MST_DISTRICTS param)
+        {
+            log.Info("Start log INFO... queryComboMstDistricts");
+            MsgForm msgError = new MsgForm();
+            List<MST_DISTRICTS> resultList = new List<MST_DISTRICTS>();
+            try
+            {
+                using (var db = new PaknampoScaleDBEntities())
+                {
+                    resultList = (from row in db.MST_DISTRICTS where row.AMPHURE_ID == param.AMPHURE_ID select row).ToList();
+                    db.Dispose();
+                    msgError.statusFlag = MsgForm.STATUS_SUCCESS;
+                }
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex.ToString(), ex);
+                msgError.statusFlag = MsgForm.STATUS_ERROR;
+                msgError.messageDescription = ex.ToString();
+            }
+            finally
+            {
+                log.Info("End log INFO... queryComboMstDistricts");
+            }
+            return new object[] { msgError, resultList };
+        }
+
         public object[] insertOrUpdateDataMstDestination(MST_DESTINATION param, string flagAddEdit)
         {
             log.Info("Start log INFO... insertOrUpdateDataMstDestination");
@@ -86,8 +194,8 @@ namespace PaknampoScale.src.controller
                             formInsert.DESTINATION_ID = param.DESTINATION_ID;
                             formInsert.DESTINATION_NAME = param.DESTINATION_NAME;
                             formInsert.DESTINATION_ADDRESS = param.DESTINATION_ADDRESS;
-                            formInsert.DESTINATION_SUB_DISTRICT = param.DESTINATION_SUB_DISTRICT;
                             formInsert.DESTINATION_DISTRICT = param.DESTINATION_DISTRICT;
+                            formInsert.DESTINATION_AMPHURE = param.DESTINATION_AMPHURE;
                             formInsert.DESTINATION_PROVINCE = param.DESTINATION_PROVINCE;
                             formInsert.DESTINATION_POSTCODE = param.DESTINATION_POSTCODE;
                             formInsert.DESTINATION_TEL_NO = param.DESTINATION_TEL_NO;
@@ -97,8 +205,8 @@ namespace PaknampoScale.src.controller
                             + " DESTINATION_ID : " + formInsert.DESTINATION_ID
                             + " DESTINATION_NAME : " + formInsert.DESTINATION_NAME
                             + " DESTINATION_ADDRESS : " + formInsert.DESTINATION_ADDRESS
-                            + " DESTINATION_SUB_DISTRICT : " + formInsert.DESTINATION_SUB_DISTRICT
                             + " DESTINATION_DISTRICT : " + formInsert.DESTINATION_DISTRICT
+                            + " DESTINATION_AMPHURE : " + formInsert.DESTINATION_AMPHURE
                             + " DESTINATION_PROVINCE : " + formInsert.DESTINATION_PROVINCE
                             + " DESTINATION_POSTCODE : " + formInsert.DESTINATION_POSTCODE
                             + " DESTINATION_TEL_NO : " + formInsert.DESTINATION_TEL_NO
@@ -113,8 +221,8 @@ namespace PaknampoScale.src.controller
                             formUpdate.DESTINATION_ID = param.DESTINATION_ID;
                             formUpdate.DESTINATION_NAME = param.DESTINATION_NAME;
                             formUpdate.DESTINATION_ADDRESS = param.DESTINATION_ADDRESS;
-                            formUpdate.DESTINATION_SUB_DISTRICT = param.DESTINATION_SUB_DISTRICT;
                             formUpdate.DESTINATION_DISTRICT = param.DESTINATION_DISTRICT;
+                            formUpdate.DESTINATION_AMPHURE = param.DESTINATION_AMPHURE;
                             formUpdate.DESTINATION_PROVINCE = param.DESTINATION_PROVINCE;
                             formUpdate.DESTINATION_POSTCODE = param.DESTINATION_POSTCODE;
                             formUpdate.DESTINATION_TEL_NO = param.DESTINATION_TEL_NO;
@@ -123,8 +231,8 @@ namespace PaknampoScale.src.controller
                             + " DESTINATION_ID : " + formUpdate.DESTINATION_ID
                             + " DESTINATION_NAME : " + formUpdate.DESTINATION_NAME
                             + " DESTINATION_ADDRESS : " + formUpdate.DESTINATION_ADDRESS
-                            + " DESTINATION_SUB_DISTRICT : " + formUpdate.DESTINATION_SUB_DISTRICT
                             + " DESTINATION_DISTRICT : " + formUpdate.DESTINATION_DISTRICT
+                            + " DESTINATION_AMPHURE : " + formUpdate.DESTINATION_AMPHURE
                             + " DESTINATION_PROVINCE : " + formUpdate.DESTINATION_PROVINCE
                             + " DESTINATION_POSTCODE : " + formUpdate.DESTINATION_POSTCODE
                             + " DESTINATION_TEL_NO : " + formUpdate.DESTINATION_TEL_NO
